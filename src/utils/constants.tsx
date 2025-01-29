@@ -1,5 +1,5 @@
 import TabNoSlider from "@/components/common/tabs/tab-no-slider"
-import { NavbarMenuSetting, TabItemProp, TabsProps } from "./types"
+import { NavbarMenuSetting, TabItemProp } from "./types"
 import LinearGradientText from "@/components/common/linear-gradient-text"
 import TabWithSlider from "@/components/common/tabs/tab-with-slider"
 import Image from "next/image"
