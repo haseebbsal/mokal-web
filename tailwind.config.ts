@@ -27,6 +27,7 @@ export default {
           "blue":"#4263AA",
           "lighterDarkBlue":"#596C8D"
         },
+        icon:"rgba(113, 113, 122, 1)"
       },
       backgroundImage:{
         "linearPurple":"linear-gradient(180deg, #D0A6FF 0%, rgba(66, 99, 170, 0.50) 100%)",

@@ -29,10 +29,10 @@ const responsive = {
 };
 
 
-export default function BaseSlider({ children ,extraClass}: BaseSliderProps) {
+export default function BaseSlider({ children ,extraClass,extraResponsive,...props}: BaseSliderProps) {
     return (
         <div className={`w-full ${extraClass}`}>
-            <Carousel className="p-4" partialVisbile={false} infinite shouldResetAutoplay responsive={responsive} arrows={false} autoPlay>
+            <Carousel {...props} className="p-4"  partialVisbile={false} infinite shouldResetAutoplay responsive={extraResponsive?extraResponsive:responsive} arrows={false} autoPlay>
                 {children}
             </Carousel>
         </div>

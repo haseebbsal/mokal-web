@@ -3,6 +3,7 @@ import "./globals.css";
 import HeroProvider from "@/providers/hero-provider";
 import { Lato } from "next/font/google"
 import MainNavbar from "@/components/page-components/navbar";
+import Footer from "@/components/page-components/footer";
 
 
 export const metadata: Metadata = {
@@ -31,6 +32,7 @@ export default function RootLayout({
           <div className={` mt-8`}>
             {children}
           </div>
+          <Footer/>
         </HeroProvider>
       </body>
     </html>

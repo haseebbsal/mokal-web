@@ -1,6 +1,7 @@
 import { AccordionProps, ButtonProps, CheckboxProps, InputProps } from "@heroui/react";
 import { CSSProperties, ReactNode } from "react";
 import { Control } from "react-hook-form";
+import { CarouselProps } from "react-multi-carousel";
 
 
 export interface BaseInputProps extends InputProps{
@@ -46,9 +47,10 @@ export interface TabWithSliderProps{
     carousel:CarouselData
 }
 
-export interface BaseSliderProps{
+export interface BaseSliderProps extends Omit<CarouselProps,'responsive'>{
     children:ReactNode,
-    extraClass?:string
+    extraClass?:string,
+    extraResponsive?:any
 }
 
 export interface BaseAccordionProps extends AccordionProps{
