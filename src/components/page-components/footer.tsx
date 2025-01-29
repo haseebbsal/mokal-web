@@ -9,6 +9,7 @@ import BaseButton from "../common/base-button";
 import { SiMinutemailer } from "react-icons/si";
 import { BsFillTelephoneOutboundFill } from "react-icons/bs";
 import { FaLocationDot } from "react-icons/fa6";
+import Marquee from "react-fast-marquee";
 const footerResponsive = {
     superLargeDesktop: {
         // the naming can be any, depends on you.
@@ -37,21 +38,42 @@ export default function Footer() {
     return (
         <div className="w-full bg-white">
             <div className="w-full">
-                <BaseSlider autoPlaySpeed={100} extraResponsive={footerResponsive}>
-                    <Image src='/vendors/AppleExpress.svg' alt="intelcom" width={100} height={100} />
-                    <Image src='/vendors/Carrier-Logos-1.svg' alt="intelcom" width={100} height={100} />
-                    <Image src='/vendors/Carrier-Logos-2.svg' alt="intelcom" width={100} height={100} />
-                    <Image src='/vendors/Carrier-Logos.svg' alt="intelcom" width={100} height={100} />
-                    <Image src='/vendors/Carrier-Logos1.svg' alt="intelcom" width={100} height={100} />
-                    <Image src='/vendors/Carrier-Logos6.svg' alt="intelcom" width={100} height={100} />
-                    <Image src='/vendors/Carrier-Logos10.svg' alt="intelcom" width={100} height={100} />
-                    <Image src='/vendors/Group-15.svg' alt="intelcom" width={100} height={100} />
-                    <Image src='/vendors/Group-1000004488.svg' alt="intelcom" width={100} height={100} />
-                    <Image src='/vendors/intelcom-1.svg' alt="intelcom" width={100} height={100} />
-                    <Image src='/vendors/Web-Logo-v2.0-1.svg' alt="intelcom" width={100} height={100} />
-                </BaseSlider>
+                <Marquee className=" ">
+                    <div className="p-4">
+                        <Image src='/vendors/AppleExpress.svg' alt="intelcom" width={100} height={100} />
+                    </div>
+                    <div className="p-4">
+                        <Image src='/vendors/Carrier-Logos-1.svg' alt="intelcom" width={100} height={100} />
+                    </div>
+                    <div className="p-4">
+                        <Image src='/vendors/Carrier-Logos-2.svg' alt="intelcom" width={100} height={100} />
+                    </div>
+                    <div className="p-4">
+                        <Image src='/vendors/Carrier-Logos.svg' alt="intelcom" width={100} height={100} />
+                    </div>
+                    <div className="p-4">
+                        <Image src='/vendors/Carrier-Logos1.svg' alt="intelcom" width={100} height={100} />
+                    </div>
+                    <div className="p-4">
+                        <Image src='/vendors/Carrier-Logos6.svg' alt="intelcom" width={100} height={100} />
+                    </div>
+                    <div className="p-4">
+                        <Image src='/vendors/Carrier-Logos10.svg' alt="intelcom" width={100} height={100} />
+                    </div>
+                    <div className="p-4">
+                        <Image src='/vendors/Group-15.svg' alt="intelcom" width={100} height={100} />
+                    </div>
+                    <div className="p-4">
+                        <Image src='/vendors/Group-1000004488.svg' alt="intelcom" width={100} height={100} />
+                    </div>
+                    <div className="p-4">
+                        <Image src='/vendors/intelcom-1.svg' alt="intelcom" width={100} height={100} />
+                    </div>
+                    <div className="p-4">
+                        <Image src='/vendors/Web-Logo-v2.0-1.svg' alt="intelcom" width={100} height={100} />
+                    </div>
+                </Marquee>
                 <div className="w-full h-[0.1rem] bg-linearPurple">
-
                 </div>
             </div>
             <div className="sm:px-20 px-4 sm:py-20 py-8">
