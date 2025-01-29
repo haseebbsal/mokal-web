@@ -1,3 +1,4 @@
+import { responsive } from "@/components/common/base-slider";
 import { AccordionProps, ButtonProps, CheckboxProps, InputProps } from "@heroui/react";
 import { CSSProperties, ReactNode } from "react";
 import { Control } from "react-hook-form";
@@ -50,7 +51,7 @@ export interface TabWithSliderProps{
 export interface BaseSliderProps extends Omit<CarouselProps,'responsive'>{
     children:ReactNode,
     extraClass?:string,
-    extraResponsive?:any
+    extraResponsive?:typeof responsive
 }
 
 export interface BaseAccordionProps extends AccordionProps{
