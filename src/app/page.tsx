@@ -8,8 +8,6 @@ import BaseTabs from "@/components/common/base-tabs";
 import ReasonsToChooseUs from "@/components/page-components/reasons-to-choose-us";
 import LinearGradientCircle from "@/components/common/linear-gradient-circle";
 import FAQS from "@/components/page-components/faqs";
-import BaseInput from "@/components/common/forms/base-input";
-import RefineTransport from "@/components/forms/refine-transport-form";
 import RefineTransportForm from "@/components/forms/refine-transport-form";
 
 export default function Home() {

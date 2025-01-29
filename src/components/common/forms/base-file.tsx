@@ -2,7 +2,7 @@
 
 import { BaseFileProps } from "@/utils/types"
 
-export default function BaseFile({ accept, className, multiple ,label,labelClass}: BaseFileProps) {
+export default function BaseFile({ className, multiple ,label,labelClass}: BaseFileProps) {
 
     return (
         <div className={`${className} flex flex-col gap-2`}>

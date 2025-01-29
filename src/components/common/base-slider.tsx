@@ -1,6 +1,5 @@
 'use client'
 import { BaseSliderProps } from '@/utils/types';
-import Image from 'next/image';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 

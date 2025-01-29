@@ -52,6 +52,7 @@ export interface BaseSliderProps{
 }
 
 export interface BaseAccordionProps extends AccordionProps{
+    anything?:string
 }
 
 export interface BaseFileProps extends InputProps{
@@ -61,4 +62,6 @@ export interface BaseFileProps extends InputProps{
 export type LinearGradientTextProp={text:string,extraClass?:string}
 
 
-export interface BaseCheckboxProps extends CheckboxProps{}
+export interface BaseCheckboxProps extends CheckboxProps{
+    anything?:string
+}

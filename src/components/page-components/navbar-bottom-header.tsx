@@ -36,7 +36,7 @@ export default function NavbarBottomHeader() {
 
                 </div>
                 <div className="sm:flex hidden gap-8 items-center ">
-                    {navbarMenuSettings.map((e: NavbarMenuSetting, index: number) => {
+                    {navbarMenuSettings.map((e: NavbarMenuSetting) => {
                         if (e.isButton) return <BaseButton key={e.name} style={e.style} extraClass={e.extraClass + " !text-sm"}>{e.name}</BaseButton>
                         if (e.isDropDown) return (<div key={e.name} onClick={() => {
                             if (show == e.index) {
@@ -57,7 +57,7 @@ export default function NavbarBottomHeader() {
             <MegaMenu show={show} />
             <Drawer isOpen={isOpen} className="sm:!hidden" size={"full"} placement="left" classNames={{ closeButton: "border-2 p-2 text-black border-black rounded-full right-4 top-4", body: "py-16" }} onClose={onClose}>
                 <DrawerContent>
-                    {(onClose) => (
+                    {() => (
                         <>
                             <DrawerBody>
                                 <Link href="/" className="hover:!bg-base-pink bg-transparent text-text-gray justify-start text-md px-2 py-2 rounded-xl">Home</Link>

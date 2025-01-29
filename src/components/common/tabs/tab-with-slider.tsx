@@ -1,6 +1,6 @@
 import BaseButton from "@/components/common/base-button";
 import BaseSlider from "@/components/common/base-slider";
-import { TabNoSliderProps, TabWithSliderProps } from "@/utils/types";
+import { TabWithSliderProps } from "@/utils/types";
 import Image from "next/image";
 import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 

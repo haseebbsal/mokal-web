@@ -8,6 +8,7 @@ export default function CheckStatusForm() {
     const {control,handleSubmit}=useForm()
 
     const checkStatusSubmit=(e:FieldValues)=>{
+        console.log(e)
     }
 
     return (

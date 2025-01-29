@@ -1,5 +1,4 @@
 import BaseButton from "@/components/common/base-button";
-import { gradientText } from "@/utils/style-constants";
 import { TabNoSliderProps } from "@/utils/types";
 import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 
