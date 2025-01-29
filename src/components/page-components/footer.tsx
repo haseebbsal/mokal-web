@@ -1,5 +1,4 @@
 import Image from "next/image";
-import BaseSlider from "../common/base-slider";
 import { FaFacebookF } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
