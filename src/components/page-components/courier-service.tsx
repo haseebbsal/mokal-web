@@ -2,8 +2,9 @@ import Image from "next/image";
 import LinearGradientText from "../common/linear-gradient-text";
 import BaseButton from "../common/base-button";
 import { MdKeyboardDoubleArrowRight } from "react-icons/md";
+import { CourierServiceProps } from "@/utils/types";
 
-export default function CourierService({bgColor='bg-base-shadeBlue'}:{bgColor?:string}) {
+export default function CourierService({bgColor='bg-base-shadeBlue'}:CourierServiceProps) {
     return (
         <div className={`${bgColor}  p-8 flex flex-col gap-16 items-center `}>
             <h1 className="sm:text-[2.3rem] text-[1.5rem] font-bold">Courier <LinearGradientText text="Service Solutions" /> that Fit Your Business</h1>

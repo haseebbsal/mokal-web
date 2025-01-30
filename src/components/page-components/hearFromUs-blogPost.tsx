@@ -2,6 +2,7 @@ import Image from "next/image";
 import BaseSlider from "../common/base-slider";
 import LinearGradientText from "../common/linear-gradient-text";
 import BlogPost from "../common/blog-post";
+import { HearFromUsAndBlogsProps } from "@/utils/types";
 
 
 
@@ -31,7 +32,7 @@ export const responsiveWhoWeAre = {
 
 
 
-export default function HearFromUsAndBlogs({ hideBlogs = false, hideHearFromUs = false, bgHearFromUs = "bg-white", bgBlogs = "bg-white" }: { hideBlogs?: boolean, hideHearFromUs?: boolean, bgHearFromUs?: string, bgBlogs?: string }) {
+export default function HearFromUsAndBlogs({ hideBlogs , hideHearFromUs , bgHearFromUs = "bg-white", bgBlogs = "bg-white" }: HearFromUsAndBlogsProps) {
     return (
         <div>
             {!hideHearFromUs && <div className={`${bgHearFromUs} w-full`}>
