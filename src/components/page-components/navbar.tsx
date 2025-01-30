@@ -14,7 +14,7 @@ export default function MainNavbar() {
     return (
         <>
             <div className="flex flex-col gap-4">
-                <Navbar height={'auto'} position="static" className={`justify-start items-center  text-base-blue sm:px-8 px-2 py-4 sm:py-0 !h-auto min-h-16`} classNames={{ wrapper: "w-full max-w-full p-0 sm:flex-row flex-col" }} style={{ backgroundImage: "linear-gradient(to right,#BACFFF 0%,#D0A6FF 100%)" }} shouldHideOnScroll>
+                <Navbar height={'auto'} position="static" className={`justify-start items-center bg-nav  text-base-blue sm:px-8 px-2 py-4 sm:py-0 !h-auto min-h-16`} classNames={{ wrapper: "w-full max-w-full p-0 sm:flex-row flex-col" }} shouldHideOnScroll>
                     <NavbarContent className=" flex" >
                         <div className="flex w-full sm:gap-16 gap-8 items-center">
                             <div className="flex gap-4">

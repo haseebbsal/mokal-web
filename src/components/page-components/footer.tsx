@@ -145,7 +145,7 @@ export default function Footer() {
                     </div>
                 </div>
             </div>
-            <div className="bg-linearPurple sm:px-20 px-4 py-4 text-base-blue font-normal">
+            <div className="bg-nav  sm:px-20 px-4 py-4 text-base-blue font-normal">
                 <p>©2024 Copyright MGCFREIGHT Inc. All rights reserved</p>
             </div>
         </div >

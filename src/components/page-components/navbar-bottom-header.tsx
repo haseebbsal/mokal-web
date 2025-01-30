@@ -46,8 +46,8 @@ export default function NavbarBottomHeader() {
                             setShow(e.index!)
                         }} className="flex gap-2 items-center cursor-pointer">
                             <p className="text-sm">{e.name}</p>
-                            {show != e.index && <IoIosArrowUp />}
-                            {show == e.index && <IoIosArrowDown />}
+                            {show != e.index && <IoIosArrowDown />}
+                            {show == e.index && <IoIosArrowUp />}
                         </div>)
                         return <Link className="text-sm" href={'/'} key={e.name}>{e.name}</Link>
                     }

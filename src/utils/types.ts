@@ -45,13 +45,15 @@ type CarouselData={imageSrc:string,description:string}[]
 export interface TabWithSliderProps{
     title:ReactNode
     description:string[]
-    carousel:CarouselData
+    carousel:CarouselData,
+    hideButton?:boolean
 }
 
 export interface BaseSliderProps extends Omit<CarouselProps,'responsive'>{
     children:ReactNode,
     extraClass?:string,
     extraResponsive?:typeof responsive
+    extraSliderClass?:string
 }
 
 export interface BaseAccordionProps extends AccordionProps{

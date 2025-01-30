@@ -2,3 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+.react-multi-carousel-dot--active button{
+    background:  #324878 !important;
+
+    
+}
+
+.react-multi-carousel-dot button{
+    border: none !important;
+    background-color: lightgray;
+
+}
+
+.react-multi-carousel-dot--active{
+    border: none !important;
+}

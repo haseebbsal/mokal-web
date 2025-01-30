@@ -7,8 +7,8 @@ import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 
 
 
-export default function TabWithSlider({ title, description, carousel }: TabWithSliderProps) {
-    return <div className="flex flex-col gap-4 items-center text-center p-4">
+export default function TabWithSlider({ title, description, carousel,hideButton=false }: TabWithSliderProps) {
+    return <div className="flex flex-col gap-4 w-full items-center text-center p-4">
         {title}
         <div className="flex flex-col gap-1">
             {description.map((e) => <p key={e} className="text-text-gray">{e}</p>)}
@@ -21,7 +21,7 @@ export default function TabWithSlider({ title, description, carousel }: TabWithS
                 </div>
             </div>)}
         </BaseSlider>
-        <BaseButton extraClass="!min-w-[10rem] flex justify-between">Learn More <MdKeyboardDoubleArrowRight className="text-lg" /></BaseButton>
+        {!hideButton && <BaseButton extraClass="!min-w-[10rem] flex justify-between">Learn More <MdKeyboardDoubleArrowRight className="text-lg" /></BaseButton>}
     </div>
 }
 

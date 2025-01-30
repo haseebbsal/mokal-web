@@ -290,3 +290,226 @@ export const faqs=[
     }
 ]
 
+
+export const termsandcondtions = [
+    {
+        header: "Acceptance of the Website Terms of Use",
+        content: [
+            '(A) These terms and conditions of use for https://www.mgcfreight.com/ constitute a legal agreement between you and MGC Freight Inc. ("Company," "we," "us," "our"). The terms, along with any documents they incorporate by reference, govern your access and use of https://www.mgcfreight.com, https://app.mgcfreight.com/, and its subdomains (the "Website").',
+            'By using the Website or clicking "accept," you agree to these Terms of Use and our Privacy Policy, incorporated by reference. If you do not agree, you must not access or use the Website.',
+            '(B) By using the Website, you represent that you meet the legal age of majority to form a binding contract and comply with all eligibility requirements. If you do not meet these requirements, you must not access or use the Website.'
+        ]
+    },
+    {
+        header: "Modifications to the Terms of Use and to the Website",
+        content: [
+            '(A) We reserve the right to revise and update these Terms of Use at any time. Such modifications take effect immediately upon posting and apply to all use of the Website. You agree to review these terms periodically and your continued use constitutes acceptance of any modifications.',
+            "(B) The Website's content, material, and Terms of Use may change or be terminated at any time without notice at our discretion."
+        ]
+    },
+
+    {
+        header: "Interactions with Third Parties",
+        content: [
+            '(A) The Website may contain links to third-party websites or services not owned by us. Our display of third-party delivery options does not imply endorsement or sponsorship by us.',
+            "(B) We do not recommend third-party services displayed on the Website.",
+            "(C) We are not responsible for the accuracy, timeliness, or completeness of information from third parties.",
+            "(D) Any interaction with third parties, including payment and service delivery, is solely at your own risk.",
+            "(E) We have no liability for any actions, errors, representations, or breaches by third parties, nor for any resulting damages."
+        ]
+    },
+
+
+    {
+        header: "No Reliance",
+        content: [
+            "(A) The content on our Website is for general information purposes only and should not be relied upon as professional advice. You must seek more specific advice before taking any action based on the Website's content.",
+            "(B) We make reasonable efforts to update the information, but we do not guarantee its accuracy or completeness. Use of the Website is at your own risk, and we disclaim all liability related to its use.",
+            "(C) Any content provided by third parties does not necessarily reflect our views, and we have no responsibility or liability for its accuracy."
+        ]
+    },
+
+
+    {
+        header: "Intellectual Property Rights and Ownership",
+        content: [
+            "(A) The Website and all its content, including text, graphics, software, images, trademarks, and other proprietary material, are owned by us or our licensors and protected by intellectual property laws.",
+            "(B) The Company name, logo, and related marks are trademarks of MGC Freight Inc. You may not use these marks without our written permission.",
+            "(C) You may only use the Website's content for personal, non-commercial use. Any other use constitutes infringement and may violate intellectual property laws.",
+            "(D) Unauthorized access or use of the Website is a violation of these terms and may infringe on intellectual property rights."
+        ]
+    },
+
+
+    {
+        header: "Conditions of Use and User Submissions",
+        content: [
+            '(A) You may use the Website only for lawful purposes and in accordance with these Terms of Use.',
+            '(B) User Submissions must comply with all applicable laws and regulations. Submissions must not:',
+            [
+                'Violate intellectual property or other legal rights.',
+                'Contain inappropriate, offensive, or harmful content.',
+                'Misrepresent or impersonate others.',
+                'Be used for commercial purposes without our prior consent.'
+            ],
+            '(C) We reserve the right to remove or refuse User Submissions that violate these standards.'
+        ]
+    },
+
+
+
+    {
+        header: "Conditions of Use and User Submissions",
+        content: [
+            "(A) You may use the Website only for lawful purposes and in accordance with these Terms of Use.",
+            "(B) User Submissions must comply with all applicable laws and regulations. Submissions must not:",
+            [
+                "Violate intellectual property or other legal rights.",
+                "Contain inappropriate, offensive, or harmful content.",
+                "Misrepresent or impersonate others.",
+                "Be used for commercial purposes without our prior consent."
+            ],
+            "(C) We reserve the right to remove or refuse User Submissions that violate these standards."
+        ]
+    },
+
+
+    {
+        header: "User Submissions: Grant of License",
+        content: [
+            "(A) By submitting User Submissions, you grant us a non-exclusive, worldwide, royalty-free license to use, reproduce, modify, display, distribute, and disclose such material.",
+            "(B) You warrant that you own or have rights to the User Submissions and that they comply with these Terms of Use.",
+            "(C) You are fully responsible for your User Submissions, and we are not liable for their accuracy or content."
+        ]
+    },
+
+
+    {
+        header: "Site Monitoring and Enforcement, Suspension, and Termination",
+        content: [
+            "(A) We have the right to:",
+            [
+                "Remove or refuse to post User Submissions.",
+                "Take action to enforce these terms.",
+                "Cooperate with law enforcement regarding violations."
+            ],
+            "(B) You waive any claims arising from our enforcement of these terms.",
+            "(C) We have no obligation to monitor User Submissions or their content."
+        ]
+    },
+
+
+    {
+        header: "Errors and Omissions",
+        content: [
+            "(A) The Website may contain errors or inaccuracies. We reserve the right to correct them at any time without notice, including after orders have been placed.",
+        ]
+    },
+
+
+    {
+        header: "Other Third Parties",
+        content: [
+            "(A) The Website may contain links to third-party websites. We have no control over these sites and assume no responsibility for their content, accuracy, or privacy practices.",
+            "(B) You access third-party sites at your own risk and should review their terms and policies.",
+            "(C) We are not responsible for any loss or damage caused by your use of third-party sites."
+        ]
+    },
+
+
+    {
+        header: "Geographic Restrictions",
+        content: [
+            "(A) The owner of the Website is based in Ontario, Canada. This Website is not intended for use in any jurisdiction where its use is not permitted. If you access the Website from outside Canada, you do so at your own risk and you are responsible for compliance with local laws of your jurisdiction."
+        ]
+    },
+
+
+    {
+        header: "Disclaimer of Warranties",
+        content: [
+            `(A) You understand and agree that your use of the Website, its content, and any services or items found or attained through the Website is at your own risk. The Website, its content, and any services or items found or attained through the Website are provided on an "as is" and "as available" basis, without any warranties or conditions of any kind, either express or implied, including, but not limited to, the implied warranties of merchantability, fitness for a particular purpose, or non-infringement. The foregoing does not affect any warranties that cannot be excluded or limited under applicable law.`,
+            `(B) Neither the Company nor its parent, subsidiaries, affiliates, or their respective directors, officers, employees, agents, service providers, contractors, licensors, licensees, suppliers, or successors make any warranty, representation, or endorsement with respect to the completeness, security, reliability, suitability, accuracy, currency, or availability of the Website or its contents. Without limiting the foregoing, neither the Company nor its parent, subsidiaries, affiliates, or their respective directors, officers, employees, agents, service providers, contractors, licensors, licensees, suppliers, or successors represent or warrant that the Website, its content, or any services or items found or attained through the Website will be accurate, reliable, error-free, or uninterrupted, that defects will be corrected, that our Website or the server that makes it available are free of viruses or other harmful components.`,
+            `(C) We cannot and do not guarantee or warrant that files or data available for downloading from the internet or the Website will be free of viruses or other destructive code. You are solely and entirely responsible for your use of the Website and your computer, internet, and data security. To the fullest extent provided by law, we will not be liable for any loss or damage caused by denial-of-service attack, distributed denial-of-service attack, overloading, flooding, mail bombing, or crashing, viruses, trojan horses, worms, logic bombs, or other technologically harmful material that may infect your computer equipment, computer programs, data, or other proprietary material due to your use of the Website or any services or items found or attained through the Website or to your downloading of any material posted on it, or on any Website linked to it.`
+        ]
+    },
+
+
+
+    {
+        header: "Limitations of Liability",
+        content: [
+            `(A) Except where such exclusions are prohibited by law, under no circumstance will the Company nor its parent, subsidiaries, affiliates, or their respective directors, officers, employees, agents, service providers, contractors, licensors, licensees, suppliers, or successors be liable for negligence, gross negligence, negligent misrepresentation, fundamental breach, damages of any kind, under any legal theory, including any direct, indirect, special, incidental, consequential, or punitive damages, including, but not limited to, personal injury, pain and suffering, emotional distress, loss of revenue, loss of profits, loss of business or anticipated savings, loss of use, loss of goodwill, loss of data, and whether caused by tort (including negligence), breach of contract, breach of privacy, or otherwise, even if the party was allegedly advised or had reason to know, arising out of or in connection with your use, or inability to use, or reliance on, the Website, any linked websites or such other third-party websites, nor any Website content, materials, posting, or information thereon, even if the party was allegedly advised or had reason to know.`
+        ]
+    },
+
+
+    {
+        header: "Indemnification",
+        content: [
+            `(A) To the maximum extent permitted by applicable law, you agree to defend, indemnify, and hold harmless the Company, its parent, subsidiaries, affiliates, and their respective directors, officers, employees, agents, service providers, contractors, licensors, suppliers, successors, and assigns from and against any claims, liabilities, damages, judgments, awards, losses, costs, expenses, or fees (including reasonable attorneys' fees) arising out of or relating to your breach of these Terms of Use or your use of the Website, including, but not limited to, your User Submissions, third-party sites, any use of the Website’s content, services, and products other than as expressly authorized in these Terms of Use.`,
+            `(B) We will not be liable if, for any reason, all or any part of the Website is restricted to users or unavailable at any time or for any period.`
+        ]
+    },
+
+    {
+        header: "Force Majeure",
+        content: [
+            `(A) The Company shall not be liable or responsible to you, nor deemed to have defaulted under, or breached, these Terms of Use or our Privacy Policy, when and to the extent such failure or delay is caused by or results from acts beyond the Company’s reasonable control, including, without limitation: (A) acts of God (B) flood, fire, or explosion; (C) epidemics, pandemics, including the 2019 novel coronavirus disease (COVID-19) pandemic; (D) war, invasion, riot, or other civil unrest; (E) actions, embargoes, or blockades; (f) national or regional emergency; (g) strikes or labour stoppages, or other industrial disturbances; (h) passage of law, or any action taken by a governmental or public authority, including but not limited to imposing an embargo, export or import restriction, quota or other restriction or prohibition, or failing to grant a necessary licence or consent; (i) shortage of adequate power or telecommunications or transportation facilities; or (j) any other event which is beyond the reasonable control of the Company.`
+        ]
+    },
+
+
+    {
+        header: "Governing Law and Choice of Forum",
+        content: [
+            `(A) The Website and these Terms of Use will be governed by and construed in accordance with the laws of the Province of Ontario and the federal laws of Canada applicable therein, without giving effect to any choice or conflict of law provision, principle, or rule (whether of the laws of the Province of Ontario or any other jurisdiction) and notwithstanding your domicile, residence, or physical location.`,
+            `(B) Any action or proceeding arising out of or relating to this Website and under these Terms of Use will be instituted in the courts of the Province of Ontario and/or the Federal Court of Canada, and each party irrevocably submits to the exclusive jurisdiction of such courts in any such action or proceeding. You waive any and all objections to the exercise of jurisdiction over you by such courts and to the venue of such courts.`
+        ]
+    },
+
+    {
+        header: "Waiver",
+        content: [
+            `(A) No failure to exercise, or delay in exercising, any right, remedy, power, or privilege arising from these Terms of Use operates, or may be construed, as a waiver thereof. No single or partial exercise of any right, remedy, power, or privilege hereunder precludes any other or further exercise thereof or the exercise of any other right, remedy, power, or privilege.`
+        ]
+    },
+
+
+
+    {
+        header: "Severability",
+        content: [
+            `(A) If any term or provision of these Terms of Use is invalid, illegal, or unenforceable in any jurisdiction, such invalidity, illegality, or unenforceability shall not affect any other term or provision of these Terms of Use or invalidate or render unenforceable such term or provision in any other jurisdiction.`
+        ]
+    },
+
+
+    {
+        header: "Entire Agreement",
+        content: [
+            `(A) The Terms of Use, our Privacy Policy, the Payment Terms, and the Insurance Policy constitute the sole and entire agreement between you and the Company regarding your use of the Website and supersede all prior and contemporaneous understandings, agreements, representations, and warranties, both written and oral, regarding such subject matter.`
+        ]
+    },
+
+
+    {
+        header: "Reporting and Contact",
+        content: [
+            `(A) This Website is operated by MGC Freight Inc., located at 1-77 Pillsworth Rd, Bolton, ON L7E 4G4.`,
+            `(B) Should you become aware of misuse of the Website, including libelous or defamatory conduct, you must report it to the Company at legal "at" mgcfreight.com.`,
+            `(C) All other feedback, comments, requests for technical support, and other communications relating to the Website should be directed to techsupport "at" mgcfreight.com.`
+        ]
+    },
+
+    {
+        header: "Paramountcy",
+        content: [
+            `In the event of any inconsistency between the English version of these Terms of Use and the terms of the French version of these Terms of Use, the English version of these Terms of Use shall govern.`
+        ]
+    }
+
+
+
+]
+

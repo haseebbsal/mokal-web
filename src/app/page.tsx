@@ -45,8 +45,8 @@ export default function Home() {
 
         <div className="bg-white w-full">
           <div className={`flex sm:flex-row flex-col m-auto sm:px-8 px-4 sm:py-20 py-16 sm:w-[80%] text-center gap-16`}>
-            <Image src={'/images/metrics.svg'} alt="metrics" width={500} height={500} />
-            <div className="flex flex-col sm:items-start items-center sm:text-start text-center gap-4">
+            <Image className="flex-1" src={'/images/metrics.svg'} alt="metrics" width={500} height={500} />
+            <div className="flex flex-1 flex-col sm:items-start items-center sm:text-start text-center gap-4">
               <h1 className="sm:text-[3rem] text-[1.5rem] font-bold">Your <LinearGradientText extraClass="" text="Shipping Metrics" />, Simplified</h1>
               <p className="text-text-gray text-md">Gain real-time insights into your shipping performance with detailed metrics, helping you track, analyze, and optimize every aspect of your freight operations.</p>
               <div className="flex ">
@@ -75,7 +75,7 @@ export default function Home() {
 
         <div className="bg-white w-full">
           <div className={`flex sm:flex-row flex-col m-auto sm:px-8 px-4 sm:py-20 py-16 sm:w-[80%] text-center gap-16`}>
-            <div className="flex sm:order-0 order-2 flex-col sm:items-start items-center sm:text-start text-center gap-4">
+            <div className="flex sm:order-0 order-2 flex-1 flex-col sm:items-start items-center sm:text-start text-center gap-4">
               <h1 className="sm:text-[3rem] text-[1.5rem] font-bold">Track Your Shipments <LinearGradientText extraClass="" text="Over Time" /></h1>
               <p className="text-text-gray text-md">Visualize your shipping trends with interactive graphs, providing you with valuable insights to monitor performance and optimize delivery timelines.</p>
               <div className="flex ">
@@ -89,7 +89,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <Image className="order-0 sm:order-2" src={'/images/track-shipments.svg'} alt="metrics" width={500} height={500} />
+            <Image className="order-0 sm:order-2 flex-1" src={'/images/track-shipments.svg'} alt="metrics" width={500} height={500} />
           </div>
         </div>
 
@@ -138,13 +138,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="bg-white w-full">
-          <div className={`flex flex-col m-auto sm:px-8 px-4 sm:py-20 py-16 sm:w-[80%] text-center gap-4`}>
-            <h1 className="font-bold sm:text-[2.3rem] text-[1.5rem]">Frequently Asked <LinearGradientText text="Questions" /></h1>
-            <p className="text-text-gray">Get quick answers to your questions and streamline your freight experience with MGC Freight.</p>
-            <FAQS />
-          </div>
-        </div>
+        <FAQS/>
 
         {/* <div className="bg-base-shadeBlue w-full">
           <div className={`flex flex-col m-auto sm:px-8 px-4 sm:py-20 py-16 sm:w-[80%] text-center gap-4`}>
