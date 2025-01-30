@@ -1,6 +1,4 @@
 import LinearGradientText from "@/components/common/linear-gradient-text";
-import { Breadcrumbs, BreadcrumbItem} from "@heroui/react";
-import { RiHome5Line } from "react-icons/ri";
 import { termsandcondtions } from "@/utils/constants";
 import BaseBreadCrumb from "@/components/common/base-breadcrumb";
 
