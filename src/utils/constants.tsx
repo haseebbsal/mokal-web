@@ -513,3 +513,27 @@ export const termsandcondtions = [
 
 ]
 
+
+export const optimalModes=[
+    'Dry Van',
+    'Expedited',
+    'Temperature controlled',
+    'Multi-stop',
+    'Flatbeds',
+    'Hazmat',
+    'Drop trailer',
+    'Auto hauling',
+    'Cross-border',
+    'Customized solutions',
+    'High value'
+]
+
+
+export const benefitsForMgc=[
+    'Scheduled payments',
+    'Established contracts',
+    'Flexible delivery duties',
+    'High revenue growth potential',
+    'Routes and hours that match an independent lifestyle',
+    'The dedicated support of RXO’s best-in-class last mile team',
+]

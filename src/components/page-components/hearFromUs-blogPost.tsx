@@ -41,10 +41,7 @@ export default function HearFromUsAndBlogs({ hideBlogs , hideHearFromUs , bgHear
                     <p className="text-text-gray">Discover how MGC Freight has transformed the logistics and shipping experience for businesses of all sizes. Real stories from our satisfied clients highlight the value of our efficient solutions and commitment to excellence.</p>
                     <div className="w-full">
                         <BaseSlider extraSliderClass="min-h-[20rem]" renderDotsOutside={false} showDots renderArrowsWhenDisabled={false} renderButtonGroupOutside={false} extraResponsive={responsiveWhoWeAre}>
-
                             {[1, 2, 3, 4, 5, 6, 7].map((_, index) => <BlogPost key={index + Math.random()} index={index} />)}
-
-
                         </BaseSlider>
                     </div>
                 </div>

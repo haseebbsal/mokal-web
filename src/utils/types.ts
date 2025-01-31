@@ -62,6 +62,7 @@ export interface BaseAccordionProps extends AccordionProps {
 
 export interface BaseFileProps extends InputProps {
     labelClass?: string
+    bgColor?:string
 }
 
 export type LinearGradientTextProp = { text: string, extraClass?: string }

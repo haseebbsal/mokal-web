@@ -77,7 +77,7 @@ export default function BaseTabs({ keys }: TabsProps) {
     const [key, setKey] = useState<number>(0)
 
     return (
-        <Tabs aria-label="Tabs sizes" onSelectionChange={(key) => { setKey(key as number) }} className="w-full" disableCursorAnimation classNames={{ tabList: "!bg-transparent gap-0 w-full", tab: "p-0", tabContent: "group-data-[selected=true]:text-base-blue group-data-[selected=true]:font-bold w-full" }}>
+        <Tabs aria-label="Tabs sizes" onSelectionChange={(key) => { setKey(key as number) }} className="w-full" disableCursorAnimation classNames={{ tabList: "!bg-transparent gap-0 w-full", tab: "p-0", tabContent: "group-data-[selected=true]:text-base-blue group-data-[selected=true]:font-bold w-full" ,panel:"w-full"}}>
             {keys.map((e, index) =>
                 <Tab key={index} title={Title(e.title, index, key, keys.length - 1,e.titleExtraClass)}>
                     {e.component}

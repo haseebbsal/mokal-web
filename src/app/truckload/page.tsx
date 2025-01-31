@@ -3,7 +3,6 @@ import LinearGradientText from "@/components/common/linear-gradient-text";
 import Image from "next/image";
 import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 import ReasonsToChooseUs from "@/components/page-components/reasons-to-choose-us";
-
 import HearFromUsAndBlogs from "@/components/page-components/hearFromUs-blogPost";
 import CourierService from "@/components/page-components/courier-service";
 import BaseBreadCrumb from "@/components/common/base-breadcrumb";
