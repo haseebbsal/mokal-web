@@ -79,7 +79,7 @@ export default function NavbarBottomHeader() {
                                 </BaseAccordion>
 
                                 <div className="relative">
-                                    <Image src={'/megamenu.svg'} alt="mega" width={400} height={200} />
+                                    <Image src={'/gifs/main.gif'} className="min-h-[18rem]" alt="mega" width={400} height={200} />
                                     <div className="absolute bottom-10 left-4 flex flex-col gap-2">
                                         <Image src={'/logo-white.svg'} alt="icon white" width={200} height={200} />
                                         <BaseButton className="bg-transparent border-2 rounded-3xl w-max border-white text-white">Book a Demo</BaseButton>

@@ -23,7 +23,7 @@ export default function MegaMenu({show}:MegaMenuProps) {
 
                     <div className="p-8 flex  justify-center">
                         <div className="relative">
-                            <Image src={'/megamenu.svg'} alt="mega" width={400} height={200} />
+                            <Image src={'/gifs/main.gif'} alt="mega" className="min-h-[18rem]" width={400} height={200} />
 
                             <div className="absolute bottom-10 left-4 flex flex-col gap-2">
                                 <Image src={'/logo-white.svg'} alt="icon white" width={200} height={200} />
