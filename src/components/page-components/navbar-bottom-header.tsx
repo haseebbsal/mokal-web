@@ -84,7 +84,6 @@ export default function NavbarBottomHeader() {
                                     <div className="absolute bottom-10 left-4 flex flex-col gap-2">
                                         <Image src={'/logo-white.svg'} alt="icon white" width={200} height={200} />
                                         <Link href={'/book-a-demo'} className="bg-transparent min-w-[9rem] flex justify-between items-center rounded-xl p-2 text-white border-2  border-white w-max">Book a Demo<MdKeyboardDoubleArrowRight className="text-lg" /></Link>
-                                        {/* <BaseButton className="bg-transparent border-2 rounded-3xl w-max border-white text-white">Book a Demo</BaseButton> */}
                                     </div>
                                 </div>
                             </DrawerBody>
