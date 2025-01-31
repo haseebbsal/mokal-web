@@ -16,6 +16,7 @@ import {
     AccordionItem,
 } from "@heroui/react";
 import BaseAccordion from "../common/base-accordion";
+import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 
 
 export default function NavbarBottomHeader() {
@@ -79,10 +80,11 @@ export default function NavbarBottomHeader() {
                                 </BaseAccordion>
 
                                 <div className="relative">
-                                    <Image src={'/gifs/main.gif'} className="min-h-[18rem]" alt="mega" width={400} height={200} />
+                                    <Image src={'/gifs/main.gif'} className="min-h-[18rem] rounded-xl" alt="mega" width={400} height={200} />
                                     <div className="absolute bottom-10 left-4 flex flex-col gap-2">
                                         <Image src={'/logo-white.svg'} alt="icon white" width={200} height={200} />
-                                        <BaseButton className="bg-transparent border-2 rounded-3xl w-max border-white text-white">Book a Demo</BaseButton>
+                                        <Link href={'/book-a-demo'} className="bg-transparent min-w-[9rem] flex justify-between items-center rounded-xl p-2 text-white border-2  border-white w-max">Book a Demo<MdKeyboardDoubleArrowRight className="text-lg" /></Link>
+                                        {/* <BaseButton className="bg-transparent border-2 rounded-3xl w-max border-white text-white">Book a Demo</BaseButton> */}
                                     </div>
                                 </div>
                             </DrawerBody>
