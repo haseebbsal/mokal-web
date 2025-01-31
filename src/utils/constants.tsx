@@ -22,25 +22,21 @@ export const navbarMenuSettings: NavbarMenuSetting[] = [
     },
     {
         name: "Services",
-        link: '/',
         isDropDown: true,
         index: 0
     },
     {
         name: "About Us",
-        link: '/',
         isDropDown: true,
         index: 1
     },
     {
         name: "Partnerships",
-        link: '/',
         isDropDown: true,
         index: 2
     },
     {
         name: "Resources",
-        link: '/',
         isDropDown: true,
         index: 3
     },
