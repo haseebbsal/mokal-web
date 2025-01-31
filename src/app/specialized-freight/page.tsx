@@ -102,7 +102,6 @@ export default function SpecializedFreight() {
                                         <BaseButton className="flex min-w-[10rem] sm:w-max w-full bg-base-purple text-white justify-between">Get Started Today <MdKeyboardDoubleArrowRight className="text-xl" /></BaseButton>
                                         <Link href={'/get-a-quote'} className="bg-transparent min-w-[9rem] flex justify-between items-center rounded-xl px-2 text-white border-2  border-white">Get A Quote<MdKeyboardDoubleArrowRight className="text-lg" /></Link>
 
-                                        {/* <BaseButton className="flex min-w-[10rem] sm:w-max w-full !bg-transparent border-white rounded-xl border-2 text-white justify-between">Get A Quote <MdKeyboardDoubleArrowRight className="text-xl" /></BaseButton> */}
                                     </div>
                                 </div>
                             </div>
