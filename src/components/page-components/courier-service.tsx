@@ -3,8 +3,9 @@ import LinearGradientText from "../common/linear-gradient-text";
 import BaseButton from "../common/base-button";
 import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 import { CourierServiceProps } from "@/utils/types";
+import Link from "next/link";
 
-export default function CourierService({bgColor='bg-base-shadeBlue'}:CourierServiceProps) {
+export default function CourierService({ bgColor = 'bg-base-shadeBlue' }: CourierServiceProps) {
     return (
         <div className={`${bgColor}  p-8 flex flex-col gap-16 items-center `}>
             <h1 className="sm:text-[2.3rem] text-[1.5rem] font-bold">Courier <LinearGradientText text="Service Solutions" /> that Fit Your Business</h1>
@@ -66,7 +67,9 @@ export default function CourierService({bgColor='bg-base-shadeBlue'}:CourierServ
                 </div>
                 <div className="flex gap-4 justify-center w-full flex-wrap">
                     <BaseButton extraClass="flex sm:w-max w-full !min-w-52 justify-between">Get Started Today<MdKeyboardDoubleArrowRight /></BaseButton>
-                    <BaseButton extraClass="flex sm:w-max w-full !min-w-36 justify-between border-2 text-base-purple border-base-purple bg-transparent">Book a Demo <MdKeyboardDoubleArrowRight /></BaseButton>
+                    <Link href={'/book-a-demo'} className="bg-transparent min-w-[9rem] flex justify-between items-center rounded-xl px-2 text-base-purple border-2  border-base-purple">Book a Demo<MdKeyboardDoubleArrowRight className="text-lg" /></Link>
+
+                    {/* <BaseButton extraClass="flex sm:w-max w-full !min-w-36 justify-between border-2 text-base-purple border-base-purple bg-transparent">Book a Demo <MdKeyboardDoubleArrowRight /></BaseButton> */}
                 </div>
             </div>
 

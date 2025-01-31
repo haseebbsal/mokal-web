@@ -9,6 +9,7 @@ import ReasonsToChooseUs from "@/components/page-components/reasons-to-choose-us
 import LinearGradientCircle from "@/components/common/linear-gradient-circle";
 import FAQS from "@/components/page-components/faqs";
 import RefineTransportForm from "@/components/forms/refine-transport-form";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -24,7 +25,7 @@ export default function Home() {
             <p className="text-gray-600 sm:text-lg text-md">Seamlessly manage logistics and operations with a complete freight solution tailored for your business needs.</p>
             <div className="flex gap-2">
               <BaseButton>Get Started Today<MdKeyboardDoubleArrowRight className="text-lg" /></BaseButton>
-              <BaseButton extraClass="bg-transparent text-base-purple border-2  border-base-purple">Get A Quote<MdKeyboardDoubleArrowRight className="text-lg" /></BaseButton>
+              <Link href={'/get-a-quote'} className="bg-transparent min-w-[9rem] flex justify-between items-center rounded-xl px-2 text-base-purple border-2  border-base-purple">Get A Quote<MdKeyboardDoubleArrowRight className="text-lg" /></Link>
             </div>
           </div>
           <div className={`sm:px-8 px-4 py-4 flex justify-center  `}>

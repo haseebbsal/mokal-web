@@ -7,6 +7,7 @@ import BaseBreadCrumb from "@/components/common/base-breadcrumb";
 import BaseInput from "@/components/common/forms/base-input";
 import { useForm } from "react-hook-form";
 import HearFromUsAndBlogs from "@/components/page-components/hearFromUs-blogPost";
+import Link from "next/link";
 
 
 export default function Careers() {
@@ -35,7 +36,10 @@ export default function Careers() {
                                 We’re always excited to connect with talented individuals and welcome new, qualified candidates to join our exceptional team!</p>
                             <div className="flex gap-4 flex-wrap">
                                 <BaseButton extraClass="flex !min-w-52 sm:w-max w-full justify-between">Get Started Today <MdKeyboardDoubleArrowRight /></BaseButton>
-                                <BaseButton extraClass="flex !min-w-52 sm:w-max w-full justify-between bg-transparent border-base-purple text-base-purple border-2">Book a Demo <MdKeyboardDoubleArrowRight /></BaseButton>
+                                <Link href={'/book-a-demo'} className="bg-transparent min-w-[9rem] flex justify-between items-center rounded-xl px-2 text-base-purple border-2  border-base-purple">Book a Demo<MdKeyboardDoubleArrowRight className="text-lg" /></Link>
+
+
+                                {/* <BaseButton extraClass="flex !min-w-52 sm:w-max w-full justify-between bg-transparent border-base-purple text-base-purple border-2">Book a Demo <MdKeyboardDoubleArrowRight /></BaseButton> */}
 
                             </div>
 
@@ -49,7 +53,7 @@ export default function Careers() {
                 <div className="bg-base-shadeBlue w-full sm:py-20  py-8">
                     <div className={`flex sm:flex-row flex-col m-auto sm:px-8 px-4 sm:py-20 bg-white py-16 sm:w-[80%] shadow-lg rounded-xl text-center sm:gap-16 gap-8`}>
                         <div className="flex flex-1 flex-col sm:items-start items-center sm:text-start text-center gap-4">
-                            <Image src={'/images/broker (1).svg'} alt="broker" width={200} height={200}/>
+                            <Image src={'/images/broker (1).svg'} alt="broker" width={200} height={200} />
                             <h1 className="sm:text-[2rem] text-[1.5rem] font-bold"><LinearGradientText extraClass="" text="Discover the MGC Freight Advantage" /></h1>
                             <p className="text-text-gray text-md">Our tailored shipping solutions empower businesses of all sizes with speed, reliability, and significant cost savings on pallet, parcel, PAK, and envelope shipping.
                                 At MGC Freight, we offer a wide range of LTL and courier services, including local, cross-border, and international shipping. From eCommerce support to white-glove delivery and specialized freight handling, you’ll enjoy discounted rates from North America’s most trusted carriers.

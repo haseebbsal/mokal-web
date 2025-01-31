@@ -8,6 +8,7 @@ import BaseInput from "@/components/common/forms/base-input";
 import { useForm } from "react-hook-form";
 import HearFromUsAndBlogs from "@/components/page-components/hearFromUs-blogPost";
 import TabWithSlider from "@/components/common/tabs/tab-with-slider";
+import Link from "next/link";
 
 
 export default function CorporatePartner() {
@@ -36,7 +37,10 @@ export default function CorporatePartner() {
                                 We’re always excited to connect with talented individuals and welcome new, qualified candidates to join our exceptional team!</p>
                             <div className="flex gap-4 flex-wrap">
                                 <BaseButton extraClass="flex !min-w-52 sm:w-max w-full justify-between">Get Started Today <MdKeyboardDoubleArrowRight /></BaseButton>
-                                <BaseButton extraClass="flex !min-w-52 sm:w-max w-full justify-between bg-transparent border-base-purple text-base-purple border-2">Book a Demo <MdKeyboardDoubleArrowRight /></BaseButton>
+                                <Link href={'/book-a-demo'} className="bg-transparent min-w-[9rem] flex justify-between items-center rounded-xl px-2 text-base-purple border-2  border-base-purple">Book a Demo<MdKeyboardDoubleArrowRight className="text-lg" /></Link>
+
+
+                                {/* <BaseButton extraClass="flex !min-w-52 sm:w-max w-full justify-between bg-transparent border-base-purple text-base-purple border-2">Book a Demo <MdKeyboardDoubleArrowRight /></BaseButton> */}
 
                             </div>
 
@@ -62,29 +66,29 @@ export default function CorporatePartner() {
                             <p className="text-text-gray text-md">Our Corporate Partnership program is designed to create meaningful cross-promotional opportunities. Highlight special offers to MGC Freight customers, expand your audience reach, and deliver exceptional solutions while offering exclusive access to our comprehensive shipping platform to your customer base.
                                 Seamless IntegrationConnect with hundreds of small and medium-sized businesses seeking tools and services to fuel their growth.
                                 Enhanced Customer SupportEmpower your customers with MGC Freight’s cutting-edge freight management platform, built to streamline their shipping operations.
-Shared SuccessEstablish a lasting partnership grounded in trust and a mutual commitment to helping businesses reach their full potential.</p>
+                                Shared SuccessEstablish a lasting partnership grounded in trust and a mutual commitment to helping businesses reach their full potential.</p>
                         </div>
                         <div className="flex bg-base-shadeBlue p-8 rounded-xl flex-col gap-8 flex-1 items-start">
                             <h1 className="text-2xl font-semibold">Reach Out to a Broker Representative</h1>
                             <BaseInput extraClass="" control={control} placeholder="First Name" label="First Name *" labelPlacement="outside" />
                             <BaseInput extraClass="" control={control} placeholder="Last Name" label="Last Name *" labelPlacement="outside" />
-                        <BaseInput extraClass="" control={control} placeholder="Company Name" label="Company Name *" labelPlacement="outside" />
-                        <BaseInput extraClass="" type="email" control={control} placeholder="Email" label="Email *" labelPlacement="outside" />
-                        <BaseInput extraClass="" control={control} placeholder="Phone Number" label="Phone Number *" labelPlacement="outside" />
-                        <BaseInput extraClass="" control={control} placeholder="Enter Size" label="Size of Partnership Audience " labelPlacement="outside" />
-                        <BaseInput extraClass="" control={control} placeholder="Describe" label="Describe the type of partnership " labelPlacement="outside" />
+                            <BaseInput extraClass="" control={control} placeholder="Company Name" label="Company Name *" labelPlacement="outside" />
+                            <BaseInput extraClass="" type="email" control={control} placeholder="Email" label="Email *" labelPlacement="outside" />
+                            <BaseInput extraClass="" control={control} placeholder="Phone Number" label="Phone Number *" labelPlacement="outside" />
+                            <BaseInput extraClass="" control={control} placeholder="Enter Size" label="Size of Partnership Audience " labelPlacement="outside" />
+                            <BaseInput extraClass="" control={control} placeholder="Describe" label="Describe the type of partnership " labelPlacement="outside" />
 
-                        
-                        <BaseButton extraClass="!py-6">Become a Corporate Partner   <MdKeyboardDoubleArrowRight /></BaseButton>
+
+                            <BaseButton extraClass="!py-6">Become a Corporate Partner   <MdKeyboardDoubleArrowRight /></BaseButton>
                         </div>
                     </div>
-                
-            </div>  
 
-  
+                </div>
+
+
                 <HearFromUsAndBlogs hideHearFromUs />
 
-        
+
             </div >
         </>
     )

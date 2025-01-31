@@ -48,13 +48,13 @@ export const navbarMenuSettings: NavbarMenuSetting[] = [
         name: "Get Started",
         link: '/',
         isButton: true,
-        extraClass: ""
+        extraClass: "bg-base-purple text-white rounded-xl p-2 font-semibold min-w-[10rem] flex justify-center"
     },
     {
         name: "Book a Demo",
-        link: '/',
+        link: '/book-a-demo',
         isButton: true,
-        extraClass: "!bg-transparent text-base-purple border-2 border-base-purple"
+        extraClass: "border-base-purple border-2 text-base-purple rounded-xl p-2 font-semibold min-w-[10rem] flex justify-center"
     },
     {
         name: "Login",
@@ -536,4 +536,113 @@ export const benefitsForMgc=[
     'High revenue growth potential',
     'Routes and hours that match an independent lifestyle',
     'The dedicated support of RXO’s best-in-class last mile team',
+]
+
+
+export const servicesLinks=[
+
+    {
+        name:"Less Than Truckload (LTL)",
+        link:'/LTL'
+    },
+    {
+        name:"Courier Services",
+        link:'/courier-services'
+    },
+    {
+        name:"Specialized Freight",
+        link:'/specialized-freight'
+    },
+    {
+        name:"International Shipping",
+        link:'/international-shipping'
+    },
+    {
+        name:"White Glove Services",
+        link:'/white-glove-services'
+    },
+    {
+        name:"Spot Quote",
+        link:'/spot-quote'
+    },
+    {
+        name:"Fulfillment Services",
+        link:'/fulfillment-services'
+    },
+    {
+        name:"Freight Forwarding",
+        link:'/freight-forwarding'
+    },
+    {
+        name:"Truckload",
+        link:'/truckload'
+    }
+]
+
+
+export const aboutUsServices=[
+    {
+        name:'Who We Are',
+        link:"/who-we-are"
+    },
+    {
+        name:'Contact Us',
+        link:"/contact-us"
+    },
+    {
+        name:'Careers',
+        link:"/careers"
+    },
+    {
+        name:'Customer Spotlight',
+        link:"/customer-spotlight"
+    }
+]
+
+
+export const quickLinksLinks=[
+    {
+        name:'Terms & Conditions',
+        link:'/terms-and-conditions'
+    },
+    {
+        name:'Privacy Policy',
+        link:'/privacy-policy'
+    },
+    {
+        name:'Claims',
+        link:'/claims'
+    }
+]
+
+
+export const partnershipLinks=[
+    {
+        name:'Broker Partners',
+        link:'/broker-partner'
+    },
+    {
+        name:'Corporate Partners',
+        link:'/corporate-partner'
+    },
+    {
+        name:'Carrier Partners',
+        link:'/carrier-partners'
+    }
+]
+
+
+export const resourcesLinks=[
+    {
+        name:'Video Library',
+        link:'/video-library'
+    },
+    {
+        name:'Blogs',
+        link:'/blogs'
+    },
+    {
+        name:'Shipping Guides',
+        link:'/shipping-guides'
+    }
 ]

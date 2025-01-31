@@ -30,13 +30,14 @@ export default function NavbarBottomHeader() {
                         <HiMenu className="sm:hidden" onClick={() => onOpen()} size={30} />
                     </div>
                     <div className="flex gap-4">
-                        <BaseButton extraClass="!bg-transparent text-base-purple w-max border-2 border-base-purple">Get Quick Quote</BaseButton>
-                        <BaseButton extraClass=" w-max sm:hidden">Book a Demo</BaseButton>
+                        <Link href={'/get-a-quote'} className="!bg-transparent text-base-purple w-max border-2 flex items-center p-2 rounded-xl border-base-purple">Get Quick Quote</Link>
+                        <Link href={'/book-a-demo'} className=" w-max sm:hidden">Book a Demo</Link>
                     </div>
 
                 </div>
                 <div className="sm:flex hidden gap-8 items-center ">
                     {navbarMenuSettings.map((e: NavbarMenuSetting) => {
+                        if (e.link) return <Link key={e.name} href={e.link} className={e.extraClass}>{e.name}</Link>
                         if (e.isButton) return <BaseButton key={e.name} style={e.style} extraClass={e.extraClass + " !text-sm"}>{e.name}</BaseButton>
                         if (e.isDropDown) return (<div key={e.name} onClick={() => {
                             if (show == e.index) {

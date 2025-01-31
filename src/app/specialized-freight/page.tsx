@@ -7,6 +7,7 @@ import HearFromUsAndBlogs from "@/components/page-components/hearFromUs-blogPost
 import LinearGradientCircle from "@/components/common/linear-gradient-circle";
 import BaseBreadCrumb from "@/components/common/base-breadcrumb";
 import TabWithSlider from "@/components/common/tabs/tab-with-slider";
+import Link from "next/link";
 
 
 
@@ -22,7 +23,7 @@ export default function SpecializedFreight() {
                             <h1 className="sm:text-[3rem] text-[1.8rem] font-bold"><LinearGradientText text="Specialized Freight" /> </h1>
                             <p className="text-text-gray text-lg">Get Easy Access to a Range of Additional Freight Services Directly from ONE Platform</p>
                         </div>
-                        <BaseBreadCrumb items={['Services','Specialized Freight']}/>
+                        <BaseBreadCrumb items={['Services', 'Specialized Freight']} />
                     </div>
                 </div>
 
@@ -36,7 +37,10 @@ export default function SpecializedFreight() {
                             <p className="text-text-gray text-md">Packages and web page editors now use Lorem Ipsum as their default model textlayout. The point of using areIpsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here content normal distribution of letters as opposed to here making readable making.</p>
                             <div className="flex gap-4 flex-wrap">
                                 <BaseButton extraClass="flex !min-w-52 sm:w-max w-full justify-between">Get Started Today<MdKeyboardDoubleArrowRight /></BaseButton>
-                                <BaseButton extraClass="flex !min-w-36 sm:w-max w-full justify-between border-2 text-base-purple border-base-purple bg-transparent">Book a Demo <MdKeyboardDoubleArrowRight /></BaseButton>
+                                <Link href={'/book-a-demo'} className="bg-transparent min-w-[9rem] flex justify-between items-center rounded-xl px-2 text-base-purple border-2  border-base-purple">Book a Demo<MdKeyboardDoubleArrowRight className="text-lg" /></Link>
+
+
+                                {/* <BaseButton extraClass="flex !min-w-36 sm:w-max w-full justify-between border-2 text-base-purple border-base-purple bg-transparent">Book a Demo <MdKeyboardDoubleArrowRight /></BaseButton> */}
                             </div>
 
                         </div>
@@ -62,7 +66,8 @@ export default function SpecializedFreight() {
                                     <Image src={'/images/freight-service.svg'} alt="shipment1" width={500} className="w-full sm:h-[15rem]" height={500} />
                                     <div className="w-full flex flex-wrap gap-4">
                                         <BaseButton className="flex min-w-[10rem] bg-base-purple text-white justify-between">Get Started Today <MdKeyboardDoubleArrowRight className="text-xl" /></BaseButton>
-                                        <BaseButton className="flex min-w-[10rem] !bg-transparent border-base-purple rounded-xl border-2 text-base-purple justify-between">Get A Quote <MdKeyboardDoubleArrowRight className="text-xl" /></BaseButton>
+
+                                        <Link href={'/get-a-quote'} className="bg-transparent min-w-[9rem] flex justify-between items-center rounded-xl px-2 text-base-purple border-2  border-base-purple">Get A Quote<MdKeyboardDoubleArrowRight className="text-lg" /></Link>
                                     </div>
                                 </div>
                                 <LinearGradientCircle />
@@ -75,7 +80,8 @@ export default function SpecializedFreight() {
                                     <Image src={'/images/freight-provider.svg'} alt="shipment2" width={500} className="w-full sm:h-[15rem]" height={500} />
                                     <div className="w-full flex flex-wrap gap-4">
                                         <BaseButton className="flex min-w-[10rem] bg-base-purple text-white justify-between">Get Started Today <MdKeyboardDoubleArrowRight className="text-xl" /></BaseButton>
-                                        <BaseButton className="flex min-w-[10rem] !bg-transparent border-white rounded-xl border-2 text-white justify-between">Get A Quote <MdKeyboardDoubleArrowRight className="text-xl" /></BaseButton>
+                                        <Link href={'/get-a-quote'} className="bg-transparent min-w-[9rem] flex justify-between items-center rounded-xl px-2 text-base-purple border-2  border-base-purple">Get A Quote<MdKeyboardDoubleArrowRight className="text-lg" /></Link>
+                                        {/* <Link href={'/get-a-quote'} className="bg-transparent min-w-[9rem] flex justify-between items-center rounded-xl px-2 text-base-purple border-2  border-base-purple">Get A Quote<MdKeyboardDoubleArrowRight className="text-lg" /></Link> */}
                                     </div>
                                 </div>
                                 <LinearGradientCircle />
@@ -87,14 +93,16 @@ export default function SpecializedFreight() {
                                     <p className="">Streamline your global supply chain with reliable shipping solutions by air, land, and sea. From small parcels to large freight, our network ensures fast, efficient, and secure delivery to every corner of the world.</p>
                                     <div className="sm:flex hidden gap-8">
                                         <BaseButton className="flex min-w-[10rem] bg-base-purple text-white justify-between">Get Started Today <MdKeyboardDoubleArrowRight className="text-xl" /></BaseButton>
-                                        <BaseButton className="flex min-w-[10rem] !bg-transparent border-white rounded-xl border-2 text-white justify-between">Get A Quote <MdKeyboardDoubleArrowRight className="text-xl" /></BaseButton>
+                                        <Link href={'/get-a-quote'} className="bg-transparent min-w-[9rem] flex justify-between items-center rounded-xl px-2 text-white border-2  border-white">Get A Quote<MdKeyboardDoubleArrowRight className="text-lg" /></Link>
                                     </div>
                                 </div>
                                 <div className=" flex-1 flex flex-col gap-2">
                                     <Image src={'/images/freight-challenge.svg'} alt="shipment" width={100} className="w-full h-full" height={100} />
                                     <div className="flex sm:hidden gap-2 flex-wrap">
                                         <BaseButton className="flex min-w-[10rem] sm:w-max w-full bg-base-purple text-white justify-between">Get Started Today <MdKeyboardDoubleArrowRight className="text-xl" /></BaseButton>
-                                        <BaseButton className="flex min-w-[10rem] sm:w-max w-full !bg-transparent border-white rounded-xl border-2 text-white justify-between">Get A Quote <MdKeyboardDoubleArrowRight className="text-xl" /></BaseButton>
+                                        <Link href={'/get-a-quote'} className="bg-transparent min-w-[9rem] flex justify-between items-center rounded-xl px-2 text-white border-2  border-white">Get A Quote<MdKeyboardDoubleArrowRight className="text-lg" /></Link>
+
+                                        {/* <BaseButton className="flex min-w-[10rem] sm:w-max w-full !bg-transparent border-white rounded-xl border-2 text-white justify-between">Get A Quote <MdKeyboardDoubleArrowRight className="text-xl" /></BaseButton> */}
                                     </div>
                                 </div>
                             </div>
@@ -163,7 +171,10 @@ export default function SpecializedFreight() {
                             </div>
                             <div className="flex gap-4 justify-center w-full flex-wrap">
                                 <BaseButton extraClass="flex sm:w-max w-full !min-w-52 justify-between">Get Started Today<MdKeyboardDoubleArrowRight /></BaseButton>
-                                <BaseButton extraClass="flex sm:w-max w-full !min-w-36 justify-between border-2 text-base-purple border-base-purple bg-transparent">Book a Demo <MdKeyboardDoubleArrowRight /></BaseButton>
+                                <Link href={'/book-a-demo'} className="bg-transparent min-w-[9rem] flex justify-between items-center rounded-xl px-2 text-base-purple border-2  border-base-purple">Book a Demo<MdKeyboardDoubleArrowRight className="text-lg" /></Link>
+
+
+                                {/* <BaseButton extraClass="flex sm:w-max w-full !min-w-36 justify-between border-2 text-base-purple border-base-purple bg-transparent">Book a Demo <MdKeyboardDoubleArrowRight /></BaseButton> */}
                             </div>
                         </div>
 

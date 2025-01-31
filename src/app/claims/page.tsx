@@ -4,6 +4,7 @@ import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 import { termsandcondtions } from "@/utils/constants";
 import BaseTabs from "@/components/common/base-tabs";
 import BaseBreadCrumb from "@/components/common/base-breadcrumb";
+import Link from "next/link";
 
 
 
@@ -36,7 +37,10 @@ export default function Claims() {
 
                             <div className="flex gap-4 flex-wrap">
                                 <BaseButton extraClass="flex !min-w-52 sm:w-max w-full justify-between">Get Started Today<MdKeyboardDoubleArrowRight /></BaseButton>
-                                <BaseButton extraClass="flex !min-w-36 sm:w-max w-full justify-between border-2 text-base-purple border-base-purple bg-transparent">Book a Demo <MdKeyboardDoubleArrowRight /></BaseButton>
+                                <Link href={'/book-a-demo'} className="bg-transparent min-w-[9rem] flex justify-between items-center rounded-xl px-2 text-base-purple border-2  border-base-purple">Book a Demo<MdKeyboardDoubleArrowRight className="text-lg" /></Link>
+
+
+                                {/* <BaseButton extraClass="flex !min-w-36 sm:w-max w-full justify-between border-2 text-base-purple border-base-purple bg-transparent">Book a Demo <MdKeyboardDoubleArrowRight /></BaseButton> */}
                             </div>
                         </div>
 

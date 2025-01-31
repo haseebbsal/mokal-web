@@ -5,6 +5,7 @@ import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 import HearFromUsAndBlogs from "@/components/page-components/hearFromUs-blogPost";
 import GrowYourBusiness from "@/components/page-components/grow-your-business";
 import BaseBreadCrumb from "@/components/common/base-breadcrumb";
+import Link from "next/link";
 
 
 export default function FulfillmentServices() {
@@ -18,7 +19,7 @@ export default function FulfillmentServices() {
                             <h1 className="sm:text-[3rem] text-[1.8rem] font-bold"><LinearGradientText text="Fulfillment Services" /> </h1>
                             <p className="text-text-gray text-lg">Scalable Pick and Pack Fulfillment Solutions for Your Business</p>
                         </div>
-                        <BaseBreadCrumb items={['Services','Fulfillment Services']}/>
+                        <BaseBreadCrumb items={['Services', 'Fulfillment Services']} />
                     </div>
                 </div>
 
@@ -32,7 +33,10 @@ export default function FulfillmentServices() {
                             <p className="text-text-gray text-md">Packages and web page editors now use Lorem Ipsum as their default model textlayout. The point of using areIpsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here content normal distribution of letters as opposed to here making readable making.</p>
                             <div className="flex gap-4 flex-wrap">
                                 <BaseButton extraClass="flex !min-w-52 sm:w-max w-full justify-between">Get Started Today<MdKeyboardDoubleArrowRight /></BaseButton>
-                                <BaseButton extraClass="flex !min-w-36 sm:w-max w-full justify-between border-2 text-base-purple border-base-purple bg-transparent">Book a Demo <MdKeyboardDoubleArrowRight /></BaseButton>
+                                <Link href={'/book-a-demo'} className="bg-transparent min-w-[9rem] flex justify-between items-center rounded-xl px-2 text-base-purple border-2  border-base-purple">Book a Demo<MdKeyboardDoubleArrowRight className="text-lg" /></Link>
+
+
+                                {/* <BaseButton extraClass="flex !min-w-36 sm:w-max w-full justify-between border-2 text-base-purple border-base-purple bg-transparent">Book a Demo <MdKeyboardDoubleArrowRight /></BaseButton> */}
                             </div>
 
                         </div>
@@ -42,7 +46,7 @@ export default function FulfillmentServices() {
 
 
 
-                <GrowYourBusiness/>
+                <GrowYourBusiness />
 
                 <div className="bg-white w-full">
                     <div className={`bg-white  p-8 flex flex-col gap-16 items-center `}>
@@ -105,7 +109,10 @@ export default function FulfillmentServices() {
                             </div>
                             <div className="flex gap-4 justify-center w-full flex-wrap">
                                 <BaseButton extraClass="flex sm:w-max w-full !min-w-52 justify-between">Get Started Today<MdKeyboardDoubleArrowRight /></BaseButton>
-                                <BaseButton extraClass="flex sm:w-max w-full !min-w-36 justify-between border-2 text-base-purple border-base-purple bg-transparent">Book a Demo <MdKeyboardDoubleArrowRight /></BaseButton>
+                                <Link href={'/book-a-demo'} className="bg-transparent min-w-[9rem] flex justify-between items-center rounded-xl px-2 text-base-purple border-2  border-base-purple">Book a Demo<MdKeyboardDoubleArrowRight className="text-lg" /></Link>
+
+
+                                {/* <BaseButton extraClass="flex sm:w-max w-full !min-w-36 justify-between border-2 text-base-purple border-base-purple bg-transparent">Book a Demo <MdKeyboardDoubleArrowRight /></BaseButton> */}
                             </div>
                         </div>
 

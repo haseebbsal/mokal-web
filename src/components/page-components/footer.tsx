@@ -9,6 +9,8 @@ import { SiMinutemailer } from "react-icons/si";
 import { BsFillTelephoneOutboundFill } from "react-icons/bs";
 import { FaLocationDot } from "react-icons/fa6";
 import Marquee from "react-fast-marquee";
+import { aboutUsServices, partnershipLinks, quickLinksLinks, resourcesLinks, servicesLinks } from "@/utils/constants";
+import Link from "next/link";
 
 export default function Footer() {
     return (
@@ -56,7 +58,9 @@ export default function Footer() {
                 <div className="grid sm:grid-cols-[1fr_1fr_1fr_1fr_1fr] grid-cols-2 gap-16 w-full">
 
                     <div className="flex flex-col gap-8 sm:col-span-1 col-span-2">
-                        <Image src={'/logo.svg'} alt="logo" width={250} height={250} />
+                        <Link href={'/'}>
+                            <Image src={'/logo.svg'} alt="logo" width={250} height={250} />
+                        </Link>
                         <div className="flex flex-col gap-4">
                             <p className="text-text-gray">Stay Connected With Us</p>
                             <div className="flex gap-2 text-icon">
@@ -66,8 +70,8 @@ export default function Footer() {
                                 <FaYoutube />
                                 <FaLinkedinIn />
                             </div>
-                            <BaseButton className="bg-transparent border-base-purple border-2 text-lg font-bold text-base-purple w-max">Get Quick Quote</BaseButton>
-                            <BaseButton className="bg-transparent border-base-purple border-2 text-lg font-bold text-base-purple w-max">Book a Demo</BaseButton>
+                            <Link href={'/get-a-quote'} className="bg-transparent border-base-purple border-2 text-lg font-bold text-base-purple w-max p-2 rounded-xl">Get Quick Quote</Link>
+                            <Link href={'/book-a-demo'} className="bg-transparent border-base-purple border-2 text-lg font-bold text-base-purple w-max p-2 rounded-xl">Book a Demo</Link>
                             <p className="text-text-gray">info@mgcfreight.com</p>
                             <p className="text-text-gray">T: 1-235-456-5689</p>
                             <p className="text-text-gray">T: 1-235-456-5689</p>
@@ -76,45 +80,29 @@ export default function Footer() {
 
                     <div className="flex flex-col gap-4">
                         <p className="text-base-purple text-2xl font-medium">Services</p>
-                        <p className="text-text-gray">Less Than Truckload (LTL)</p>
-                        <p className="text-text-gray">Courier Services</p>
-                        <p className="text-text-gray">Specialized Freight</p>
-                        <p className="text-text-gray">International Shipping</p>
-                        <p className="text-text-gray">White Glove Services</p>
-                        <p className="text-text-gray">Spot Quote</p>
-                        <p className="text-text-gray">Fulfillment Services</p>
-                        <p className="text-text-gray">Freight Forwarding</p>
-                        <p className="text-text-gray">Truckload</p>
+                        {servicesLinks.map((e) => <Link key={e.link} className="text-text-gray" href={e.link}>{e.name}</Link>)}
                     </div>
 
                     <div className="flex flex-col gap-4">
                         <div className="flex flex-col gap-4">
                             <p className="text-base-purple text-2xl font-medium">About Us</p>
-                            <p className="text-text-gray">Who We Are</p>
-                            <p className="text-text-gray">Contact Us</p>
-                            <p className="text-text-gray">Careers</p>
-                            <p className="text-text-gray">Customer Spotlight</p>
+                            {aboutUsServices.map((e) => <Link key={e.link} className="text-text-gray" href={e.link}>{e.name}</Link>)}
+
                         </div>
                         <div className="flex flex-col gap-4">
                             <p className="text-base-purple text-2xl font-medium">Quick Links</p>
-                            <p className="text-text-gray">Terms & Conditions</p>
-                            <p className="text-text-gray">Privacy Policy</p>
-                            <p className="text-text-gray">Claims</p>
+                            {quickLinksLinks.map((e) => <Link key={e.link} className="text-text-gray" href={e.link}>{e.name}</Link>)}
                         </div>
                     </div>
 
                     <div className="sm:flex grid grid-cols-2 sm:gap-4 gap-16 sm:flex-col  sm:col-span-1 col-span-2">
                         <div className="flex flex-col gap-4 flex-1">
                             <p className="text-base-purple text-2xl font-medium">Partnership</p>
-                            <p className="text-text-gray">Broker Partners</p>
-                            <p className="text-text-gray">Corporate Partners</p>
-                            <p className="text-text-gray">Carrier Partners</p>
+                            {partnershipLinks.map((e) => <Link key={e.link} className="text-text-gray" href={e.link}>{e.name}</Link>)}
                         </div>
                         <div className="flex flex-col gap-4 flex-1">
                             <p className="text-base-purple text-2xl font-medium">Resources</p>
-                            <p className="text-text-gray">Video Library</p>
-                            <p className="text-text-gray">Blogs</p>
-                            <p className="text-text-gray">Shipping Guides</p>
+                            {resourcesLinks.map((e) => <Link key={e.link} className="text-text-gray" href={e.link}>{e.name}</Link>)}
                         </div>
                     </div>
 
