@@ -66,12 +66,12 @@ export default function TrackShipments() {
 
                                                 <div className="flex flex-col -top-2 left-1/3  absolute">
                                                     <FaCheck className="bg-green-500 text-white rounded-full p-2 text-[1.8rem]" />
-                                                    <p>Label Ready</p>
+                                                    <p>Pick up</p>
                                                 </div>
 
                                                 <div className="flex flex-col -top-2 left-[68%]  absolute">
                                                     <FaCheck className="bg-green-500 text-white rounded-full p-2 text-[1.8rem]" />
-                                                    <p>Label Ready</p>
+                                                    <p>In Transit</p>
                                                 </div>
 
                                                 <div className="flex flex-col -top-2 right-0 items-end absolute">
