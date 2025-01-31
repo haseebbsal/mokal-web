@@ -70,7 +70,7 @@ export default function WhiteGlove() {
 
                 <div className="bg-white w-full">
                     <div className={`bg-white  p-8 flex flex-col gap-16 items-center `}>
-                        <h1 className="sm:text-[2.3rem] text-[1.5rem] font-bold">Premium White Glove <LinearGradientText text="White Glove" /> Freight Services</h1>
+                        <h1 className="sm:text-[2.3rem] text-[1.5rem] font-bold">Premium  <LinearGradientText text="White Glove" /> Freight Services</h1>
                         <div className="flex flex-col gap-8 sm:w-[80%] flex-wrap">
                             <div className="grid sm:grid-cols-3 grid-cols-1 gap-8 ">
                                 <div className="flex flex-col gap-2">
