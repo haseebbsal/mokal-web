@@ -30,8 +30,8 @@ export default function NavbarBottomHeader() {
                         <HiMenu className="sm:hidden" onClick={() => onOpen()} size={30} />
                     </div>
                     <div className="flex gap-4">
-                        <Link href={'/get-a-quote'} className="!bg-transparent text-base-purple w-max border-2 flex items-center p-2 rounded-xl border-base-purple">Get Quick Quote</Link>
-                        <Link href={'/book-a-demo'} className=" w-max sm:hidden">Book a Demo</Link>
+                        <Link href={'/get-a-quote'} className="!bg-transparent text-base-purple w-max border-2 flex items-center p-2 rounded-xl border-base-purple font-semibold">Get Quick Quote</Link>
+                        <Link href={'/book-a-demo'} className=" w-max sm:hidden bg-base-purple p-2 text-white rounded-xl font-semibold">Book a Demo</Link>
                     </div>
 
                 </div>
