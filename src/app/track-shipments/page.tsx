@@ -56,8 +56,8 @@ export default function TrackShipments() {
                                     <TableCell className="sm:!w-[50%] w-[50rem]">
                                         <div className="p-4">
                                             <div className="flex relative">
-                                                <hr className="flex-[1_0_55%] border-solid border-[0.45rem] border-b-0 border-base-blue rounded-full" />
-                                                <hr className="flex-[1_0_10%] border-dotted bg-gray-100 border-b-0 border-[0.45rem] border-gray-200 rounded-full" />
+                                                <hr className="flex-[1_0_52%] border-solid border-[0.45rem] border-b-0 border-base-blue rounded-full" />
+                                                <hr className="flex-[1_0_15%] border-dotted bg-gray-100 border-b-0 border-[0.45rem] border-gray-200 rounded-full" />
 
                                                 <div className="flex flex-col -top-2 -left-2 absolute">
                                                     <FaCheck className="bg-green-500 text-white rounded-full p-2 text-[1.8rem]" />
