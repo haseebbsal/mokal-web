@@ -73,47 +73,59 @@ export const megaMenuServices = [
     {
         icon: '/icons/loading.svg',
         title: "Less Than Truckload (LTL)",
-        description: "Cost-effective shipping for smaller freight."
+        description: "Cost-effective shipping for smaller freight.",
+        link:'/LTL'
     },
     {
         icon: '/icons/food-delivery.svg',
         title: "Courier Services",
-        description: "Fast and reliable package delivery."
+        description: "Fast and reliable package delivery.",
+        link:'/courier-services'
     },
     {
         icon: '/icons/premium-quality.svg',
         title: "Specialized Freight",
-        description: "Expert handling for unique shipments."
+        description: "Expert handling for unique shipments.",
+        link:'/specialized-freight'
     },
     {
         icon: '/icons/international.svg',
         title: "International Shipping",
-        description: "Hassle-free international shipping."
+        description: "Hassle-free international shipping.",
+        link:'/international-shipping'
+
     },
     {
         icon: '/icons/world-humanitarian-day.svg',
         title: "White Glove Services",
-        description: "Premium care for delicate and high-value items."
+        description: "Premium care for delicate and high-value items.",
+        link:'/white-glove-services'
     },
     {
         icon: '/icons/pricing.svg',
         title: "Spot Quote",
-        description: "Instant pricing for urgent shipments."
+        description: "Instant pricing for urgent shipments.",
+        link:'/spot-quote'
+        
     },
     {
         icon: '/icons/fulfillment.svg',
         title: "Fulfillment Services",
-        description: "Streamlined inventory and order management."
+        description: "Streamlined inventory and order management.",
+        link:'/fulfillment-services'
+
     },
     {
         icon: '/icons/delivery (1) (1).svg',
         title: "Freight Forwarding",
-        description: "Global logistics for seamless freight movement."
+        description: "Global logistics for seamless freight movement.",
+        link:'/freight-forwarding'
     },
     {
         icon: '/icons/delivery (1).svg',
         title: "Truckload",
-        description: "Full-capacity shipping for large freight."
+        description: "Full-capacity shipping for large freight.",
+        link:'/truckload'
     }
 ]
 
@@ -121,22 +133,26 @@ export const megaMenuAbout = [
     {
         icon: '/icons/about.svg',
         title: "Who We Are",
-        description: "Your trusted partner in logistics."
+        description: "Your trusted partner in logistics.",
+        link:'/who-we-are'
     },
     {
         icon: '/icons/chat.svg',
         title: "Contact Us",
-        description: "Reach out for personalized support."
+        description: "Reach out for personalized support.",
+        link:'/contact-us'
     },
     {
         icon: '/icons/career.svg',
         title: "Careers",
-        description: "Join our team and grow with us."
+        description: "Join our team and grow with us.",
+        link:'/careers'
     },
     {
         icon: '/icons/satisfaction.svg',
         title: "Customer Spotlight",
-        description: "Showcasing success stories and partnerships."
+        description: "Showcasing success stories and partnerships.",
+        link:'/customer-spotlight'
     },
 ]
 
@@ -145,17 +161,20 @@ export const megaMenuPartnerships = [
     {
         icon: '/icons/broker.svg',
         title: "Broker Partners",
-        description: "Collaborate with us for mutual growth."
+        description: "Collaborate with us for mutual growth.",
+        link:'/broker-partner'
     },
     {
         icon: '/icons/corporation.svg',
         title: "Corporate Partners",
-        description: "Customized solutions for enterprise needs."
+        description: "Customized solutions for enterprise needs.",
+        link:'/corporate-partner'
     },
     {
         icon: '/icons/delivery-truck (1).svg',
         title: "Carrier Partners",
-        description: "Fastest and Most Reliable Carrier Partners"
+        description: "Fastest and Most Reliable Carrier Partners",
+        link:'/carrier-partners'
     },
 ]
 
@@ -164,17 +183,22 @@ export const megaMenuResources = [
     {
         icon: '/icons/info (1).svg',
         title: "Shipping Guides",
-        description: "Step-by-step resources for seamless shipping."
+        description: "Step-by-step resources for seamless shipping.",
+        link:'/shipping-guides'
+
     },
     {
         icon: '/icons/video.svg',
         title: "Video Library",
-        description: "Learn with engaging and informative videos."
+        description: "Learn with engaging and informative videos.",
+        link:'/video-library'
+
     },
     {
         icon: '/icons/blogging 1.svg',
         title: "Blog",
-        description: "Expert advice to streamline shipping."
+        description: "Expert advice to streamline shipping.",
+        link:'/blogs'
     },
 ]
 
