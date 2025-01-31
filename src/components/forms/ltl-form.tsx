@@ -2,7 +2,7 @@
 
 import { Checkbox, Radio, RadioGroup, Switch } from "@heroui/react"
 import Image from "next/image"
-import { useState } from "react"
+// import { useState } from "react"
 import BaseInput from "../common/forms/base-input"
 import { useForm } from "react-hook-form"
 import BaseSelect from "../common/forms/base-select"
@@ -10,7 +10,7 @@ import BaseButton from "../common/base-button"
 import { PiWarningCircleFill } from "react-icons/pi"
 
 export default function LTLForm() {
-    const [activeLevel, setActiveLevel] = useState(0)
+    // const [activeLevel, setActiveLevel] = useState(0)
     const { control } = useForm()
     return (
         <div className="bg-base-blue rounded-xl flex flex-col border-1 border-base-teal gap-2 w-full">

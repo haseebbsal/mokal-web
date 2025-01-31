@@ -4,11 +4,9 @@ import LinearGradientText from "@/components/common/linear-gradient-text";
 import Image from "next/image";
 import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 import BaseBreadCrumb from "@/components/common/base-breadcrumb";
-import { useForm } from "react-hook-form";
 
 
 export default function CustomerSpotlight() {
-    const { control } = useForm()
     return (
         <>
             <div className="flex flex-col gap-4">
