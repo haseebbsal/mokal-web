@@ -4,7 +4,6 @@ import { FaTwitter } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { FaYoutube } from "react-icons/fa";
 import { FaLinkedinIn } from "react-icons/fa";
-import BaseButton from "../common/base-button";
 import { SiMinutemailer } from "react-icons/si";
 import { BsFillTelephoneOutboundFill } from "react-icons/bs";
 import { FaLocationDot } from "react-icons/fa6";
