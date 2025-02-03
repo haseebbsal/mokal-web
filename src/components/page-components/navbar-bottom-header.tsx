@@ -17,11 +17,13 @@ import {
 } from "@heroui/react";
 import BaseAccordion from "../common/base-accordion";
 import { MdKeyboardDoubleArrowRight } from "react-icons/md";
+import { useRouter } from "next/navigation";
 
 
 export default function NavbarBottomHeader() {
     const [show, setShow] = useState<null | number>(null)
     const { isOpen, onOpen, onClose } = useDisclosure();
+    const router = useRouter()
     return (
         <>
             <nav className={`flex w-full gap-8 px-8 py-4 sm:py-0 items-center justify-between `}>
@@ -67,7 +69,10 @@ export default function NavbarBottomHeader() {
                                     {dropdowns.map((e, index) => <AccordionItem classNames={{ heading: `data-[open=true]:bg-base-pink data-[open=true]:rounded-2xl data-[open=true]:px-2 data-[open=true]:text-base-purple data-[open=true]:font-bold ` }} key={index} aria-label={e} title={e}>
                                         <div className="px-4">
                                             <div className="flex flex-col gap-4 p-4">
-                                                {megaMenu[index].map((e, index) => <div key={e.title + index} className="flex items-center gap-4">
+                                                {megaMenu[index].map((e, index) => <div onClick={() => {
+                                                    router.push(e.link)
+                                                    onClose()
+                                                }} key={e.title + index} className="flex cursor-pointer items-center gap-4">
                                                     <Image key={e.icon} src={e.icon} alt="icon" width={50} height={50} />
                                                     <div className="flex flex-col gap-1">
                                                         <p className="font-bold text-md">{e.title}</p>
