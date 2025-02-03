@@ -19,7 +19,7 @@ export default function RefineTransportForm() {
                 <BaseInput classNames={{ label: "!font-thin !text-sm" }} extraClass="flex-[1_0_40%]" control={control} type="email" label="Work Email" labelPlacement="outside" placeholder="Work Email" />
                 <BaseInput classNames={{ label: "!font-thin !text-sm" }} extraClass="flex-[1_0_40%]" control={control} label="Company Name" labelPlacement="outside" placeholder="Company Name" />
                 <BaseInput classNames={{ label: "!font-thin !text-sm" }} extraClass="flex-[1_0_40%]" control={control} label="MC / DOT / CVOR / Registration Number" labelPlacement="outside" placeholder="# 000000" />
-                <BaseFile label="Carrier package" labelClass="font-bold" multiple={true} className="w-full" />
+                <BaseFile bgColor="bg-gray-200" label="Carrier package" labelClass="font-bold" multiple={true} className="w-full" />
             </div>
             <div className="flex gap-4">
                 <BaseCheckBox>Shippers</BaseCheckBox>
