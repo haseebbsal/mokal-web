@@ -64,7 +64,7 @@ export default function NavbarBottomHeader() {
                     {() => (
                         <>
                             <DrawerBody>
-                                <Link href="/" className="hover:!bg-base-pink bg-transparent text-text-gray justify-start text-md px-2 py-2 rounded-xl">Home</Link>
+                                <Link onClick={()=>onClose()} href="/" className="hover:!bg-base-pink bg-transparent text-text-gray justify-start text-md px-2 py-2 rounded-xl">Home</Link>
                                 <BaseAccordion variant="light" showDivider={false} itemClasses={{ content: "bg-white" }}>
                                     {dropdowns.map((e, index) => <AccordionItem classNames={{ heading: `data-[open=true]:bg-base-pink data-[open=true]:rounded-2xl data-[open=true]:px-2 data-[open=true]:text-base-purple data-[open=true]:font-bold ` }} key={index} aria-label={e} title={e}>
                                         <div className="px-4">
