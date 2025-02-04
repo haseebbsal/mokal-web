@@ -10,6 +10,7 @@ import LinearGradientCircle from "@/components/common/linear-gradient-circle";
 import FAQS from "@/components/page-components/faqs";
 import RefineTransportForm from "@/components/forms/refine-transport-form";
 import Link from "next/link";
+import CustomerBase from "@/components/page-components/customer-base";
 
 export default function Home() {
   return (
@@ -139,7 +140,10 @@ export default function Home() {
           </div>
         </div>
 
-        <FAQS/>
+        <div className="bg-white w-full">
+          <FAQS />
+          <CustomerBase />
+        </div>
 
         {/* <div className="bg-base-shadeBlue w-full">
           <div className={`flex flex-col m-auto sm:px-8 px-4 sm:py-20 py-16 sm:w-[80%] text-center gap-4`}>
@@ -157,9 +161,10 @@ export default function Home() {
               <h1 className="sm:text-[2.3rem] text-[1.3rem] font-bold">REFINING TRANSPORTATION</h1>
               <RefineTransportForm />
             </div>
-            <Image className="absolute right-0 top-0 z-0 h-full sm:block hidden" src={'/images/dashboard1.svg'}  alt="dashboard1" width={700} height={600} />
+            <Image className="absolute right-0 top-0 z-0 h-full sm:block hidden" src={'/images/dashboard1.svg'} alt="dashboard1" width={700} height={600} />
           </div>
         </div>
+
 
       </div>
     </>

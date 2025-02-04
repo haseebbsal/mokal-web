@@ -6,6 +6,7 @@ import HearFromUsAndBlogs from "@/components/page-components/hearFromUs-blogPost
 import ExpertLogistics from "@/components/page-components/expert-logistics";
 import BaseBreadCrumb from "@/components/common/base-breadcrumb";
 import Link from "next/link";
+import CustomerBase from "@/components/page-components/customer-base";
 
 
 export default function InternationalShipping() {
@@ -19,7 +20,7 @@ export default function InternationalShipping() {
                             <h1 className="sm:text-[3rem] text-[1.8rem] font-bold"><LinearGradientText text="International Shipping" /> </h1>
                             <p className="text-text-gray text-lg">Shipping Internationally from Canada, the US, and Mexico Made Effortless</p>
                         </div>
-                        <BaseBreadCrumb items={['Services','International Shipping']}/>
+                        <BaseBreadCrumb items={['Services', 'International Shipping']} />
                     </div>
                 </div>
 
@@ -42,7 +43,13 @@ export default function InternationalShipping() {
                         </div>
                     </div>
 
+
+                    <div className="bg-white w-full">
+                        <CustomerBase heading={<h1 className="sm:text-[2.3rem] text-[1.5rem] font-bold">Global Shipping Solutions Across  <LinearGradientText extraClass="" text="Every Border" /></h1>}/>
+                    </div>
+
                 </div>
+
 
 
 

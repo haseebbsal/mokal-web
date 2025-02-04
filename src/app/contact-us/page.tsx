@@ -1,5 +1,6 @@
 import BaseBreadCrumb from "@/components/common/base-breadcrumb";
 import LinearGradientText from "@/components/common/linear-gradient-text";
+import CustomerBase from "@/components/page-components/customer-base";
 import FAQS from "@/components/page-components/faqs";
 import RefineTransport from "@/components/page-components/refine-transport";
 
@@ -15,7 +16,13 @@ export default function ContactUs() {
                 </div>
 
                 <FAQS />
+                
+                <div className="bg-base-shadeBlue  w-full">
+                    <CustomerBase/>
+                </div>
+
                 <RefineTransport />
+
             </div>
         </>
     )

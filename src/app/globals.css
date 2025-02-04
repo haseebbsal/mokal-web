@@ -17,3 +17,7 @@
 .react-multi-carousel-dot--active{
     border: none !important;
 }
+
+.leaflet-control{
+    display: none;
+}
