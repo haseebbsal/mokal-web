@@ -26,7 +26,6 @@ const center: L.LatLngTuple = [20, 0];
 const CurveConnection = ({ start, end }: { start: L.LatLngTuple; end: L.LatLngTuple }) => {
   const map = useMap();
 
-  // Calculate intermediate point for curve
   const getControlPoint = (start: L.LatLngTuple, end: L.LatLngTuple): L.LatLngTuple => {
     const midLat = (start[0] + end[0]) / 2;
     const midLng = (start[1] + end[1]) / 2;
