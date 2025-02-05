@@ -11,14 +11,14 @@ declare module 'leaflet' {
 }
 
 const locations = [
-    { name: "United States", coords: [37.090240, -95.712891], iconUrl: `http://localhost:3000/flags/flag-2.svg` },
-    { name: "Canada", coords: [56.130367, -106.346771], iconUrl: `http://localhost:3000/flags/flag-1.svg` },
-    { name: "United Kingdom", coords: [52.355518, -1.174320], iconUrl: `http://localhost:3000/flags/flag-4.svg` },
-    { name: "South Africa", coords: [-30.559483, 22.937506], iconUrl: `http://localhost:3000/flags/flag-8.svg` },
-    { name: "Japan", coords: [36.204823,138.252930], iconUrl: `http://localhost:3000/flags/flag-7.svg` },
-    { name: "Australia", coords: [-25.274399,133.775131], iconUrl: `http://localhost:3000/flags/flag-6.svg` },
-    { name: "Mexico", coords: [23.634501,-102.552788], iconUrl: `http://localhost:3000/flags/flag-5.svg` },
-    { name: "Brazil", coords: [-14.235004,-51.925282], iconUrl: `http://localhost:3000/flags/flag-3.svg` }
+    { name: "United States", coords: [37.090240, -95.712891], iconUrl: `${process.env.NEXT_PUBLIC_BASE_URL}/flags/flag-2.svg` },
+    { name: "Canada", coords: [56.130367, -106.346771], iconUrl: `${process.env.NEXT_PUBLIC_BASE_URL}/flags/flag-1.svg` },
+    { name: "United Kingdom", coords: [52.355518, -1.174320], iconUrl: `${process.env.NEXT_PUBLIC_BASE_URL}/flags/flag-4.svg` },
+    { name: "South Africa", coords: [-30.559483, 22.937506], iconUrl: `${process.env.NEXT_PUBLIC_BASE_URL}/flags/flag-8.svg` },
+    { name: "Japan", coords: [36.204823,138.252930], iconUrl: `${process.env.NEXT_PUBLIC_BASE_URL}/flags/flag-7.svg` },
+    { name: "Australia", coords: [-25.274399,133.775131], iconUrl: `${process.env.NEXT_PUBLIC_BASE_URL}/flags/flag-6.svg` },
+    { name: "Mexico", coords: [23.634501,-102.552788], iconUrl: `${process.env.NEXT_PUBLIC_BASE_URL}/flags/flag-5.svg` },
+    { name: "Brazil", coords: [-14.235004,-51.925282], iconUrl: `${process.env.NEXT_PUBLIC_BASE_URL}/flags/flag-3.svg` }
 ];
 
 const center: L.LatLngTuple = [20, 0];
