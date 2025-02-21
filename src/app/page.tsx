@@ -2,17 +2,42 @@ import BaseButton from "@/components/common/base-button";
 import Image from "next/image";
 import { BsBoxSeam } from "react-icons/bs";
 import { MdKeyboardDoubleArrowRight } from "react-icons/md";
-import { HomePageTabs, managementPlatformTabs } from "@/utils/constants";
+import { client, HomePageTabs, managementPlatformTabs } from "@/utils/constants";
 import LinearGradientText from "@/components/common/linear-gradient-text";
 import BaseTabs from "@/components/common/base-tabs";
 import ReasonsToChooseUs from "@/components/page-components/reasons-to-choose-us";
 import LinearGradientCircle from "@/components/common/linear-gradient-circle";
-import FAQS from "@/components/page-components/faqs";
 import RefineTransportForm from "@/components/forms/refine-transport-form";
 import Link from "next/link";
 import CustomerBase from "@/components/page-components/customer-base";
+import { FAQS,  HeaderAndCards } from "@/utils/types";
+import FAQSs from "@/components/page-components/faqs";
 
-export default function Home() {
+export default async function Home() {
+
+  const homeData:{contentBlocks:HeaderAndCards[]}= await client.fetch({
+    query: `*[_type=='home'][0]{
+...,
+  
+  "contentBlocks":[...contentBlocks[]->{
+    ...,
+    "cards":[...cards[]{
+      heading,
+      "imageUrl":icon.asset->url,
+             description
+    }],
+    "blogs":[...blogs[]->{
+      header,
+      "createdAt":_createdAt,
+      "imageUrl":image.asset->url,
+      "contents":[...contents[].children[].text]
+    }]
+  }]
+}`
+  })
+
+  // console.log(homeData)
+
   return (
     <>
       <div className={`flex flex-col gap-4`}>
@@ -43,7 +68,7 @@ export default function Home() {
           </div>
         </div>
 
-        <ReasonsToChooseUs />
+        <ReasonsToChooseUs reasonsToChooseUs={homeData.contentBlocks[0] as HeaderAndCards} />
 
         <div className="bg-white w-full">
           <div className={`flex sm:flex-row flex-col m-auto sm:px-8 px-4 sm:py-20 py-16 sm:w-[80%] text-center gap-16`}>
@@ -141,7 +166,7 @@ export default function Home() {
         </div>
 
         <div className="bg-white w-full">
-          <FAQS />
+          <FAQSs data={homeData.contentBlocks[1] as unknown as FAQS}/>
           <CustomerBase />
         </div>
 

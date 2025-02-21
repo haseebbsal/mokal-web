@@ -3,6 +3,8 @@ import { NavbarMenuSetting, TabItemProp } from "./types"
 import LinearGradientText from "@/components/common/linear-gradient-text"
 import TabWithSlider from "@/components/common/tabs/tab-with-slider"
 import Image from "next/image"
+import { FaFacebookF, FaInstagram, FaLinkedinIn, FaTwitter, FaYoutube } from "react-icons/fa"
+import SanityClient from "next-sanity-client"
 
 export const countries = [
     'Canada',
@@ -74,58 +76,58 @@ export const megaMenuServices = [
         icon: '/icons/loading.svg',
         title: "Less Than Truckload (LTL)",
         description: "Cost-effective shipping for smaller freight.",
-        link:'/LTL'
+        link: '/LTL'
     },
     {
         icon: '/icons/food-delivery.svg',
         title: "Courier Services",
         description: "Fast and reliable package delivery.",
-        link:'/courier-services'
+        link: '/courier-services'
     },
     {
         icon: '/icons/premium-quality.svg',
         title: "Specialized Freight",
         description: "Expert handling for unique shipments.",
-        link:'/specialized-freight'
+        link: '/specialized-freight'
     },
     {
         icon: '/icons/international.svg',
         title: "International Shipping",
         description: "Hassle-free international shipping.",
-        link:'/international-shipping'
+        link: '/international-shipping'
 
     },
     {
         icon: '/icons/world-humanitarian-day.svg',
         title: "White Glove Services",
         description: "Premium care for delicate and high-value items.",
-        link:'/white-glove-services'
+        link: '/white-glove-services'
     },
     {
         icon: '/icons/pricing.svg',
         title: "Spot Quote",
         description: "Instant pricing for urgent shipments.",
-        link:'/spot-quote'
-        
+        link: '/spot-quote'
+
     },
     {
         icon: '/icons/fulfillment.svg',
         title: "Fulfillment Services",
         description: "Streamlined inventory and order management.",
-        link:'/fulfillment-services'
+        link: '/fulfillment-services'
 
     },
     {
         icon: '/icons/delivery (1) (1).svg',
         title: "Freight Forwarding",
         description: "Global logistics for seamless freight movement.",
-        link:'/freight-forwarding'
+        link: '/freight-forwarding'
     },
     {
         icon: '/icons/delivery (1).svg',
         title: "Truckload",
         description: "Full-capacity shipping for large freight.",
-        link:'/truckload'
+        link: '/truckload'
     }
 ]
 
@@ -134,25 +136,25 @@ export const megaMenuAbout = [
         icon: '/icons/about.svg',
         title: "Who We Are",
         description: "Your trusted partner in logistics.",
-        link:'/who-we-are'
+        link: '/who-we-are'
     },
     {
         icon: '/icons/chat.svg',
         title: "Contact Us",
         description: "Reach out for personalized support.",
-        link:'/contact-us'
+        link: '/contact-us'
     },
     {
         icon: '/icons/career.svg',
         title: "Careers",
         description: "Join our team and grow with us.",
-        link:'/careers'
+        link: '/careers'
     },
     {
         icon: '/icons/satisfaction.svg',
         title: "Customer Spotlight",
         description: "Showcasing success stories and partnerships.",
-        link:'/customer-spotlight'
+        link: '/customer-spotlight'
     },
 ]
 
@@ -162,19 +164,19 @@ export const megaMenuPartnerships = [
         icon: '/icons/broker.svg',
         title: "Broker Partners",
         description: "Collaborate with us for mutual growth.",
-        link:'/broker-partner'
+        link: '/broker-partner'
     },
     {
         icon: '/icons/corporation.svg',
         title: "Corporate Partners",
         description: "Customized solutions for enterprise needs.",
-        link:'/corporate-partner'
+        link: '/corporate-partner'
     },
     {
         icon: '/icons/delivery-truck (1).svg',
         title: "Carrier Partners",
         description: "Fastest and Most Reliable Carrier Partners",
-        link:'/carrier-partners'
+        link: '/carrier-partners'
     },
 ]
 
@@ -184,21 +186,21 @@ export const megaMenuResources = [
         icon: '/icons/info (1).svg',
         title: "Shipping Guides",
         description: "Step-by-step resources for seamless shipping.",
-        link:'/shipping-guides'
+        link: '/shipping-guides'
 
     },
     {
         icon: '/icons/video.svg',
         title: "Video Library",
         description: "Learn with engaging and informative videos.",
-        link:'/video-library'
+        link: '/video-library'
 
     },
     {
         icon: '/icons/blogging 1.svg',
         title: "Blog",
         description: "Expert advice to streamline shipping.",
-        link:'/blogs'
+        link: '/blogs'
     },
 ]
 
@@ -231,82 +233,82 @@ export const HomePageTabs = [
 ]
 
 
-export const dropdowns=['Services','About Us','Partnerships','Resources']
+export const dropdowns = ['Services', 'About Us', 'Partnerships', 'Resources']
 
 
 
 export const megaMenu = [megaMenuServices, megaMenuAbout, megaMenuPartnerships, megaMenuResources]
 
 
-export const reasonsToChooseUs=[
+export const reasonsToChooseUs = [
     {
-        imageSrc:"/icons/success.svg",
-        title:"Success Together",
-        description:"We do big things when we are inclusive and work together. To perform with excellence, we learn from one another, value diverse perspectives, operate safely, and build strong relationships. We welcome everyone regardless of background, identity or ability."
+        imageSrc: "/icons/success.svg",
+        title: "Success Together",
+        description: "We do big things when we are inclusive and work together. To perform with excellence, we learn from one another, value diverse perspectives, operate safely, and build strong relationships. We welcome everyone regardless of background, identity or ability."
     },
     {
-        imageSrc:"/icons/leading.svg",
-        title:"Leading Results",
-        description:"Customers, carriers, stakeholders and colleagues demand best-in-class performance, so we never stop listening, understanding needs, and executing with integrity. We make transportation simpler and more effective for everyone."
+        imageSrc: "/icons/leading.svg",
+        title: "Leading Results",
+        description: "Customers, carriers, stakeholders and colleagues demand best-in-class performance, so we never stop listening, understanding needs, and executing with integrity. We make transportation simpler and more effective for everyone."
     },
     {
-        imageSrc:"/icons/spirit.svg",
-        title:"Pioneering Spirit",
-        description:"We’re passionate about creating cutting-edge technologies and solutions that connect customers and carriers with the right capacity. We always look boldly ahead to what’s next."
+        imageSrc: "/icons/spirit.svg",
+        title: "Pioneering Spirit",
+        description: "We’re passionate about creating cutting-edge technologies and solutions that connect customers and carriers with the right capacity. We always look boldly ahead to what’s next."
     },
     {
-        imageSrc:"/icons/mindset.svg",
-        title:"ENTREPRENEURIAL Mindset",
-        description:"We know the success of our customers, carriers and company is in our hands. We take it upon ourselves to solve problems and out perform."
+        imageSrc: "/icons/mindset.svg",
+        title: "ENTREPRENEURIAL Mindset",
+        description: "We know the success of our customers, carriers and company is in our hands. We take it upon ourselves to solve problems and out perform."
     },
     {
-        imageSrc:"/icons/agile.svg",
-        title:"Agile Approach",
-        description:"We move quickly and adapt easily. We leverage technology, data and expertise to anticipate and create the right capacity where it’s needed."
+        imageSrc: "/icons/agile.svg",
+        title: "Agile Approach",
+        description: "We move quickly and adapt easily. We leverage technology, data and expertise to anticipate and create the right capacity where it’s needed."
     }
 ]
 
 
-export const managementPlatformTabs:TabItemProp = [
+export const managementPlatformTabs: TabItemProp = [
     {
         title: 'Dashboard',
-        component: <div className="w-full "><Image src={'/images/platform.svg'} alt="platform" className="h-full w-full " width={1000} height={1000}/></div>,
-        titleExtraClass:"blue"
+        component: <div className="w-full "><Image src={'/images/platform.svg'} alt="platform" className="h-full w-full " width={1000} height={1000} /></div>,
+        titleExtraClass: "blue"
     },
     {
         title: "Real-Time Quotes",
         component: <TabWithSlider title={<h1 className="sm:!text-3xl text-lg font-bold" >Trusted Courier Partner Solutions for <LinearGradientText text="Seamless Deliveries" /></h1>} description={['Enhance your shipping capabilities with MGC Freight’s reliable courier partnerships. We ensure timely deliveries, secure handling, and exceptional service, providing your business with the flexibility and efficiency needed to satisfy your customers every step of the way.']} carousel={[{ imageSrc: "/couriers/Artboard.svg", description: "Shipping, courier, and expedited transport services within the US, Canada." }, { imageSrc: "/couriers/gardewine.svg", description: "Leading trucking company providing logistics services across Canada for 70+ years." }, { imageSrc: "/couriers/DayandRoss.svg", description: "Logistics company that operates in various sectors, including logistics solutions" }, { description: "Canada’s most trusted transport carrier for over 60 years.", imageSrc: "/couriers/M-O-2.svg" }, { imageSrc: "/couriers/kindersley.svg", description: "Providing truckload and LTL service throughout North America" }, { imageSrc: "/couriers/DHL.svg", description: "American-founded German logistics company delivering over 1.8 billion parcels per year." }, { imageSrc: "/couriers/Canpar.svg", description: "Helping small parcel delivery companies’ shipping processes on a day-to-day basis." }]} />,
-        titleExtraClass:"blue"
+        titleExtraClass: "blue"
     },
     {
         title: "Tracking",
         component: <TabWithSlider title={<h1 className="sm:!text-3xl text-lg font-bold" >Reliable <LinearGradientText text="LTL (Less Than Truckload)" /> Partner Solutions</h1>} description={['Optimize your freight shipping with MGC Freight’s LTL services. We provide cost-effective and flexible solutions, ensuring your smaller shipments are delivered safely and on time, no matter the destination.']} carousel={[{ imageSrc: "/couriers/Artboard.svg", description: "Shipping, courier, and expedited transport services within the US, Canada." }, { imageSrc: "/couriers/gardewine.svg", description: "Leading trucking company providing logistics services across Canada for 70+ years." }, { imageSrc: "/couriers/DayandRoss.svg", description: "Logistics company that operates in various sectors, including logistics solutions" }, { description: "Canada’s most trusted transport carrier for over 60 years.", imageSrc: "/couriers/M-O-2.svg" }, { imageSrc: "/couriers/kindersley.svg", description: "Providing truckload and LTL service throughout North America" }, { imageSrc: "/couriers/DHL.svg", description: "American-founded German logistics company delivering over 1.8 billion parcels per year." }, { imageSrc: "/couriers/Canpar.svg", description: "Helping small parcel delivery companies’ shipping processes on a day-to-day basis." }]} />,
-        titleExtraClass:"blue"
+        titleExtraClass: "blue"
     },
     {
         title: "Pickup",
         component: <TabNoSlider title={<h1 className="sm:!text-3xl text-lg font-bold" >The <LinearGradientText text="Ultimate Platform" /> for Freight Brokers</h1>} description={['Streamline your operations with MGC Freight’s broker-friendly solutions. We offer efficient tools and reliable support to help you manage shipments, connect with carriers, and ensure seamless deliveries for your clients.']} />,
-        titleExtraClass:"blue"
+        titleExtraClass: "blue"
     }
 ]
 
 
-export const faqs=[
+export const faqs = [
     {
-        title:"How do I create a new shipment order through MGC Freight?",
-        content:'To create a new shipment, log into your account and click on the "Create New Shipment" button. Fill in the necessary details, such as destination and shipment type, and submit the order.'
+        title: "How do I create a new shipment order through MGC Freight?",
+        content: 'To create a new shipment, log into your account and click on the "Create New Shipment" button. Fill in the necessary details, such as destination and shipment type, and submit the order.'
     },
     {
-        title:"What types of freight services are available through MGC Freight for my business needs?",
-        content:"We offer air, sea, and ground shipping services, each designed to optimize cost, time, and reliability for your specific logistics requirements."
+        title: "What types of freight services are available through MGC Freight for my business needs?",
+        content: "We offer air, sea, and ground shipping services, each designed to optimize cost, time, and reliability for your specific logistics requirements."
     },
     {
-        title:"How can I track the status of my shipment in real-time using your platform?",
-        content:'To create a new shipment, log into your account and click on the "Create New Shipment" button. Fill in the necessary details, such as destination and shipment type, and submit the order.'
+        title: "How can I track the status of my shipment in real-time using your platform?",
+        content: 'To create a new shipment, log into your account and click on the "Create New Shipment" button. Fill in the necessary details, such as destination and shipment type, and submit the order.'
     },
     {
-        title:"What payment methods are accepted when using MGC Freight services for shipping orders?",
-        content:'To create a new shipment, log into your account and click on the "Create New Shipment" button. Fill in the necessary details, such as destination and shipment type, and submit the order.'
+        title: "What payment methods are accepted when using MGC Freight services for shipping orders?",
+        content: 'To create a new shipment, log into your account and click on the "Create New Shipment" button. Fill in the necessary details, such as destination and shipment type, and submit the order.'
     }
 ]
 
@@ -534,7 +536,7 @@ export const termsandcondtions = [
 ]
 
 
-export const optimalModes=[
+export const optimalModes = [
     'Dry Van',
     'Expedited',
     'Temperature controlled',
@@ -549,7 +551,7 @@ export const optimalModes=[
 ]
 
 
-export const benefitsForMgc=[
+export const benefitsForMgc = [
     'Scheduled payments',
     'Established contracts',
     'Flexible delivery duties',
@@ -559,110 +561,125 @@ export const benefitsForMgc=[
 ]
 
 
-export const servicesLinks=[
+export const servicesLinks = [
 
     {
-        name:"Less Than Truckload (LTL)",
-        link:'/LTL'
+        name: "Less Than Truckload (LTL)",
+        link: '/LTL'
     },
     {
-        name:"Courier Services",
-        link:'/courier-services'
+        name: "Courier Services",
+        link: '/courier-services'
     },
     {
-        name:"Specialized Freight",
-        link:'/specialized-freight'
+        name: "Specialized Freight",
+        link: '/specialized-freight'
     },
     {
-        name:"International Shipping",
-        link:'/international-shipping'
+        name: "International Shipping",
+        link: '/international-shipping'
     },
     {
-        name:"White Glove Services",
-        link:'/white-glove-services'
+        name: "White Glove Services",
+        link: '/white-glove-services'
     },
     {
-        name:"Spot Quote",
-        link:'/spot-quote'
+        name: "Spot Quote",
+        link: '/spot-quote'
     },
     {
-        name:"Fulfillment Services",
-        link:'/fulfillment-services'
+        name: "Fulfillment Services",
+        link: '/fulfillment-services'
     },
     {
-        name:"Freight Forwarding",
-        link:'/freight-forwarding'
+        name: "Freight Forwarding",
+        link: '/freight-forwarding'
     },
     {
-        name:"Truckload",
-        link:'/truckload'
+        name: "Truckload",
+        link: '/truckload'
     }
 ]
 
 
-export const aboutUsServices=[
+export const aboutUsServices = [
     {
-        name:'Who We Are',
-        link:"/who-we-are"
+        name: 'Who We Are',
+        link: "/who-we-are"
     },
     {
-        name:'Contact Us',
-        link:"/contact-us"
+        name: 'Contact Us',
+        link: "/contact-us"
     },
     {
-        name:'Careers',
-        link:"/careers"
+        name: 'Careers',
+        link: "/careers"
     },
     {
-        name:'Customer Spotlight',
-        link:"/customer-spotlight"
+        name: 'Customer Spotlight',
+        link: "/customer-spotlight"
     }
 ]
 
 
-export const quickLinksLinks=[
+export const quickLinksLinks = [
     {
-        name:'Terms & Conditions',
-        link:'/terms-and-conditions'
+        name: 'Terms & Conditions',
+        link: '/terms-and-conditions'
     },
     {
-        name:'Privacy Policy',
-        link:'/privacy-policy'
+        name: 'Privacy Policy',
+        link: '/privacy-policy'
     },
     {
-        name:'Claims',
-        link:'/claims'
+        name: 'Claims',
+        link: '/claims'
     }
 ]
 
 
-export const partnershipLinks=[
+export const partnershipLinks = [
     {
-        name:'Broker Partners',
-        link:'/broker-partner'
+        name: 'Broker Partners',
+        link: '/broker-partner'
     },
     {
-        name:'Corporate Partners',
-        link:'/corporate-partner'
+        name: 'Corporate Partners',
+        link: '/corporate-partner'
     },
     {
-        name:'Carrier Partners',
-        link:'/carrier-partners'
+        name: 'Carrier Partners',
+        link: '/carrier-partners'
     }
 ]
 
 
-export const resourcesLinks=[
+export const resourcesLinks = [
     {
-        name:'Video Library',
-        link:'/video-library'
+        name: 'Video Library',
+        link: '/video-library'
     },
     {
-        name:'Blogs',
-        link:'/blogs'
+        name: 'Blogs',
+        link: '/blogs'
     },
     {
-        name:'Shipping Guides',
-        link:'/shipping-guides'
+        name: 'Shipping Guides',
+        link: '/shipping-guides'
     }
 ]
+
+
+export const links = {
+    facebook: <FaFacebookF/>,
+    instagram: <FaInstagram/>,
+    linkedIn: <FaLinkedinIn/>,
+    youtube: <FaYoutube/>,
+    twitter: <FaTwitter/>
+}
+
+export const client = new SanityClient({
+    projectId: process.env.SANITY_PROJECT_ID!,
+    dataset: process.env.SANITY_STUDIO_DATASET!,
+    useCdn: process.env.SANITY_STUDIO_DATASET == 'staging',
+});

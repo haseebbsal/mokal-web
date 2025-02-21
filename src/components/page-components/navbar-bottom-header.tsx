@@ -20,7 +20,7 @@ import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 import { useRouter } from "next/navigation";
 
 
-export default function NavbarBottomHeader() {
+export default function NavbarBottomHeader({logo}:{logo:string}) {
     const [show, setShow] = useState<null | number>(null)
     const { isOpen, onOpen, onClose } = useDisclosure();
     const router = useRouter()
@@ -29,7 +29,7 @@ export default function NavbarBottomHeader() {
             <nav className={`flex w-full gap-8 px-8 py-4 sm:py-0 items-center justify-between `}>
                 <div className="flex sm:flex-row flex-col sm:w-max w-full sm:gap-8 gap-4">
                     <div className="flex justify-between items-center">
-                        <Link href={"/"}><Image src={'/logo.svg'} alt="logo" width={200} height={200} /></Link>
+                        <Link href={"/"}><Image src={logo} alt="logo" width={200} height={200} /></Link>
                         <HiMenu className="sm:hidden" onClick={() => onOpen()} size={30} />
                     </div>
                     <div className="flex gap-4">

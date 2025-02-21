@@ -83,3 +83,36 @@ export interface HearFromUsAndBlogsProps {
     bgHearFromUs?: string
     bgBlogs?: string
 }
+
+
+export type countriesType={name:string,coords:number[],iconUrl:string}[]
+
+export interface configData{
+    socialLinks:{[x:string]:string}
+    phoneNumber:string
+    countries?:countriesType
+    imageUrl:string
+    copyright:string
+    address:{lat:number,lng:number}
+    email:string
+}
+
+export interface HeaderAndCards{
+    header: { Highlight?: boolean, Value: string }[]
+    cards: {
+        imageUrl: string
+        heading: string
+        description: string
+    }[]
+} 
+
+export type IndvidualBlog={id:string,imageUrl:string,title:string,content:[{text:string}][],publishedAt:string}
+
+export type Blogs=IndvidualBlog[]
+
+export interface FAQS{
+    header:{Highlight:boolean,Value:string}[]
+    questions:{answer:string,question:string}[]
+    description:string
+
+}

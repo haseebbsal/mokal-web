@@ -6,20 +6,23 @@ import L, { LatLngExpression } from 'leaflet'
 import '@elfalem/leaflet-curve'
 import { useEffect } from "react";
 
+
 declare module 'leaflet' {
   function curve(path: Array<string | L.LatLngTuple>, options?: L.PathOptions): L.Curve
 }
 
-const locations = [
-    { name: "United States", coords: [37.090240, -95.712891], iconUrl: `${process.env.NEXT_PUBLIC_BASE_URL}/flags/flag-2.svg` },
-    { name: "Canada", coords: [56.130367, -106.346771], iconUrl: `${process.env.NEXT_PUBLIC_BASE_URL}/flags/flag-1.svg` },
-    { name: "United Kingdom", coords: [52.355518, -1.174320], iconUrl: `${process.env.NEXT_PUBLIC_BASE_URL}/flags/flag-4.svg` },
-    { name: "South Africa", coords: [-30.559483, 22.937506], iconUrl: `${process.env.NEXT_PUBLIC_BASE_URL}/flags/flag-8.svg` },
-    { name: "Japan", coords: [36.204823,138.252930], iconUrl: `${process.env.NEXT_PUBLIC_BASE_URL}/flags/flag-7.svg` },
-    { name: "Australia", coords: [-25.274399,133.775131], iconUrl: `${process.env.NEXT_PUBLIC_BASE_URL}/flags/flag-6.svg` },
-    { name: "Mexico", coords: [23.634501,-102.552788], iconUrl: `${process.env.NEXT_PUBLIC_BASE_URL}/flags/flag-5.svg` },
-    { name: "Brazil", coords: [-14.235004,-51.925282], iconUrl: `${process.env.NEXT_PUBLIC_BASE_URL}/flags/flag-3.svg` }
-];
+// const locations = [
+//     { name: "United States", coords: [37.090240, -95.712891], iconUrl: `${process.env.NEXT_PUBLIC_BASE_URL}/flags/flag-2.svg` },
+//     { name: "Canada", coords: [56.130367, -106.346771], iconUrl: `${process.env.NEXT_PUBLIC_BASE_URL}/flags/flag-1.svg` },
+//     { name: "United Kingdom", coords: [52.355518, -1.174320], iconUrl: `${process.env.NEXT_PUBLIC_BASE_URL}/flags/flag-4.svg` },
+//     { name: "South Africa", coords: [-30.559483, 22.937506], iconUrl: `${process.env.NEXT_PUBLIC_BASE_URL}/flags/flag-8.svg` },
+//     { name: "Japan", coords: [36.204823,138.252930], iconUrl: `${process.env.NEXT_PUBLIC_BASE_URL}/flags/flag-7.svg` },
+//     { name: "Australia", coords: [-25.274399,133.775131], iconUrl: `${process.env.NEXT_PUBLIC_BASE_URL}/flags/flag-6.svg` },
+//     { name: "Mexico", coords: [23.634501,-102.552788], iconUrl: `${process.env.NEXT_PUBLIC_BASE_URL}/flags/flag-5.svg` },
+//     { name: "Brazil", coords: [-14.235004,-51.925282], iconUrl: `${process.env.NEXT_PUBLIC_BASE_URL}/flags/flag-3.svg` }
+// ];
+
+type locations={name:string,coords:number[],iconUrl:string}[]
 
 const center: L.LatLngTuple = [20, 0];
 
@@ -56,7 +59,10 @@ const CurveConnection = ({ start, end }: { start: L.LatLngTuple; end: L.LatLngTu
   return null;
 };
 
-export default function CustomMap() {
+
+
+
+export default function DynamicMap({data}:{data:locations}) {
     return (
         <MapContainer
             center={center}
@@ -77,7 +83,7 @@ export default function CustomMap() {
                 {/* <Popup>Center Point</Popup> */}
             </Marker>
 
-            {locations.map((location, index) => (
+            {data.map((location, index) => (
                 <div key={index}>
                     <Marker
                         position={location.coords as LatLngExpression}

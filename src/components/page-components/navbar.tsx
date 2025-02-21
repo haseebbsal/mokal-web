@@ -1,15 +1,22 @@
-import { countries, phoneNumber } from "@/utils/constants";
-import { Navbar,NavbarContent} from "@heroui/navbar";
+import { client,links } from "@/utils/constants";
+import { Navbar, NavbarContent } from "@heroui/navbar";
 import { IoIosCall } from "react-icons/io";
 import CheckStatusForm from "../forms/check-status";
-import { FaFacebook } from "react-icons/fa";
-import { AiFillTwitterCircle } from "react-icons/ai";
-import { FaInstagramSquare } from "react-icons/fa";
-import { FaLinkedin } from "react-icons/fa6";
 import NavbarBottomHeader from "./navbar-bottom-header";
+import Link from "next/link";
+import { configData } from "@/utils/types";
 
+export default async function MainNavbar() {
 
-export default function MainNavbar() {
+    const configData: configData = await client.fetch({
+        query: `*[_type == 'config'][0]{
+        ...,
+        "imageUrl": logo.asset->url,
+        }`,
+        config: {
+            cache: 'no-store',
+        }
+    });
 
     return (
         <>
@@ -19,27 +26,26 @@ export default function MainNavbar() {
                         <div className="flex w-full sm:gap-16 gap-8 items-center">
                             <div className="flex gap-4">
                                 <p className="sm:block hidden">www.mgcfreight.com</p>
-                                {countries.map((e: string,index) => <p key={e} className={`${index!=0?"border-l-2" :"sm:border-l-2"}  pl-2 border-base-blue`}>{e}</p>)}
+                                {configData.countries?.slice(0,3).map((e, index) => <p key={e.name} className={`${index != 0 ? "border-l-2" : "sm:border-l-2"}  pl-2 border-base-blue`}>{e.name}</p>)}
                             </div>
                             <div className="flex gap-2 items-center">
                                 <IoIosCall size={20} />
-                                <p>{phoneNumber}</p>
+                                <p>{configData.phoneNumber}</p>
                             </div>
                         </div>
                     </NavbarContent>
                     <NavbarContent className="sm:justify-end">
                         <div className="flex  gap-4 w-full sm:justify-end items-center">
                             <div className="flex gap-2 text-base-blue">
-                                <FaFacebook />
-                                <AiFillTwitterCircle />
-                                <FaInstagramSquare />
-                                <FaLinkedin />
+                                {
+                                    configData.socialLinks && Object.entries(configData.socialLinks).map((e) => <Link key={e[1]} target="_blank" href={e[1] as string}>{links[e[0] as keyof (typeof links)]}</Link>)
+                                }
                             </div>
                             <CheckStatusForm />
                         </div>
                     </NavbarContent>
                 </Navbar>
-                <NavbarBottomHeader/>
+                <NavbarBottomHeader logo={configData.imageUrl}/>
             </div>
         </>
     )

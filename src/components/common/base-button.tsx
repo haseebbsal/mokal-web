@@ -7,7 +7,7 @@ export default function BaseButton({extraClass,children,...props}:BaseButtonProp
 
 
     return (
-        <Button  className={` bg-base-purple text-white !p-4  ${extraClass}`} {...props}>
+        <Button  className={` !bg-base-purple text-white !p-4  ${extraClass}`} {...props}>
             {children}
         </Button>
     )

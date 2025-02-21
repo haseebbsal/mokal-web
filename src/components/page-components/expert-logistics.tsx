@@ -11,6 +11,7 @@ export default function ExpertLogistics() {
                 <p className="text-text-gray ">Take your logistics to the next level with MGC Freight's comprehensive, consultative approach. We go beyond traditional shipping to address every aspect of your supply chain, providing smart solutions tailored to optimize your operations. Wherever you are in your growth journey, our 360-degree solutions empower you to choose what fits your unique needs, unlocking new opportunities and driving your success forward.</p>
 
                 <Video
+                    autoPlay={false}
                     className="max-h-96"
                     icons={
                         {
