@@ -4,8 +4,6 @@ import LinearGradientText from "@/components/common/linear-gradient-text";
 import Image from "next/image";
 import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 import BaseBreadCrumb from "@/components/common/base-breadcrumb";
-import BaseInput from "@/components/common/forms/base-input";
-import { useForm } from "react-hook-form";
 import HearFromUsAndBlogs from "@/components/page-components/hearFromUs-blogPost";
 import Link from "next/link";
 import FOrNow from "@/components/page-components/client-for-now";
