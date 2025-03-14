@@ -44,7 +44,11 @@ export default async function HearFromUsAndBlogs({ hideBlogs, hideHearFromUs, bg
 
     const fetchData2: any = await client.fetch({
         query: `*[_type=='testimonialComponent'][0]{
-      ...  
+      ...,
+      "testimonials":[...testimonials[]->{
+      ...,
+      "imageUrl":image.asset->url
+      }]  
     }
                 `
     })
@@ -53,6 +57,7 @@ export default async function HearFromUsAndBlogs({ hideBlogs, hideHearFromUs, bg
     const description:string=fetchData2.description
     const testimonials:[{_id:string,name:string,_createdAt:string,imageUrl:string,description:string,rating:number}]=fetchData2.testimonials
     const header2:[{ Value: string, Highlight: boolean }] =fetchData2.header
+    console.log(fetchData2)
     return (
         <div>
             {!hideHearFromUs && <div className={`${bgHearFromUs} w-full`}>

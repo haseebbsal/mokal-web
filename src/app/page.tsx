@@ -1,6 +1,6 @@
 import { client } from "@/utils/constants";
 import CustomerBase from "@/components/page-components/customer-base";
-import {  PagesContent } from "@/utils/types";
+import { PagesContent } from "@/utils/types";
 import FAQSs from "@/components/page-components/faqs";
 import Title from "@/components/page-components/title";
 import TabPageComponent from "@/components/page-components/tab";
@@ -9,13 +9,17 @@ import RefineTransportPage from "@/components/page-components/refine-transportPa
 import CardsContent from "@/components/page-components/cards-content";
 import MainBlog from "@/components/page-components/main-blog";
 import Testimonials from "@/components/page-components/testimonials";
+import Content2 from "@/components/page-components/content2";
+import GuideToBook from "@/components/page-components/guide-to-book";
 
 export default async function Home() {
 
   const homeData: { content: [PagesContent] } = await client.fetch({
-    query: `*[_type=='home'][0]{
+    query: `*[_type=='LTL'][0]{
   "content":[...contentBlocks[]->{
     ...,
+    "images":[...images[]{"imageUrl":asset->url}],
+    "video":video.asset->url,
      "testimonials":[...testimonials[]->{
        ...,
        "imageUrl":image.asset->url
@@ -71,6 +75,9 @@ export default async function Home() {
             {e._type == 'cards' && <CardsContent description={e.description!} header={e.header!} cards={e.cards as any} variation={e.variation!} />}
             {e._type == 'blogComponent' && <MainBlog header={e.header!} blogs={e.blogs} />}
             {e._type == 'testimonialComponent' && <Testimonials header={e.header!} description={e.description} testimonials={e.testimonials} />}
+            {e._type == 'contentPageComponent' && <Content2 images={e.images} buttons={e.buttons} description={e.description} header={e.header!} video={e.video} />}
+            {e._type == 'guideComponent' && <GuideToBook />}
+
           </div>)
           // if (e._type == 'title') return <Title key={e._type + index} header={e.header!} title={e.title} buttons={e.buttons} imageUrl={e.imageUrl} description={e.description} />
           // if (e._type == 'tabs') return <TabPageComponent key={e._type + index} header={e.header!} slider={e.slider as any} />

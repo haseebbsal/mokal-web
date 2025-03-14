@@ -1,47 +1,70 @@
-import BaseButton from "@/components/common/base-button";
-import LinearGradientText from "@/components/common/linear-gradient-text";
-import Image from "next/image";
-import { MdKeyboardDoubleArrowRight } from "react-icons/md";
-import HearFromUsAndBlogs from "@/components/page-components/hearFromUs-blogPost";
-import CourierService from "@/components/page-components/courier-service";
-import ExpertLogistics from "@/components/page-components/expert-logistics";
 import GuideToBook from "@/components/page-components/guide-to-book";
-import BenefitsOfServices from "@/components/page-components/benefits-of-services";
-import BaseBreadCrumb from "@/components/common/base-breadcrumb";
-import BaseSlider from "@/components/common/base-slider";
-import Link from "next/link";
+import Title from "@/components/page-components/title";
+import TabPageComponent from "@/components/page-components/tab";
+import Content from "@/components/page-components/content";
+import FAQSs from "@/components/page-components/faqs";
+import CustomerBase from "@/components/page-components/customer-base";
+import RefineTransportPage from "@/components/page-components/refine-transportPage";
+import CardsContent from "@/components/page-components/cards-content";
+import MainBlog from "@/components/page-components/main-blog";
+import Testimonials from "@/components/page-components/testimonials";
+import { PagesContent } from "@/utils/types";
+import { client } from "@/utils/constants";
+import Content2 from "@/components/page-components/content2";
 
 
 
 
-const responsiveCouriers = {
-    superLargeDesktop: {
-        // the naming can be any, depends on you.
-        breakpoint: { max: 4000, min: 3000 },
-        items: 3,
-        partialVisibilityGutter: 2000
-    },
-    desktop: {
-        breakpoint: { max: 3000, min: 1024 },
-        items: 3,
-        partialVisibilityGutter: 2000
-    },
-    tablet: {
-        breakpoint: { max: 1024, min: 464 },
-        items: 2,
-        partialVisibilityGutter: 2000
-    },
-    mobile: {
-        breakpoint: { max: 464, min: 0 },
-        items: 3,
-        partialVisibilityGutter: 2000
+
+
+export default async function LTL() {
+    const homeData: { content: [PagesContent] } = await client.fetch({
+        query: `*[_type=='LTL'][0]{
+  "content":[...contentBlocks[]->{
+    ...,
+    "images":[...images[]{"imageUrl":asset->url}],
+    "video":video.asset->url,
+     "testimonials":[...testimonials[]->{
+       ...,
+       "imageUrl":image.asset->url
+      }],
+     "blogs":[...blogs[]->{
+       ...,
+       "imageUrl":image.asset->url
+      }],
+    "imageUrl":imageUrl.asset->url,
+    "slider":[...slider[]{
+      ...,
+      "imageUrl":imageUrl.asset->url,
+      "cards":[...cards[]{
+        ...,
+        "imageUrl":imageUrl.asset->url
+      }]
+    }],
+    "cards":[...cards[]{
+      ...,
+      "imageUrl":icon.asset->url
+    }],
+    "content":[...content[]{
+      ...,
+      "description":[...description[]{
+        ...,
+        "imageUrl":imageUrl.asset->url
+      }],
+      "imageUrl":asset->url,
+      "arrayContent":[...arrayContent[]{
+        ...,
+        "imageUrl":imageUrl.asset->url
+      }]
+    }]
     }
-};
-
-export default function LTL() {
+    ]}`
+    })
+    const { content } = homeData
+    console.log(content)
     return (
         <>
-            <div className="flex flex-col gap-4">
+            {/* <div className="flex flex-col gap-4">
                 <div className="flex flex-col gap-8 min-h-64">
                     <div className={`flex flex-col items-center m-auto sm:px-8 px-4 py-4 sm:w-1/2  text-center gap-4`}>
                         <div className="flex flex-col ">
@@ -65,9 +88,6 @@ export default function LTL() {
                                 <div className="flex gap-4 flex-wrap">
                                     <BaseButton extraClass="flex !min-w-52 sm:w-max w-full justify-between">Get Started Today<MdKeyboardDoubleArrowRight /></BaseButton>
                                     <Link href={'/book-a-demo'} className="bg-transparent min-w-[9rem] flex justify-between items-center rounded-xl px-2 text-base-purple border-2  border-base-purple">Book a Demo<MdKeyboardDoubleArrowRight className="text-lg" /></Link>
-
-
-                                    {/* <BaseButton extraClass="flex !min-w-36 sm:w-max w-full justify-between border-2 text-base-purple border-base-purple bg-transparent">Book a Demo <MdKeyboardDoubleArrowRight /></BaseButton> */}
                                 </div>
 
                             </div>
@@ -157,7 +177,26 @@ export default function LTL() {
 
 
                 <HearFromUsAndBlogs hideBlogs={true} />
-            </div >
+            </div > */}
+
+            <div className={`flex flex-col gap-4`}>
+                {content.map((e, index) => {
+                    return (<div key={e._type + index}
+                        className={`${index != 0 ? index % 2 != 0 ? 'bg-white w-full' : 'bg-base-shadeBlue w-full' : ""}`}>
+                        {e._type == 'title' && <Title identifier="contact" breadCrumb={['Services', 'Less Than Truckload (LTL)']} header={e.header!} title={e.title} buttons={e.buttons} imageUrl={e.imageUrl} description={e.description} />}
+                        {e._type == 'tabs' && <TabPageComponent variation={e.variation!} header={e.header!} slider={e.slider as any} />}
+                        {e._type == 'content' && <Content content={e.content as any} />}
+                        {e._type == 'faqs' && <FAQSs header={e.header!} questions={e.questions!} description={e.description!} />}
+                        {e._type == 'mapComponent' && <CustomerBase header={e.header!} />}
+                        {e._type == 'refineTransport' && <RefineTransportPage />}
+                        {e._type == 'cards' && <CardsContent buttons={e.buttons} description={e.description!} header={e.header!} cards={e.cards as any} variation={e.variation!} />}
+                        {e._type == 'blogComponent' && <MainBlog header={e.header!} blogs={e.blogs} />}
+                        {e._type == 'testimonialComponent' && <Testimonials description={e.description} header={e.header!} testimonials={e.testimonials} />}
+                        {e._type == 'contentPageComponent' && <Content2 images={e.images} buttons={e.buttons} description={e.description} header={e.header!} video={e.video} />}
+                        {e._type == 'guideComponent' && <GuideToBook />}
+                    </div>)
+                })}
+            </div>
         </>
     )
 }

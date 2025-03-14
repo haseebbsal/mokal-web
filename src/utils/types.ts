@@ -145,4 +145,6 @@ export interface PagesContent {
     variation?:number,
     blogs?:[{_id:string,title:string,_createdAt:string,imageUrl:string}]
     testimonials?:[{_id:string,name:string,_createdAt:string,imageUrl:string,description:string,rating:number}]
+    video:string
+    images:[{imageUrl:string}]
 }

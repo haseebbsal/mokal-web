@@ -9,15 +9,19 @@ import RefineTransportPage from "@/components/page-components/refine-transportPa
 import CardsContent from "@/components/page-components/cards-content";
 import MainBlog from "@/components/page-components/main-blog";
 import Testimonials from "@/components/page-components/testimonials";
+import Content2 from "@/components/page-components/content2";
+import GuideToBook from "@/components/page-components/guide-to-book";
 
 
 
 export default async function WhoWeAre() {
 
-    const homeData: { content: [PagesContent] } = await client.fetch({
-        query: `*[_type=='who-we-are'][0]{
+  const homeData: { content: [PagesContent] } = await client.fetch({
+    query: `*[_type=='LTL'][0]{
   "content":[...contentBlocks[]->{
     ...,
+    "images":[...images[]{"imageUrl":asset->url}],
+    "video":video.asset->url,
      "testimonials":[...testimonials[]->{
        ...,
        "imageUrl":image.asset->url
@@ -53,12 +57,12 @@ export default async function WhoWeAre() {
     }]
     }
     ]}`
-    })
-    const { content } = homeData
+  })
+  const { content } = homeData
 
-    return (
-        <>
-            {/* <div className="flex flex-col gap-4">
+  return (
+    <>
+      {/* <div className="flex flex-col gap-4">
                 <div className="flex flex-col gap-8 min-h-64">
                     <div className={`flex flex-col items-center m-auto sm:px-8 px-4 py-4 sm:w-1/2  text-center gap-4`}>
                         <h1 className="sm:text-[3rem] text-[1.8rem] font-bold"><LinearGradientText text="Who We Are" /> </h1>
@@ -94,23 +98,26 @@ export default async function WhoWeAre() {
             </div> */}
 
 
-            <div className={`flex flex-col gap-4`}>
-                {content.map((e, index) => {
-                    return (<div key={e._type + index}
-                        className={`${index != 0 ? index % 2 != 0 ? 'bg-white w-full' : 'bg-base-shadeBlue w-full' : ""}`}>
-                        {e._type == 'title' && <Title identifier="who-we-are" breadCrumb={['Who We Are']} header={e.header!} title={e.title} buttons={e.buttons} imageUrl={e.imageUrl} description={e.description} />}
-                        {e._type == 'tabs' && <TabPageComponent variation={e.variation!} header={e.header!} slider={e.slider as any} />}
-                        {e._type == 'content' && <Content content={e.content as any} />}
-                        {e._type == 'faqs' && <FAQSs header={e.header!} questions={e.questions!} description={e.description!} />}
-                        {e._type == 'mapComponent' && <CustomerBase header={e.header!} />}
-                        {e._type == 'refineTransport' && <RefineTransportPage />}
-                        {e._type == 'cards' && <CardsContent buttons={e.buttons} description={e.description!} header={e.header!} cards={e.cards as any} variation={e.variation!} />}
-                        {e._type == 'blogComponent' && <MainBlog header={e.header!} blogs={e.blogs} />}
-                        {e._type == 'testimonialComponent' && <Testimonials header={e.header!} description={e.description} testimonials={e.testimonials} />}
+      <div className={`flex flex-col gap-4`}>
+        {content.map((e, index) => {
+          return (<div key={e._type + index}
+            className={`${index != 0 ? index % 2 != 0 ? 'bg-white w-full' : 'bg-base-shadeBlue w-full' : ""}`}>
+            {e._type == 'title' && <Title identifier="who-we-are" breadCrumb={['Who We Are']} header={e.header!} title={e.title} buttons={e.buttons} imageUrl={e.imageUrl} description={e.description} />}
+            {e._type == 'tabs' && <TabPageComponent variation={e.variation!} header={e.header!} slider={e.slider as any} />}
+            {e._type == 'content' && <Content content={e.content as any} />}
+            {e._type == 'faqs' && <FAQSs header={e.header!} questions={e.questions!} description={e.description!} />}
+            {e._type == 'mapComponent' && <CustomerBase header={e.header!} />}
+            {e._type == 'refineTransport' && <RefineTransportPage />}
+            {e._type == 'cards' && <CardsContent buttons={e.buttons} description={e.description!} header={e.header!} cards={e.cards as any} variation={e.variation!} />}
+            {e._type == 'blogComponent' && <MainBlog header={e.header!} blogs={e.blogs} />}
+            {e._type == 'testimonialComponent' && <Testimonials header={e.header!} description={e.description} testimonials={e.testimonials} />}
+            {e._type == 'contentPageComponent' && <Content2 images={e.images} buttons={e.buttons} description={e.description} header={e.header!} video={e.video} />}
+            {e._type == 'guideComponent' && <GuideToBook />}
 
-                    </div>)
-                })}
-            </div>
-        </>
-    )
+
+          </div>)
+        })}
+      </div>
+    </>
+  )
 }
