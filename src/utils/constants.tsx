@@ -1,8 +1,7 @@
 import TabNoSlider from "@/components/common/tabs/tab-no-slider"
-import { NavbarMenuSetting, TabItemProp } from "./types"
+import { NavbarMenuSetting} from "./types"
 import LinearGradientText from "@/components/common/linear-gradient-text"
 import TabWithSlider from "@/components/common/tabs/tab-with-slider"
-import Image from "next/image"
 import { FaFacebookF, FaInstagram, FaLinkedinIn, FaTwitter, FaYoutube } from "react-icons/fa"
 import SanityClient from "next-sanity-client"
 
@@ -61,13 +60,13 @@ export const navbarMenuSettings: NavbarMenuSetting[] = [
         extraClass: "!bg-transparent text-gray-600 !p-0 ",
         style: { padding: 0, color: 'grey' }
     },
-    {
-        name: "Francais",
-        link: '/',
-        isButton: true,
-        extraClass: "!bg-transparent text-gray-600 !p-0 ",
-        style: { padding: 0, color: 'grey' }
-    }
+    // {
+    //     name: "Francais",
+    //     link: '/',
+    //     isButton: true,
+    //     extraClass: "!bg-transparent text-gray-600 !p-0 ",
+    //     style: { padding: 0, color: 'grey' }
+    // }
 ]
 
 
@@ -269,28 +268,28 @@ export const reasonsToChooseUs = [
 ]
 
 
-export const managementPlatformTabs: TabItemProp = [
-    {
-        title: 'Dashboard',
-        component: <div className="w-full "><Image src={'/images/platform.svg'} alt="platform" className="h-full w-full " width={1000} height={1000} /></div>,
-        titleExtraClass: "blue"
-    },
-    {
-        title: "Real-Time Quotes",
-        component: <TabWithSlider title={<h1 className="sm:!text-3xl text-lg font-bold" >Trusted Courier Partner Solutions for <LinearGradientText text="Seamless Deliveries" /></h1>} description={['Enhance your shipping capabilities with MGC Freight’s reliable courier partnerships. We ensure timely deliveries, secure handling, and exceptional service, providing your business with the flexibility and efficiency needed to satisfy your customers every step of the way.']} carousel={[{ imageSrc: "/couriers/Artboard.svg", description: "Shipping, courier, and expedited transport services within the US, Canada." }, { imageSrc: "/couriers/gardewine.svg", description: "Leading trucking company providing logistics services across Canada for 70+ years." }, { imageSrc: "/couriers/DayandRoss.svg", description: "Logistics company that operates in various sectors, including logistics solutions" }, { description: "Canada’s most trusted transport carrier for over 60 years.", imageSrc: "/couriers/M-O-2.svg" }, { imageSrc: "/couriers/kindersley.svg", description: "Providing truckload and LTL service throughout North America" }, { imageSrc: "/couriers/DHL.svg", description: "American-founded German logistics company delivering over 1.8 billion parcels per year." }, { imageSrc: "/couriers/Canpar.svg", description: "Helping small parcel delivery companies’ shipping processes on a day-to-day basis." }]} />,
-        titleExtraClass: "blue"
-    },
-    {
-        title: "Tracking",
-        component: <TabWithSlider title={<h1 className="sm:!text-3xl text-lg font-bold" >Reliable <LinearGradientText text="LTL (Less Than Truckload)" /> Partner Solutions</h1>} description={['Optimize your freight shipping with MGC Freight’s LTL services. We provide cost-effective and flexible solutions, ensuring your smaller shipments are delivered safely and on time, no matter the destination.']} carousel={[{ imageSrc: "/couriers/Artboard.svg", description: "Shipping, courier, and expedited transport services within the US, Canada." }, { imageSrc: "/couriers/gardewine.svg", description: "Leading trucking company providing logistics services across Canada for 70+ years." }, { imageSrc: "/couriers/DayandRoss.svg", description: "Logistics company that operates in various sectors, including logistics solutions" }, { description: "Canada’s most trusted transport carrier for over 60 years.", imageSrc: "/couriers/M-O-2.svg" }, { imageSrc: "/couriers/kindersley.svg", description: "Providing truckload and LTL service throughout North America" }, { imageSrc: "/couriers/DHL.svg", description: "American-founded German logistics company delivering over 1.8 billion parcels per year." }, { imageSrc: "/couriers/Canpar.svg", description: "Helping small parcel delivery companies’ shipping processes on a day-to-day basis." }]} />,
-        titleExtraClass: "blue"
-    },
-    {
-        title: "Pickup",
-        component: <TabNoSlider title={<h1 className="sm:!text-3xl text-lg font-bold" >The <LinearGradientText text="Ultimate Platform" /> for Freight Brokers</h1>} description={['Streamline your operations with MGC Freight’s broker-friendly solutions. We offer efficient tools and reliable support to help you manage shipments, connect with carriers, and ensure seamless deliveries for your clients.']} />,
-        titleExtraClass: "blue"
-    }
-]
+// export const managementPlatformTabs: TabItemProp = [
+//     {
+//         title: 'Dashboard',
+//         component: <div className="w-full "><Image src={'/images/platform.svg'} alt="platform" className="h-full w-full " width={1000} height={1000} /></div>,
+//         titleExtraClass: "blue"
+//     },
+//     {
+//         title: "Real-Time Quotes",
+//         component: <TabWithSlider title={<h1 className="sm:!text-3xl text-lg font-bold" >Trusted Courier Partner Solutions for <LinearGradientText text="Seamless Deliveries" /></h1>} description={['Enhance your shipping capabilities with MGC Freight’s reliable courier partnerships. We ensure timely deliveries, secure handling, and exceptional service, providing your business with the flexibility and efficiency needed to satisfy your customers every step of the way.']} carousel={[{ imageSrc: "/couriers/Artboard.svg", description: "Shipping, courier, and expedited transport services within the US, Canada." }, { imageSrc: "/couriers/gardewine.svg", description: "Leading trucking company providing logistics services across Canada for 70+ years." }, { imageSrc: "/couriers/DayandRoss.svg", description: "Logistics company that operates in various sectors, including logistics solutions" }, { description: "Canada’s most trusted transport carrier for over 60 years.", imageSrc: "/couriers/M-O-2.svg" }, { imageSrc: "/couriers/kindersley.svg", description: "Providing truckload and LTL service throughout North America" }, { imageSrc: "/couriers/DHL.svg", description: "American-founded German logistics company delivering over 1.8 billion parcels per year." }, { imageSrc: "/couriers/Canpar.svg", description: "Helping small parcel delivery companies’ shipping processes on a day-to-day basis." }]} />,
+//         titleExtraClass: "blue"
+//     },
+//     {
+//         title: "Tracking",
+//         component: <TabWithSlider title={<h1 className="sm:!text-3xl text-lg font-bold" >Reliable <LinearGradientText text="LTL (Less Than Truckload)" /> Partner Solutions</h1>} description={['Optimize your freight shipping with MGC Freight’s LTL services. We provide cost-effective and flexible solutions, ensuring your smaller shipments are delivered safely and on time, no matter the destination.']} carousel={[{ imageSrc: "/couriers/Artboard.svg", description: "Shipping, courier, and expedited transport services within the US, Canada." }, { imageSrc: "/couriers/gardewine.svg", description: "Leading trucking company providing logistics services across Canada for 70+ years." }, { imageSrc: "/couriers/DayandRoss.svg", description: "Logistics company that operates in various sectors, including logistics solutions" }, { description: "Canada’s most trusted transport carrier for over 60 years.", imageSrc: "/couriers/M-O-2.svg" }, { imageSrc: "/couriers/kindersley.svg", description: "Providing truckload and LTL service throughout North America" }, { imageSrc: "/couriers/DHL.svg", description: "American-founded German logistics company delivering over 1.8 billion parcels per year." }, { imageSrc: "/couriers/Canpar.svg", description: "Helping small parcel delivery companies’ shipping processes on a day-to-day basis." }]} />,
+//         titleExtraClass: "blue"
+//     },
+//     {
+//         title: "Pickup",
+//         component: <TabNoSlider title={<h1 className="sm:!text-3xl text-lg font-bold" >The <LinearGradientText text="Ultimate Platform" /> for Freight Brokers</h1>} description={['Streamline your operations with MGC Freight’s broker-friendly solutions. We offer efficient tools and reliable support to help you manage shipments, connect with carriers, and ensure seamless deliveries for your clients.']} />,
+//         titleExtraClass: "blue"
+//     }
+// ]
 
 
 export const faqs = [

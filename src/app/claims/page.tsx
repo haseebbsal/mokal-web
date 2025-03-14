@@ -1,8 +1,6 @@
 import BaseButton from "@/components/common/base-button";
 import LinearGradientText from "@/components/common/linear-gradient-text";
 import { MdKeyboardDoubleArrowRight } from "react-icons/md";
-import { termsandcondtions } from "@/utils/constants";
-import BaseTabs from "@/components/common/base-tabs";
 import BaseBreadCrumb from "@/components/common/base-breadcrumb";
 import Link from "next/link";
 
@@ -45,7 +43,7 @@ export default function Claims() {
                         </div>
 
 
-                        <BaseTabs keys={[
+                        {/* <BaseTabs keys={[
                             {
                                 title: "Courier", component: <>
                                     <div className={`flex  flex-col  sm:gap-8 gap-4`}>
@@ -94,7 +92,7 @@ export default function Claims() {
                                     </div>
                                 </>
                             }
-                        ]} />
+                        ]} /> */}
 
                         { }
                     </div>

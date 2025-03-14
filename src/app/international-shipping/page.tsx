@@ -6,7 +6,7 @@ import HearFromUsAndBlogs from "@/components/page-components/hearFromUs-blogPost
 import ExpertLogistics from "@/components/page-components/expert-logistics";
 import BaseBreadCrumb from "@/components/common/base-breadcrumb";
 import Link from "next/link";
-import CustomerBase from "@/components/page-components/customer-base";
+// import CustomerBase from "@/components/page-components/customer-base";
 
 
 export default function InternationalShipping() {
@@ -45,7 +45,7 @@ export default function InternationalShipping() {
 
 
                     <div className="bg-white w-full">
-                        <CustomerBase heading={<h1 className="sm:text-[2.3rem] text-[1.5rem] font-bold">Global Shipping Solutions Across  <LinearGradientText extraClass="" text="Every Border" /></h1>}/>
+                        {/* <CustomerBase heading={<h1 className="sm:text-[2.3rem] text-[1.5rem] font-bold">Global Shipping Solutions Across  <LinearGradientText extraClass="" text="Every Border" /></h1>}/> */}
                     </div>
 
                 </div>

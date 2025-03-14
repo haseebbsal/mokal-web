@@ -1,18 +1,61 @@
-import BaseButton from "@/components/common/base-button";
-import LinearGradientText from "@/components/common/linear-gradient-text";
-import Image from "next/image";
-import { MdKeyboardDoubleArrowRight } from "react-icons/md";
-import ReasonsToChooseUs from "@/components/page-components/reasons-to-choose-us";
-import HearFromUsAndBlogs from "@/components/page-components/hearFromUs-blogPost";
-import CourierService from "@/components/page-components/courier-service";
-import BaseBreadCrumb from "@/components/common/base-breadcrumb";
-import Link from "next/link";
+import { PagesContent } from "@/utils/types";
+import { client } from "@/utils/constants";
+import Title from "@/components/page-components/title";
+import TabPageComponent from "@/components/page-components/tab";
+import Content from "@/components/page-components/content";
+import FAQSs from "@/components/page-components/faqs";
+import CustomerBase from "@/components/page-components/customer-base";
+import RefineTransportPage from "@/components/page-components/refine-transportPage";
+import CardsContent from "@/components/page-components/cards-content";
+import MainBlog from "@/components/page-components/main-blog";
+import Testimonials from "@/components/page-components/testimonials";
 
 
-export default function Truckload() {
+export default async function Truckload() {
+    const homeData: { content: [PagesContent] } = await client.fetch({
+        query: `*[_type=='truckload'][0]{
+      "content":[...contentBlocks[]->{
+        ...,
+         "testimonials":[...testimonials[]->{
+           ...,
+           "imageUrl":image.asset->url
+          }],
+         "blogs":[...blogs[]->{
+           ...,
+           "imageUrl":image.asset->url
+          }],
+        "imageUrl":imageUrl.asset->url,
+        "slider":[...slider[]{
+          ...,
+          "imageUrl":imageUrl.asset->url,
+          "cards":[...cards[]{
+            ...,
+            "imageUrl":imageUrl.asset->url
+          }]
+        }],
+        "cards":[...cards[]{
+          ...,
+          "imageUrl":icon.asset->url
+        }],
+        "content":[...content[]{
+          ...,
+          "description":[...description[]{
+            ...,
+            "imageUrl":imageUrl.asset->url
+          }],
+          "imageUrl":asset->url,
+          "arrayContent":[...arrayContent[]{
+            ...,
+            "imageUrl":imageUrl.asset->url
+          }]
+        }]
+        }
+        ]}`
+    })
+    const { content } = homeData
     return (
         <>
-            <div className="flex flex-col gap-4">
+            {/* <div className="flex flex-col gap-4">
                 <div className="flex flex-col gap-8 min-h-64">
                     <div className={`flex flex-col items-center m-auto sm:px-8 px-4 py-4 sm:w-1/2  text-center gap-4`}>
                         <div className="flex flex-col ">
@@ -35,7 +78,6 @@ export default function Truckload() {
                                 <Link href={'/book-a-demo'} className="bg-transparent min-w-[9rem] flex justify-between items-center rounded-xl px-2 text-base-purple border-2  border-base-purple">Book a Demo<MdKeyboardDoubleArrowRight className="text-lg" /></Link>
 
 
-                                {/* <BaseButton extraClass="flex !min-w-36 sm:w-max w-full justify-between border-2 text-base-purple border-base-purple bg-transparent">Book a Demo <MdKeyboardDoubleArrowRight /></BaseButton> */}
                                 <BaseButton extraClass="flex !min-w-52 sm:w-max w-full justify-between">Get Started Today<MdKeyboardDoubleArrowRight /></BaseButton>
                             </div>
 
@@ -49,6 +91,24 @@ export default function Truckload() {
                 <ReasonsToChooseUs />
 
                 <HearFromUsAndBlogs />
+            </div> */}
+
+            <div className={`flex flex-col gap-4`}>
+                {content.map((e, index) => {
+                    return (<div key={e._type + index}
+                        className={`${index != 0 ? index % 2 != 0 ? 'bg-white w-full' : 'bg-base-shadeBlue w-full' : ""}`}>
+                        {e._type == 'title' && <Title identifier="truckload" breadCrumb={['Services', 'Truckload']} header={e.header!} title={e.title} buttons={e.buttons} imageUrl={e.imageUrl} description={e.description} />}
+                        {e._type == 'tabs' && <TabPageComponent variation={e.variation!} header={e.header!} slider={e.slider as any} />}
+                        {e._type == 'content' && <Content content={e.content as any} />}
+                        {e._type == 'faqs' && <FAQSs header={e.header!} questions={e.questions!} description={e.description!} />}
+                        {e._type == 'mapComponent' && <CustomerBase header={e.header!} />}
+                        {e._type == 'refineTransport' && <RefineTransportPage />}
+                        {e._type == 'cards' && <CardsContent buttons={e.buttons} description={e.description!} header={e.header!} cards={e.cards as any} variation={e.variation!} />}
+                        {e._type == 'blogComponent' && <MainBlog header={e.header!} blogs={e.blogs} />}
+                        {e._type == 'testimonialComponent' && <Testimonials header={e.header!} description={e.description} testimonials={e.testimonials} />}
+
+                    </div>)
+                })}
             </div>
         </>
     )

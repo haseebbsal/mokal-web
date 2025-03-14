@@ -1,37 +1,35 @@
-import { client} from "@/utils/constants";
 import LinearGradientText from "../common/linear-gradient-text";
 import { FAQS } from "@/utils/types";
 import AccordionFaqs from "./accordion.faq";
 
-export default async function FAQSs({data}:{data?:FAQS}) {
+export default async function FAQSs({header,description,questions}:FAQS) {
 
-    const faqsData: FAQS =data??  await client.fetch(
-        {
-            query: `*[_type == 'faqs'][0]{
-  // ...,
-   description,
-     "header":[...header[]{
-       Value,
-         Highlight
-     }],
-               "questions":[...questions[]{answer,question}]
- }`, config: {
-                cache: 'no-store',
-            }
-        },
+//     const faqsData: FAQS =data??  await client.fetch(
+//         {
+//             query: `*[_type == 'faqs'][0]{
+//   // ...,
+//    description,
+//      "header":[...header[]{
+//        Value,
+//          Highlight
+//      }],
+//                "questions":[...questions[]{answer,question}]
+//  }`, config: {
+//                 cache: 'no-store',
+//             }
+//         },
 
-    )
+//     )
 
-    console.log(faqsData)
+    // console.log(faqsData)
 
 
     return (
 
-        <div className="bg-white w-full">
             <div className={`flex flex-col m-auto sm:px-8 px-4 sm:py-20 py-16 sm:w-[80%] text-center gap-4`}>
                 <h1 className="font-bold sm:text-[2.3rem] justify-center flex gap-2 text-[1.5rem]">
                     {
-                        faqsData.header.map((e) => {
+                        header.map((e) => {
                             if (e.Highlight) {
                                 return <LinearGradientText key={e.Value} text={e.Value} />
                             }
@@ -39,10 +37,9 @@ export default async function FAQSs({data}:{data?:FAQS}) {
                         })
                     }
                 </h1>
-                <p className="text-text-gray">{faqsData.description}</p>
-              <AccordionFaqs questions={faqsData.questions}/>
+                <p className="text-text-gray">{description}</p>
+              <AccordionFaqs questions={questions}/>
             </div>
-        </div>
 
     )
 }

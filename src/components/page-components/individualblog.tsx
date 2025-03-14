@@ -10,6 +10,7 @@ import { IndvidualBlog } from "@/utils/types"
 
 export default function IndividualBlog({data}:{data:IndvidualBlog}) {
      const { control } = useForm()
+    //  console.log(data)
     return (
         <>
             <div className="flex flex-col gap-4">
@@ -26,7 +27,7 @@ export default function IndividualBlog({data}:{data:IndvidualBlog}) {
                     <div className={`grid sm:grid-cols-[1fr_0.4fr] grid-cols-1 m-auto sm:px-8 px-4 sm:py-20 py-16 sm:w-[80%] text-center gap-8`}>
 
                         <div className={`flex flex-col sm:order-1 order-2 flex-wrap items-start text-start gap-4`}>
-                            <Image className="flex-1 w-full max-h-52 rounded-xl object-cover" src={'/blogs/blog.svg'} alt="blog" height={70} width={70} />
+                            <Image className="flex-1 w-full max-h-52 rounded-xl object-cover" src={data.imageUrl} alt="blog" height={70} width={70} />
                             <h1 className="text-text-blue text-2xl font-semibold">{data.title}</h1>
                             <p className="text-text-gray font-semibold">Posted on {new Date(data.publishedAt).toDateString()}</p>
 

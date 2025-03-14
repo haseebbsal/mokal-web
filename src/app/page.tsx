@@ -1,76 +1,98 @@
-import BaseButton from "@/components/common/base-button";
-import Image from "next/image";
-import { BsBoxSeam } from "react-icons/bs";
-import { MdKeyboardDoubleArrowRight } from "react-icons/md";
-import { client, HomePageTabs, managementPlatformTabs } from "@/utils/constants";
-import LinearGradientText from "@/components/common/linear-gradient-text";
-import BaseTabs from "@/components/common/base-tabs";
-import ReasonsToChooseUs from "@/components/page-components/reasons-to-choose-us";
-import LinearGradientCircle from "@/components/common/linear-gradient-circle";
-import RefineTransportForm from "@/components/forms/refine-transport-form";
-import Link from "next/link";
+import { client } from "@/utils/constants";
 import CustomerBase from "@/components/page-components/customer-base";
-import { FAQS,  HeaderAndCards } from "@/utils/types";
+import {  PagesContent } from "@/utils/types";
 import FAQSs from "@/components/page-components/faqs";
+import Title from "@/components/page-components/title";
+import TabPageComponent from "@/components/page-components/tab";
+import Content from "@/components/page-components/content";
+import RefineTransportPage from "@/components/page-components/refine-transportPage";
+import CardsContent from "@/components/page-components/cards-content";
+import MainBlog from "@/components/page-components/main-blog";
+import Testimonials from "@/components/page-components/testimonials";
 
 export default async function Home() {
 
-  const homeData:{contentBlocks:HeaderAndCards[]}= await client.fetch({
+  const homeData: { content: [PagesContent] } = await client.fetch({
     query: `*[_type=='home'][0]{
-...,
-  
-  "contentBlocks":[...contentBlocks[]->{
+  "content":[...contentBlocks[]->{
     ...,
-    "cards":[...cards[]{
-      heading,
-      "imageUrl":icon.asset->url,
-             description
+     "testimonials":[...testimonials[]->{
+       ...,
+       "imageUrl":image.asset->url
+      }],
+     "blogs":[...blogs[]->{
+       ...,
+       "imageUrl":image.asset->url
+      }],
+    "imageUrl":imageUrl.asset->url,
+    "slider":[...slider[]{
+      ...,
+      "imageUrl":imageUrl.asset->url,
+      "cards":[...cards[]{
+        ...,
+        "imageUrl":imageUrl.asset->url
+      }]
     }],
-    "blogs":[...blogs[]->{
-      header,
-      "createdAt":_createdAt,
-      "imageUrl":image.asset->url,
-      "contents":[...contents[].children[].text]
+    "cards":[...cards[]{
+      ...,
+      "imageUrl":icon.asset->url
+    }],
+    "content":[...content[]{
+      ...,
+      "description":[...description[]{
+        ...,
+        "imageUrl":imageUrl.asset->url
+      }],
+      "imageUrl":asset->url,
+      "arrayContent":[...arrayContent[]{
+        ...,
+        "imageUrl":imageUrl.asset->url
+      }]
     }]
-  }]
-}`
+    }
+    ]}`
   })
+  const { content } = homeData
 
-  // console.log(homeData)
+  console.log(content)
 
   return (
     <>
       <div className={`flex flex-col gap-4`}>
-        <div className="flex flex-col gap-8">
-          <div className={`flex flex-col items-center m-auto sm:px-8 px-4 py-4 sm:w-1/2  text-center gap-4`}>
-            <div className="px-16 py-2 border-2 rounded-lg flex gap-2 items-center w-max bg-white text-text-gray  ">
-              <p className="font-bold ">Welcome to MGC FREIGHT</p>
-              <BsBoxSeam className="text-base-purple" />
-            </div>
-            <h1 className="sm:text-[3rem] text-[1.8rem] font-bold">The Modern Freight <LinearGradientText text="Solution" /> for Your Business in One Place</h1>
-            <p className="text-gray-600 sm:text-lg text-md">Seamlessly manage logistics and operations with a complete freight solution tailored for your business needs.</p>
-            <div className="flex gap-2">
-              <BaseButton>Get Started Today<MdKeyboardDoubleArrowRight className="text-lg" /></BaseButton>
-              <Link href={'/get-a-quote'} className="bg-transparent min-w-[9rem] flex justify-between items-center rounded-xl px-2 text-base-purple border-2  border-base-purple">Get A Quote<MdKeyboardDoubleArrowRight className="text-lg" /></Link>
-            </div>
-          </div>
-          <div className={`sm:px-8 px-4 py-4 flex justify-center  `}>
-            <Image src="/images/dashboard.svg" alt="dashboard" width={1000} height={1000} className="" />
-          </div>
-        </div>
+        {content.map((e, index) => {
+          return (<div key={e._type + index}
+            className={`${index != 0 ? index % 2 != 0 ? 'bg-white w-full' : 'bg-base-shadeBlue w-full' : ""}`}>
+            {e._type == 'title' && <Title header={e.header!} title={e.title} buttons={e.buttons} imageUrl={e.imageUrl} description={e.description} />}
+            {e._type == 'tabs' && <TabPageComponent variation={e.variation!} header={e.header!} slider={e.slider as any} />}
+            {e._type == 'content' && <Content content={e.content as any} />}
+            {e._type == 'faqs' && <FAQSs header={e.header!} questions={e.questions!} description={e.description!} />}
+            {e._type == 'mapComponent' && <CustomerBase header={e.header!} />}
+            {e._type == 'refineTransport' && <RefineTransportPage />}
+            {e._type == 'cards' && <CardsContent description={e.description!} header={e.header!} cards={e.cards as any} variation={e.variation!} />}
+            {e._type == 'blogComponent' && <MainBlog header={e.header!} blogs={e.blogs} />}
+            {e._type == 'testimonialComponent' && <Testimonials header={e.header!} description={e.description} testimonials={e.testimonials} />}
+          </div>)
+          // if (e._type == 'title') return <Title key={e._type + index} header={e.header!} title={e.title} buttons={e.buttons} imageUrl={e.imageUrl} description={e.description} />
+          // if (e._type == 'tabs') return <TabPageComponent key={e._type + index} header={e.header!} slider={e.slider as any} />
+          // if(e._type=='content') return <Content key={e._type + index} content={e.content as any}/>
+          // if(e._type=='faqs') return <FAQSs key={e._type + index} header={e.header!} questions={e.questions!} description={e.description!}  />
+          // if(e._type=='mapComponent') return <CustomerBase key={e._type + index} header={e.header!}/>
+          // if(e._type=='refineTransport') return <RefineTransportPage key={e._type + index}/>
+          // if(e._type=='cards') return <CardsContent description={e.description!} key={e._type + index} header={e.header!} cards={e.cards as any} variation={e.variation!} />
+        })}
 
-        <div className="bg-white">
+        {/* <div className="bg-white">
           <div className={`flex flex-col items-center m-auto sm:px-8 px-4 sm:py-20 py-16  text-center gap-4`}>
             <h1 className="sm:text-[2.3rem] text-[1.5rem] font-bold">Complete <LinearGradientText text="Freight & Logistics" /> Solutions</h1>
             <div className="flex flex-col sm:w-[80%] w-full gap-4">
               <BaseTabs keys={HomePageTabs} />
             </div>
           </div>
-        </div>
+        </div> */}
 
-        <ReasonsToChooseUs reasonsToChooseUs={homeData.contentBlocks[0] as HeaderAndCards} />
+        {/* <ReasonsToChooseUs reasonsToChooseUs={homeData.contentBlocks[0] as HeaderAndCards} /> */}
 
-        <div className="bg-white w-full">
+        {/* <div className="bg-white w-full">
           <div className={`flex sm:flex-row flex-col m-auto sm:px-8 px-4 sm:py-20 py-16 sm:w-[80%] text-center gap-16`}>
             <Image className="flex-1" src={'/images/metrics.svg'} alt="metrics" width={500} height={500} />
             <div className="flex flex-1 flex-col sm:items-start items-center sm:text-start text-center gap-4">
@@ -90,17 +112,17 @@ export default async function Home() {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
 
-        <div className="bg-base-shadeBlue  p-8 flex flex-col w-full gap-4 items-center ">
+        {/* <div className="bg-base-shadeBlue  p-8 flex flex-col w-full gap-4 items-center ">
           <h1 className="sm:text-[2.3rem] text-[1.5rem] text-center font-bold">Powered by Our Robust, Innovative Shipping <LinearGradientText text="Management Platform" /></h1>
           <div className="sm:w-[80%] w-full">
             <BaseTabs keys={managementPlatformTabs} />
           </div>
-        </div>
+        </div> */}
 
 
-        <div className="bg-white w-full">
+        {/* <div className="bg-white w-full">
           <div className={`flex sm:flex-row flex-col m-auto sm:px-8 px-4 sm:py-20 py-16 sm:w-[80%] text-center gap-16`}>
             <div className="flex sm:order-0 order-2 flex-1 flex-col sm:items-start items-center sm:text-start text-center gap-4">
               <h1 className="sm:text-[3rem] text-[1.5rem] font-bold">Track Your Shipments <LinearGradientText extraClass="" text="Over Time" /></h1>
@@ -118,10 +140,10 @@ export default async function Home() {
             </div>
             <Image className="order-0 sm:order-2 flex-1" src={'/images/track-shipments.svg'} alt="metrics" width={500} height={500} />
           </div>
-        </div>
+        </div> */}
 
 
-        <div className="bg-base-shadeBlue  p-8  w-full">
+        {/* <div className="bg-base-shadeBlue  p-8  w-full">
           <div className="sm:w-[80%] m-auto flex flex-col  gap-4 items-center">
             <h1 className="sm:text-[2.3rem] text-[1.5rem] text-center font-bold">All Your <LinearGradientText text="Freight Operations" /> in One Platform </h1>
             <p className="text-text-gray text-center">There are many solutions available, but most are limited in scope. MGC Freight brings together tracking, cost optimization, and logistics management, offering a seamless experience for your business needs.</p>
@@ -163,12 +185,11 @@ export default async function Home() {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
 
-        <div className="bg-white w-full">
-          <FAQSs data={homeData.contentBlocks[1] as unknown as FAQS}/>
+        {/* <div className="bg-white w-full">
           <CustomerBase />
-        </div>
+        </div> */}
 
         {/* <div className="bg-base-shadeBlue w-full">
           <div className={`flex flex-col m-auto sm:px-8 px-4 sm:py-20 py-16 sm:w-[80%] text-center gap-4`}>
@@ -179,16 +200,7 @@ export default async function Home() {
           </div>
         </div> */}
 
-        <div className="bg-linearBlue w-full relative overflow-hidden">
-          <div className={`flex flex-col m-auto sm:px-8 px-4 sm:py-20 py-16 sm:w-[80%]  text-center gap-4`}>
-            <div className="flex flex-col gap-4 relative z-10 text-start sm:w-1/2 text-white">
-              <Image src={'/logo-fullWhite.svg'} alt="logo full White" height={600} width={600} />
-              <h1 className="sm:text-[2.3rem] text-[1.3rem] font-bold">REFINING TRANSPORTATION</h1>
-              <RefineTransportForm />
-            </div>
-            <Image className="absolute right-0 top-0 z-0 h-full sm:block hidden" src={'/images/dashboard1.svg'} alt="dashboard1" width={700} height={600} />
-          </div>
-        </div>
+
 
 
       </div>

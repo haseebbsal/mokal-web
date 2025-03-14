@@ -22,6 +22,8 @@ export default async function BlogsPage() {
     }
     )
 
+    console.log('blogsdata',blogsData)
+
     return (
         <>
             <BlogsClient data={blogsData}/>

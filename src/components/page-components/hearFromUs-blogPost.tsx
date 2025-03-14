@@ -3,6 +3,7 @@ import BaseSlider from "../common/base-slider";
 import LinearGradientText from "../common/linear-gradient-text";
 import BlogPost from "../common/blog-post";
 import { HearFromUsAndBlogsProps } from "@/utils/types";
+import { client } from "@/utils/constants";
 
 
 
@@ -32,16 +33,42 @@ export const responsiveWhoWeAre = {
 
 
 
-export default function HearFromUsAndBlogs({ hideBlogs , hideHearFromUs , bgHearFromUs = "bg-white", bgBlogs = "bg-white" }: HearFromUsAndBlogsProps) {
+export default async function HearFromUsAndBlogs({ hideBlogs, hideHearFromUs, bgHearFromUs = "bg-white", bgBlogs = "bg-white" }: HearFromUsAndBlogsProps) {
+
+    const fetchData: any = await client.fetch({
+        query: `*[_type=='blogComponent'][0]{
+      ...  
+    }
+                `
+    })
+
+    const fetchData2: any = await client.fetch({
+        query: `*[_type=='testimonialComponent'][0]{
+      ...  
+    }
+                `
+    })
+    const header: [{ Value: string, Highlight: boolean }] = fetchData.header
+    const blogs: [{ _id: string, title: string, _createdAt: string, imageUrl: string }] =fetchData.header
+    const description:string=fetchData2.description
+    const testimonials:[{_id:string,name:string,_createdAt:string,imageUrl:string,description:string,rating:number}]=fetchData2.testimonials
+    const header2:[{ Value: string, Highlight: boolean }] =fetchData2.header
     return (
         <div>
             {!hideHearFromUs && <div className={`${bgHearFromUs} w-full`}>
                 <div className={`flex flex-col m-auto sm:px-8 px-4 sm:py-20 py-16 sm:w-[80%] text-center gap-4`}>
-                    <h1 className="font-bold sm:text-[2.3rem] text-[1.5rem]">Hear from Our <LinearGradientText text="Customers" /></h1>
-                    <p className="text-text-gray">Discover how MGC Freight has transformed the logistics and shipping experience for businesses of all sizes. Real stories from our satisfied clients highlight the value of our efficient solutions and commitment to excellence.</p>
+                    <h1 className="font-bold sm:text-[2.3rem] text-[1.5rem]">
+                        {header2.map((e) => {
+                            if (e.Highlight) {
+                                return <LinearGradientText extraClass="mr-2" key={e.Value} text={e.Value} />
+                            }
+                            return <span className="mr-2" key={e.Value}>{e.Value}</span>
+                        })}
+                    </h1>
+                    <p className="text-text-gray">{description}</p>
                     <div className="w-full">
                         <BaseSlider extraSliderClass="min-h-[20rem]" renderDotsOutside={false} showDots renderArrowsWhenDisabled={false} renderButtonGroupOutside={false} extraResponsive={responsiveWhoWeAre}>
-                            {[1, 2, 3, 4, 5, 6, 7].map((_, index) => <BlogPost key={index + Math.random()} index={index} />)}
+                            {testimonials!.map((el, index) => <BlogPost rating={el.rating} description={el.description} name={el.name} imageUrl={el.imageUrl} createdAt={el._createdAt} key={index + Math.random()} index={index} />)}
                         </BaseSlider>
                     </div>
                 </div>
@@ -50,61 +77,30 @@ export default function HearFromUsAndBlogs({ hideBlogs , hideHearFromUs , bgHear
 
             {!hideBlogs && <div className={`${bgBlogs} w-full`}>
                 <div className={`flex flex-col m-auto sm:px-8 px-4 sm:py-20 py-16 sm:w-[80%] text-center gap-4`}>
-                    <h1 className="font-bold sm:text-[2.3rem] text-[1.5rem]">Recent <LinearGradientText text="Blog" /> Posts</h1>
-                    <p className="text-text-gray">Discover how MGC Freight has transformed the logistics and shipping experience for businesses of all sizes. Real stories from our satisfied clients highlight the value of our efficient solutions and commitment to excellence.</p>
+                    <h1 className="font-bold sm:text-[2.3rem] text-[1.5rem]">
+                        {
+                            header.map((e) => {
+                                if (e.Highlight) {
+                                    return <LinearGradientText extraClass="mr-2" key={e.Value} text={e.Value} />
+                                }
+                                return <span className="mr-2" key={e.Value}>{e.Value}</span>
+                            })
+                        }
+                    </h1>
+                    {/* <p className="text-text-gray">Discover how MGC Freight has transformed the logistics and shipping experience for businesses of all sizes. Real stories from our satisfied clients highlight the value of our efficient solutions and commitment to excellence.</p> */}
                     <div className="w-full">
                         <BaseSlider extraResponsive={responsiveWhoWeAre}>
-                            <div className="px-8">
+                            {blogs?.map((e) => <div key={e.imageUrl} className="px-8">
                                 <div className="p-4 text-base-blue items-start text-start shadow-xl bg-white rounded-xl flex flex-col gap-2">
-                                    <Image className="flex-1 w-full" src={'/blogs/blog.svg'} alt="blog" height={70} width={70} />
-                                    <p className="font-semibold text-xl">The Ultimate Guide to Simplifying Freight Logistics</p>
-                                    <p className="text-xs text-text-gray">Jan 05, 2024</p>
-                                    <div className="flex gap-2 w-full items-center">
-                                        <Image src={'/people/person.svg'} alt="person" height={30} width={30} />
-                                        <p className="text-sm text-black">Patrick</p>
-                                    </div>
+                                    <Image className="flex-1 w-full" src={e.imageUrl} alt="blog" height={70} width={70} />
+                                    <p className="font-semibold text-xl">{e.title}</p>
+                                    <p className="text-xs text-text-gray">{new Date(e._createdAt).toDateString()}</p>
+                                    {/* <div className="flex gap-2 w-full items-center">
+                                               <Image src={'/people/person.svg'} alt="person" height={30} width={30} />
+                                               <p className="text-sm text-black">Patrick</p>
+                                           </div> */}
                                 </div>
-                            </div>
-
-
-                            <div className="px-8">
-                                <div className="p-4 text-base-blue items-start text-start shadow-xl bg-white rounded-xl flex flex-col gap-2">
-                                    <Image className="flex-1 w-full" src={'/blogs/blog.svg'} alt="blog" height={70} width={70} />
-                                    <p className="font-semibold text-xl">The Ultimate Guide to Simplifying Freight Logistics</p>
-                                    <p className="text-xs text-text-gray">Jan 05, 2024</p>
-                                    <div className="flex gap-2 w-full items-center">
-                                        <Image src={'/people/person.svg'} alt="person" height={30} width={30} />
-                                        <p className="text-sm text-black">Patrick</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div className="px-8">
-                                <div className="p-4 text-base-blue items-start text-start shadow-xl bg-white rounded-xl flex flex-col gap-2">
-                                    <Image className="flex-1 w-full" src={'/blogs/blog.svg'} alt="blog" height={70} width={70} />
-                                    <p className="font-semibold text-xl">The Ultimate Guide to Simplifying Freight Logistics</p>
-                                    <p className="text-xs text-text-gray">Jan 05, 2024</p>
-                                    <div className="flex gap-2 w-full items-center">
-                                        <Image src={'/people/person.svg'} alt="person" height={30} width={30} />
-                                        <p className="text-sm text-black">Patrick</p>
-                                    </div>
-                                </div>
-                            </div>
-
-
-
-                            <div className="px-8">
-                                <div className="p-4 text-base-blue items-start text-start shadow-xl bg-white rounded-xl flex flex-col gap-2">
-                                    <Image className="flex-1 w-full" src={'/blogs/blog.svg'} alt="blog" height={70} width={70} />
-                                    <p className="font-semibold text-xl">The Ultimate Guide to Simplifying Freight Logistics</p>
-                                    <p className="text-xs text-text-gray">Jan 05, 2024</p>
-                                    <div className="flex gap-2 w-full items-center">
-                                        <Image src={'/people/person.svg'} alt="person" height={30} width={30} />
-                                        <p className="text-sm text-black">Patrick</p>
-                                    </div>
-                                </div>
-                            </div>
-
+                            </div>)}
 
                         </BaseSlider>
                     </div>
