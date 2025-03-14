@@ -11,6 +11,7 @@ import MainBlog from "@/components/page-components/main-blog";
 import Testimonials from "@/components/page-components/testimonials";
 import Content2 from "@/components/page-components/content2";
 import GuideToBook from "@/components/page-components/guide-to-book";
+import GrowYourBusiness from "@/components/page-components/grow-your-business";
 
 export default async function Home() {
 
@@ -77,6 +78,8 @@ export default async function Home() {
             {e._type == 'testimonialComponent' && <Testimonials header={e.header!} description={e.description} testimonials={e.testimonials} />}
             {e._type == 'contentPageComponent' && <Content2 images={e.images} buttons={e.buttons} description={e.description} header={e.header!} video={e.video} />}
             {e._type == 'guideComponent' && <GuideToBook />}
+            {e._type == 'growYourBusiness' && <GrowYourBusiness />}
+
 
           </div>)
           // if (e._type == 'title') return <Title key={e._type + index} header={e.header!} title={e.title} buttons={e.buttons} imageUrl={e.imageUrl} description={e.description} />

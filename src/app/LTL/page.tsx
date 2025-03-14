@@ -11,6 +11,7 @@ import Testimonials from "@/components/page-components/testimonials";
 import { PagesContent } from "@/utils/types";
 import { client } from "@/utils/constants";
 import Content2 from "@/components/page-components/content2";
+import GrowYourBusiness from "@/components/page-components/grow-your-business";
 
 
 
@@ -194,6 +195,8 @@ export default async function LTL() {
                         {e._type == 'testimonialComponent' && <Testimonials description={e.description} header={e.header!} testimonials={e.testimonials} />}
                         {e._type == 'contentPageComponent' && <Content2 images={e.images} buttons={e.buttons} description={e.description} header={e.header!} video={e.video} />}
                         {e._type == 'guideComponent' && <GuideToBook />}
+                        {e._type == 'growYourBusiness' && <GrowYourBusiness />}
+
                     </div>)
                 })}
             </div>

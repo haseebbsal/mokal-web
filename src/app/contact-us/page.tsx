@@ -3,6 +3,7 @@ import Content from "@/components/page-components/content";
 import Content2 from "@/components/page-components/content2";
 import CustomerBase from "@/components/page-components/customer-base";
 import FAQSs from "@/components/page-components/faqs";
+import GrowYourBusiness from "@/components/page-components/grow-your-business";
 import GuideToBook from "@/components/page-components/guide-to-book";
 import MainBlog from "@/components/page-components/main-blog";
 import RefineTransportPage from "@/components/page-components/refine-transportPage";
@@ -90,6 +91,7 @@ export default async function ContactUs() {
             {e._type == 'testimonialComponent' && <Testimonials description={e.description} header={e.header!} testimonials={e.testimonials} />}
             {e._type == 'contentPageComponent' && <Content2 images={e.images} buttons={e.buttons} description={e.description} header={e.header!} video={e.video} />}
             {e._type == 'guideComponent' && <GuideToBook />}
+            {e._type=='growYourBusiness' &&  <GrowYourBusiness />}
 
           </div>)
         })}
