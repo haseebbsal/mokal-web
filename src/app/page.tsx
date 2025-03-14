@@ -15,7 +15,7 @@ import GuideToBook from "@/components/page-components/guide-to-book";
 export default async function Home() {
 
   const homeData: { content: [PagesContent] } = await client.fetch({
-    query: `*[_type=='LTL'][0]{
+    query: `*[_type=='home'][0]{
   "content":[...contentBlocks[]->{
     ...,
     "images":[...images[]{"imageUrl":asset->url}],
