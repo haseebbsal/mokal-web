@@ -37,7 +37,11 @@ export default async function HearFromUsAndBlogs({ hideBlogs, hideHearFromUs, bg
 
     const fetchData: any = await client.fetch({
         query: `*[_type=='blogComponent'][0]{
-      ...  
+      ...  ,
+      "blogs":[...blogs[]->{
+      ...,
+      "imageUrl":image.asset->url
+      }]
     }
                 `
     })
@@ -53,11 +57,11 @@ export default async function HearFromUsAndBlogs({ hideBlogs, hideHearFromUs, bg
                 `
     })
     const header: [{ Value: string, Highlight: boolean }] = fetchData.header
-    const blogs: [{ _id: string, title: string, _createdAt: string, imageUrl: string }] =fetchData.header
-    const description:string=fetchData2.description
-    const testimonials:[{_id:string,name:string,_createdAt:string,imageUrl:string,description:string,rating:number}]=fetchData2.testimonials
-    const header2:[{ Value: string, Highlight: boolean }] =fetchData2.header
-    console.log(fetchData2)
+    const blogs: [{ _id: string, title: string, _createdAt: string, imageUrl: string }] = fetchData.blogs
+    const description: string = fetchData2.description
+    const testimonials: [{ _id: string, name: string, _createdAt: string, imageUrl: string, description: string, rating: number }] = fetchData2.testimonials
+    const header2: [{ Value: string, Highlight: boolean }] = fetchData2.header
+    // console.log(fetchData2)
     return (
         <div>
             {!hideHearFromUs && <div className={`${bgHearFromUs} w-full`}>
