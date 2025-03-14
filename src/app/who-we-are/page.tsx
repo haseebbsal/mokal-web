@@ -17,7 +17,7 @@ import GuideToBook from "@/components/page-components/guide-to-book";
 export default async function WhoWeAre() {
 
   const homeData: { content: [PagesContent] } = await client.fetch({
-    query: `*[_type=='LTL'][0]{
+    query: `*[_type=='who-we-are'][0]{
   "content":[...contentBlocks[]->{
     ...,
     "images":[...images[]{"imageUrl":asset->url}],

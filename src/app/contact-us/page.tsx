@@ -14,7 +14,7 @@ import { PagesContent } from "@/utils/types";
 
 export default async function ContactUs() {
   const homeData: { content: [PagesContent] } = await client.fetch({
-    query: `*[_type=='LTL'][0]{
+    query: `*[_type=='contact'][0]{
   "content":[...contentBlocks[]->{
     ...,
     "video":video.asset->url,
