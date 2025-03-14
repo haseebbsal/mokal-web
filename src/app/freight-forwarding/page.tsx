@@ -112,18 +112,18 @@ export default async function FreightForwarding() {
                 {content.map((e, index) => {
                     return (<div key={e._type + index}
                         className={`${index != 0 ? index % 2 != 0 ? 'bg-white w-full' : 'bg-base-shadeBlue w-full' : ""}`}>
-                        {e._type == 'title' && <Title identifier="freight" breadCrumb={['Services', 'Freight Forwarding']} header={e.header!} title={e.title} buttons={e.buttons} imageUrl={e.imageUrl} description={e.description} />}
+                        {e._type == 'title' && <Title header={e.header!} title={e.title} buttons={e.buttons} imageUrl={e.imageUrl} description={e.description} />}
                         {e._type == 'tabs' && <TabPageComponent variation={e.variation!} header={e.header!} slider={e.slider as any} />}
                         {e._type == 'content' && <Content content={e.content as any} />}
                         {e._type == 'faqs' && <FAQSs header={e.header!} questions={e.questions!} description={e.description!} />}
                         {e._type == 'mapComponent' && <CustomerBase header={e.header!} />}
                         {e._type == 'refineTransport' && <RefineTransportPage />}
-                        {e._type == 'cards' && <CardsContent buttons={e.buttons} description={e.description!} header={e.header!} cards={e.cards as any} variation={e.variation!} />}
+                        {e._type == 'cards' && <CardsContent description={e.description!} header={e.header!} cards={e.cards as any} variation={e.variation!} />}
                         {e._type == 'blogComponent' && <MainBlog header={e.header!} blogs={e.blogs} />}
-                        {e._type == 'testimonialComponent' && <Testimonials description={e.description} header={e.header!} testimonials={e.testimonials} />}
+                        {e._type == 'testimonialComponent' && <Testimonials header={e.header!} description={e.description} testimonials={e.testimonials} />}
                         {e._type == 'contentPageComponent' && <Content2 images={e.images} buttons={e.buttons} description={e.description} header={e.header!} video={e.video} />}
                         {e._type == 'guideComponent' && <GuideToBook />}
-                        {e._type=='growYourBusiness' &&  <GrowYourBusiness />}
+                        {e._type == 'growYourBusiness' && <GrowYourBusiness />}
 
                     </div>)
                 })}
