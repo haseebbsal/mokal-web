@@ -12,6 +12,7 @@ import Testimonials from "@/components/page-components/testimonials";
 import Content2 from "@/components/page-components/content2";
 import GuideToBook from "@/components/page-components/guide-to-book";
 import GrowYourBusiness from "@/components/page-components/grow-your-business";
+import SingleSlider from "@/components/page-components/single-slider";
 
 export default async function Home() {
 
@@ -30,13 +31,29 @@ export default async function Home() {
        "imageUrl":image.asset->url
       }],
     "imageUrl":imageUrl.asset->url,
-    "slider":[...slider[]{
+    "singleSlider":[...slider[]{...,"cards":[...cards[]{
+      ...,
+      "imageUrl":imageUrl.asset->url
+    }]}],
+    "slider":[...slider[]->{
       ...,
       "imageUrl":imageUrl.asset->url,
-      "cards":[...cards[]{
+      "cards":[...cards[]->{
         ...,
         "imageUrl":imageUrl.asset->url
-      }]
+      }],
+
+      "slider":[...slider[]{
+        ...,
+        "imageUrl":imageUrl.asset->url,
+        "cards":[...cards[]{
+          ...,
+          "imageUrl":imageUrl.asset->url
+          
+        }]}
+               ]
+
+      
     }],
     "cards":[...cards[]{
       ...,
@@ -55,11 +72,12 @@ export default async function Home() {
       }]
     }]
     }
-    ]}`
+    ],
+    }`
   })
   const { content } = homeData
 
-  console.log(content)
+  // console.log(content)
 
   return (
     <>
@@ -78,7 +96,9 @@ export default async function Home() {
             {e._type == 'testimonialComponent' && <Testimonials header={e.header!} description={e.description} testimonials={e.testimonials} />}
             {e._type == 'contentPageComponent' && <Content2 images={e.images} buttons={e.buttons} description={e.description} header={e.header!} video={e.video} />}
             {e._type == 'guideComponent' && <GuideToBook />}
-            {e._type == 'growYourBusiness' && <GrowYourBusiness />}
+            {e._type == 'growYourBusiness' || e._type == 'spotQuoteForm' && <GrowYourBusiness />}
+            {e._type == 'sliderComponent' && <SingleSlider header={e.singleSlider[0].header} description={e.singleSlider[0].description} cards={e.singleSlider[0].cards} buttons={e.singleSlider[0].buttons} imageUrl={e.singleSlider[0].imageUrl} />}
+
 
 
           </div>)

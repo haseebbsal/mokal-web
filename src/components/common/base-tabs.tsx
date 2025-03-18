@@ -80,6 +80,7 @@ function Title(title: string, index: number, activeKey: number, lengthOfKeys: nu
 export default function BaseTabs({ keys, variation }: TabsProps) {
     const [key, setKey] = useState<number>(0)
 
+    console.log('keysss',keys)
 
     return (
         <Tabs aria-label="Tabs sizes" onSelectionChange={(key) => { setKey(key as number) }} className="w-full" disableCursorAnimation classNames={{ tabList: "!bg-transparent gap-0 w-full", tab: "p-0", tabContent: "group-data-[selected=true]:text-base-blue group-data-[selected=true]:font-bold w-full", panel: "w-full" }}>
@@ -89,11 +90,11 @@ export default function BaseTabs({ keys, variation }: TabsProps) {
                 // </Tab>
                 <Tab key={index} title={Title(e.name, index, key, keys.length - 1)}>
                     {/* {e.component} */}
-                    {e.cards.length > 0 && variation == 1 && <TabWithSlider
+                    {e.slider[0].cards.length > 0 && variation == 1 && <TabWithSlider
                         buttons={e.buttons}
                         title={<h1 className="sm:!text-3xl text-lg font-bold" >
                             {
-                                e.header!.map((e) => {
+                                e.slider[0].header!.map((e) => {
                                     if (e.Highlight) {
                                         return <LinearGradientText extraClass="mr-2" key={e.Value} text={e.Value} />
                                     }
@@ -101,13 +102,13 @@ export default function BaseTabs({ keys, variation }: TabsProps) {
                                 })
                             }
                         </h1>}
-                        description={[e.description!]}
-                        carousel={e.cards.map((e) => ({ imageSrc: e.imageUrl, description: e.description }))} />}
-                    {!e.imageUrl && variation == 1 && !e.cards.length && <TabNoSlider
+                        description={[e.slider[0].description!]}
+                        carousel={e.slider[0].cards.map((e) => ({ imageSrc: e.imageUrl, description: e.description }))} />}
+                    {!e.slider[0].imageUrl && variation == 1 && !e.slider[0].cards.length && <TabNoSlider
                         buttons={e.buttons}
                         title={<h1 className="sm:!text-3xl text-lg font-bold" >
                             {
-                                e.header!.map((e) => {
+                                e.slider[0].header!.map((e) => {
                                     if (e.Highlight) {
                                         return <LinearGradientText extraClass="mr-2" key={e.Value} text={e.Value} />
                                     }
@@ -115,13 +116,13 @@ export default function BaseTabs({ keys, variation }: TabsProps) {
                                 })
                             }
                         </h1>}
-                        description={[e.description!]} />}
+                        description={[e.slider[0].description!]} />}
 
-                    {e.imageUrl && variation == 1 && <div className="w-full "><Image src={e.imageUrl} alt="platform" className="h-full w-full " width={1000} height={1000} /></div>}
+                    {e.slider[0].imageUrl && variation == 1 && <div className="w-full "><Image src={e.slider[0].imageUrl} alt="platform" className="h-full w-full " width={1000} height={1000} /></div>}
 
                     {variation == 2 && <div className="w-full flex relative">
-                        {keys.filter((j)=>j.imageUrl!=e.imageUrl).map((i,index,array)=><Image  key={i.imageUrl} src={i.imageUrl!} alt="platform" className={`h-full ${index==1 && 'rotate-[4deg]'}  ${index==0 && 'rotate-[-4deg]'} flex-1 object-cover relative z-20 ${index==array.length-1 && '!absolute left-[30%] z-0'}  `} width={500} height={1000} />)}
-                        <Image src={e.imageUrl!} alt="platform" style={{scale:1.1}} className="h-full flex-1 absolute object-cover left-[30%] z-50 " width={500} height={1000} />
+                        {keys.filter((j)=>j.slider[0].imageUrl!=e.slider[0].imageUrl).map((i,index,array)=><Image  key={i.slider[0].imageUrl} src={i.slider[0].imageUrl!} alt="platform" className={`h-full ${index==1 && 'rotate-[4deg]'}  ${index==0 && 'rotate-[-4deg]'} flex-1 object-cover relative z-20 ${index==array.length-1 && '!absolute left-[30%] z-0'}  `} width={500} height={1000} />)}
+                        <Image src={e.slider[0].imageUrl!} alt="platform" style={{scale:1.1}} className="h-full flex-1 absolute object-cover left-[30%] z-50 " width={500} height={1000} />
                     </div>}
 
                 </Tab>

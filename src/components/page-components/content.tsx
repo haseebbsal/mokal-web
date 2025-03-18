@@ -21,6 +21,7 @@ export default function Content({ content }: ContentProps) {
                 if (e.imageUrl) return <Image key={e.imageUrl} className="flex-1" src={e.imageUrl} alt="metrics" width={500} height={500} />
                 return (
                     <div key={e.header![0].Value} className="flex flex-1 flex-col sm:items-start items-center sm:text-start text-center gap-4">
+                   
                         <h1 className="sm:text-[3rem] text-[1.5rem] font-bold">
                             {
                                 e.header!.map((e) => {

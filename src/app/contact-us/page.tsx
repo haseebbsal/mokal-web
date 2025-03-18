@@ -7,6 +7,7 @@ import GrowYourBusiness from "@/components/page-components/grow-your-business";
 import GuideToBook from "@/components/page-components/guide-to-book";
 import MainBlog from "@/components/page-components/main-blog";
 import RefineTransportPage from "@/components/page-components/refine-transportPage";
+import SingleSlider from "@/components/page-components/single-slider";
 import TabPageComponent from "@/components/page-components/tab";
 import Testimonials from "@/components/page-components/testimonials";
 import Title from "@/components/page-components/title";
@@ -18,6 +19,7 @@ export default async function ContactUs() {
     query: `*[_type=='contact'][0]{
   "content":[...contentBlocks[]->{
     ...,
+    "images":[...images[]{"imageUrl":asset->url}],
     "video":video.asset->url,
      "testimonials":[...testimonials[]->{
        ...,
@@ -28,13 +30,29 @@ export default async function ContactUs() {
        "imageUrl":image.asset->url
       }],
     "imageUrl":imageUrl.asset->url,
-    "slider":[...slider[]{
+    "singleSlider":[...slider[]{...,"cards":[...cards[]{
+      ...,
+      "imageUrl":imageUrl.asset->url
+    }]}],
+    "slider":[...slider[]->{
       ...,
       "imageUrl":imageUrl.asset->url,
-      "cards":[...cards[]{
+      "cards":[...cards[]->{
         ...,
         "imageUrl":imageUrl.asset->url
-      }]
+      }],
+
+      "slider":[...slider[]{
+        ...,
+        "imageUrl":imageUrl.asset->url,
+        "cards":[...cards[]{
+          ...,
+          "imageUrl":imageUrl.asset->url
+          
+        }]}
+               ]
+
+      
     }],
     "cards":[...cards[]{
       ...,
@@ -53,7 +71,8 @@ export default async function ContactUs() {
       }]
     }]
     }
-    ]}`
+    ],
+    }`
   })
   const { content } = homeData
   return (
@@ -80,7 +99,7 @@ export default async function ContactUs() {
         {content.map((e, index) => {
           return (<div key={e._type + index}
             className={`${index != 0 ? index % 2 != 0 ? 'bg-white w-full' : 'bg-base-shadeBlue w-full' : ""}`}>
-            {e._type == 'title' && <Title header={e.header!} title={e.title} buttons={e.buttons} imageUrl={e.imageUrl} description={e.description} />}
+            {e._type == 'title' && <Title identifier="1" breadCrumb={['About Us', 'Contact Us']} header={e.header!} title={e.title} buttons={e.buttons} imageUrl={e.imageUrl} description={e.description} />}
             {e._type == 'tabs' && <TabPageComponent variation={e.variation!} header={e.header!} slider={e.slider as any} />}
             {e._type == 'content' && <Content content={e.content as any} />}
             {e._type == 'faqs' && <FAQSs header={e.header!} questions={e.questions!} description={e.description!} />}
@@ -91,7 +110,8 @@ export default async function ContactUs() {
             {e._type == 'testimonialComponent' && <Testimonials header={e.header!} description={e.description} testimonials={e.testimonials} />}
             {e._type == 'contentPageComponent' && <Content2 images={e.images} buttons={e.buttons} description={e.description} header={e.header!} video={e.video} />}
             {e._type == 'guideComponent' && <GuideToBook />}
-            {e._type == 'growYourBusiness' && <GrowYourBusiness />}
+            {e._type == 'growYourBusiness' || e._type == 'spotQuoteForm' && <GrowYourBusiness />}
+            {e._type == 'sliderComponent' && <SingleSlider header={e.singleSlider[0].header} description={e.singleSlider[0].description} cards={e.singleSlider[0].cards} buttons={e.singleSlider[0].buttons} imageUrl={e.singleSlider[0].imageUrl} />}
 
           </div>)
         })}

@@ -18,6 +18,7 @@ interface TabProps {
 
 
 export default function TabPageComponent({ header, slider,variation }: TabProps) {
+    // console.log('sliderrr',slider)
     return (
       
             <div className={`flex flex-col items-center m-auto sm:px-8 px-4 sm:py-20 py-16  text-center gap-4`}>
@@ -32,7 +33,7 @@ export default function TabPageComponent({ header, slider,variation }: TabProps)
                     }
                 </h1>
                 <div className="flex flex-col sm:w-[80%] w-full gap-4">
-                    <BaseTabs variation={variation} keys={slider} />
+                    <BaseTabs variation={variation} keys={slider as any} />
                 </div>
             </div>
     )

@@ -29,18 +29,27 @@ export interface MegaMenuProps {
 }
 
 export type TabItemProp = [{
-        header?: [{ Value: string, Highlight: boolean }],
-        imageUrl?: string,
-        buttons?: [{ withBackground: boolean, url: { current: string }, text: string }],
-        name: string, description?: string,
-        cards: [{ imageUrl: string, description: string }]
-    }]
+    header?: [{ Value: string, Highlight: boolean }],
+    imageUrl?: string,
+    buttons?: [{ withBackground: boolean, url: { current: string }, text: string }],
+    name: string, description?: string,
+    cards: [{ imageUrl: string, description: string }]
+    slider: [
+        {
+            header: [{ Value: string, Highlight: boolean }],
+            imageUrl: string,
+            buttons: [{ withBackground: boolean, url: { current: string }, text: string }],
+            name: string,
+            description: string,
+            cards: [{ imageUrl: string, description: string }]
+        }]
+}]
 
 
 
 export interface TabsProps {
     keys: TabItemProp
-    variation:number
+    variation: number
 }
 
 export interface TabNoSliderProps {
@@ -129,7 +138,23 @@ export interface FAQS {
 
 export interface PagesContent {
     _id: string,
-    slider: [{ header?: [{ Value: string, Highlight: boolean }], imageUrl?: string, buttons?: [{ withBackground: boolean, url: { current: string }, text: string }], name: string, description?: string, slider: [{ header?: [{ Value: string, Highlight: boolean }], imageUrl?: string, buttons?: [{ withBackground: boolean, url: { current: string }, text: string }], name: string, description?: string, cards: [{ imageUrl: string, description: string }] }] }],
+    slider: [{
+        header?: [{ Value: string, Highlight: boolean }],
+        imageUrl?: string,
+        buttons?: [{ withBackground: boolean, url: { current: string }, text: string }],
+        name: string,
+        description?: string,
+        slider: [
+            {
+                header?: [{ Value: string, Highlight: boolean }],
+                imageUrl?: string,
+                buttons?: [{ withBackground: boolean, url: { current: string }, text: string }],
+                name: string,
+                description?: string,
+                cards: [{ imageUrl: string, description: string }]
+            }]
+    }],
+
     cards: [] | [any],
     imageUrl?: string,
     buttons?: [any],
@@ -141,10 +166,18 @@ export interface PagesContent {
     _createdAt?: string,
     header?: [any],
     _rev: string
-    questions?:[{answer:string,question:string}]
-    variation?:number,
-    blogs?:[{_id:string,title:string,_createdAt:string,imageUrl:string}]
-    testimonials?:[{_id:string,name:string,_createdAt:string,imageUrl:string,description:string,rating:number}]
-    video:string
-    images:[{imageUrl:string}]
+    questions?: [{ answer: string, question: string }]
+    variation?: number,
+    blogs?: [{ _id: string, title: string, _createdAt: string, imageUrl: string }]
+    testimonials?: [{ _id: string, name: string, _createdAt: string, imageUrl: string, description: string, rating: number }]
+    video: string
+    images: [{ imageUrl: string }]
+    singleSlider:[
+        {
+            header?: [{ Value: string, Highlight: boolean }],
+            imageUrl?: string,
+            buttons?: [{ withBackground: boolean, url: { current: string }, text: string }],
+            description?: string,
+            cards: [{ imageUrl: string, description: string }]
+        }]
 }

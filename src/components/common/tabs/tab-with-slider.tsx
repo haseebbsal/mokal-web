@@ -15,7 +15,7 @@ export default function TabWithSlider({ title, description, carousel,buttons}: T
         </div>
         <BaseSlider >
             {carousel.map((e) => <div key={e.imageSrc} className='px-4 h-full'>
-                <div className='flex flex-col gap-4 p-8 shadow-lg h-full rounded-2xl text-center items-center'>
+                <div className='flex flex-col bg-white gap-4 p-8 shadow-lg h-full rounded-2xl text-center items-center'>
                     <Image src={e.imageSrc} alt='artboard' width={200} height={200} />
                     <p>{e.description}</p>
                 </div>

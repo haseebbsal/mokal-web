@@ -39,14 +39,15 @@ export default async function CardsContent({ header, cards, variation, descripti
     return (
         <>
             {variation == 1 && <div className="  p-8 flex flex-col gap-4 items-center ">
-                <h1 className="sm:text-[2.3rem] flex flex-wrap gap-2 text-[1.5rem] font-bold">
+                {header && <h1 className="sm:text-[2.3rem] flex flex-wrap gap-2 text-[1.5rem] font-bold">
                     {header.map((e) => {
                         if (e.Highlight) {
                             return <LinearGradientText key={e.Value} text={e.Value} />
                         }
                         return <span key={e.Value} >{e.Value}</span>
                     })}
-                </h1>
+                </h1>}
+
                 <div className="sm:flex hidden gap-4 w-[80%] flex-wrap">
                     {cards.map((e) =>
                         <div key={e.heading} className="flex flex-col gap-2 bg-white shadow-lg flex-[1_1_23rem] rounded-xl p-4">
@@ -86,15 +87,15 @@ export default async function CardsContent({ header, cards, variation, descripti
 
             {variation == 2 && <div className=" p-8  w-full">
                 <div className="sm:w-[80%] m-auto flex flex-col  gap-4 items-center">
-                    <h1 className="sm:text-[2.3rem] flex flex-wrap gap-2 text-[1.5rem] font-bold">
+                    {header && <h1 className="sm:text-[2.3rem] flex flex-wrap gap-2 text-[1.5rem] font-bold">
                         {header.map((e) => {
                             if (e.Highlight) {
                                 return <LinearGradientText key={e.Value} text={e.Value} />
                             }
-                            return <span key={e.Value}>{e.Value}</span>
+                            return <span key={e.Value} >{e.Value}</span>
                         })}
-                        {/* All Your <LinearGradientText text="Freight Operations" /> in One Platform */}
-                    </h1>
+                    </h1>}
+                    
 
                     <p className="text-text-gray text-center">{description}</p>
                     <div className="flex gap-4 flex-wrap w-full">

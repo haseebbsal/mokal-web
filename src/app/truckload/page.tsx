@@ -12,6 +12,7 @@ import Testimonials from "@/components/page-components/testimonials";
 import Content2 from "@/components/page-components/content2";
 import GuideToBook from "@/components/page-components/guide-to-book";
 import GrowYourBusiness from "@/components/page-components/grow-your-business";
+import SingleSlider from "@/components/page-components/single-slider";
 
 
 export default async function Truckload() {
@@ -30,13 +31,29 @@ export default async function Truckload() {
        "imageUrl":image.asset->url
       }],
     "imageUrl":imageUrl.asset->url,
-    "slider":[...slider[]{
+    "singleSlider":[...slider[]{...,"cards":[...cards[]{
+      ...,
+      "imageUrl":imageUrl.asset->url
+    }]}],
+    "slider":[...slider[]->{
       ...,
       "imageUrl":imageUrl.asset->url,
-      "cards":[...cards[]{
+      "cards":[...cards[]->{
         ...,
         "imageUrl":imageUrl.asset->url
-      }]
+      }],
+
+      "slider":[...slider[]{
+        ...,
+        "imageUrl":imageUrl.asset->url,
+        "cards":[...cards[]{
+          ...,
+          "imageUrl":imageUrl.asset->url
+          
+        }]}
+               ]
+
+      
     }],
     "cards":[...cards[]{
       ...,
@@ -55,7 +72,8 @@ export default async function Truckload() {
       }]
     }]
     }
-    ]}`
+    ],
+    }`
   })
   const { content } = homeData
   return (
@@ -102,7 +120,7 @@ export default async function Truckload() {
         {content.map((e, index) => {
           return (<div key={e._type + index}
             className={`${index != 0 ? index % 2 != 0 ? 'bg-white w-full' : 'bg-base-shadeBlue w-full' : ""}`}>
-            {e._type == 'title' && <Title header={e.header!} title={e.title} buttons={e.buttons} imageUrl={e.imageUrl} description={e.description} />}
+            {e._type == 'title' && <Title identifier="1" breadCrumb={['Services', 'Truckload']} header={e.header!} title={e.title} buttons={e.buttons} imageUrl={e.imageUrl} description={e.description} />}
             {e._type == 'tabs' && <TabPageComponent variation={e.variation!} header={e.header!} slider={e.slider as any} />}
             {e._type == 'content' && <Content content={e.content as any} />}
             {e._type == 'faqs' && <FAQSs header={e.header!} questions={e.questions!} description={e.description!} />}
@@ -113,7 +131,9 @@ export default async function Truckload() {
             {e._type == 'testimonialComponent' && <Testimonials header={e.header!} description={e.description} testimonials={e.testimonials} />}
             {e._type == 'contentPageComponent' && <Content2 images={e.images} buttons={e.buttons} description={e.description} header={e.header!} video={e.video} />}
             {e._type == 'guideComponent' && <GuideToBook />}
-            {e._type == 'growYourBusiness' && <GrowYourBusiness />}
+            {e._type == 'growYourBusiness' || e._type == 'spotQuoteForm' && <GrowYourBusiness />}
+            {e._type == 'sliderComponent' && <SingleSlider header={e.singleSlider[0].header} description={e.singleSlider[0].description} cards={e.singleSlider[0].cards} buttons={e.singleSlider[0].buttons} imageUrl={e.singleSlider[0].imageUrl} />}
+
 
 
           </div>)

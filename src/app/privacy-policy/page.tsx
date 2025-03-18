@@ -1,10 +1,112 @@
 import BaseBreadCrumb from "@/components/common/base-breadcrumb";
 import LinearGradientText from "@/components/common/linear-gradient-text";
-import { termsandcondtions } from "@/utils/constants";
+import { client } from "@/utils/constants";
+import { PagesContent } from "@/utils/types";
+import { PortableText } from "@portabletext/react";
 
 
+const components = {
+    // types: {
+    //     image: ({ value }:any) => <img src={value.imageUrl} />,
+    // },
+    marks: {
+        // Ex. 1: custom renderer for the em / italics decorator
+        em: ({ children }: any) => <em className="text-gray-600 font-semibold">{children}</em>,
 
-export default function PrivacyPolicy() {
+        // Ex. 2: rendering a custom `link` annotation
+        link: ({ value, children }: any) => {
+            const target = (value?.href || '').startsWith('http') ? '_blank' : undefined
+            return (
+                <a href={value?.href} target={target} rel={(target === '_blank' && 'noindex nofollow') as string}>
+                    {children}
+                </a>
+            )
+        },
+        strong: ({ children }: any) => <b className="text-black font-bold">{children}</b>
+    },
+    block: {
+        // Ex. 1: customizing common block types
+        h1: ({ children }: any) => <h1 className="text-2xl">{children}</h1>,
+        blockquote: ({ children }: any) => <blockquote className="border-l-purple-500">{children}</blockquote>,
+    },
+    list: {
+        // Ex. 1: customizing common list types
+        bullet: ({ children }: any) => <ul className="mt-xl">{children}</ul>,
+        number: ({ children }: any) => <ol className="mt-lg">{children}</ol>,
+
+        // Ex. 2: rendering custom lists
+        checkmarks: ({ children }: any) => <ol className="m-auto text-lg">{children}</ol>,
+    },
+    listItem: {
+        // Ex. 1: customizing common list types
+        bullet: ({ children }: any) => <li className="list-disc" >{children}</li>,
+        decimal: ({ children }: any) => <li className="list-desc" >{children}</li>,
+        // Ex. 2: rendering custom list items
+        checkmarks: ({ children }: any) => <li>✅ {children}</li>,
+    },
+}
+
+export default async function PrivacyPolicy() {
+    const homeData: { content: [PagesContent], remaining: any } = await client.fetch({
+        query: `*[_type=='termsandconditions'][0]{
+  "content":[...contentBlocks[]->{
+    ...,
+    "images":[...images[]{"imageUrl":asset->url}],
+    "video":video.asset->url,
+     "testimonials":[...testimonials[]->{
+       ...,
+       "imageUrl":image.asset->url
+      }],
+     "blogs":[...blogs[]->{
+       ...,
+       "imageUrl":image.asset->url
+      }],
+    "imageUrl":imageUrl.asset->url,
+    "singleSlider":[...slider[]{...,"cards":[...cards[]{
+      ...,
+      "imageUrl":imageUrl.asset->url
+    }]}],
+    "slider":[...slider[]->{
+      ...,
+      "imageUrl":imageUrl.asset->url,
+      "cards":[...cards[]->{
+        ...,
+        "imageUrl":imageUrl.asset->url
+      }],
+
+      "slider":[...slider[]{
+        ...,
+        "imageUrl":imageUrl.asset->url,
+        "cards":[...cards[]{
+          ...,
+          "imageUrl":imageUrl.asset->url
+          
+        }]}
+               ]
+
+      
+    }],
+    "cards":[...cards[]{
+      ...,
+      "imageUrl":icon.asset->url
+    }],
+    "content":[...content[]{
+      ...,
+      "description":[...description[]{
+        ...,
+        "imageUrl":imageUrl.asset->url
+      }],
+      "imageUrl":asset->url,
+      "arrayContent":[...arrayContent[]{
+        ...,
+        "imageUrl":imageUrl.asset->url
+      }]
+    }]
+    }
+    ],
+    }`
+    })
+
     return (
         <>
             <div className="flex flex-col gap-4">
@@ -13,31 +115,34 @@ export default function PrivacyPolicy() {
                         <div className="flex flex-col ">
                             <h1 className="sm:text-[3rem] text-[1.8rem] font-bold"><LinearGradientText text="Privacy Policy" /> </h1>
                         </div>
-                        <BaseBreadCrumb items={['Privacy Policy']}/>
+                        <BaseBreadCrumb items={['Privacy Policy']} />
                     </div>
                 </div>
 
 
                 <div className="bg-white w-full">
-                    <div className={`flex  flex-col m-auto sm:px-8 px-4 sm:py-20 py-16 sm:w-[80%] sm:gap-8 gap-4`}>
-                        <div className="flex flex-col gap-1">
-                            <p className="font-semibold text-lg">Effective Date: January <span className="text-sm text-text-gray">29, 2022</span></p>
-                            <p className="font-semibold text-lg">Last Modified: April <span className="text-sm text-text-gray">19, 2022</span></p>
-                        </div>
+                    <div className={` m-auto sm:px-8 px-4 sm:py-20 py-16 sm:w-[90%] sm:gap-8 gap-4`}>
+                        {/* <div dangerouslySetInnerHTML={{__html:toHTML(homeData.remaining.content)}}/> */}
+                        <PortableText value={homeData.remaining.content} components={components} />
 
-                        {termsandcondtions.map((e, index) => <div key={index + 1} className="flex gap-1 flex-col">
-                            <h1 className="font-semibold text-2xl">{index + 1}. {e.header}</h1>
-                            {
-                                e.content.map((f) => {
-
-                                    return typeof f != 'string' ? <ul key={e.header} className="list-disc pl-4">
-                                        {f.map((g) => <li key={g}>{g}</li>)}
-                                    </ul> : <p key={f}>{f}</p>
-
-                                })
-                            }
-
-                        </div>)}
+                        {/* <div className="flex flex-col gap-1">
+                                    <p className="font-semibold text-lg">Effective Date: January <span className="text-sm text-text-gray">29, 2022</span></p>
+                                    <p className="font-semibold text-lg">Last Modified: April <span className="text-sm text-text-gray">19, 2022</span></p>
+                                </div>
+        
+                                {termsandcondtions.map((e, index) => <div key={index + 1} className="flex gap-1 flex-col">
+                                    <h1 className="font-semibold text-2xl">{index + 1}. {e.header}</h1>
+                                    {
+                                        e.content.map((f) => {
+        
+                                            return typeof f != 'string' ? <ul key={e.header} className="list-disc pl-4">
+                                                {f.map((g) => <li key={g}>{g}</li>)}
+                                            </ul> : <p key={f}>{f}</p>
+        
+                                        })
+                                    }
+        
+                                </div>)} */}
                     </div>
                 </div>
             </div >
