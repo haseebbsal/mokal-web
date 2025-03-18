@@ -1,9 +1,8 @@
 import LinearGradientText from "@/components/common/linear-gradient-text";
-import { client, termsandcondtions } from "@/utils/constants";
+import { client} from "@/utils/constants";
 import BaseBreadCrumb from "@/components/common/base-breadcrumb";
 import { PagesContent } from "@/utils/types";
 import { PortableText } from '@portabletext/react'
-import { toHTML } from '@portabletext/to-html'
 
 
  const components = {
