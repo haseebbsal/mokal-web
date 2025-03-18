@@ -48,7 +48,7 @@ const components = {
 
 export default async function PrivacyPolicy() {
     const homeData: { content: [PagesContent], remaining: any } = await client.fetch({
-        query: `*[_type=='termsandconditions'][0]{
+        query: `*[_type=='privacypolicy'][0]{
   "content":[...contentBlocks[]->{
     ...,
     "images":[...images[]{"imageUrl":asset->url}],
@@ -62,10 +62,6 @@ export default async function PrivacyPolicy() {
        "imageUrl":image.asset->url
       }],
     "imageUrl":imageUrl.asset->url,
-    "singleSlider":[...slider[]{...,"cards":[...cards[]{
-      ...,
-      "imageUrl":imageUrl.asset->url
-    }]}],
     "slider":[...slider[]->{
       ...,
       "imageUrl":imageUrl.asset->url,
@@ -104,6 +100,7 @@ export default async function PrivacyPolicy() {
     }]
     }
     ],
+      "remaining":{...}
     }`
     })
 

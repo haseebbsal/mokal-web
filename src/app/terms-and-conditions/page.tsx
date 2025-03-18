@@ -1,14 +1,15 @@
 import LinearGradientText from "@/components/common/linear-gradient-text";
-import { client } from "@/utils/constants";
+import { client, termsandcondtions } from "@/utils/constants";
 import BaseBreadCrumb from "@/components/common/base-breadcrumb";
 import { PagesContent } from "@/utils/types";
 import { PortableText } from '@portabletext/react'
+import { toHTML } from '@portabletext/to-html'
 
 
-const components = {
-    // types: {
-    //     image: ({ value }:any) => <img src={value.imageUrl} />,
-    // },
+ const components = {
+    types: {
+        image: ({ value }:any) => <img src={value.imageUrl} />,
+    },
     marks: {
         // Ex. 1: custom renderer for the em / italics decorator
         em: ({ children }: any) => <em className="text-gray-600 font-semibold">{children}</em>,
@@ -62,10 +63,6 @@ export default async function TermsAndConditions() {
        "imageUrl":image.asset->url
       }],
     "imageUrl":imageUrl.asset->url,
-    "singleSlider":[...slider[]{...,"cards":[...cards[]{
-      ...,
-      "imageUrl":imageUrl.asset->url
-    }]}],
     "slider":[...slider[]->{
       ...,
       "imageUrl":imageUrl.asset->url,
@@ -104,6 +101,7 @@ export default async function TermsAndConditions() {
     }]
     }
     ],
+      "remaining":{...}
     }`
     })
 
