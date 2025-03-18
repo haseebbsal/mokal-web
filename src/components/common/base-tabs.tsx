@@ -91,7 +91,7 @@ export default function BaseTabs({ keys, variation }: TabsProps) {
                 <Tab key={index} title={Title(e.name, index, key, keys.length - 1)}>
                     {/* {e.component} */}
                     {e.slider[0].cards.length > 0 && variation == 1 && <TabWithSlider
-                        buttons={e.buttons}
+                        buttons={e.slider[0].buttons}
                         title={<h1 className="sm:!text-3xl text-lg font-bold" >
                             {
                                 e.slider[0].header!.map((e) => {
@@ -105,7 +105,7 @@ export default function BaseTabs({ keys, variation }: TabsProps) {
                         description={[e.slider[0].description!]}
                         carousel={e.slider[0].cards.map((e) => ({ imageSrc: e.imageUrl, description: e.description }))} />}
                     {!e.slider[0].imageUrl && variation == 1 && !e.slider[0].cards.length && <TabNoSlider
-                        buttons={e.buttons}
+                        buttons={e.slider[0].buttons}
                         title={<h1 className="sm:!text-3xl text-lg font-bold" >
                             {
                                 e.slider[0].header!.map((e) => {
