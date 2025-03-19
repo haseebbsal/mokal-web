@@ -2,15 +2,15 @@
 import Image from "next/image";
 import BaseSlider from "../common/base-slider";
 import LinearGradientText from "../common/linear-gradient-text";
-import { Video } from "@triyanox/react-video";
 import Link from "next/link";
 import { MdKeyboardDoubleArrowRight } from "react-icons/md";
+import BaseVideo from "../common/base-video";
 
 interface Content2Props {
     video?: string
     header: [{ Value: string, Highlight: boolean }]
     description?: string
-    images: [{ imageUrl: string }]
+    images: [{ imageUrl: string, description?: string }]
     buttons?: [{ withBackground: boolean, url: { current: string }, text: string }]
 }
 
@@ -40,6 +40,7 @@ const responsiveCouriers = {
 };
 
 export default function Content2({ header, video, description, images, buttons }: Content2Props) {
+    console.log('imeagess', images)
     return (
         <div className=" w-full">
             <div className={`flex flex-col m-auto sm:px-8 px-4 sm:py-20 py-16 sm:w-[80%] text-center gap-4`}>
@@ -52,24 +53,8 @@ export default function Content2({ header, video, description, images, buttons }
                     })}
                 </h1>
                 {description && <p className="text-text-gray">{description}</p>}
-                {video && <Video
-                    autoPlay={false}
-                    className="max-h-96"
-                    icons={
-                        {
-                            play: () => <div className="p-4 border-2 rounded-full border-white text-white"><p>PLAY</p></div>,
-                            backBy10() {
-                                return <></>
-                            },
-                            forwardBy10() {
-                                return <></>
-                            },
-                        }
-                    }
-                    poster=""
-                    src={video}
-                />}
-                {images && <>
+                {video && <BaseVideo src={video} />}
+                {images && !images[0].description && <>
                     <div className="w-full sm:flex hidden gap-2 flex-wrap justify-center">
                         {images.map((e) => <Image key={e.imageUrl} src={e.imageUrl} alt="dhl" width={150} height={150} />)}
                     </div>
@@ -77,6 +62,15 @@ export default function Content2({ header, video, description, images, buttons }
                         {images.map((e) => <Image key={e.imageUrl} src={e.imageUrl} alt="dhl" width={100} height={100} />)}
                     </BaseSlider>
                 </>}
+                {images && images[0].description && <div className={`flex flex-wrap  text-center gap-4`}>
+                    {images.map((e) => <div key={e.imageUrl} className='flex flex-col sm:flex-[1_0_17%] flex-[1_0_100%]  sm:max-w-[17%] gap-4 p-8 shadow-lg h-auto rounded-2xl text-center items-center'>
+                        <Image src={e.imageUrl} alt='artboard' width={200} height={200} />
+                        <p>{e.description}</p>
+                    </div>)}
+
+
+                </div>
+                }
 
                 <div className="flex gap-4 justify-center w-full flex-wrap">
                     {buttons && buttons?.length > 0 && <>

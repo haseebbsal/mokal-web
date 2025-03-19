@@ -7,10 +7,9 @@ import LinearGradientText from "../common/linear-gradient-text"
 import { useForm } from "react-hook-form"
 import { MdKeyboardDoubleArrowRight } from "react-icons/md"
 
-export default function FOrNow() {
+export default function ReactOut() {
     const { control } = useForm()
     return (
-        <div className="bg-base-shadeBlue w-full sm:py-20  py-8">
             <div className={`flex sm:flex-row flex-col m-auto sm:px-8 px-4 sm:py-20 bg-white py-16 sm:w-[80%] shadow-lg rounded-xl text-center sm:gap-16 gap-8`}>
                 <div className="flex flex-1 flex-col sm:items-start items-center sm:text-start text-center gap-4">
                     <Image src={'/images/broker (1).svg'} alt="broker" width={200} height={200} />
@@ -31,6 +30,5 @@ export default function FOrNow() {
                 </div>
             </div>
 
-        </div>
     )
 }

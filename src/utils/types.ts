@@ -43,6 +43,7 @@ export type TabItemProp = [{
             description: string,
             cards: [{ imageUrl: string, description: string }]
         }]
+        component?:any
 }]
 
 

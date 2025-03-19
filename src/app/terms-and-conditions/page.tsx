@@ -3,11 +3,12 @@ import { client} from "@/utils/constants";
 import BaseBreadCrumb from "@/components/common/base-breadcrumb";
 import { PagesContent } from "@/utils/types";
 import { PortableText } from '@portabletext/react'
+import Image from "next/image";
 
 
  const components = {
     types: {
-        image: ({ value }:any) => <img src={value.imageUrl} />,
+        image: ({ value }:any) => <Image src={value.imageUrl} alt="image" width={100} height={100} />,
     },
     marks: {
         // Ex. 1: custom renderer for the em / italics decorator
@@ -51,7 +52,7 @@ export default async function TermsAndConditions() {
         query: `*[_type=='termsandconditions'][0]{
   "content":[...contentBlocks[]->{
     ...,
-    "images":[...images[]{"imageUrl":asset->url}],
+    "images":[...images[]{...,"imageUrl":imageUrl.asset->url}],
     "video":video.asset->url,
      "testimonials":[...testimonials[]->{
        ...,

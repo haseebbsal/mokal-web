@@ -51,7 +51,7 @@ export default async function PrivacyPolicy() {
         query: `*[_type=='privacypolicy'][0]{
   "content":[...contentBlocks[]->{
     ...,
-    "images":[...images[]{"imageUrl":asset->url}],
+    "images":[...images[]{...,"imageUrl":imageUrl.asset->url}],
     "video":video.asset->url,
      "testimonials":[...testimonials[]->{
        ...,
