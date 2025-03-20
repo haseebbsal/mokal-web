@@ -64,9 +64,9 @@ export default async function Footer() {
                             </div>
                             <Link href={'/get-a-quote'} className="bg-transparent border-base-purple border-2 text-lg font-bold text-base-purple w-max p-2 rounded-xl">Get Quick Quote</Link>
                             <Link href={'/book-a-demo'} className="bg-transparent border-base-purple border-2 text-lg font-bold text-base-purple w-max p-2 rounded-xl">Book a Demo</Link>
-                            <p className="text-text-gray">info@mgcfreight.com</p>
+                            {/* <p className="text-text-gray">info@mgcfreight.com</p>
                             <p className="text-text-gray">T: 1-235-456-5689</p>
-                            <p className="text-text-gray">T: 1-235-456-5689</p>
+                            <p className="text-text-gray">T: 1-235-456-5689</p> */}
                         </div>
                     </div>
 

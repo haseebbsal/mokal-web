@@ -114,7 +114,8 @@ export interface configData {
     imageUrl: string
     copyright: string
     address: { lat: number, lng: number }
-    email: string
+    email: string,
+    prod:boolean
 }
 
 export interface HeaderAndCards {
