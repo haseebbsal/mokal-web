@@ -119,8 +119,8 @@ export default function BaseTabs({ keys, variation }: TabsProps) {
                     {e.slider[0].imageUrl && variation == 1 && <div className="w-full "><Image src={e.slider[0].imageUrl} alt="platform" className="h-full w-full " width={1000} height={1000} /></div>}
 
                     {variation == 2 && <div className="w-full flex relative">
-                        {keys.filter((j)=>j.slider[0].imageUrl!=e.slider[0].imageUrl).map((i,index,array)=><Image  key={i.slider[0].imageUrl} src={i.slider[0].imageUrl!} alt="platform" className={`h-full ${index==1 && 'rotate-[4deg]'}  ${index==0 && 'rotate-[-4deg]'} flex-1 object-cover relative z-20 ${index==array.length-1 && '!absolute left-[30%] z-0'}  `} width={500} height={1000} />)}
-                        <Image src={e.slider[0].imageUrl!} alt="platform" style={{scale:1.1}} className="h-full flex-1 absolute object-cover left-[30%] z-50 " width={500} height={1000} />
+                        {keys.filter((j)=>j.slider[0].imageUrl!=e.slider[0].imageUrl).map((i,index,array)=><Image  key={i.slider[0].imageUrl} src={i.slider[0].imageUrl!} alt="platform" className={`h-full w-[50%] ${index==1 && 'rotate-[4deg]'}  ${index==0 && 'rotate-[-4deg]'} flex-1 object-cover relative z-20 ${index==array.length-1 && '!absolute left-[25%] z-0'}  `} width={500} height={1000} />)}
+                        <Image src={e.slider[0].imageUrl!} alt="platform" style={{scale:1.1}} className="h-full flex-1 absolute object-cover left-[25%] z-50 w-[50%]" width={500} height={1000} />
                     </div>}
 
                 </Tab>
