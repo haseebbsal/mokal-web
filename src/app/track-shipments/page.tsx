@@ -92,7 +92,7 @@ export default async function TrackShipments() {
         {content.map((e, index) => {
           return (<div key={e._type + index}
             className={`${index != 0 ? index % 2 != 0 ? 'bg-white w-full' : 'bg-base-shadeBlue w-full' : ""}`}>
-            {e._type == 'title' && <Title identifier="1" breadCrumb={['Claims']} header={e.header!} title={e.title} buttons={e.buttons} imageUrl={e.imageUrl} description={e.description} />}
+            {e._type == 'title' && <Title identifier="1" breadCrumb={['Track Shipments']} header={e.header!} title={e.title} buttons={e.buttons} imageUrl={e.imageUrl} description={e.description} />}
             {e._type == 'tabs' && <TabPageComponent variation={e.variation!} header={e.header!} slider={e.slider as any} />}
             {e._type == 'content' && <Content customerSpotlight content={e.content as any} />}
             {e._type == 'faqs' && <FAQSs header={e.header!} questions={e.questions!} description={e.description!} />}

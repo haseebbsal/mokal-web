@@ -54,7 +54,7 @@ export default function Content2({ header, video, description, images, buttons }
                 </h1>
                 {description && <p className="text-text-gray">{description}</p>}
                 {video && <BaseVideo src={video} />}
-                {images && !images[0].description && <>
+                { images && images.length >0 && !images[0].description && <>
                     <div className="w-full sm:flex hidden gap-2 flex-wrap justify-center">
                         {images.map((e) => <Image key={e.imageUrl} src={e.imageUrl} alt="dhl" width={150} height={150} />)}
                     </div>
@@ -62,7 +62,7 @@ export default function Content2({ header, video, description, images, buttons }
                         {images.map((e) => <Image key={e.imageUrl} src={e.imageUrl} alt="dhl" width={100} height={100} />)}
                     </BaseSlider>
                 </>}
-                {images && images[0].description && <div className={`flex flex-wrap  text-center gap-4`}>
+                {images && images.length >0  && images[0].description && <div className={`flex flex-wrap  text-center gap-4`}>
                     {images.map((e) => <div key={e.imageUrl} className='flex flex-col sm:flex-[1_0_17%] flex-[1_0_100%]  sm:max-w-[17%] gap-4 p-8 shadow-lg h-auto rounded-2xl text-center items-center'>
                         <Image src={e.imageUrl} alt='artboard' width={200} height={200} />
                         <p>{e.description}</p>
