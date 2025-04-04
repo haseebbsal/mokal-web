@@ -100,13 +100,14 @@ export default async function Footer() {
 
                     <div className="flex flex-col gap-4 sm:col-span-1 col-span-2">
                         <p className="text-base-purple text-2xl font-medium">Social</p>
-                        <div className="flex gap-4">
+                        {addressText.data.results[0] && <div className="flex gap-4">
                             <FaLocationDot className="sm:text-4xl text-2xl" />
                             <div className="flex flex-col gap-2">
                                 <p className="font-semibold">Address</p>
                                 <p>{addressText.data.results[0].formatted_address}</p>
                             </div>
-                        </div>
+                        </div>}
+
                         <div className="flex gap-4">
                             <SiMinutemailer className="text-2xl" />
                             <div className="flex flex-col gap-2">
