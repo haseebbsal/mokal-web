@@ -97,7 +97,7 @@ export default async function CorporatePartner() {
             {e._type == 'faqs' && <FAQSs header={e.header!} questions={e.questions!} description={e.description!} />}
             {e._type == 'mapComponent' && <CustomerBase header={e.header!} />}
             {e._type == 'refineTransport' && <RefineTransportPage />}
-            {e._type == 'cards' && <CardsContent description={e.description!} header={e.header!} cards={e.cards as any} variation={e.variation!} />}
+            {e._type == 'cards' && <CardsContent description={e.description!} header={e.header!} cards={e.cards as any} variation={e.variation!} buttons={e.buttons}/>}
             {e._type == 'blogComponent' && <MainBlog header={e.header!} blogs={e.blogs} />}
             {e._type == 'testimonialComponent' && <Testimonials header={e.header!} description={e.description} testimonials={e.testimonials} />}
             {e._type == 'contentPageComponent' && <Content2 images={e.images} buttons={e.buttons} description={e.description} header={e.header!} video={e.video} />}

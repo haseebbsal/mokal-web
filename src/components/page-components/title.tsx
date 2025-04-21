@@ -44,7 +44,7 @@ export default function Title({ title, header, buttons, imageUrl, description, i
                 {description && <p className="text-gray-600 sm:text-lg text-md">{description}</p>}
                 {buttons && buttons?.length > 0 && <div className="flex gap-2">{buttons?.map((e) => {
                     if (e.withBackground) {
-                        return <Link key={e.url.current + e.text} href={e.url.current} className="bg-base-purple min-w-[9rem] flex justify-between items-center rounded-xl px-2 text-white border-2 py-2 ">{e.text}<MdKeyboardDoubleArrowRight className="text-lg" /></Link>
+                        return <Link key={e.url.current + e.text} href={e.url.current} className="bg-base-purple min-w-[12rem] flex justify-between items-center rounded-xl px-3 text-white border-2 py-3 ">{e.text}<MdKeyboardDoubleArrowRight className="text-lg" /></Link>
                     }
                     return <Link key={e.url.current + e.text} href={e.url.current} className="bg-transparent min-w-[9rem] flex justify-between items-center rounded-xl px-2 text-base-purple border-2  border-base-purple py-2">{e.text}<MdKeyboardDoubleArrowRight className="text-lg" /></Link>
                 })}</div>}

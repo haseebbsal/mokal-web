@@ -14,35 +14,34 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
         base: {
-          'purple': "#7C4EAF",
-          'blue': "#324878",
-          "shadeBlue":"#F5F8FF",
-          "pink":"rgba(208, 166, 255, 0.20)",
-          "lightBlue":"#DBECFF",
-          "gridBg":"#F6F9FF",
-          "teal":"#6F93E1"
+          purple: "#7C4EAF",
+          blue: "#324878",
+          shadeBlue: "#F5F8FF",
+          pink: "rgba(208, 166, 255, 0.20)",
+          lightBlue: "#DBECFF",
+          buttonTab: "#D8E4FF",
+          gridBg: "#F6F9FF",
+          teal: "#6F93E1",
         },
-        text:{
-          "gray":"#7B7F9C",
-          "gradient":"linear-gradient(90deg, #4263AA 61.47%, #7C4EAF 88.81%)",
-          "blue":"#4263AA",
-          "lighterDarkBlue":"#596C8D",
-          "beige":"#E4E4E7",
-          "darkGray":"#52525B"
+        text: {
+          gray: "#7B7F9C",
+          gradient: "linear-gradient(90deg, #4263AA 61.47%, #7C4EAF 88.81%)",
+          blue: "#4263AA",
+          lighterDarkBlue: "#596C8D",
+          beige: "#E4E4E7",
+          darkGray: "#52525B",
         },
-        icon:"rgba(113, 113, 122, 1)"
+        icon: "rgba(113, 113, 122, 1)",
       },
-      backgroundImage:{
-        "nav":"linear-gradient(to right,#BACFFF 0%,#D0A6FF 100%)",
-        "linearPurple":"linear-gradient(180deg, #D0A6FF 0%, rgba(66, 99, 170, 0.50) 100%)",
-        "linearBlue":"linear-gradient(292deg, #2C3A62 0%, #374F8F 100%)",
-        "gradientText":"linear-gradient(90deg, #4263AA 61.47%, #7C4EAF 88.81%)",
-        "grid":"url('/covers/grid.svg')",
+      backgroundImage: {
+        nav: "linear-gradient(to right,#BACFFF 0%,#D0A6FF 100%)",
+        linearPurple:
+          "linear-gradient(180deg, #D0A6FF 0%, rgba(66, 99, 170, 0.50) 100%)",
+        linearBlue: "linear-gradient(292deg, #2C3A62 0%, #374F8F 100%)",
+        gradientText: "linear-gradient(90deg, #4263AA 61.47%, #7C4EAF 88.81%)",
+        grid: "url('/covers/grid.svg')",
       },
-      
     },
   },
   plugins: [heroui()],
 } satisfies Config;
-
-

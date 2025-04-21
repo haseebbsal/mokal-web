@@ -21,7 +21,6 @@ import TrackShipment from "@/components/page-components/track-shipment";
 import GetAQuoteForm from "@/components/page-components/get-a-quote";
 
 export default async function Home() {
-
   const homeData: { content: [PagesContent] } = await client.fetch({
     query: `*[_type=='home'][0]{
                                                       "content":[...contentBlocks[]->{
@@ -80,41 +79,104 @@ export default async function Home() {
                                                         }
                                                         ],
                                                           "remaining":{...}
-                                                        }`
-  })
-  const { content } = homeData
-
+                                                        }`,
+  });
+  const { content } = homeData;
 
   return (
     <>
       <div className={`flex flex-col gap-4`}>
         {content.map((e, index) => {
-          return (<div key={e._type + index}
-            className={`${index != 0 ? index % 2 != 0 ? 'bg-white w-full' : 'bg-base-shadeBlue w-full' : ""}`}>
-            {e._type == 'title' && <Title breadCrumb={['Claims']} header={e.header!} title={e.title} buttons={e.buttons} imageUrl={e.imageUrl} description={e.description} />}
-            {e._type == 'tabs' && <TabPageComponent variation={e.variation!} header={e.header!} slider={e.slider as any} />}
-            {e._type == 'content' && <Content customerSpotlight content={e.content as any} />}
-            {e._type == 'faqs' && <FAQSs header={e.header!} questions={e.questions!} description={e.description!} />}
-            {e._type == 'mapComponent' && <CustomerBase header={e.header!} />}
-            {e._type == 'refineTransport' && <RefineTransportPage />}
-            {e._type == 'cards' && <CardsContent description={e.description!} header={e.header!} cards={e.cards as any} variation={e.variation!} />}
-            {e._type == 'blogComponent' && <MainBlog header={e.header!} blogs={e.blogs} />}
-            {e._type == 'testimonialComponent' && <Testimonials header={e.header!} description={e.description} testimonials={e.testimonials} />}
-            {e._type == 'contentPageComponent' && <Content2 images={e.images} buttons={e.buttons} description={e.description} header={e.header!} video={e.video} />}
-            {e._type == 'guideComponent' && <GuideToBook />}
-            {e._type == 'growYourBusiness' || e._type == 'spotQuoteForm' && <GrowYourBusiness />}
-            {e._type == 'sliderComponent' && <SingleSlider header={e.singleSlider[0].header} description={e.singleSlider[0].description} cards={e.singleSlider[0].cards} buttons={e.singleSlider[0].buttons} imageUrl={e.singleSlider[0].imageUrl} />}
-            {e._type == 'career-oppurtuinities' && <CareerOppurtunities />}
-            {e._type == 'positionForm' && <NoOpenForm />}
-            {e._type == 'bookDemoForm' && <BookADemoForm />}
-            {e._type == 'reachOutForm' && <ReactOut />}
-            {e._type == 'trackShipment' && <TrackShipment />}
-            {e._type == 'getAQuoteForm' && <GetAQuoteForm />}
-
-
-          </div>)
+          return (
+            <div
+              key={e._type + index}
+              className={`${
+                index != 0
+                  ? index % 2 != 0
+                    ? "bg-white w-full"
+                    : "bg-base-shadeBlue w-full"
+                  : ""
+              }`}
+            >
+              {e._type == "title" && (
+                <Title
+                  breadCrumb={["Claims"]}
+                  header={e.header!}
+                  title={e.title}
+                  buttons={e.buttons}
+                  imageUrl={e.imageUrl}
+                  description={e.description}
+                />
+              )}
+              {e._type == "tabs" && (
+                <TabPageComponent
+                  variation={e.variation!}
+                  header={e.header!}
+                  slider={e.slider as any}
+                />
+              )}
+              {e._type == "content" && (
+                <Content customerSpotlight content={e.content as any} />
+              )}
+              {e._type == "faqs" && (
+                <FAQSs
+                  header={e.header!}
+                  questions={e.questions!}
+                  description={e.description!}
+                />
+              )}
+              {e._type == "mapComponent" && <CustomerBase header={e.header!} />}
+              {e._type == "refineTransport" && <RefineTransportPage />}
+              {e._type == "cards" && (
+                <CardsContent
+                  description={e.description!}
+                  header={e.header!}
+                  cards={e.cards as any}
+                  variation={e.variation!}
+                  buttons={e.buttons}
+                />
+              )}
+              {e._type == "blogComponent" && (
+                <MainBlog header={e.header!} blogs={e.blogs} />
+              )}
+              {e._type == "testimonialComponent" && (
+                <Testimonials
+                  header={e.header!}
+                  description={e.description}
+                  testimonials={e.testimonials}
+                />
+              )}
+              {e._type == "contentPageComponent" && (
+                <Content2
+                  images={e.images}
+                  buttons={e.buttons}
+                  description={e.description}
+                  header={e.header!}
+                  video={e.video}
+                />
+              )}
+              {e._type == "guideComponent" && <GuideToBook />}
+              {e._type == "growYourBusiness" ||
+                (e._type == "spotQuoteForm" && <GrowYourBusiness />)}
+              {e._type == "sliderComponent" && (
+                <SingleSlider
+                  header={e.singleSlider[0].header}
+                  description={e.singleSlider[0].description}
+                  cards={e.singleSlider[0].cards}
+                  buttons={e.singleSlider[0].buttons}
+                  imageUrl={e.singleSlider[0].imageUrl}
+                />
+              )}
+              {e._type == "career-oppurtuinities" && <CareerOppurtunities />}
+              {e._type == "positionForm" && <NoOpenForm />}
+              {e._type == "bookDemoForm" && <BookADemoForm />}
+              {e._type == "reachOutForm" && <ReactOut />}
+              {e._type == "trackShipment" && <TrackShipment />}
+              {e._type == "getAQuoteForm" && <GetAQuoteForm />}
+            </div>
+          );
         })}
       </div>
     </>
-  )
+  );
 }

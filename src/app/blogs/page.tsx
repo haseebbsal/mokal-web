@@ -4,11 +4,14 @@ import BlogsClient from "@/components/page-components/blogs";
 
 
 const query=` *[_type == 'blog']{
+  "authorName":Author.authorName,
+    "authorImg":Author.authorImage.asset->url,
 "id":_id,
   "imageUrl":image.asset->url,
     "title":title,
      "publishedAt":_createdAt,
  "content":[...contents[].children[]]}`
+ 
 
 export default async function BlogsPage() {
 
@@ -22,7 +25,6 @@ export default async function BlogsPage() {
     }
     )
 
-    // console.log('blogsdata',blogsData)
 
     return (
         <>

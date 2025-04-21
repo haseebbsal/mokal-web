@@ -43,7 +43,7 @@ export const navbarMenuSettings: NavbarMenuSetting[] = [
     },
     {
         name: "Get Started",
-        link: '/',
+        link: 'https://mokal.vercel.app/login',
         isButton: true,
         extraClass: "bg-base-purple text-white rounded-xl p-2 font-semibold min-w-[10rem] flex justify-center"
     },
@@ -55,7 +55,7 @@ export const navbarMenuSettings: NavbarMenuSetting[] = [
     },
     {
         name: "Login",
-        link: '/',
+        link: 'https://mokal.vercel.app/login',
         isButton: true,
         extraClass: "!bg-transparent text-gray-600 !p-0 ",
         style: { padding: 0, color: 'grey' }
