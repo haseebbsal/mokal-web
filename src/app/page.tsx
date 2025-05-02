@@ -106,8 +106,6 @@ export default async function Home() {
             >
               {e._type == "title" && (
                 <Title
-                  identifier="1"
-                  breadCrumb={["Partnerships", "Broker Partner"]}
                   header={e.header!}
                   title={e.title}
                   buttons={e.buttons}

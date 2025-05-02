@@ -107,7 +107,7 @@ export default async function WhiteGlove() {
               {e._type == "title" && (
                 <Title
                   identifier="1"
-                  breadCrumb={["Partnerships", "Broker Partner"]}
+                  breadCrumb={["Services","White Glove Services"]}
                   header={e.header!}
                   title={e.title}
                   buttons={e.buttons}

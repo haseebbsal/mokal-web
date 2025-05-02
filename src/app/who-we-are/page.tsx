@@ -107,7 +107,7 @@ export default async function WhoWeAre() {
               {e._type == "title" && (
                 <Title
                   identifier="1"
-                  breadCrumb={["Partnerships", "Broker Partner"]}
+                  breadCrumb={["Who We Are"]}
                   header={e.header!}
                   title={e.title}
                   buttons={e.buttons}

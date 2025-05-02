@@ -107,7 +107,7 @@ export default async function CustomerSpotlight() {
               {e._type == "title" && (
                 <Title
                   identifier="1"
-                  breadCrumb={["Partnerships", "Broker Partner"]}
+                  breadCrumb={["About Us","Customer Spotlight"]}
                   header={e.header!}
                   title={e.title}
                   buttons={e.buttons}

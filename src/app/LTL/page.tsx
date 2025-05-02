@@ -107,7 +107,7 @@ export default async function LTL() {
               {e._type == "title" && (
                 <Title
                   identifier="1"
-                  breadCrumb={["Partnerships", "Broker Partner"]}
+                  breadCrumb={["Services","Less Than Truckload(LTL)"]}
                   header={e.header!}
                   title={e.title}
                   buttons={e.buttons}

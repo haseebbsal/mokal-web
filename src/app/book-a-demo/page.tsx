@@ -107,7 +107,7 @@ export default async function BookADemo() {
               {e._type == "title" && (
                 <Title
                   identifier="1"
-                  breadCrumb={["Partnerships", "Broker Partner"]}
+                  breadCrumb={["Book A Demo"]}
                   header={e.header!}
                   title={e.title}
                   buttons={e.buttons}

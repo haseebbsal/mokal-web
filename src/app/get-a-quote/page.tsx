@@ -21,9 +21,7 @@ import TrackShipment from "@/components/page-components/track-shipment";
 import GetAQuoteForm from "@/components/page-components/get-a-quote";
 import BrokerPartnerForm from "@/components/forms/broker-partner-form";
 import CorporatePartnerForm from "@/components/forms/corporate-partner-form";
-// import BaseTabs from "@/components/common/base-tabs";
-// import LTLForm from "@/components/forms/ltl-form";
-// import FTLForm from "@/components/forms/ftl-form";
+
 
 export default async function GetAQuote() {
   const homeData: { content: [PagesContent] } = await client.fetch({
@@ -110,7 +108,7 @@ export default async function GetAQuote() {
               {e._type == "title" && (
                 <Title
                   identifier="1"
-                  breadCrumb={["Partnerships", "Broker Partner"]}
+                  breadCrumb={["Get A Quote"]}
                   header={e.header!}
                   title={e.title}
                   buttons={e.buttons}
