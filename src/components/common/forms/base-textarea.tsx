@@ -6,6 +6,7 @@ export default function BaseTextArea({
   control,
   name,
   rules,
+  classNames,
   ...props
 }: BaseTextAreaProps) {
   const {
@@ -15,6 +16,7 @@ export default function BaseTextArea({
   return (
     <Textarea
       isInvalid={!!error}
+      classNames={{ ...classNames, helperWrapper: "text-start" }}
       errorMessage={error?.message}
       {...field}
       {...props}

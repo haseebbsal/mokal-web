@@ -7,6 +7,7 @@ export default function BaseInput({
   name,
   rules,
   control,
+  classNames,
   ...props
 }: BaseInputProps) {
   const { field, fieldState } = useController({
@@ -18,6 +19,7 @@ export default function BaseInput({
   return (
     <Input
       {...field}
+      classNames={{ ...classNames, helperWrapper: "text-start" }}
       isInvalid={!!fieldState.error}
       errorMessage={fieldState.error?.message}
       className={`  ${extraClass}`}

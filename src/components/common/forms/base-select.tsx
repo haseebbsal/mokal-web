@@ -25,6 +25,7 @@ export default function BaseSelect({
   name,
   control,
   rules,
+  classNames,
   ...props
 }: BaseSelectProps) {
   const {
@@ -35,6 +36,7 @@ export default function BaseSelect({
     <Select
       {...field}
       isInvalid={!!error}
+      classNames={{ ...classNames, helperWrapper: "text-start" }}
       errorMessage={error?.message}
       className="w-full"
       {...props}
