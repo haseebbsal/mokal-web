@@ -3,15 +3,15 @@
 import { Checkbox, Radio, RadioGroup, Switch } from "@heroui/react"
 import Image from "next/image"
 // import { useState } from "react"
-import BaseInput from "../common/forms/base-input"
-import { useForm } from "react-hook-form"
-import BaseSelect from "../common/forms/base-select"
+// import BaseInput from "../common/forms/base-input"
+// import { useForm } from s"react-hook-form"
+// import BaseSelect from "../common/forms/base-select"
 import BaseButton from "../common/base-button"
 import { PiWarningCircleFill } from "react-icons/pi"
 
 export default function LTLForm() {
     // const [activeLevel, setActiveLevel] = useState(0)
-    const { control } = useForm()
+    // const { control } = useForm()
     return (
         <div className="bg-base-blue rounded-xl flex flex-col border-1 border-base-teal gap-2 w-full">
             <div className="p-4 flex justify-center gap-2 w-1/2 m-auto items-center">
@@ -75,7 +75,7 @@ export default function LTLForm() {
                     <p className="text-base-purple font-semibold text-lg">Shipping From:</p>
                     <div className="flex gap-4 w-full">
 
-                        <BaseInput classNames={{ inputWrapper: "bg-transparent border-1 border-base-teal p-7 rounded-xl", label: "pb-2", input: "!text-base-blue" }} control={control} label="Postal / Zip Code *" labelPlacement="outside" placeholder="Enter Postal Code" />
+                        {/* <BaseInput classNames={{ inputWrapper: "bg-transparent border-1 border-base-teal p-7 rounded-xl", label: "pb-2", input: "!text-base-blue" }} control={control} label="Postal / Zip Code *" labelPlacement="outside" placeholder="Enter Postal Code" />
 
                         <BaseSelect classNames={{ trigger: "p-7 bg-transparent border-1 border-base-teal rounded-xl", label: "pb-2", value: "!text-base-blue" }} label="Country *" labelPlacement="outside" placeholder="Select" />
 
@@ -83,7 +83,7 @@ export default function LTLForm() {
 
                         <BaseSelect classNames={{ trigger: "p-7 bg-transparent border-1 border-base-teal rounded-xl", label: "pb-2", value: "!text-base-blue" }} label="City *" labelPlacement="outside" placeholder="Select" />
 
-                        <BaseSelect classNames={{ trigger: "p-7 bg-transparent border-1 border-base-teal rounded-xl", label: "pb-2", value: "!text-base-blue" }} label="Location Type " labelPlacement="outside" placeholder="Select" />
+                        <BaseSelect classNames={{ trigger: "p-7 bg-transparent border-1 border-base-teal rounded-xl", label: "pb-2", value: "!text-base-blue" }} label="Location Type " labelPlacement="outside" placeholder="Select" /> */}
 
                     </div>
                 </div>
@@ -93,7 +93,7 @@ export default function LTLForm() {
                     <p className="text-base-purple font-semibold text-lg">Shipping To:</p>
                     <div className="flex gap-4 w-full">
 
-                        <BaseInput classNames={{ inputWrapper: "bg-transparent border-1 border-base-teal p-7 rounded-xl", label: "pb-2", input: "!text-base-blue" }} control={control} label="Postal / Zip Code *" labelPlacement="outside" placeholder="Enter Postal Code" />
+                        {/* <BaseInput classNames={{ inputWrapper: "bg-transparent border-1 border-base-teal p-7 rounded-xl", label: "pb-2", input: "!text-base-blue" }} control={control} label="Postal / Zip Code *" labelPlacement="outside" placeholder="Enter Postal Code" />
 
                         <BaseSelect classNames={{ trigger: "p-7 bg-transparent border-1 border-base-teal rounded-xl", label: "pb-2", value: "!text-base-blue" }} label="Country *" labelPlacement="outside" placeholder="Select" />
 
@@ -101,7 +101,7 @@ export default function LTLForm() {
 
                         <BaseSelect classNames={{ trigger: "p-7 bg-transparent border-1 border-base-teal rounded-xl", label: "pb-2", value: "!text-base-blue" }} label="City *" labelPlacement="outside" placeholder="Select" />
 
-                        <BaseSelect classNames={{ trigger: "p-7 bg-transparent border-1 border-base-teal rounded-xl", label: "pb-2", value: "!text-base-blue" }} label="Location Type " labelPlacement="outside" placeholder="Select" />
+                        <BaseSelect classNames={{ trigger: "p-7 bg-transparent border-1 border-base-teal rounded-xl", label: "pb-2", value: "!text-base-blue" }} label="Location Type " labelPlacement="outside" placeholder="Select" /> */}
 
                     </div>
                 </div>
@@ -110,7 +110,7 @@ export default function LTLForm() {
                 <div className="flex flex-col gap-8 items-start">
                     <p className="text-base-purple font-semibold text-lg">Dimensions & Weight:</p>
                     <div className="flex gap-4 w-full ">
-                        <BaseInput type="number" className="max-w-52" classNames={{ inputWrapper: "bg-transparent border-1 border-base-teal p-7 rounded-xl", label: "pb-2", input: "!text-base-blue" }} control={control} label="Quantity" labelPlacement="outside" placeholder="Enter " />
+                        {/* <BaseInput type="number" className="max-w-52" classNames={{ inputWrapper: "bg-transparent border-1 border-base-teal p-7 rounded-xl", label: "pb-2", input: "!text-base-blue" }} control={control} label="Quantity" labelPlacement="outside" placeholder="Enter " /> */}
                         <div className="flex flex-col gap-4 items-start flex-1">
                             <p>Class & Density Calculator</p>
                             <RadioGroup classNames={{wrapper:"!flex-row !flex-nowrap"}} className="w-full">
@@ -120,7 +120,7 @@ export default function LTLForm() {
                         </div>
                     </div>
                     <div className="flex gap-4 w-full">
-
+{/* 
                         <BaseInput classNames={{ inputWrapper: "bg-transparent border-1 border-base-teal p-7 rounded-xl", label: "pb-2", input: "!text-base-blue" }} control={control} label="Length (CM) *" labelPlacement="outside" placeholder="Enter " />
 
                         <BaseInput classNames={{ inputWrapper: "bg-transparent border-1 border-base-teal p-7 rounded-xl", label: "pb-2", input: "!text-base-blue" }} control={control} label="Width (CM) *" labelPlacement="outside" placeholder="Enter " />
@@ -133,7 +133,7 @@ export default function LTLForm() {
 
                         <BaseInput type="number" classNames={{ inputWrapper: "bg-transparent border-1 border-base-teal p-7 rounded-xl", label: "pb-2", input: "!text-base-blue" }} control={control} label="Type " labelPlacement="outside" placeholder="Enter " />
 
-                        <BaseInput classNames={{ inputWrapper: "bg-transparent border-1 border-base-teal p-7 rounded-xl", label: "pb-2", input: "!text-base-blue" }} control={control} label="Pieces" labelPlacement="outside" placeholder="Enter " />
+                        <BaseInput classNames={{ inputWrapper: "bg-transparent border-1 border-base-teal p-7 rounded-xl", label: "pb-2", input: "!text-base-blue" }} control={control} label="Pieces" labelPlacement="outside" placeholder="Enter " /> */}
 
                     </div>
 

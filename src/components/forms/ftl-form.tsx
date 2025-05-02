@@ -3,15 +3,15 @@
 import { Checkbox, Radio, RadioGroup, Switch } from "@heroui/react"
 import Image from "next/image"
 // import { useState } from "react"
-import BaseInput from "../common/forms/base-input"
-import { useForm } from "react-hook-form"
-import BaseSelect from "../common/forms/base-select"
+// import BaseInput from "../common/forms/base-input"
+// import { useForm } from "react-hook-form"
+// import BaseSelect from "../common/forms/base-select"
 import BaseButton from "../common/base-button"
 import { PiWarningCircleFill } from "react-icons/pi";
 
 export default function FTLForm() {
     // const [activeLevel, setActiveLevel] = useState(0)
-    const { control } = useForm()
+    // const { control } = useForm()
     return (
         <div className="bg-base-blue rounded-xl flex flex-col border-1 border-base-teal gap-2 w-full">
             <div className="p-4 flex justify-center gap-2 w-1/2 m-auto items-center">
@@ -87,7 +87,7 @@ export default function FTLForm() {
                     <p className="text-base-purple font-semibold text-lg">Shipping From:</p>
                     <div className="flex gap-4 w-full">
 
-                        <BaseInput classNames={{ inputWrapper: "bg-transparent border-1 border-base-teal p-7 rounded-xl", label: "pb-2", input: "!text-base-blue" }} control={control} label="Postal / Zip Code *" labelPlacement="outside" placeholder="Enter Postal Code" />
+                        {/* <BaseInput classNames={{ inputWrapper: "bg-transparent border-1 border-base-teal p-7 rounded-xl", label: "pb-2", input: "!text-base-blue" }} control={control} label="Postal / Zip Code *" labelPlacement="outside" placeholder="Enter Postal Code" />
 
                         <BaseSelect classNames={{ trigger: "p-7 bg-transparent border-1 border-base-teal rounded-xl", label: "pb-2", value: "!text-base-blue" }} label="Country *" labelPlacement="outside" placeholder="Select" />
 
@@ -95,7 +95,7 @@ export default function FTLForm() {
 
                         <BaseSelect classNames={{ trigger: "p-7 bg-transparent border-1 border-base-teal rounded-xl", label: "pb-2", value: "!text-base-blue" }} label="City *" labelPlacement="outside" placeholder="Select" />
 
-                        <BaseSelect classNames={{ trigger: "p-7 bg-transparent border-1 border-base-teal rounded-xl", label: "pb-2", value: "!text-base-blue" }} label="Location Type " labelPlacement="outside" placeholder="Select" />
+                        <BaseSelect classNames={{ trigger: "p-7 bg-transparent border-1 border-base-teal rounded-xl", label: "pb-2", value: "!text-base-blue" }} label="Location Type " labelPlacement="outside" placeholder="Select" /> */}
 
                     </div>
                 </div>
@@ -105,7 +105,7 @@ export default function FTLForm() {
                     <p className="text-base-purple font-semibold text-lg">Shipping To:</p>
                     <div className="flex gap-4 w-full">
 
-                        <BaseInput classNames={{ inputWrapper: "bg-transparent border-1 border-base-teal p-7 rounded-xl", label: "pb-2", input: "!text-base-blue" }} control={control} label="Postal / Zip Code *" labelPlacement="outside" placeholder="Enter Postal Code" />
+                        {/* <BaseInput classNames={{ inputWrapper: "bg-transparent border-1 border-base-teal p-7 rounded-xl", label: "pb-2", input: "!text-base-blue" }} control={control} label="Postal / Zip Code *" labelPlacement="outside" placeholder="Enter Postal Code" />
 
                         <BaseSelect classNames={{ trigger: "p-7 bg-transparent border-1 border-base-teal rounded-xl", label: "pb-2", value: "!text-base-blue" }} label="Country *" labelPlacement="outside" placeholder="Select" />
 
@@ -113,7 +113,7 @@ export default function FTLForm() {
 
                         <BaseSelect classNames={{ trigger: "p-7 bg-transparent border-1 border-base-teal rounded-xl", label: "pb-2", value: "!text-base-blue" }} label="City *" labelPlacement="outside" placeholder="Select" />
 
-                        <BaseSelect classNames={{ trigger: "p-7 bg-transparent border-1 border-base-teal rounded-xl", label: "pb-2", value: "!text-base-blue" }} label="Location Type " labelPlacement="outside" placeholder="Select" />
+                        <BaseSelect classNames={{ trigger: "p-7 bg-transparent border-1 border-base-teal rounded-xl", label: "pb-2", value: "!text-base-blue" }} label="Location Type " labelPlacement="outside" placeholder="Select" /> */}
 
                     </div>
                 </div>
@@ -126,9 +126,9 @@ export default function FTLForm() {
                     </div>
                     <div className="flex gap-4 w-full">
 
-                        <BaseInput className="max-w-40" classNames={{ inputWrapper: "bg-transparent border-1 border-base-teal p-7 rounded-xl", label: "pb-2", input: "!text-base-blue" }} control={control} label="Weight(lbs) *" labelPlacement="outside" placeholder="Enter Weight" />
+                        {/* <BaseInput className="max-w-40" classNames={{ inputWrapper: "bg-transparent border-1 border-base-teal p-7 rounded-xl", label: "pb-2", input: "!text-base-blue" }} control={control} label="Weight(lbs) *" labelPlacement="outside" placeholder="Enter Weight" /> */}
 
-                        <BaseInput className="flex-1" classNames={{ inputWrapper: "bg-transparent border-1 border-base-teal p-7 rounded-xl", label: "pb-2", input: "!text-base-blue" }} control={control} label="Description *" labelPlacement="outside" placeholder="Enter Description" />
+                        {/* <BaseInput className="flex-1" classNames={{ inputWrapper: "bg-transparent border-1 border-base-teal p-7 rounded-xl", label: "pb-2", input: "!text-base-blue" }} control={control} label="Description *" labelPlacement="outside" placeholder="Enter Description" /> */}
 
 
 
@@ -141,7 +141,7 @@ export default function FTLForm() {
                 <div className="flex flex-col gap-8 items-start">
                     <p className="text-base-purple font-semibold text-lg">Dimensions & Weight:</p>
                     <div className="flex gap-4 w-full ">
-                        <BaseInput type="number" className="max-w-52" classNames={{ inputWrapper: "bg-transparent border-1 border-base-teal p-7 rounded-xl", label: "pb-2", input: "!text-base-blue" }} control={control} label="Pallet Quantity" labelPlacement="outside" placeholder="Enter " />
+                        {/* <BaseInput type="number" className="max-w-52" classNames={{ inputWrapper: "bg-transparent border-1 border-base-teal p-7 rounded-xl", label: "pb-2", input: "!text-base-blue" }} control={control} label="Pallet Quantity" labelPlacement="outside" placeholder="Enter " /> */}
                         <div className="flex flex-col gap-4 items-start flex-1">
                             <p>Class & Density Calculator</p>
                             <RadioGroup classNames={{ wrapper: "!flex-row !flex-nowrap" }} className="w-full">
