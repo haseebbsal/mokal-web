@@ -6,6 +6,7 @@ import MainNavbar from "@/components/page-components/navbar";
 import Footer from "@/components/page-components/footer";
 import QueryProvider from "@/providers/query-provider";
 import MegaMenuProvider from "@/providers/mega-menu";
+import { ToastContainer} from 'react-toastify';
 
 export const metadata: Metadata = {
   title: "Mokal",
@@ -31,6 +32,7 @@ export default function RootLayout({
               <MainNavbar />
               <div className={` mt-8`}>{children}</div>
               <Footer />
+              <ToastContainer />
             </MegaMenuProvider>
           </QueryProvider>
         </HeroProvider>

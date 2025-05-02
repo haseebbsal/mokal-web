@@ -204,6 +204,7 @@ export default async function CardsContent({
                           height={500}
                         />
                       </div>
+
                       <LinearGradientCircle />
                     </div>
                   );

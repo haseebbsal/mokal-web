@@ -1,5 +1,3 @@
-import LinearGradientText from "@/components/common/linear-gradient-text";
-import BaseBreadCrumb from "@/components/common/base-breadcrumb";
 import { PagesContent } from "@/utils/types";
 import { client } from "@/utils/constants";
 import Title from "@/components/page-components/title";
@@ -17,16 +15,20 @@ import SingleSlider from "@/components/page-components/single-slider";
 import GrowYourBusiness from "@/components/page-components/grow-your-business";
 import CareerOppurtunities from "@/components/page-components/career-oppurtunities";
 import NoOpenForm from "@/components/forms/no-open-complete";
-import ReactOut from "@/components/page-components/client-for-now";
+import ReactOut from "@/components/forms/broker-partner-form";
 import TrackShipment from "@/components/page-components/track-shipment";
 import BookADemoForm from "@/components/forms/book-a-demo";
 import GetAQuoteForm from "@/components/page-components/get-a-quote";
+import BrokerPartnerForm from "@/components/forms/broker-partner-form";
+import CorporatePartnerForm from "@/components/forms/corporate-partner-form";
 
 export default async function BookADemo() {
   const homeData: { content: [PagesContent] } = await client.fetch({
     query: `*[_type=='book-a-demo'][0]{
                                                           "content":[...contentBlocks[]->{
+
                                                             ...,
+                                                            
                                                             "singleSlider":[...slider[]{...,"cards":[...cards[]{
                                           ...,
                                           "imageUrl":imageUrl.asset->url
@@ -39,6 +41,8 @@ export default async function BookADemo() {
                                                               }],
                                                              "blogs":[...blogs[]->{
                                                                ...,
+                                                               "Author":Author.authorName,
+  "AuthorImage":Author.authorImage.asset->url,
                                                                "imageUrl":image.asset->url
                                                               }],
                                                             "imageUrl":imageUrl.asset->url,
@@ -81,63 +85,108 @@ export default async function BookADemo() {
                                                             }
                                                             ],
                                                               "remaining":{...}
-                                                            }`
-  })
-  const { content } = homeData
-
+                                                            }`,
+  });
+  const { content } = homeData;
 
   return (
     <>
       <div className={`flex flex-col gap-4`}>
         {content.map((e, index) => {
-          return (<div key={e._type + index}
-            className={`${index != 0 ? index % 2 != 0 ? 'bg-white w-full' : 'bg-base-shadeBlue w-full' : ""}`}>
-            {e._type == 'title' && <Title identifier="1" breadCrumb={['Book A Demo']} header={e.header!} title={e.title} buttons={e.buttons} imageUrl={e.imageUrl} description={e.description} />}
-            {e._type == 'tabs' && <TabPageComponent variation={e.variation!} header={e.header!} slider={e.slider as any} />}
-            {e._type == 'content' && <Content customerSpotlight content={e.content as any} />}
-            {e._type == 'faqs' && <FAQSs header={e.header!} questions={e.questions!} description={e.description!} />}
-            {e._type == 'mapComponent' && <CustomerBase header={e.header!} />}
-            {e._type == 'refineTransport' && <RefineTransportPage />}
-            {e._type == 'cards' && <CardsContent description={e.description!} header={e.header!} cards={e.cards as any} variation={e.variation!} buttons={e.buttons}/>}
-            {e._type == 'blogComponent' && <MainBlog header={e.header!} blogs={e.blogs} />}
-            {e._type == 'testimonialComponent' && <Testimonials header={e.header!} description={e.description} testimonials={e.testimonials} />}
-            {e._type == 'contentPageComponent' && <Content2 images={e.images} buttons={e.buttons} description={e.description} header={e.header!} video={e.video} />}
-            {e._type == 'guideComponent' && <GuideToBook />}
-            {e._type == 'growYourBusiness' || e._type == 'spotQuoteForm' && <GrowYourBusiness />}
-            {e._type == 'sliderComponent' && <SingleSlider header={e.singleSlider[0].header} description={e.singleSlider[0].description} cards={e.singleSlider[0].cards} buttons={e.singleSlider[0].buttons} imageUrl={e.singleSlider[0].imageUrl} />}
-            {e._type == 'career-oppurtuinities' && <CareerOppurtunities />}
-            {e._type == 'positionForm' && <NoOpenForm />}
-            {e._type == 'bookDemoForm' && <BookADemoForm />}
-            {e._type == 'reachOutForm' && <ReactOut />}
-            {e._type == 'trackShipment' && <TrackShipment />}
-            {e._type == 'getAQuoteForm' && <GetAQuoteForm />}
+          return (
+            <div
+              key={e._type + index}
+              className={`${
+                index != 0
+                  ? index % 2 != 0
+                    ? "bg-white w-full"
+                    : "bg-base-shadeBlue w-full"
+                  : ""
+              }`}
+            >
+              {e._type == "title" && (
+                <Title
+                  identifier="1"
+                  breadCrumb={["Partnerships", "Broker Partner"]}
+                  header={e.header!}
+                  title={e.title}
+                  buttons={e.buttons}
+                  imageUrl={e.imageUrl}
+                  description={e.description}
+                />
+              )}
+              {e._type == "tabs" && (
+                <TabPageComponent
+                  variation={e.variation!}
+                  header={e.header!}
+                  slider={e.slider as any}
+                />
+              )}
+              {e._type == "content" && (
+                <Content customerSpotlight content={e.content as any} />
+              )}
+              {e._type == "faqs" && (
+                <FAQSs
+                  header={e.header!}
+                  questions={e.questions!}
+                  description={e.description!}
+                />
+              )}
+              {e._type == "mapComponent" && <CustomerBase header={e.header!} />}
+              {e._type == "refineTransport" && <RefineTransportPage />}
+              {e._type == "cards" && (
+                <CardsContent
+                  description={e.description!}
+                  header={e.header!}
+                  cards={e.cards as any}
+                  variation={e.variation!}
+                  buttons={e.buttons}
+                />
+              )}
+              {e._type == "blogComponent" && (
+                <MainBlog header={e.header!} blogs={e.blogs} />
+              )}
+              {e._type == "testimonialComponent" && (
+                <Testimonials
+                  header={e.header!}
+                  description={e.description}
+                  testimonials={e.testimonials}
+                />
+              )}
+              {e._type == "contentPageComponent" && (
+                <Content2
+                  images={e.images}
+                  buttons={e.buttons}
+                  description={e.description}
+                  header={e.header!}
+                  video={e.video}
+                />
+              )}
+              {e._type == "guideComponent" && <GuideToBook />}
+              {(e._type == "growYourBusiness" ||
+                e._type == "spotQuoteForm") && <GrowYourBusiness />}
+              {e._type == "sliderComponent" && (
+                <SingleSlider
+                  header={e.singleSlider[0].header}
+                  description={e.singleSlider[0].description}
+                  cards={e.singleSlider[0].cards}
+                  buttons={e.singleSlider[0].buttons}
+                  imageUrl={e.singleSlider[0].imageUrl}
+                />
+              )}
+              {e._type == "career-oppurtuinities" && <CareerOppurtunities />}
+              {e._type == "brokerPartner" && <BrokerPartnerForm />}
+              {e._type == "corporatePartner" && <CorporatePartnerForm />}
 
-
-          </div>)
+              {e._type == "positionForm" && <NoOpenForm />}
+              {e._type == "bookDemoForm" && <BookADemoForm />}
+              {e._type == "reachOutForm" && <ReactOut />}
+              {e._type == "trackShipment" && <TrackShipment />}
+              {e._type == "getAQuoteForm" && <GetAQuoteForm />}
+            </div>
+          );
         })}
       </div>
     </>
-  )
-  return (
-    <>
-      <div className="flex flex-col gap-4">
-        <div className="flex flex-col gap-8 min-h-64">
-          <div className={`flex flex-col items-center m-auto sm:px-8 px-4 py-4 sm:w-1/2  text-center gap-4`}>
-            <div className="flex flex-col ">
-              <h1 className="sm:text-[3rem] text-[1.8rem] font-bold"><LinearGradientText text="Book a Demo" /> </h1>
-              <p className="text-text-gray text-lg">Unlock Exclusive Rates for Specialized and Time-Sensitive Shipments</p>
-            </div>
-            <BaseBreadCrumb items={['Book a Demo']} />
-          </div>
-        </div>
-
-        <div className="flex flex-col gap-8 bg-white py-16">
-
-          <div className="bg-white w-full">
-            <BookADemo />
-          </div>
-        </div>
-      </div >
-    </>
-  )
+  );
 }

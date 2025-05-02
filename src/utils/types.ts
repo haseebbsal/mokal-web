@@ -4,13 +4,20 @@ import {
   ButtonProps,
   CheckboxProps,
   InputProps,
+  SelectProps,
+  TextAreaProps,
 } from "@heroui/react";
 import { CSSProperties, Dispatch, ReactNode, SetStateAction } from "react";
-import { Control } from "react-hook-form";
+import { Control, FieldValues, RegisterOptions } from "react-hook-form";
 import { CarouselProps } from "react-multi-carousel";
 
 export interface BaseInputProps extends InputProps {
   control: Control;
+  name: string;
+  rules?: Omit<
+    RegisterOptions<FieldValues, string>,
+    "disabled" | "setValueAs" | "valueAsNumber" | "valueAsDate"
+  >;
   extraClass?: string;
 }
 
@@ -98,12 +105,24 @@ export interface BaseAccordionProps extends AccordionProps {
 export interface BaseFileProps extends InputProps {
   labelClass?: string;
   bgColor?: string;
+  control: Control;
+  name: string;
+  rules?: Omit<
+    RegisterOptions<FieldValues, string>,
+    "disabled" | "setValueAs" | "valueAsNumber" | "valueAsDate"
+  >;
 }
 
 export type LinearGradientTextProp = { text: string; extraClass?: string };
 
 export interface BaseCheckboxProps extends CheckboxProps {
   anything?: string;
+  control: Control;
+  name: string;
+  rules?: Omit<
+    RegisterOptions<FieldValues, string>,
+    "disabled" | "setValueAs" | "valueAsNumber" | "valueAsDate"
+  >;
 }
 
 export interface CourierServiceProps {
@@ -226,4 +245,24 @@ export interface PagesContent {
       cards: [{ imageUrl: string; description: string }];
     }
   ];
+}
+
+export interface BaseSelectProps extends Omit<SelectProps, "children"> {
+  items: { name: string; value: string | number }[];
+  control: Control;
+  name: string;
+  rules?: Omit<
+    RegisterOptions<FieldValues, string>,
+    "disabled" | "setValueAs" | "valueAsNumber" | "valueAsDate"
+  >;
+}
+
+
+export interface BaseTextAreaProps extends TextAreaProps{
+  control: Control;
+  name: string;
+  rules?: Omit<
+    RegisterOptions<FieldValues, string>,
+    "disabled" | "setValueAs" | "valueAsNumber" | "valueAsDate"
+  >;
 }

@@ -1,7 +1,12 @@
 "use client";
 import Image from "next/image";
 import BaseButton from "../common/base-button";
-import { dropdowns, megaMenu, navbarMenuSettings } from "@/utils/constants";
+import {
+  dropdowns,
+  megaMenu,
+  mokalLink,
+  navbarMenuSettings,
+} from "@/utils/constants";
 import { NavbarMenuSetting } from "@/utils/types";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import Link from "next/link";
@@ -117,7 +122,7 @@ export default function NavbarBottomHeader({ logo }: { logo: string }) {
                 <Link
                   onClick={() => onClose()}
                   href="/"
-                  className="hover:!bg-base-pink bg-transparent text-text-gray justify-start text-md px-2 py-2 rounded-xl"
+                  className="hover:!bg-base-pink bg-transparent text-black justify-start text-md px-2 py-2 rounded-xl"
                 >
                   Home
                 </Link>
@@ -164,6 +169,14 @@ export default function NavbarBottomHeader({ logo }: { logo: string }) {
                     </AccordionItem>
                   ))}
                 </BaseAccordion>
+
+                <Link
+                  onClick={() => onClose()}
+                  href={mokalLink}
+                  className="hover:!bg-base-pink bg-transparent text-black justify-start text-md px-2 py-2 rounded-xl"
+                >
+                  Login
+                </Link>
 
                 <div className="relative">
                   <Image

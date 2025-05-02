@@ -1,7 +1,23 @@
-import { Textarea, TextAreaProps } from "@heroui/react";
+import { BaseTextAreaProps } from "@/utils/types";
+import { Textarea } from "@heroui/react";
+import { useController } from "react-hook-form";
 
-export default function BaseTextArea({...props}:TextAreaProps){
-    return(
-        <Textarea {...props} />
-    )
+export default function BaseTextArea({
+  control,
+  name,
+  rules,
+  ...props
+}: BaseTextAreaProps) {
+  const {
+    field,
+    fieldState: { error },
+  } = useController({ name, control, rules });
+  return (
+    <Textarea
+      isInvalid={!!error}
+      errorMessage={error?.message}
+      {...field}
+      {...props}
+    />
+  );
 }

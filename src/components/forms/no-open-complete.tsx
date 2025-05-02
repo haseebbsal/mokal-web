@@ -3,7 +3,7 @@ import NoOpenPositionForm from "./no-open-position";
 
 export default function NoOpenForm() {
     return (
-        <div className={`flex sm:flex-row flex-col m-auto sm:px-8 px-4 sm:py-20 py-16 sm:w-[80%]  text-center gap-4`}>
+        <div className={`flex sm:flex-row flex-col  sm:px-36 px-4 sm:py-20 py-16  text-center gap-4 bg-base-blue`}>
             <div className="flex flex-col gap-4 relative z-10 flex-1 text-start text-white">
                 <Image src={'/logo-fullWhite.svg'} alt="logo full White" height={600} width={600} />
                 <h1 className="sm:text-[2.3rem] text-[1.3rem] font-bold">No Open Position That Fits?</h1>

@@ -44,6 +44,7 @@ export default function BlogsClient({ data }: { data: Blogs }) {
                 setQuery(e.target.value);
               }}
               extraClass="w-full"
+              name="search"
               control={control}
               placeholder="Search Blogs"
               endContent={

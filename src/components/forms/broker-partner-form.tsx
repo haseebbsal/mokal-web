@@ -1,32 +1,17 @@
 "use client";
 
-import { MdKeyboardDoubleArrowRight } from "react-icons/md";
-import BaseButton from "../common/base-button";
+import Image from "next/image";
 import BaseInput from "../common/forms/base-input";
-import BaseSelect from "../common/forms/base-select";
+import BaseButton from "../common/base-button";
 import LinearGradientText from "../common/linear-gradient-text";
 import { FieldValues, useForm } from "react-hook-form";
+import { MdKeyboardDoubleArrowRight } from "react-icons/md";
+import { isValidPhoneNumber } from "libphonenumber-js";
 import { useMutation } from "@tanstack/react-query";
-import { toast } from "react-toastify";
 import axiosInstance from "@/utils/axiosInstance";
+import { toast } from "react-toastify";
 
-const regionItems = [
-  { name: "US", value: "US" },
-  { name: "CA", value: "CA" },
-];
-
-const typeOfShipmentItems = [
-  { name: "Pallet", value: 1 },
-  { name: "Package", value: 2 },
-  { name: "Courier Pack", value: 3 },
-  { name: "Envelop", value: 4 },
-];
-
-const shipmentRatioItems = [
-  { name: "10-15 Shipments", value: "10-15 Shipments" },
-];
-
-export default function BookADemoForm() {
+export default function BrokerPartnerForm() {
   const { control, handleSubmit, reset } = useForm();
 
   function onError(e: any) {
@@ -47,23 +32,24 @@ export default function BookADemoForm() {
     reset();
   }
   const { mutate, isLoading } = useMutation(
-    (data: any) => axiosInstance.post("/platform/book-a-demo", data),
+    (data: any) => axiosInstance.post("/platform/broker-partner", data),
     { onError, onSuccess }
   );
 
-  function bookDemo(values: FieldValues) {
-    const data = {
-      ...values,
-      typeOfShipment: Number(values.typeOfShipment),
-    };
-    mutate(data);
+  function brokerPartner(values: FieldValues) {
+    mutate(values);
   }
-
   return (
     <div
-      className={`flex sm:flex-row flex-col m-auto sm:px-8 px-4 sm:py-20 py-16 sm:w-[80%] shadow-lg rounded-xl text-center sm:gap-16 gap-8`}
+      className={`flex sm:flex-row flex-col m-auto sm:px-8 px-4 sm:py-20 bg-white py-16 sm:w-[80%] shadow-lg rounded-xl text-center sm:gap-16 gap-8`}
     >
       <div className="flex flex-1 flex-col sm:items-start items-center sm:text-start text-center gap-4">
+        <Image
+          src={"/images/broker (1).svg"}
+          alt="broker"
+          width={200}
+          height={200}
+        />
         <h1 className="sm:text-[2rem] text-[1.5rem] font-bold">
           <LinearGradientText
             extraClass=""
@@ -85,53 +71,71 @@ export default function BookADemoForm() {
         </p>
       </div>
       <form
-        onSubmit={handleSubmit(bookDemo)}
-        className="flex flex-col gap-8 flex-1 items-start"
+        onSubmit={handleSubmit(brokerPartner)}
+        className="flex bg-base-shadeBlue p-8 rounded-xl flex-col gap-8 flex-1 items-start"
       >
-        <h1 className="text-2xl font-semibold">Reach Out to Book a Demo</h1>
-        <BaseSelect
+        <h1 className="text-2xl font-semibold">
+          Reach Out to a Broker Representative
+        </h1>
+
+        <BaseInput
+          name="firstName"
+          rules={{ required: "First Name is required" }}
+          extraClass=""
           control={control}
-          name="region"
-          rules={{ required: "Region is required" }}
-          items={regionItems}
-          label="Select Region *"
+          placeholder="First Name"
+          label="First Name *"
           labelPlacement="outside"
-          placeholder="Select"
-        />
-        <BaseSelect
-          control={control}
-          rules={{ required: "Type Of Shipment is required" }}
-          name="typeOfShipment"
-          items={typeOfShipmentItems}
-          label="Type of Shipment *"
-          labelPlacement="outside"
-          placeholder="Pallets"
-        />
-        <BaseSelect
-          control={control}
-          rules={{ required: "Shipment Ratio is required" }}
-          name="shipmentRation"
-          items={shipmentRatioItems}
-          label="Shipment Ratio *"
-          labelPlacement="outside"
-          placeholder="10 - 15 Shipments"
         />
         <BaseInput
+          name="lastName"
+          rules={{ required: "Last Name is required" }}
+          extraClass=""
           control={control}
-          rules={{ required: "Email is required" }}
+          placeholder="Last Name"
+          label="Last Name *"
+          labelPlacement="outside"
+        />
+        <BaseInput
+          name="companyName"
+          rules={{ required: "Company Name is required" }}
+          extraClass=""
+          control={control}
+          placeholder="Company Name"
+          label="Company Name *"
+          labelPlacement="outside"
+        />
+        <BaseInput
           name="email"
           extraClass=""
+          rules={{ required: " Email is required" }}
+          type="email"
+          control={control}
           placeholder="Email"
           label="Email *"
           labelPlacement="outside"
         />
+        <BaseInput
+          name="phoneNumber"
+          extraClass=""
+          rules={{
+            required: "Phone Number is required",
+            validate: (value) => {
+              return isValidPhoneNumber(value) || "Invalid Phone Number";
+            },
+          }}
+          control={control}
+          placeholder="Phone Number"
+          label="Phone Number *"
+          labelPlacement="outside"
+        />
         <BaseButton
+          type="submit"
           isLoading={isLoading}
           isDisabled={isLoading}
-          type="submit"
           extraClass="!py-6"
         >
-          Start Booking <MdKeyboardDoubleArrowRight />
+          Become a Broker Partner <MdKeyboardDoubleArrowRight />
         </BaseButton>
       </form>
     </div>

@@ -1,32 +1,47 @@
-'use client'
+"use client";
 
-import { Select, SelectItem, SelectProps } from "@heroui/react"
+import { BaseSelectProps } from "@/utils/types";
+import { Select, SelectItem } from "@heroui/react";
+import { useController } from "react-hook-form";
 
+// const animals = [
+//   { key: "cat", label: "Cat" },
+//   { key: "dog", label: "Dog" },
+//   { key: "elephant", label: "Elephant" },
+//   { key: "lion", label: "Lion" },
+//   { key: "tiger", label: "Tiger" },
+//   { key: "giraffe", label: "Giraffe" },
+//   { key: "dolphin", label: "Dolphin" },
+//   { key: "penguin", label: "Penguin" },
+//   { key: "zebra", label: "Zebra" },
+//   { key: "shark", label: "Shark" },
+//   { key: "whale", label: "Whale" },
+//   { key: "otter", label: "Otter" },
+//   { key: "crocodile", label: "Crocodile" },
+// ];
 
-
-const animals = [
-    { key: "cat", label: "Cat" },
-    { key: "dog", label: "Dog" },
-    { key: "elephant", label: "Elephant" },
-    { key: "lion", label: "Lion" },
-    { key: "tiger", label: "Tiger" },
-    { key: "giraffe", label: "Giraffe" },
-    { key: "dolphin", label: "Dolphin" },
-    { key: "penguin", label: "Penguin" },
-    { key: "zebra", label: "Zebra" },
-    { key: "shark", label: "Shark" },
-    { key: "whale", label: "Whale" },
-    { key: "otter", label: "Otter" },
-    { key: "crocodile", label: "Crocodile" },
-];
-
-
-export default function BaseSelect({...props}:Omit<SelectProps,'children'>) {
-    return (
-        <Select className="w-full" {...props} >
-            {animals.map((animal) => (
-                <SelectItem key={animal.key}>{animal.label}</SelectItem>
-            ))}
-        </Select>
-    )
+export default function BaseSelect({
+  items,
+  name,
+  control,
+  rules,
+  ...props
+}: BaseSelectProps) {
+  const {
+    field,
+    fieldState: { error },
+  } = useController({ name, control, rules, defaultValue: "" });
+  return (
+    <Select
+      {...field}
+      isInvalid={!!error}
+      errorMessage={error?.message}
+      className="w-full"
+      {...props}
+    >
+      {items.map((item) => (
+        <SelectItem key={item.value}>{item.name}</SelectItem>
+      ))}
+    </Select>
+  );
 }

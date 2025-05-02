@@ -16,74 +16,80 @@ import SingleSlider from "@/components/page-components/single-slider";
 import CareerOppurtunities from "@/components/page-components/career-oppurtunities";
 import NoOpenForm from "@/components/forms/no-open-complete";
 import BookADemoForm from "@/components/forms/book-a-demo";
-import ReactOut from "@/components/page-components/client-for-now";
+import ReactOut from "@/components/forms/broker-partner-form";
 import TrackShipment from "@/components/page-components/track-shipment";
 import GetAQuoteForm from "@/components/page-components/get-a-quote";
+import BrokerPartnerForm from "@/components/forms/broker-partner-form";
+import CorporatePartnerForm from "@/components/forms/corporate-partner-form";
 
 export default async function Truckload() {
   const homeData: { content: [PagesContent] } = await client.fetch({
     query: `*[_type=='truckload'][0]{
-                                                      "content":[...contentBlocks[]->{
-                                                        ...,
-                                                        "singleSlider":[...slider[]{...,"cards":[...cards[]{
-                                      ...,
-                                      "imageUrl":imageUrl.asset->url
-                                    }]}],
-                                                        "images":[...images[]{...,"imageUrl":imageUrl.asset->url}],
-                                                        "video":video.asset->url,
-                                                         "testimonials":[...testimonials[]->{
-                                                           ...,
-                                                           "imageUrl":image.asset->url
-                                                          }],
-                                                         "blogs":[...blogs[]->{
-                                                           ...,
-                                                           "imageUrl":image.asset->url
-                                                          }],
-                                                        "imageUrl":imageUrl.asset->url,
-                                                        "slider":[...slider[]->{
-                                                          ...,
-                                                          "imageUrl":imageUrl.asset->url,
-                                                          "cards":[...cards[]->{
+                                                          "content":[...contentBlocks[]->{
+
                                                             ...,
-                                                            "imageUrl":imageUrl.asset->url
-                                                          }],
-                                                    
-                                                          "slider":[...slider[]{
-                                                            ...,
+                                                            
+                                                            "singleSlider":[...slider[]{...,"cards":[...cards[]{
+                                          ...,
+                                          "imageUrl":imageUrl.asset->url
+                                        }]}],
+                                                            "images":[...images[]{...,"imageUrl":imageUrl.asset->url}],
+                                                            "video":video.asset->url,
+                                                             "testimonials":[...testimonials[]->{
+                                                               ...,
+                                                               "imageUrl":image.asset->url
+                                                              }],
+                                                             "blogs":[...blogs[]->{
+                                                               ...,
+                                                               "Author":Author.authorName,
+  "AuthorImage":Author.authorImage.asset->url,
+                                                               "imageUrl":image.asset->url
+                                                              }],
                                                             "imageUrl":imageUrl.asset->url,
+                                                            "slider":[...slider[]->{
+                                                              ...,
+                                                              "imageUrl":imageUrl.asset->url,
+                                                              "cards":[...cards[]->{
+                                                                ...,
+                                                                "imageUrl":imageUrl.asset->url
+                                                              }],
+                                                        
+                                                              "slider":[...slider[]{
+                                                                ...,
+                                                                "imageUrl":imageUrl.asset->url,
+                                                                "cards":[...cards[]{
+                                                                  ...,
+                                                                  "imageUrl":imageUrl.asset->url
+                                                                  
+                                                                }]}
+                                                                       ]
+                                                        
+                                                              
+                                                            }],
                                                             "cards":[...cards[]{
                                                               ...,
-                                                              "imageUrl":imageUrl.asset->url
-                                                              
-                                                            }]}
-                                                                   ]
-                                                    
-                                                          
-                                                        }],
-                                                        "cards":[...cards[]{
-                                                          ...,
-                                                          "imageUrl":icon.asset->url
-                                                        }],
-                                                        "content":[...content[]{
-                                                          ...,
-                                                          "description":[...description[]{
-                                                            ...,
-                                                            "imageUrl":imageUrl.asset->url
-                                                          }],
-                                                          "imageUrl":asset->url,
-                                                          "arrayContent":[...arrayContent[]{
-                                                            ...,
-                                                            "imageUrl":imageUrl.asset->url
-                                                          }]
-                                                        }]
-                                                        }
-                                                        ],
-                                                          "remaining":{...}
-                                                        }`,
+                                                              "imageUrl":icon.asset->url
+                                                            }],
+                                                            "content":[...content[]{
+                                                              ...,
+                                                              "description":[...description[]{
+                                                                ...,
+                                                                "imageUrl":imageUrl.asset->url
+                                                              }],
+                                                              "imageUrl":asset->url,
+                                                              "arrayContent":[...arrayContent[]{
+                                                                ...,
+                                                                "imageUrl":imageUrl.asset->url
+                                                              }]
+                                                            }]
+                                                            }
+                                                            ],
+                                                              "remaining":{...}
+                                                            }`,
   });
   const { content } = homeData;
 
-  console.log("contenttt", content);
+
   return (
     <>
       <div className={`flex flex-col gap-4`}>
@@ -102,7 +108,7 @@ export default async function Truckload() {
               {e._type == "title" && (
                 <Title
                   identifier="1"
-                  breadCrumb={["Services", "Truckload"]}
+                  breadCrumb={["Partnerships", "Broker Partner"]}
                   header={e.header!}
                   title={e.title}
                   buttons={e.buttons}
@@ -158,8 +164,8 @@ export default async function Truckload() {
                 />
               )}
               {e._type == "guideComponent" && <GuideToBook />}
-              {e._type == "growYourBusiness" ||
-                (e._type == "spotQuoteForm" && <GrowYourBusiness />)}
+              {(e._type == "growYourBusiness" ||
+                e._type == "spotQuoteForm") && <GrowYourBusiness />}
               {e._type == "sliderComponent" && (
                 <SingleSlider
                   header={e.singleSlider[0].header}
@@ -170,6 +176,9 @@ export default async function Truckload() {
                 />
               )}
               {e._type == "career-oppurtuinities" && <CareerOppurtunities />}
+              {e._type == "brokerPartner" && <BrokerPartnerForm />}
+              {e._type == "corporatePartner" && <CorporatePartnerForm />}
+
               {e._type == "positionForm" && <NoOpenForm />}
               {e._type == "bookDemoForm" && <BookADemoForm />}
               {e._type == "reachOutForm" && <ReactOut />}
