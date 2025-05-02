@@ -2,16 +2,16 @@
 
 import { MdKeyboardDoubleArrowRight } from "react-icons/md"
 import BaseButton from "../common/base-button"
-import BaseFile from "../common/forms/base-file"
-import BaseInput from "../common/forms/base-input"
-import BaseTextArea from "../common/forms/base-textarea"
+// import BaseFile from "../common/forms/base-file"
+// import BaseInput from "../common/forms/base-input"
+// import BaseTextArea from "../common/forms/base-textarea"
 import { Accordion, AccordionItem } from "@heroui/react"
-import { useForm } from "react-hook-form"
+// import { useForm } from "react-hook-form"
 import LinearGradientText from "../common/linear-gradient-text"
-import { BiSearch } from "react-icons/bi"
+// import { BiSearch } from "react-icons/bi"
 
 export default function CareerOppurtunities() {
-    const { control } = useForm()
+    // const { control } = useForm()
 
     return (
         <div className={`  p-8 flex flex-col gap-16 sm:w-[80%] m-auto items-center `}>
@@ -19,7 +19,7 @@ export default function CareerOppurtunities() {
                 <h1 className="sm:text-[2.3rem] text-[1.5rem] font-bold">Current <LinearGradientText text="Career Opportunities" /></h1>
                 <p className="text-text-darkGray">View available openings with Freightcom across our many locations.</p>
             </div>
-            <BaseInput classNames={{ inputWrapper: "p-6" }} extraClass="w-full" control={control} placeholder="Search Positions" endContent={<BiSearch size={20} />} />
+            {/* <BaseInput classNames={{ inputWrapper: "p-6" }} extraClass="w-full" control={control} placeholder="Search Positions" endContent={<BiSearch size={20} />} /> */}
 
             <Accordion
                 variant="splitted" >
@@ -49,13 +49,13 @@ export default function CareerOppurtunities() {
                         </div>
 
                         <div className="flex gap-4 flex-wrap mt-4">
-                            <BaseInput extraClass="flex-[1_0_20%]" control={control} placeholder="First Name" label="First Name *" labelPlacement="outside" />
+                            {/* <BaseInput extraClass="flex-[1_0_20%]" control={control} placeholder="First Name" label="First Name *" labelPlacement="outside" />
                             <BaseInput extraClass="flex-[1_0_20%]" control={control} placeholder="Last Name" label="Last Name *" labelPlacement="outside" />
                             <BaseInput extraClass="flex-[1_0_20%]" type="email" control={control} placeholder="Email" label="Email *" labelPlacement="outside" />
                             <BaseInput extraClass="flex-[1_0_20%]" control={control} placeholder="Position" label="Position you are looking for? *" labelPlacement="outside" />
                             <BaseFile className="flex-[1_0_40%]" bgColor="bg-gray-100" label="Resume *" />
                             <BaseFile className="flex-[1_0_40%]" bgColor="bg-gray-100" label="Cover Letter" />
-                            <BaseTextArea label="Message" labelPlacement="outside" placeholder="Write Message" minRows={10} />
+                            <BaseTextArea label="Message" labelPlacement="outside" placeholder="Write Message" minRows={10} /> */}
                             <BaseButton extraClass="!py-6">Submit Application <MdKeyboardDoubleArrowRight /></BaseButton>
 
 
@@ -90,13 +90,13 @@ export default function CareerOppurtunities() {
                         </div>
 
                         <div className="flex gap-4 flex-wrap mt-4">
-                            <BaseInput extraClass="flex-[1_0_20%]" control={control} placeholder="First Name" label="First Name *" labelPlacement="outside" />
+                            {/* <BaseInput extraClass="flex-[1_0_20%]" control={control} placeholder="First Name" label="First Name *" labelPlacement="outside" />
                             <BaseInput extraClass="flex-[1_0_20%]" control={control} placeholder="Last Name" label="Last Name *" labelPlacement="outside" />
                             <BaseInput extraClass="flex-[1_0_20%]" type="email" control={control} placeholder="Email" label="Email *" labelPlacement="outside" />
                             <BaseInput extraClass="flex-[1_0_20%]" control={control} placeholder="Position" label="Position you are looking for? *" labelPlacement="outside" />
                             <BaseFile className="flex-[1_0_40%]" bgColor="bg-gray-100" label="Resume *" />
                             <BaseFile className="flex-[1_0_40%]" bgColor="bg-gray-100" label="Cover Letter" />
-                            <BaseTextArea label="Message" labelPlacement="outside" placeholder="Write Message" minRows={10} />
+                            <BaseTextArea label="Message" labelPlacement="outside" placeholder="Write Message" minRows={10} /> */}
                             <BaseButton extraClass="!py-6">Submit Application <MdKeyboardDoubleArrowRight /></BaseButton>
 
 
@@ -132,13 +132,13 @@ export default function CareerOppurtunities() {
                         </div>
 
                         <div className="flex gap-4 flex-wrap mt-4">
-                            <BaseInput extraClass="flex-[1_0_20%]" control={control} placeholder="First Name" label="First Name *" labelPlacement="outside" />
+                            {/* <BaseInput extraClass="flex-[1_0_20%]" control={control} placeholder="First Name" label="First Name *" labelPlacement="outside" />
                             <BaseInput extraClass="flex-[1_0_20%]" control={control} placeholder="Last Name" label="Last Name *" labelPlacement="outside" />
                             <BaseInput extraClass="flex-[1_0_20%]" type="email" control={control} placeholder="Email" label="Email *" labelPlacement="outside" />
                             <BaseInput extraClass="flex-[1_0_20%]" control={control} placeholder="Position" label="Position you are looking for? *" labelPlacement="outside" />
                             <BaseFile className="flex-[1_0_40%]" bgColor="bg-gray-100" label="Resume *" />
                             <BaseFile className="flex-[1_0_40%]" bgColor="bg-gray-100" label="Cover Letter" />
-                            <BaseTextArea label="Message" labelPlacement="outside" placeholder="Write Message" minRows={10} />
+                            <BaseTextArea label="Message" labelPlacement="outside" placeholder="Write Message" minRows={10} /> */}
                             <BaseButton extraClass="!py-6">Submit Application <MdKeyboardDoubleArrowRight /></BaseButton>
 
 
@@ -174,13 +174,13 @@ export default function CareerOppurtunities() {
                         </div>
 
                         <div className="flex gap-4 flex-wrap mt-4">
-                            <BaseInput extraClass="flex-[1_0_20%]" control={control} placeholder="First Name" label="First Name *" labelPlacement="outside" />
+                            {/* <BaseInput extraClass="flex-[1_0_20%]" control={control} placeholder="First Name" label="First Name *" labelPlacement="outside" />
                             <BaseInput extraClass="flex-[1_0_20%]" control={control} placeholder="Last Name" label="Last Name *" labelPlacement="outside" />
                             <BaseInput extraClass="flex-[1_0_20%]" type="email" control={control} placeholder="Email" label="Email *" labelPlacement="outside" />
                             <BaseInput extraClass="flex-[1_0_20%]" control={control} placeholder="Position" label="Position you are looking for? *" labelPlacement="outside" />
                             <BaseFile className="flex-[1_0_40%]" bgColor="bg-gray-100" label="Resume *" />
                             <BaseFile className="flex-[1_0_40%]" bgColor="bg-gray-100" label="Cover Letter" />
-                            <BaseTextArea label="Message" labelPlacement="outside" placeholder="Write Message" minRows={10} />
+                            <BaseTextArea label="Message" labelPlacement="outside" placeholder="Write Message" minRows={10} /> */}
                             <BaseButton extraClass="!py-6">Submit Application <MdKeyboardDoubleArrowRight /></BaseButton>
 
 
