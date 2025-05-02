@@ -35,7 +35,7 @@ export default function IndividualBlog({data}:{data:IndvidualBlog}) {
 
                         </div>
                         <div className="p-4 py-8 h-max sm:order-2 order-1 flex flex-col gap-4 shadow-xl rounded-xl">
-                            <BaseInput classNames={{ inputWrapper: "p-6" }} extraClass="w-full" control={control} placeholder="Search Blogs" endContent={<BiSearch size={20} />} />
+                            <BaseInput name="search" classNames={{ inputWrapper: "p-6" }} extraClass="w-full" control={control} placeholder="Search Blogs" endContent={<BiSearch size={20} />} />
                             <div className=" flex flex-col gap-4 items-start text-start">
                                 <p className="text-text-blue text-2xl font-semibold">Table of Content</p>
                                 <p className="text-text-blue">Utilizing Freightcom to Manage Your End of the Supply Chain</p>
