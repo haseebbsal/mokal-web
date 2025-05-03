@@ -7,16 +7,15 @@ import { BiSearch } from "react-icons/bi";
 import { useForm } from "react-hook-form";
 import { useRouter } from "next/navigation";
 import { Blogs, IndvidualBlog } from "@/utils/types";
-import { useState } from "react";
 import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
 import { ImSpinner9 } from "react-icons/im";
 
 export default function BlogsClient({ data }: { data: Blogs }) {
-  const { control } = useForm();
+  const { control, watch } = useForm();
   const router = useRouter();
-  const [query, setQuery] = useState("");
-  const blogQuery = useQuery(["blogs", query], ({ queryKey }) =>
+  const search = watch("search");
+  const blogQuery = useQuery(["blogs", search], ({ queryKey }) =>
     axios.get(`/api/blog?searchQuery=${queryKey[1]}`)
   );
   return (
@@ -40,15 +39,12 @@ export default function BlogsClient({ data }: { data: Blogs }) {
             className={`flex flex-col m-auto sm:px-8 px-4 sm:py-20 py-16 sm:w-[80%] text-center gap-8`}
           >
             <BaseInput
-              onChange={async (e) => {
-                setQuery(e.target.value);
-              }}
               extraClass="w-full"
               name="search"
               control={control}
               placeholder="Search Blogs"
               endContent={
-                query && blogQuery.isLoading ? (
+                search && blogQuery.isLoading ? (
                   <ImSpinner9 className="animate-spin" size={20} />
                 ) : (
                   <BiSearch size={20} />
@@ -56,7 +52,7 @@ export default function BlogsClient({ data }: { data: Blogs }) {
               }
             />
             <div className={`flex flex-wrap  text-center gap-4`}>
-              {(query ? blogQuery.data?.data : data)?.map(
+              {(search ? blogQuery.data?.data : data)?.map(
                 (e: IndvidualBlog) => (
                   <div
                     key={e.id}
