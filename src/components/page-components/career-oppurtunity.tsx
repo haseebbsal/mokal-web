@@ -183,7 +183,7 @@ export default function CareerOppurtunity({
         />
       </div>
       <BaseButton
-        className="self-start bg-base-purple text-white mt-4"
+        className="self-start !bg-base-purple !text-white mt-4"
         isLoading={isLoading}
         isDisabled={isLoading}
         type="submit"
