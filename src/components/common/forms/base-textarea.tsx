@@ -12,7 +12,7 @@ export default function BaseTextArea({
   const {
     field,
     fieldState: { error },
-  } = useController({ name, control, rules });
+  } = useController({ name, control, rules ,defaultValue:''});
   return (
     <Textarea
       isInvalid={!!error}

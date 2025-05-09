@@ -1,28 +1,29 @@
 "use client";
-import { FormProvider, useForm } from "react-hook-form";
+
 import { createContext, Dispatch, SetStateAction, useState } from "react";
-import Quote from "./ltl-parts/quote";
-import Details from "./ftl-parts/details";
-import Package from "./ftl-parts/package";
-export const FtlFormContext = createContext<{
+import PackageLTL from "./package";
+import { FormProvider, useForm } from "react-hook-form";
+import Details from "./details";
+import Quote from "./quote";
+
+export const LtlFormContext = createContext<{
   activeState: number;
   setActiveState: Dispatch<SetStateAction<number>>;
 }>({
   activeState: 1,
   setActiveState: () => {},
 });
-export default function FTLForm() {
+export default function LTLForm() {
   const [activeState, setActiveState] = useState(1);
-
-  // const [activeLevel, setActiveLevel] = useState(0)
   const methods = useForm({
     defaultValues: {
-      flatbed: true,
+      pallet: true,
     },
   });
+
   return (
     <FormProvider {...methods}>
-      <FtlFormContext.Provider value={{ activeState, setActiveState }}>
+      <LtlFormContext.Provider value={{ activeState, setActiveState }}>
         <div className="bg-base-blue rounded-xl flex flex-col border-1 border-base-teal gap-2 w-full">
           <div className="p-4 flex justify-center gap-2 w-1/2 m-auto items-center">
             <div className="flex gap-2">
@@ -76,12 +77,11 @@ export default function FTLForm() {
               </p>
             </div>
           </div>
-
-          {activeState == 1 && <Package />}
+          {activeState == 1 && <PackageLTL />}
           {activeState == 2 && <Details />}
           {activeState == 3 && <Quote />}
         </div>
-      </FtlFormContext.Provider>
+      </LtlFormContext.Provider>
     </FormProvider>
   );
 }

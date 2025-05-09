@@ -1,55 +1,77 @@
 import LinearGradientText from "@/components/common/linear-gradient-text";
-import { client} from "@/utils/constants";
+import { client } from "@/utils/constants";
 import BaseBreadCrumb from "@/components/common/base-breadcrumb";
 import { PagesContent } from "@/utils/types";
-import { PortableText } from '@portabletext/react'
-import Image from "next/image";
+import { PortableText } from "@portabletext/react";
 
 
- const components = {
-    types: {
-        image: ({ value }:any) => <Image src={value.imageUrl} alt="image" width={100} height={100} />,
-    },
-    marks: {
-        // Ex. 1: custom renderer for the em / italics decorator
-        em: ({ children }: any) => <em className="text-gray-600 font-semibold">{children}</em>,
+const components = {
+  // types: {
+  //     image: ({ value }:any) => <img src={value.imageUrl} />,
+  // },
+  marks: {
+    // Ex. 1: custom renderer for the em / italics decorator
+    em: ({ children }: any) => (
+      <em className="text-gray-600 font-semibold">{children}</em>
+    ),
 
-        // Ex. 2: rendering a custom `link` annotation
-        link: ({ value, children }: any) => {
-            const target = (value?.href || '').startsWith('http') ? '_blank' : undefined
-            return (
-                <a href={value?.href} target={target} rel={(target === '_blank' && 'noindex nofollow') as string}>
-                    {children}
-                </a>
-            )
-        },
-        strong: ({ children }: any) => <b className="text-black font-bold">{children}</b>
+    // Ex. 2: rendering a custom `link` annotation
+    link: ({ value, children }: any) => {
+      const target = (value?.href || "").startsWith("http")
+        ? "_blank"
+        : undefined;
+      return (
+        <a
+          href={value?.href}
+          target={target}
+          rel={(target === "_blank" && "noindex nofollow") as string}
+        >
+          {children}
+        </a>
+      );
     },
-    block: {
-        // Ex. 1: customizing common block types
-        h1: ({ children }: any) => <h1 className="text-2xl">{children}</h1>,
-        blockquote: ({ children }: any) => <blockquote className="border-l-purple-500">{children}</blockquote>,
-    },
-    list: {
-        // Ex. 1: customizing common list types
-        bullet: ({ children }: any) => <ul className="mt-xl">{children}</ul>,
-        number: ({ children }: any) => <ol className="mt-lg">{children}</ol>,
+    strong: ({ children }: any) => (
+      <b className="text-black font-bold">{children}</b>
+    ),
+  },
+  block: {
+    // Ex. 1: customizing common block types
+    h1: ({ children }: any) => (
+      <h1 className="text-2xl mt-5 font-semibold">{children}</h1>
+    ),
+    normal: ({ children }: any) => <h1 className=" mt-2 ">{children}</h1>,
 
-        // Ex. 2: rendering custom lists
-        checkmarks: ({ children }: any) => <ol className="m-auto text-lg">{children}</ol>,
-    },
-    listItem: {
-        // Ex. 1: customizing common list types
-        bullet: ({ children }: any) => <li className="list-disc" >{children}</li>,
-        decimal: ({ children }: any) => <li className="list-desc" >{children}</li>,
-        // Ex. 2: rendering custom list items
-        checkmarks: ({ children }: any) => <li>✅ {children}</li>,
-    },
-}
+    blockquote: ({ children }: any) => (
+      <blockquote className="border-l-purple-500">{children}</blockquote>
+    ),
+  },
+  list: {
+    // Ex. 1: customizing common list types
+    bullet: ({ children }: any) => <ul className="mt-xl mt-2">{children}</ul>,
+    number: ({ children }: any) => <ol className="mt-lg">{children}</ol>,
+
+    // Ex. 2: rendering custom lists
+    checkmarks: ({ children }: any) => (
+      <ol className="m-auto text-lg">{children}</ol>
+    ),
+  },
+  listItem: {
+    // Ex. 1: customizing common list types
+    bullet: ({ children }: any) => (
+      <li className="list-disc leading-relaxed mt-2 ml-5">{children}</li>
+    ),
+    decimal: ({ children }: any) => (
+      <li className="list-desc leading-relaxed mt-2 ml-5">{children}</li>
+    ),
+    // Ex. 2: rendering custom list items
+    checkmarks: ({ children }: any) => <li>✅ {children}</li>,
+  },
+};
 
 export default async function TermsAndConditions() {
-    const homeData: { content: [PagesContent], remaining: any } = await client.fetch({
-        query: `*[_type=='termsandconditions'][0]{
+  const homeData: { content: [PagesContent]; remaining: any } =
+    await client.fetch({
+      query: `*[_type=='termsandconditions'][0]{
   "content":[...contentBlocks[]->{
     ...,
     "images":[...images[]{...,"imageUrl":imageUrl.asset->url}],
@@ -102,29 +124,40 @@ export default async function TermsAndConditions() {
     }
     ],
       "remaining":{...}
-    }`
-    })
+    }`,
+    });
 
+  return (
+    <>
+      <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-8 min-h-64">
+          <div
+            className={`flex flex-col items-center m-auto sm:px-8 px-4 py-4 sm:w-1/2  text-center gap-4`}
+          >
+            <div className="flex flex-col ">
+              <h1 className="sm:text-[3rem] text-[1.8rem] font-bold">
+                <LinearGradientText text="Terms & Conditions" />{" "}
+              </h1>
+            </div>
+            <BaseBreadCrumb items={["Terms & Conditions"]} />
+          </div>
+        </div>
 
-    return (
-        <>
-            <div className="flex flex-col gap-4">
-                <div className="flex flex-col gap-8 min-h-64">
-                    <div className={`flex flex-col items-center m-auto sm:px-8 px-4 py-4 sm:w-1/2  text-center gap-4`}>
-                        <div className="flex flex-col ">
-                            <h1 className="sm:text-[3rem] text-[1.8rem] font-bold"><LinearGradientText text="Terms & Conditions" /> </h1>
-                        </div>
-                        <BaseBreadCrumb items={['Terms & Conditions']} />
-                    </div>
-                </div>
+        <div className="bg-white w-full">
+          <div
+            className={` m-auto sm:px-8 px-4 sm:py-20 py-16 sm:w-[90%] flex flex-col gap-2  `}
+          >
+            <p>
+              Last Modified:{" "}
+              {new Date(homeData.remaining._updatedAt).toDateString()}
+            </p>
+            {/* <div dangerouslySetInnerHTML={{__html:toHTML(homeData.remaining.content)}}/> */}
+            <PortableText
+              value={homeData.remaining.content}
+              components={components}
+            />
 
-
-                <div className="bg-white w-full">
-                    <div className={` m-auto sm:px-8 px-4 sm:py-20 py-16 sm:w-[90%] sm:gap-8 gap-4`}>
-                        {/* <div dangerouslySetInnerHTML={{__html:toHTML(homeData.remaining.content)}}/> */}
-                        <PortableText value={homeData.remaining.content} components={components} />
-
-                        {/* <div className="flex flex-col gap-1">
+            {/* <div className="flex flex-col gap-1">
                             <p className="font-semibold text-lg">Effective Date: January <span className="text-sm text-text-gray">29, 2022</span></p>
                             <p className="font-semibold text-lg">Last Modified: April <span className="text-sm text-text-gray">19, 2022</span></p>
                         </div>
@@ -142,9 +175,9 @@ export default async function TermsAndConditions() {
                             }
 
                         </div>)} */}
-                    </div>
-                </div>
-            </div >
-        </>
-    )
+          </div>
+        </div>
+      </div>
+    </>
+  );
 }

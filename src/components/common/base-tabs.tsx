@@ -174,6 +174,7 @@ function Title(
 export default function BaseTabs({ keys, variation }: TabsProps) {
   const [key, setKey] = useState<number>(0);
 
+
   return (
     <>
       <div className="flex sm:hidden flex-wrap gap-4">
@@ -199,7 +200,7 @@ export default function BaseTabs({ keys, variation }: TabsProps) {
               buttons={keys[key].slider[0].buttons}
               title={
                 <h1 className="sm:!text-3xl text-lg font-bold">
-                  {keys[key].slider[0].header!.map((e) => {
+                  {keys[key].slider[0].header?.map((e) => {
                     if (e.Highlight) {
                       return (
                         <LinearGradientText
@@ -217,6 +218,7 @@ export default function BaseTabs({ keys, variation }: TabsProps) {
                   })}
                 </h1>
               }
+              content={keys[key].slider[0].content}
               description={[keys[key].slider[0].description!]}
               carousel={keys[key].slider[0].cards.map((e) => ({
                 imageSrc: e.imageUrl,
@@ -231,7 +233,7 @@ export default function BaseTabs({ keys, variation }: TabsProps) {
                 buttons={keys[key].slider[0].buttons}
                 title={
                   <h1 className="sm:!text-3xl text-lg font-bold">
-                    {keys[key].slider[0].header!.map((e) => {
+                    {keys[key].slider[0].header?.map((e) => {
                       if (e.Highlight) {
                         return (
                           <LinearGradientText
@@ -249,6 +251,7 @@ export default function BaseTabs({ keys, variation }: TabsProps) {
                     })}
                   </h1>
                 }
+                content={keys[key].slider[0].content}
                 description={[keys[key].slider[0].description!]}
               />
             )}
@@ -329,40 +332,9 @@ export default function BaseTabs({ keys, variation }: TabsProps) {
               <TabWithSlider
                 buttons={e.slider[0].buttons}
                 title={
-                  <h1 className="sm:!text-3xl text-lg font-bold">
-                    {e.slider[0].header!.map((e) => {
-                      if (e.Highlight) {
-                        return (
-                          <LinearGradientText
-                            extraClass="mr-2"
-                            key={e.Value}
-                            text={e.Value}
-                          />
-                        );
-                      }
-                      return (
-                        <span className="mr-2" key={e.Value}>
-                          {e.Value}
-                        </span>
-                      );
-                    })}
-                  </h1>
-                }
-                description={[e.slider[0].description!]}
-                carousel={e.slider[0].cards.map((e) => ({
-                  imageSrc: e.imageUrl,
-                  description: e.description,
-                }))}
-              />
-            )}
-            {!e.slider[0].imageUrl &&
-              variation == 1 &&
-              !e.slider[0].cards.length && (
-                <TabNoSlider
-                  buttons={e.slider[0].buttons}
-                  title={
+                  e.slider[0].header && (
                     <h1 className="sm:!text-3xl text-lg font-bold">
-                      {e.slider[0].header!.map((e) => {
+                      {e.slider[0].header?.map((e) => {
                         if (e.Highlight) {
                           return (
                             <LinearGradientText
@@ -379,6 +351,43 @@ export default function BaseTabs({ keys, variation }: TabsProps) {
                         );
                       })}
                     </h1>
+                  )
+                }
+                description={[e.slider[0].description!]}
+                content={keys[key].slider[0].content}
+                carousel={e.slider[0].cards.map((e) => ({
+                  imageSrc: e.imageUrl,
+                  description: e.description,
+                }))}
+              />
+            )}
+            {!e.slider[0].imageUrl &&
+              variation == 1 &&
+              !e.slider[0].cards.length && (
+                <TabNoSlider
+                  buttons={e.slider[0].buttons}
+                  content={keys[key].slider[0].content}
+                  title={
+                    e.slider[0].header && (
+                      <h1 className="sm:!text-3xl text-lg font-bold">
+                        {e.slider[0].header?.map((e) => {
+                          if (e.Highlight) {
+                            return (
+                              <LinearGradientText
+                                extraClass="mr-2"
+                                key={e.Value}
+                                text={e.Value}
+                              />
+                            );
+                          }
+                          return (
+                            <span className="mr-2" key={e.Value}>
+                              {e.Value}
+                            </span>
+                          );
+                        })}
+                      </h1>
+                    )
                   }
                   description={[e.slider[0].description!]}
                 />

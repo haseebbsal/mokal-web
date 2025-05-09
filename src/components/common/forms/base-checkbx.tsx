@@ -10,6 +10,14 @@ export default function BaseCheckBox({
   control,
   rules,
 }: BaseCheckboxProps) {
-  const { field, fieldState } = useController({ name, control, rules });
-  return <Checkbox {...field} isInvalid={!!fieldState.error} >{children}</Checkbox>;
+  const { field, fieldState } = useController({
+    name,
+    control,
+    rules,
+  });
+  return (
+    <Checkbox {...field} isInvalid={!!fieldState.error}>
+      {children}
+    </Checkbox>
+  );
 }

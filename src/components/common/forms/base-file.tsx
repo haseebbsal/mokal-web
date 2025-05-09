@@ -12,6 +12,7 @@ export default function BaseFile({
   label,
   labelClass,
   accept,
+
   bgColor = "bgWhite",
 }: BaseFileProps) {
   const {
@@ -36,7 +37,7 @@ export default function BaseFile({
         } justify-center items-center`}
       >
         <input
-          id="file"
+          id={name}
           type="file"
           accept={accept}
           value={undefined}
@@ -50,7 +51,7 @@ export default function BaseFile({
           className="absolute opacity-0 z-0"
         />
         <label
-          htmlFor="file"
+          htmlFor={name}
           className="p-2 border-2 border-gray-200 bg-white rounded-lg relative z-10 cursor-pointer"
         >
           Browse Files

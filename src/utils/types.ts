@@ -5,6 +5,7 @@ import {
   CheckboxProps,
   InputProps,
   SelectProps,
+  SwitchProps,
   TextAreaProps,
 } from "@heroui/react";
 import { CSSProperties, Dispatch, ReactNode, SetStateAction } from "react";
@@ -60,6 +61,7 @@ export type TabItemProp = [
         name: string;
         description: string;
         cards: [{ imageUrl: string; description: string }];
+        content: any;
       }
     ];
     component?: any;
@@ -73,10 +75,11 @@ export interface TabsProps {
 
 export interface TabNoSliderProps {
   title: ReactNode;
-  description: string[];
+  description?: string[];
   buttons?: [
     { withBackground: boolean; url: { current: string }; text: string }
   ];
+  content?: any;
 }
 
 type CarouselData = { imageSrc: string; description: string }[];
@@ -89,6 +92,7 @@ export interface TabWithSliderProps {
   buttons?: [
     { withBackground: boolean; url: { current: string }; text: string }
   ];
+  content?: any;
 }
 
 export interface BaseSliderProps extends Omit<CarouselProps, "responsive"> {
@@ -257,12 +261,95 @@ export interface BaseSelectProps extends Omit<SelectProps, "children"> {
   >;
 }
 
-
-export interface BaseTextAreaProps extends TextAreaProps{
+export interface BaseTextAreaProps extends TextAreaProps {
   control: Control;
   name: string;
   rules?: Omit<
     RegisterOptions<FieldValues, string>,
     "disabled" | "setValueAs" | "valueAsNumber" | "valueAsDate"
   >;
+}
+
+export interface BaseSwitchProps extends SwitchProps {
+  name: string;
+  control?: Control<FieldValues, any, FieldValues>;
+  rules?: Omit<
+    RegisterOptions<FieldValues, string>,
+    "disabled" | "setValueAs" | "valueAsNumber" | "valueAsDate"
+  >;
+}
+
+export enum PackageType {
+  PALLET = 1,
+  PACKAGE,
+  COURIER_PACK,
+  ENVELOP,
+}
+
+export enum PalletType {
+  Drum = 1,
+  Boxes,
+  Rolls,
+  Pipes,
+  Bales,
+  Bags,
+  Pallet,
+  Cylinder,
+  Pails,
+  Reels,
+  Crate,
+  Bucket,
+  Bundle,
+  Can,
+  Carton,
+  Case,
+  Coil,
+  Pieces,
+  Skid,
+}
+
+export enum PalletFreightClass {
+  _50 = 1,
+  _55,
+  _60,
+  _65,
+  _70,
+  _77,
+  _77Point5,
+  _85,
+  _92Point5,
+  _100,
+  _110,
+  _125,
+  _150,
+  _175,
+  _200,
+  _250,
+  _300,
+  _400,
+  _500,
+}
+
+export enum Country {
+  US = "US",
+  CA = "CA",
+}
+
+export enum FTLPackageType {
+  FLATBED = 1,
+  REEFER,
+  VAN,
+  CONTAINER,
+}
+
+export enum ShipmentStatus {
+  DRAFT = 1, // Initial state, not finalized.
+  PENDING, // shipment status when payment is credit or email transfer
+  PUBLISHED, // Shipment is visible/confirmed but not yet processed.
+  READYTOSHIP,
+  IN_TRANSIT, // Shipment is currently being transported.
+  DELIVERED, // Shipment has been delivered to the destination.
+  CANCELLED, // Shipment was cancelled before delivery.
+  // RETURNED, // Shipment was returned after delivery attempt.
+  EXCEPTION,
 }

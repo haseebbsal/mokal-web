@@ -22,7 +22,12 @@ import GetAQuoteForm from "@/components/page-components/get-a-quote";
 import BrokerPartnerForm from "@/components/forms/broker-partner-form";
 import CorporatePartnerForm from "@/components/forms/corporate-partner-form";
 
-export default async function TrackShipments() {
+
+export default async function TrackShipments({
+  searchParams,
+}: {
+  searchParams: Promise<{ id: string }>;
+}) {
   const homeData: { content: [PagesContent] } = await client.fetch({
     query: `*[_type=='track-shipment'][0]{
                                                           "content":[...contentBlocks[]->{
@@ -181,7 +186,9 @@ export default async function TrackShipments() {
               {e._type == "positionForm" && <NoOpenForm />}
               {e._type == "bookDemoForm" && <BookADemoForm />}
               {e._type == "reachOutForm" && <ReactOut />}
-              {e._type == "trackShipment" && <TrackShipment />}
+              {e._type == "trackShipment" && (
+                <TrackShipment searchParams={searchParams} />
+              )}
               {e._type == "getAQuoteForm" && <GetAQuoteForm />}
             </div>
           );
