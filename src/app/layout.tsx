@@ -9,7 +9,7 @@ import MegaMenuProvider from "@/providers/mega-menu";
 import { ToastContainer} from 'react-toastify';
 
 export const metadata: Metadata = {
-  title: "Mokal",
+  title: "MGCFREIGHT",
   description: "Mokal Web",
 };
 
