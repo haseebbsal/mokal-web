@@ -1,3 +1,24 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "International Shipping | MGC Freight",
+  description: "Cross-border and global logistics solutions. Ship seamlessly between the USA, Canada, Mexico, and worldwide with MGC Freight.",
+
+  keywords: ["international shipping", "global logistics", "freight forwarding", "MGC Freight", "cross-border shipping", "USA Canada Mexico", "international freight", "ocean freight", "air freight", "customs clearance", "supply chain services"],
+  openGraph: {
+    title: "International Shipping | MGC Freight",
+    description: "Seamless international shipping solutions. Connect with MGC Freight for global logistics.",
+    type: "website",
+    locale: "en_US",
+    siteName: "MGC Freight",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "International Shipping | MGC Freight",
+    description: "Cross-border and global shipping services with MGC Freight.",
+  },
+};
+
 // import BaseButton from "@/components/common/base-button";
 // import LinearGradientText from "@/components/common/linear-gradient-text";
 // import Image from "next/image";
@@ -105,18 +126,17 @@ export default async function InternationalShipping() {
           return (
             <div
               key={e._type + index}
-              className={`${
-                index != 0
+              className={`${index != 0
                   ? index % 2 != 0
                     ? "bg-white w-full"
                     : "bg-base-shadeBlue w-full"
                   : ""
-              }`}
+                }`}
             >
               {e._type == "title" && (
                 <Title
                   identifier="1"
-                  breadCrumb={["Services","International Shipping"]}
+                  breadCrumb={["Services", "International Shipping"]}
                   header={e.header!}
                   title={e.title}
                   buttons={e.buttons}

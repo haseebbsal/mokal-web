@@ -1,3 +1,24 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Customer Spotlight | MGC Freight",
+  description: "Discover our client success stories and see how we help businesses optimize their logistics, reduce shipping costs, and scale.",
+
+  keywords: ["customer spotlight", "client success stories", "case studies", "logistics optimization", "shipping savings", "MGC Freight", "transportation case studies", "freight success", "supply chain optimization"],
+  openGraph: {
+    title: "Customer Spotlight | MGC Freight",
+    description: "Real stories of how businesses benefit from MGC Freight.",
+    type: "website",
+    locale: "en_US",
+    siteName: "MGC Freight",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Customer Spotlight | MGC Freight",
+    description: "Success stories from our valued clients.",
+  },
+};
+
 import Title from "@/components/page-components/title";
 import TabPageComponent from "@/components/page-components/tab";
 import Content from "@/components/page-components/content";
@@ -96,18 +117,17 @@ export default async function CustomerSpotlight() {
           return (
             <div
               key={e._type + index}
-              className={`${
-                index != 0
+              className={`${index != 0
                   ? index % 2 != 0
                     ? "bg-white w-full"
                     : "bg-base-shadeBlue w-full"
                   : ""
-              }`}
+                }`}
             >
               {e._type == "title" && (
                 <Title
                   identifier="1"
-                  breadCrumb={["About Us","Customer Spotlight"]}
+                  breadCrumb={["About Us", "Customer Spotlight"]}
                   header={e.header!}
                   title={e.title}
                   buttons={e.buttons}

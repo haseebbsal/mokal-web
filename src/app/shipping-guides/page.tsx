@@ -1,3 +1,24 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Shipping Guides | MGC Freight",
+  description: "Access step-by-step resources, tools, and guides for hassle-free shipping and logistics planning.",
+
+  keywords: ["shipping guides", "logistics resources", "MGC Freight guides", "transportation tips", "freight planning", "shipping checklist", "carrier selection", "supply chain management", "international shipping", "domestic shipping"],
+  openGraph: {
+    title: "Shipping Guides | MGC Freight",
+    description: "Step-by-step guides for hassle-free shipping.",
+    type: "website",
+    locale: "en_US",
+    siteName: "MGC Freight",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Shipping Guides | MGC Freight",
+    description: "Your complete guide to shipping and logistics.",
+  },
+};
+
 import { client } from "@/utils/constants";
 import GuideToBook from "@/components/page-components/guide-to-book";
 import Title from "@/components/page-components/title";
@@ -97,18 +118,17 @@ export default async function ShippingGuides() {
           return (
             <div
               key={e._type + index}
-              className={`${
-                index != 0
+              className={`${index != 0
                   ? index % 2 != 0
                     ? "bg-white w-full"
                     : "bg-base-shadeBlue w-full"
                   : ""
-              }`}
+                }`}
             >
               {e._type == "title" && (
                 <Title
                   identifier="1"
-                  breadCrumb={["Resources","Shipping Guides"]}
+                  breadCrumb={["Resources", "Shipping Guides"]}
                   header={e.header!}
                   title={e.title}
                   buttons={e.buttons}

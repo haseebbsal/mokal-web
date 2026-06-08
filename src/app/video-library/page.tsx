@@ -1,3 +1,24 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Video Library | MGC Freight",
+  description: "Explore our video library to learn more about MGC Freight’s logistics platform, tutorials, and insights for simplifying your freight shipping.",
+
+  keywords: ["freight videos", "logistics tutorials", "MGC Freight", "how to ship", "shipping guide", "carrier training"],
+  openGraph: {
+    title: "Video Library | MGC Freight",
+    description: "Learn how to use MGC Freight's platform with our comprehensive video library.",
+    type: "website",
+    locale: "en_US",
+    siteName: "MGC Freight",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Video Library | MGC Freight",
+    description: "Tutorials and guides for MGC Freight customers and carriers.",
+  },
+};
+
 
 import { PagesContent } from "@/utils/types";
 import { client } from "@/utils/constants";
@@ -7,8 +28,8 @@ import BaseVideo from "@/components/common/base-video";
 
 export default async function VideoLibrary() {
 
-    const homeData: { content: [PagesContent], remaining: any } = await client.fetch({
-        query: `*[_type=='video-page'][0]{
+  const homeData: { content: [PagesContent], remaining: any } = await client.fetch({
+    query: `*[_type=='video-page'][0]{
   "content":[...contentBlocks[]->{
     ...,
     "images":[...images[]{...,"imageUrl":imageUrl.asset->url}],
@@ -62,12 +83,12 @@ export default async function VideoLibrary() {
     ],
       "remaining":{...}
     }`
-    })
-    return (
-        <>
-            <div className="flex flex-col gap-4">
-                <Title header={homeData.remaining.title} identifier="1" breadCrumb={['Resources', 'Video Library']} />
-                {/* <div className="flex flex-col gap-8 min-h-64">
+  })
+  return (
+    <>
+      <div className="flex flex-col gap-4">
+        <Title header={homeData.remaining.title} identifier="1" breadCrumb={['Resources', 'Video Library']} />
+        {/* <div className="flex flex-col gap-8 min-h-64">
                     <div className={`flex flex-col items-center m-auto sm:px-8 px-4 py-4 sm:w-1/2  text-center gap-4`}>
                         <div className="flex flex-col ">
                             <h1 className="sm:text-[3rem] text-[1.8rem] font-bold"><LinearGradientText text="Video Library" /> </h1>
@@ -76,17 +97,17 @@ export default async function VideoLibrary() {
                     </div>
                 </div> */}
 
-                <div className="bg-white w-full">
-                    <div className={`flex flex-wrap m-auto sm:px-8 px-4 sm:py-20 py-16 sm:w-[80%] text-center gap-16`}>
-                        {homeData.content.map((e) =>
-                            <div key={e.video} className="flex flex-col items-start sm:flex-[1_0_25%] flex-[1_0_100%] sm:max-w-[30%] gap-2 text-start">
-                                <BaseVideo src={e.video}/>
-                                {/* <Image src={'/images/video1.svg'} className="w-full max-h-56" alt="video1" width={300} height={300} /> */}
-                                <p className="font-bold text-2xl">{e.title}</p>
-                                <p className="text-text-gray text-sm">{e.description}</p>
-                            </div>
-                        )}
-                        {/* <div className="flex flex-col items-start sm:flex-[1_0_25%] flex-[1_0_100%] sm:max-w-[30%] gap-2 text-start">
+        <div className="bg-white w-full">
+          <div className={`flex flex-wrap m-auto sm:px-8 px-4 sm:py-20 py-16 sm:w-[80%] text-center gap-16`}>
+            {homeData.content.map((e) =>
+              <div key={e.video} className="flex flex-col items-start sm:flex-[1_0_25%] flex-[1_0_100%] sm:max-w-[30%] gap-2 text-start">
+                <BaseVideo src={e.video} />
+                {/* <Image src={'/images/video1.svg'} className="w-full max-h-56" alt="video1" width={300} height={300} /> */}
+                <p className="font-bold text-2xl">{e.title}</p>
+                <p className="text-text-gray text-sm">{e.description}</p>
+              </div>
+            )}
+            {/* <div className="flex flex-col items-start sm:flex-[1_0_25%] flex-[1_0_100%] sm:max-w-[30%] gap-2 text-start">
                             <Image src={'/images/video1.svg'} className="w-full max-h-56" alt="video1" width={300} height={300} />
                             <p className="font-bold text-2xl">How to use Quick Quote feature</p>
                             <p className="text-text-gray text-sm">Full-truckload solutions for large, high-volume shipments.</p>
@@ -134,11 +155,11 @@ export default async function VideoLibrary() {
                             <p className="font-bold text-2xl">Shipment tracking</p>
                             <p className="text-text-gray text-sm">Global logistics services for international freight.</p>
                         </div> */}
-                    </div>
-                </div>
+          </div>
+        </div>
 
 
-            </div>
-        </>
-    )
+      </div>
+    </>
+  )
 }

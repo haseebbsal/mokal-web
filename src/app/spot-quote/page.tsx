@@ -1,3 +1,24 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Get a Spot Quote | MGC Freight",
+  description: "Get instant, competitive freight spot quotes. Streamline your freight booking with fast pricing options through MGC Freight.",
+
+  keywords: ["spot quote", "freight rates", "quick quote", "shipping prices", "MGC Freight spot", "instant quote", "freight cost"],
+  openGraph: {
+    title: "Get a Spot Quote | MGC Freight",
+    description: "Fast freight spot quotes for your shipments.",
+    type: "website",
+    locale: "en_US",
+    siteName: "MGC Freight",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Get a Spot Quote | MGC Freight",
+    description: "Instant freight quotes - get pricing now.",
+  },
+};
+
 // import BaseButton from "@/components/common/base-button";
 // import LinearGradientText from "@/components/common/linear-gradient-text";
 // import Image from "next/image";
@@ -104,18 +125,17 @@ export default async function SpotQuote() {
           return (
             <div
               key={e._type + index}
-              className={`${
-                index != 0
+              className={`${index != 0
                   ? index % 2 != 0
                     ? "bg-white w-full"
                     : "bg-base-shadeBlue w-full"
                   : ""
-              }`}
+                }`}
             >
               {e._type == "title" && (
                 <Title
                   identifier="1"
-                  breadCrumb={["Services","Spot Quote"]}
+                  breadCrumb={["Services", "Spot Quote"]}
                   header={e.header!}
                   title={e.title}
                   buttons={e.buttons}

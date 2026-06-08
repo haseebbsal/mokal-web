@@ -1,3 +1,24 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Get a Shipping Quote | MGC Freight",
+  description: "Request a custom shipping quote for LTL, full truckload, courier, or international logistics services from MGC Freight.",
+
+  keywords: ["shipping quote", "freight quote", "LTL quote", "truckload quote", "international shipping", "MGC Freight", "online quote", "freight rates", "logistics services", "custom shipping quote"],
+  openGraph: {
+    title: "Get a Shipping Quote | MGC Freight",
+    description: "Request a custom shipping quote for LTL, full truckload, or international logistics.",
+    type: "website",
+    locale: "en_US",
+    siteName: "MGC Freight",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Get a Shipping Quote | MGC Freight",
+    description: "Get competitive rates for your freight shipments.",
+  },
+};
+
 import { PagesContent } from "@/utils/types";
 import { client } from "@/utils/constants";
 import Title from "@/components/page-components/title";
@@ -97,13 +118,12 @@ export default async function GetAQuote() {
           return (
             <div
               key={e._type + index}
-              className={`${
-                index != 0
+              className={`${index != 0
                   ? index % 2 != 0
                     ? "bg-white w-full"
                     : "bg-base-shadeBlue w-full"
                   : ""
-              }`}
+                }`}
             >
               {e._type == "title" && (
                 <Title

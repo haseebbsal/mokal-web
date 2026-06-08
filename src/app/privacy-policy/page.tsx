@@ -1,3 +1,24 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Privacy Policy | MGC Freight",
+  description: "Read MGC Freight's privacy policy to understand how we protect and manage your personal data and shipping details.",
+
+  keywords: ["privacy policy", "MGC Freight privacy", "data protection", "shipping data", "personal information", "terms and conditions", "privacy practices"],
+  openGraph: {
+    title: "Privacy Policy | MGC Freight",
+    description: "MGC Freight's privacy policy - learn how we protect your data.",
+    type: "website",
+    locale: "en_US",
+    siteName: "MGC Freight",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Privacy Policy | MGC Freight",
+    description: "Read MGC Freight's privacy policy.",
+  },
+};
+
 import BaseBreadCrumb from "@/components/common/base-breadcrumb";
 import LinearGradientText from "@/components/common/linear-gradient-text";
 import { client } from "@/utils/constants";

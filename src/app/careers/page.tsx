@@ -1,3 +1,24 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Careers at MGC Freight | Join Our Team",
+  description: "Explore job opportunities and career paths at MGC Freight. Join a fast-growing logistics company focused on innovation.",
+
+  keywords: ["careers MGC Freight", "trucking jobs", "freight broker careers", "MGC Freight jobs", "logistics careers", "supply chain jobs", "transportation jobs", "office careers", "driver opportunities"],
+  openGraph: {
+    title: "Careers at MGC Freight | Join Our Team",
+    description: "Discover exciting career opportunities in the logistics industry.",
+    type: "website",
+    locale: "en_US",
+    siteName: "MGC Freight",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Careers | MGC Freight",
+    description: "Join our growing logistics team.",
+  },
+};
+
 import { PagesContent } from "@/utils/types";
 import { client } from "@/utils/constants";
 import CareerOppurtunities from "@/components/page-components/career-oppurtunities";
@@ -96,18 +117,17 @@ export default async function Careers() {
           return (
             <div
               key={e._type + index}
-              className={`${
-                index != 0
+              className={`${index != 0
                   ? index % 2 != 0
                     ? "bg-white w-full"
                     : "bg-base-shadeBlue w-full"
                   : ""
-              }`}
+                }`}
             >
               {e._type == "title" && (
                 <Title
                   identifier="1"
-                  breadCrumb={["About Us","Careers"]}
+                  breadCrumb={["About Us", "Careers"]}
                   header={e.header!}
                   title={e.title}
                   buttons={e.buttons}

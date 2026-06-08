@@ -1,3 +1,24 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Specialized Freight Shipping | MGC Freight",
+  description: "Expert handling for unique, oversized, or complex shipments. Find customized shipping solutions with MGC Freight.",
+
+  keywords: ["specialized freight", "heavy haul", "oversized loads", "complex shipments", "MGC Freight", "logistics services", "custom shipping", "delicate cargo"],
+  openGraph: {
+    title: "Specialized Freight Shipping | MGC Freight",
+    description: "Expert handling for unique, oversized, or complex shipments.",
+    type: "website",
+    locale: "en_US",
+    siteName: "MGC Freight",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Specialized Freight Shipping | MGC Freight",
+    description: "Customized shipping solutions for your unique freight needs.",
+  },
+};
+
 // 'use client'
 // import BaseButton from "@/components/common/base-button";
 // import LinearGradientText from "@/components/common/linear-gradient-text";
@@ -106,18 +127,17 @@ export default async function SpecializedFreight() {
           return (
             <div
               key={e._type + index}
-              className={`${
-                index != 0
+              className={`${index != 0
                   ? index % 2 != 0
                     ? "bg-white w-full"
                     : "bg-base-shadeBlue w-full"
                   : ""
-              }`}
+                }`}
             >
               {e._type == "title" && (
                 <Title
                   identifier="1"
-                  breadCrumb={["Services","Specialized Freight"]}
+                  breadCrumb={["Services", "Specialized Freight"]}
                   header={e.header!}
                   title={e.title}
                   buttons={e.buttons}

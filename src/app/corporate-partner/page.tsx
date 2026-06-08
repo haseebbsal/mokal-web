@@ -1,3 +1,24 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Corporate Partnership Program | MGC Freight",
+  description: "Partner with MGC Freight for enterprise-level logistics, dedicated capacity, and custom freight management solutions.",
+
+  keywords: ["corporate partnership", "enterprise logistics", "freight management", "MGC Freight", "strategic partnership", "logistics solutions", "supply chain partnership", "dedicated capacity", "carrier partnership"],
+  openGraph: {
+    title: "Corporate Partnership | MGC Freight",
+    description: "Enterprise logistics partnerships with dedicated capacity and custom solutions.",
+    type: "website",
+    locale: "en_US",
+    siteName: "MGC Freight",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Corporate Partnership | MGC Freight",
+    description: "Partner with us for enterprise-level logistics solutions.",
+  },
+};
+
 import { PagesContent } from "@/utils/types";
 import { client } from "@/utils/constants";
 import Title from "@/components/page-components/title";
@@ -96,13 +117,12 @@ export default async function CorporatePartner() {
           return (
             <div
               key={e._type + index}
-              className={`${
-                index != 0
+              className={`${index != 0
                   ? index % 2 != 0
                     ? "bg-white w-full"
                     : "bg-base-shadeBlue w-full"
                   : ""
-              }`}
+                }`}
             >
               {e._type == "title" && (
                 <Title

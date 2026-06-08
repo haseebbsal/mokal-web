@@ -1,3 +1,24 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Freight Forwarding Services | MGC Freight",
+  description: "Reliable freight forwarding and global logistics management to move your cargo across borders efficiently.",
+
+  keywords: ["freight forwarding", "global logistics", "MGC Freight", "international shipping", "freight broker", "cross-border logistics", "supply chain management", "ocean freight", "air freight", "customs brokerage", "shipping services"],
+  openGraph: {
+    title: "Freight Forwarding Services | MGC Freight",
+    description: "Reliable freight forwarding with global reach.",
+    type: "website",
+    locale: "en_US",
+    siteName: "MGC Freight",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Freight Forwarding | MGC Freight",
+    description: "Streamline your international shipments with our expert forwarding services.",
+  },
+};
+
 import GrowYourBusiness from "@/components/page-components/grow-your-business";
 import { PagesContent } from "@/utils/types";
 import { client } from "@/utils/constants";
@@ -96,18 +117,17 @@ export default async function FreightForwarding() {
           return (
             <div
               key={e._type + index}
-              className={`${
-                index != 0
+              className={`${index != 0
                   ? index % 2 != 0
                     ? "bg-white w-full"
                     : "bg-base-shadeBlue w-full"
                   : ""
-              }`}
+                }`}
             >
               {e._type == "title" && (
                 <Title
                   identifier="1"
-                  breadCrumb={["Services","Freight Forwarding"]}
+                  breadCrumb={["Services", "Freight Forwarding"]}
                   header={e.header!}
                   title={e.title}
                   buttons={e.buttons}

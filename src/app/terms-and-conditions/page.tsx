@@ -1,3 +1,24 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Terms and Conditions | MGC Freight",
+  description: "Read the Terms of Use and service agreements for using MGC Freight's website and logistics services.",
+
+  keywords: ["terms and conditions", "MGC Freight terms", "service agreement", "legal", "privacy policy", "user agreement"],
+  openGraph: {
+    title: "Terms and Conditions | MGC Freight",
+    description: "Read the terms of service for MGC Freight.",
+    type: "website",
+    locale: "en_US",
+    siteName: "MGC Freight",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Terms and Conditions | MGC Freight",
+    description: "Terms of Use for MGC Freight platform.",
+  },
+};
+
 import LinearGradientText from "@/components/common/linear-gradient-text";
 import { client } from "@/utils/constants";
 import BaseBreadCrumb from "@/components/common/base-breadcrumb";

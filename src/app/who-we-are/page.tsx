@@ -1,3 +1,24 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Who We Are | MGC Freight",
+  description: "Learn more about MGC Freight, our mission, values, and our commitment to helping businesses succeed through premium logistics and reliable shipping solutions.",
+
+  keywords: ["about MGC Freight", "who we are", "logistics company", "freight broker", "MGC Freight team", "company values", "careers", "sustainability", "diversity"],
+  openGraph: {
+    title: "Who We Are | MGC Freight",
+    description: "Learn about our team, mission, and values at MGC Freight.",
+    type: "website",
+    locale: "en_US",
+    siteName: "MGC Freight",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Who We Are | MGC Freight",
+    description: "About MGC Freight - your trusted logistics partner.",
+  },
+};
+
 import { PagesContent } from "@/utils/types";
 import { client } from "@/utils/constants";
 import Title from "@/components/page-components/title";
@@ -96,13 +117,12 @@ export default async function WhoWeAre() {
           return (
             <div
               key={e._type + index}
-              className={`${
-                index != 0
+              className={`${index != 0
                   ? index % 2 != 0
                     ? "bg-white w-full"
                     : "bg-base-shadeBlue w-full"
                   : ""
-              }`}
+                }`}
             >
               {e._type == "title" && (
                 <Title

@@ -1,3 +1,24 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Less Than Truckload (LTL) Shipping | MGC Freight",
+  description: "Cost-effective LTL freight shipping. Optimize your smaller cargo shipments with our premium carrier network.",
+
+  keywords: ["LTL shipping", "less than truckload", "freight LTL", "MGC Freight", "LTL carrier", "shipping LTL", "cost-effective", "cargo optimization"],
+  openGraph: {
+    title: "Less Than Truckload (LTL) Shipping | MGC Freight",
+    description: "Cost-effective LTL freight shipping with MGC Freight.",
+    type: "website",
+    locale: "en_US",
+    siteName: "MGC Freight",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "LTL Shipping | MGC Freight",
+    description: "Optimize your LTL shipments with our premium carrier network.",
+  },
+};
+
 import GuideToBook from "@/components/page-components/guide-to-book";
 import Title from "@/components/page-components/title";
 import TabPageComponent from "@/components/page-components/tab";
@@ -96,18 +117,17 @@ export default async function LTL() {
           return (
             <div
               key={e._type + index}
-              className={`${
-                index != 0
+              className={`${index != 0
                   ? index % 2 != 0
                     ? "bg-white w-full"
                     : "bg-base-shadeBlue w-full"
                   : ""
-              }`}
+                }`}
             >
               {e._type == "title" && (
                 <Title
                   identifier="1"
-                  breadCrumb={["Services","Less Than Truckload(LTL)"]}
+                  breadCrumb={["Services", "Less Than Truckload(LTL)"]}
                   header={e.header!}
                   title={e.title}
                   buttons={e.buttons}

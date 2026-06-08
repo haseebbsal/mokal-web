@@ -1,3 +1,24 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Truckload Freight Shipping | MGC Freight",
+  description: "Reliable and secure truckload freight shipping. Access full capacity (FTL) solutions for large-scale shipments across North America.",
+
+  keywords: ["truckload freight", "FTL shipping", "full truckload", "freight broker", "LTL", "North America shipping", "MGC Freight"],
+  openGraph: {
+    title: "Truckload Freight Shipping | MGC Freight",
+    description: "Reliable FTL shipping across North America with MGC Freight. Get competitive rates and guaranteed capacity.",
+    type: "website",
+    locale: "en_US",
+    siteName: "MGC Freight",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Truckload Freight Shipping | MGC Freight",
+    description: "Full truckload shipping made simple. MGC Freight delivers reliable FTL solutions.",
+  },
+};
+
 import { PagesContent } from "@/utils/types";
 import { client } from "@/utils/constants";
 import Title from "@/components/page-components/title";
@@ -97,18 +118,17 @@ export default async function Truckload() {
           return (
             <div
               key={e._type + index}
-              className={`${
-                index != 0
+              className={`${index != 0
                   ? index % 2 != 0
                     ? "bg-white w-full"
                     : "bg-base-shadeBlue w-full"
                   : ""
-              }`}
+                }`}
             >
               {e._type == "title" && (
                 <Title
                   identifier="1"
-                  breadCrumb={["Services","Truckload"]}
+                  breadCrumb={["Services", "Truckload"]}
                   header={e.header!}
                   title={e.title}
                   buttons={e.buttons}

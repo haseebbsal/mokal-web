@@ -1,3 +1,24 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "White Glove Services | MGC Freight",
+  description: "Premium white glove services for delicate, high-value, or complex freight. We handle your sensitive shipments with extreme care and professional support.",
+
+  keywords: ["white glove shipping", "delicate freight", "high-value shipping", "secure transport", "MGC Freight white glove", "logistics services"],
+  openGraph: {
+    title: "White Glove Services | MGC Freight",
+    description: "Premium white glove shipping services for your most sensitive freight.",
+    type: "website",
+    locale: "en_US",
+    siteName: "MGC Freight",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "White Glove Services | MGC Freight",
+    description: "Professional handling for delicate and high-value shipments.",
+  },
+};
+
 import { PagesContent } from "@/utils/types";
 import { client } from "@/utils/constants";
 import Title from "@/components/page-components/title";
@@ -96,18 +117,17 @@ export default async function WhiteGlove() {
           return (
             <div
               key={e._type + index}
-              className={`${
-                index != 0
+              className={`${index != 0
                   ? index % 2 != 0
                     ? "bg-white w-full"
                     : "bg-base-shadeBlue w-full"
                   : ""
-              }`}
+                }`}
             >
               {e._type == "title" && (
                 <Title
                   identifier="1"
-                  breadCrumb={["Services","White Glove Services"]}
+                  breadCrumb={["Services", "White Glove Services"]}
                   header={e.header!}
                   title={e.title}
                   buttons={e.buttons}

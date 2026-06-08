@@ -1,3 +1,24 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Freight Claims Support | MGC Freight",
+  description: "Need to file a claim? Use our simplified claims resolution portal for fast assistance and support.",
+
+  keywords: ["freight claims", "claim filing", "MGC Freight", "claims support", "freight claims portal", "shipping claims", "cargo claims", "claims resolution", "transport claims"],
+  openGraph: {
+    title: "Freight Claims | MGC Freight",
+    description: "Easy and fast freight claim filing with complete support.",
+    type: "website",
+    locale: "en_US",
+    siteName: "MGC Freight",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Freight Claims Support | MGC Freight",
+    description: "File your freight claims quickly and get fast support.",
+  },
+};
+
 import { PagesContent } from "@/utils/types";
 import { client } from "@/utils/constants";
 import Title from "@/components/page-components/title";
@@ -96,13 +117,12 @@ export default async function Claims() {
           return (
             <div
               key={e._type + index}
-              className={`${
-                index != 0
+              className={`${index != 0
                   ? index % 2 != 0
                     ? "bg-white w-full"
                     : "bg-base-shadeBlue w-full"
                   : ""
-              }`}
+                }`}
             >
               {e._type == "title" && (
                 <Title

@@ -1,3 +1,24 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Courier & Package Delivery Services | MGC Freight",
+  description: "Fast, reliable, and secure courier services. Get local and expedited package delivery with real-time tracking.",
+
+  keywords: ["courier services", "package delivery", "MGC Freight", "express delivery", "local courier", "shipping services", "package tracking", "reliable courier", "fast delivery"],
+  openGraph: {
+    title: "Courier & Package Delivery | MGC Freight",
+    description: "Fast and reliable courier services for all your package delivery needs.",
+    type: "website",
+    locale: "en_US",
+    siteName: "MGC Freight",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Courier Services | MGC Freight",
+    description: "Fast, reliable package delivery with real-time tracking.",
+  },
+};
+
 // import BaseButton from "@/components/common/base-button";
 // import LinearGradientText from "@/components/common/linear-gradient-text";
 // import Image from "next/image";
@@ -107,18 +128,17 @@ export default async function CourierServices() {
           return (
             <div
               key={e._type + index}
-              className={`${
-                index != 0
+              className={`${index != 0
                   ? index % 2 != 0
                     ? "bg-white w-full"
                     : "bg-base-shadeBlue w-full"
                   : ""
-              }`}
+                }`}
             >
               {e._type == "title" && (
                 <Title
                   identifier="1"
-                  breadCrumb={["Services","Courier Services"]}
+                  breadCrumb={["Services", "Courier Services"]}
                   header={e.header!}
                   title={e.title}
                   buttons={e.buttons}

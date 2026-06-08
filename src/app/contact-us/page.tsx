@@ -1,3 +1,24 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Contact Us | MGC Freight",
+  description: "Get in touch with the logistics experts at MGC Freight. We are here to support your shipping needs 24/7.",
+
+  keywords: ["contact MGC Freight", "freight broker contact", "shipping support", "logistics help", "MGC Freight customer service", "freight quotes", "broker partnership contact", "corporate partnership contact", "24/7 shipping support"],
+  openGraph: {
+    title: "Contact Us | MGC Freight",
+    description: "Get in touch with our logistics experts for 24/7 support.",
+    type: "website",
+    locale: "en_US",
+    siteName: "MGC Freight",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Contact Us | MGC Freight",
+    description: "Reach out to us for all your freight and logistics needs.",
+  },
+};
+
 import BookADemoForm from "@/components/forms/book-a-demo";
 import NoOpenForm from "@/components/forms/no-open-complete";
 import CardsContent from "@/components/page-components/cards-content";
@@ -96,18 +117,17 @@ export default async function ContactUs() {
           return (
             <div
               key={e._type + index}
-              className={`${
-                index != 0
+              className={`${index != 0
                   ? index % 2 != 0
                     ? "bg-white w-full"
                     : "bg-base-shadeBlue w-full"
                   : ""
-              }`}
+                }`}
             >
               {e._type == "title" && (
                 <Title
                   identifier="1"
-                  breadCrumb={["About Us","Contact Us"]}
+                  breadCrumb={["About Us", "Contact Us"]}
                   header={e.header!}
                   title={e.title}
                   buttons={e.buttons}

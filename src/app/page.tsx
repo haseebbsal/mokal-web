@@ -1,3 +1,24 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "MGC Freight | Premium Logistics & Freight Shipping",
+  description: "MGC Freight simplifies logistics for your business. Connect with reliable carriers, get real-time freight quotes, and streamline your supply chain with our advanced freight broker platform.",
+
+  keywords: ["freight shipping", "logistics company", "MGC Freight", "cargo shipping", "supply chain management", "freight broker", "transportation services", "shipping solutions", "truckload shipping", "LTL shipping"],
+  openGraph: {
+    title: "MGC Freight | Premium Logistics & Freight Shipping",
+    description: "Streamline your supply chain with MGC Freight. Get real-time quotes and book shipments easily.",
+    type: "website",
+    locale: "en_US",
+    siteName: "MGC Freight",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "MGC Freight | Logistics & Shipping",
+    description: "Fast, reliable freight shipping solutions for your business.",
+  },
+};
+
 import { client } from "@/utils/constants";
 import CustomerBase from "@/components/page-components/customer-base";
 import { PagesContent } from "@/utils/types";
@@ -96,13 +117,12 @@ export default async function Home() {
           return (
             <div
               key={e._type + index}
-              className={`${
-                index != 0
+              className={`${index != 0
                   ? index % 2 != 0
                     ? "bg-white w-full"
                     : "bg-base-shadeBlue w-full"
                   : ""
-              }`}
+                }`}
             >
               {e._type == "title" && (
                 <Title

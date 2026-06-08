@@ -1,3 +1,24 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Book a Demo | MGC Freight",
+  description: "Schedule a personalized demo of MGC Freight’s logistics platform to see how we simplify cargo booking and supply chain tracking.",
+
+  keywords: ["book a demo", "freight booking", "logistics platform", "MGC Freight demo", "cargo booking", "supply chain software", "freight management", "shipping demo", "transportation solutions"],
+  openGraph: {
+    title: "Book a Demo | MGC Freight",
+    description: "Schedule your demo and see how our platform works.",
+    type: "website",
+    locale: "en_US",
+    siteName: "MGC Freight",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Book a Demo | MGC Freight",
+    description: "Request a demo and discover our freight solutions.",
+  },
+};
+
 import { PagesContent } from "@/utils/types";
 import { client } from "@/utils/constants";
 import Title from "@/components/page-components/title";
@@ -96,13 +117,12 @@ export default async function BookADemo() {
           return (
             <div
               key={e._type + index}
-              className={`${
-                index != 0
+              className={`${index != 0
                   ? index % 2 != 0
                     ? "bg-white w-full"
                     : "bg-base-shadeBlue w-full"
                   : ""
-              }`}
+                }`}
             >
               {e._type == "title" && (
                 <Title

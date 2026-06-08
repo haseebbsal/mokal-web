@@ -1,3 +1,24 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Become a Carrier Partner | MGC Freight",
+  description: "Join MGC Freight's carrier network. Access high-quality loads, regular routes, and fast, reliable payment options.",
+
+  keywords: ["carrier partners", "trucking jobs", "freight carrier", "MGC Freight", "carrier opportunities", "reliable loads", "trucking company", "carrier network", "payment terms"],
+  openGraph: {
+    title: "Carrier Partners | MGC Freight",
+    description: "Join our network of trusted carriers and access consistent loads.",
+    type: "website",
+    locale: "en_US",
+    siteName: "MGC Freight",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Carrier Partners | MGC Freight",
+    description: "Reliable loads and fast payments for our carrier partners.",
+  },
+};
+
 import Title from "@/components/page-components/title";
 import TabPageComponent from "@/components/page-components/tab";
 import Content from "@/components/page-components/content";
@@ -96,18 +117,17 @@ export default async function CarrierPartners() {
           return (
             <div
               key={e._type + index}
-              className={`${
-                index != 0
+              className={`${index != 0
                   ? index % 2 != 0
                     ? "bg-white w-full"
                     : "bg-base-shadeBlue w-full"
                   : ""
-              }`}
+                }`}
             >
               {e._type == "title" && (
                 <Title
                   identifier="1"
-                  breadCrumb={["Partnership", "Carrier","Contract Carriers"]}
+                  breadCrumb={["Partnership", "Carrier", "Contract Carriers"]}
                   header={e.header!}
                   title={e.title}
                   buttons={e.buttons}
