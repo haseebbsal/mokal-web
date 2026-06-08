@@ -1,3 +1,4 @@
+import { getServiceSchema, getFAQSchema } from "@/utils/schema";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -109,10 +110,24 @@ export default async function Truckload() {
                                                             }`,
   });
   const { content } = homeData;
+  const serviceSchema = getServiceSchema("Truckload Freight Shipping", "Reliable and secure truckload freight shipping. Access full capacity (FTL) solutions for large-scale shipments across North America.", "https://www.mgcfreight.com/truckload");
+  const faqBlock = content.find((e) => e._type === "faqs");
+  const faqSchema = faqBlock && faqBlock.questions ? getFAQSchema(faqBlock.questions) : null;
+
 
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
+      {faqSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      )}
       <div className={`flex flex-col gap-4`}>
         {content.map((e, index) => {
           return (

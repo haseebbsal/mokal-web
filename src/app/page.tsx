@@ -42,86 +42,125 @@ import TrackShipment from "@/components/page-components/track-shipment";
 import GetAQuoteForm from "@/components/page-components/get-a-quote";
 import BrokerPartnerForm from "@/components/forms/broker-partner-form";
 import CorporatePartnerForm from "@/components/forms/corporate-partner-form";
+import { getOrganizationSchema, getWebSiteSchema, getFAQSchema } from "@/utils/schema";
 
 export default async function Home() {
-  const homeData: { content: [PagesContent] } = await client.fetch({
-    query: `*[_type=='home'][0]{
-                                                          "content":[...contentBlocks[]->{
-
-                                                            ...,
-                                                            
-                                                            "singleSlider":[...slider[]{...,"cards":[...cards[]{
-                                          ...,
-                                          "imageUrl":imageUrl.asset->url
-                                        }]}],
-                                                            "images":[...images[]{...,"imageUrl":imageUrl.asset->url}],
-                                                            "video":video.asset->url,
-                                                             "testimonials":[...testimonials[]->{
-                                                               ...,
-                                                               "imageUrl":image.asset->url
-                                                              }],
-                                                             "blogs":[...blogs[]->{
-                                                               ...,
-                                                               "Author":Author.authorName,
-  "AuthorImage":Author.authorImage.asset->url,
-                                                               "imageUrl":image.asset->url
-                                                              }],
-                                                            "imageUrl":imageUrl.asset->url,
-                                                            "slider":[...slider[]->{
+  const [homeData, configData] = await Promise.all([
+    client.fetch<{ content: [PagesContent] }>({
+      query: `*[_type=='home'][0]{
+                                                            "content":[...contentBlocks[]->{
+  
                                                               ...,
+                                                              
+                                                              "singleSlider":[...slider[]{...,"cards":[...cards[]{
+                                            ...,
+                                            "imageUrl":imageUrl.asset->url
+                                          }]}],
+                                                              "images":[...images[]{...,"imageUrl":imageUrl.asset->url}],
+                                                              "video":video.asset->url,
+                                                               "testimonials":[...testimonials[]->{
+                                                                 ...,
+                                                                 "imageUrl":image.asset->url
+                                                                }],
+                                                               "blogs":[...blogs[]->{
+                                                                 ...,
+                                                                 "Author":Author.authorName,
+    "AuthorImage":Author.authorImage.asset->url,
+                                                                 "imageUrl":image.asset->url
+                                                                }],
                                                               "imageUrl":imageUrl.asset->url,
-                                                              "cards":[...cards[]->{
-                                                                ...,
-                                                                "imageUrl":imageUrl.asset->url
-                                                              }],
-                                                        
-                                                              "slider":[...slider[]{
+                                                              "slider":[...slider[]->{
                                                                 ...,
                                                                 "imageUrl":imageUrl.asset->url,
-                                                                "cards":[...cards[]{
+                                                                "cards":[...cards[]->{
                                                                   ...,
                                                                   "imageUrl":imageUrl.asset->url
-                                                                  
-                                                                }]}
-                                                                       ]
-                                                        
-                                                              
-                                                            }],
-                                                            "cards":[...cards[]{
-                                                              ...,
-                                                              "imageUrl":icon.asset->url
-                                                            }],
-                                                            "content":[...content[]{
-                                                              ...,
-                                                              "description":[...description[]{
-                                                                ...,
-                                                                "imageUrl":imageUrl.asset->url
+                                                                }],
+                                                          
+                                                                "slider":[...slider[]{
+                                                                  ...,
+                                                                  "imageUrl":imageUrl.asset->url,
+                                                                  "cards":[...cards[]{
+                                                                    ...,
+                                                                    "imageUrl":imageUrl.asset->url
+                                                                    
+                                                                  }]}
+                                                                         ]
+                                                          
+                                                                
                                                               }],
-                                                              "imageUrl":asset->url,
-                                                              "arrayContent":[...arrayContent[]{
+                                                              "cards":[...cards[]{
                                                                 ...,
-                                                                "imageUrl":imageUrl.asset->url
+                                                                "imageUrl":icon.asset->url
+                                                              }],
+                                                              "content":[...content[]{
+                                                                ...,
+                                                                "description":[...description[]{
+                                                                  ...,
+                                                                  "imageUrl":imageUrl.asset->url
+                                                                }],
+                                                                "imageUrl":asset->url,
+                                                                "arrayContent":[...arrayContent[]{
+                                                                  ...,
+                                                                  "imageUrl":imageUrl.asset->url
+                                                                }]
                                                               }]
-                                                            }]
-                                                            }
-                                                            ],
-                                                              "remaining":{...}
-                                                            }`,
-  });
+                                                              }
+                                                              ],
+                                                                "remaining":{...}
+                                                              }`,
+      config: {
+        cache: "no-store",
+      },
+    }),
+    client.fetch<any>({
+      query: `*[_type == 'config'][0]{
+        email,
+        phoneNumber,
+        socialLinks,
+        "imageUrl": logo.asset->url
+      }`,
+      config: {
+        cache: "no-store",
+      },
+    }),
+  ]);
+
   const { content } = homeData;
+  const orgSchema = getOrganizationSchema(configData);
+  const webSiteSchema = getWebSiteSchema();
+
+  const faqBlock = content.find((e) => e._type === "faqs");
+  const faqSchema = faqBlock && faqBlock.questions
+    ? getFAQSchema(faqBlock.questions)
+    : null;
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webSiteSchema) }}
+      />
+      {faqSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      )}
       <div className={`flex flex-col gap-4`}>
         {content.map((e, index) => {
           return (
             <div
               key={e._type + index}
               className={`${index != 0
-                  ? index % 2 != 0
-                    ? "bg-white w-full"
-                    : "bg-base-shadeBlue w-full"
-                  : ""
+                ? index % 2 != 0
+                  ? "bg-white w-full"
+                  : "bg-base-shadeBlue w-full"
+                : ""
                 }`}
             >
               {e._type == "title" && (

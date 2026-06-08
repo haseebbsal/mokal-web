@@ -1,3 +1,4 @@
+import { getServiceSchema, getFAQSchema } from "@/utils/schema";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -109,9 +110,23 @@ export default async function WhiteGlove() {
                                                             }`,
   });
   const { content } = homeData;
+  const serviceSchema = getServiceSchema("White Glove Services", "Premium white glove services for delicate, high-value, or complex freight. We handle your sensitive shipments with extreme care and professional support.", "https://www.mgcfreight.com/white-glove-services");
+  const faqBlock = content.find((e) => e._type === "faqs");
+  const faqSchema = faqBlock && faqBlock.questions ? getFAQSchema(faqBlock.questions) : null;
+
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
+      {faqSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      )}
       <div className={`flex flex-col gap-4`}>
         {content.map((e, index) => {
           return (

@@ -1,3 +1,4 @@
+import { getServiceSchema, getFAQSchema } from "@/utils/schema";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -118,9 +119,23 @@ export default async function InternationalShipping() {
                                                             }`,
   });
   const { content } = homeData;
+  const serviceSchema = getServiceSchema("International Shipping", "Cross-border and global logistics solutions. Ship seamlessly between the USA, Canada, Mexico, and worldwide with MGC Freight.", "https://www.mgcfreight.com/international-shipping");
+  const faqBlock = content.find((e) => e._type === "faqs");
+  const faqSchema = faqBlock && faqBlock.questions ? getFAQSchema(faqBlock.questions) : null;
+
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
+      {faqSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      )}
       <div className={`flex flex-col gap-4`}>
         {content.map((e, index) => {
           return (

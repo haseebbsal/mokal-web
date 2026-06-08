@@ -2,6 +2,7 @@ import { client } from "@/utils/constants";
 import IndividualBlog from "@/components/page-components/individualblog";
 import { IndvidualBlog } from "@/utils/types";
 import type { Metadata } from "next";
+import { getBlogPostingSchema } from "@/utils/schema";
 
 export async function generateMetadata({
   params,
@@ -57,13 +58,27 @@ export default async function Blog({ params }: { params: Promise<{ blogId: strin
   "imageUrl":image.asset->url,
     "title":title,
      "publishedAt":_createdAt,
+     "authorName":Author.authorName,
+     "authorImg":Author.authorImage.asset->url,
  "content":[...contents[].children[]]}`,
     config: {
       cache: 'no-store'
     }
   })
 
+  const blogSchema = individualBlogData
+    ? getBlogPostingSchema(individualBlogData, `https://www.mgcfreight.com/blogs/${blogId}`)
+    : null;
+
   return (
-    <IndividualBlog data={individualBlogData as IndvidualBlog} />
+    <>
+      {blogSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(blogSchema) }}
+        />
+      )}
+      <IndividualBlog data={individualBlogData as IndvidualBlog} />
+    </>
   )
 }
