@@ -143,16 +143,15 @@ export default function Package() {
         <p className="text-base-purple font-semibold text-lg">Equipment</p>
         <div className="flex gap-4 w-full">
           <div
-            className={`flex flex-1 p-4 justify-between ${
-              switchErrors && "border-red-400 text-red-400"
-            } border-base-teal border-1 rounded-lg`}
+            className={`flex flex-1 p-4 justify-between ${switchErrors && "border-red-400 text-red-400"
+              } border-base-teal border-1 rounded-lg`}
           >
             <div className="flex flex-col gap-2 items-start ">
               <Image
                 src={"/icons/flatbed.svg"}
                 width={100}
                 height={100}
-                alt="pallet"
+                alt="flat bed truck"
               />
               <div className="flex flex-col items-start">
                 <p className="text-lg font-semibold">48’ Flatbed</p>
@@ -177,16 +176,15 @@ export default function Package() {
           </div>
 
           <div
-            className={`flex flex-1 p-4 justify-between ${
-              switchErrors && "border-red-400 text-red-400"
-            } border-base-teal border-1 rounded-lg`}
+            className={`flex flex-1 p-4 justify-between ${switchErrors && "border-red-400 text-red-400"
+              } border-base-teal border-1 rounded-lg`}
           >
             <div className="flex flex-col gap-2 items-start ">
               <Image
                 src={"/icons/reefer.svg"}
                 width={100}
                 height={100}
-                alt="pallet"
+                alt="reefer truck"
               />
               <div className="flex flex-col items-start">
                 <p className="text-lg font-semibold">53’ Reefer</p>
@@ -211,16 +209,15 @@ export default function Package() {
           </div>
 
           <div
-            className={`flex flex-1 p-4 justify-between ${
-              switchErrors && "border-red-400 text-red-400"
-            } border-base-teal border-1 rounded-lg`}
+            className={`flex flex-1 p-4 justify-between ${switchErrors && "border-red-400 text-red-400"
+              } border-base-teal border-1 rounded-lg`}
           >
             <div className="flex flex-col gap-2 items-start ">
               <Image
                 src={"/icons/van.svg"}
                 width={100}
                 height={100}
-                alt="pallet"
+                alt="van"
               />
               <div className="flex flex-col items-start">
                 <p className="text-lg font-semibold">53’ Dry van</p>
@@ -245,16 +242,15 @@ export default function Package() {
           </div>
 
           <div
-            className={`flex flex-1 p-4 justify-between ${
-              switchErrors && "border-red-400 text-red-400"
-            } border-base-teal border-1 rounded-lg`}
+            className={`flex flex-1 p-4 justify-between ${switchErrors && "border-red-400 text-red-400"
+              } border-base-teal border-1 rounded-lg`}
           >
             <div className="flex flex-col gap-2 items-start ">
               <Image
                 src={"/icons/van.svg"}
                 width={100}
                 height={100}
-                alt="pallet"
+                alt="container"
               />
               <div className="flex flex-col items-start">
                 <p className="text-lg font-semibold">

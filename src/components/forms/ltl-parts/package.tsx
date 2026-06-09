@@ -166,9 +166,8 @@ export default function PackageLTL() {
         </p>
         <div className="flex gap-4 w-full">
           <div
-            className={`flex flex-1 p-4 justify-between ${
-              switchErrors && "border-red-400 text-red-400"
-            } border-base-teal border-1 rounded-lg`}
+            className={`flex flex-1 p-4 justify-between ${switchErrors && "border-red-400 text-red-400"
+              } border-base-teal border-1 rounded-lg`}
           >
             <div className="flex gap-4 items-center">
               <Image
@@ -197,16 +196,15 @@ export default function PackageLTL() {
           </div>
 
           <div
-            className={`flex flex-1 p-4 justify-between ${
-              switchErrors && "border-red-400 text-red-400"
-            } border-base-teal border-1 rounded-lg`}
+            className={`flex flex-1 p-4 justify-between ${switchErrors && "border-red-400 text-red-400"
+              } border-base-teal border-1 rounded-lg`}
           >
             <div className="flex gap-4 items-center">
               <Image
                 src={"/icons/package.svg"}
                 width={30}
                 height={30}
-                alt="pallet"
+                alt="package"
               />
               <p>Package</p>
             </div>
@@ -228,16 +226,15 @@ export default function PackageLTL() {
           </div>
 
           <div
-            className={`flex flex-1 p-4 justify-between ${
-              switchErrors && "border-red-400 text-red-400"
-            } border-base-teal border-1 rounded-lg`}
+            className={`flex flex-1 p-4 justify-between ${switchErrors && "border-red-400 text-red-400"
+              } border-base-teal border-1 rounded-lg`}
           >
             <div className="flex gap-4 items-center">
               <Image
                 src={"/icons/courier-pack.svg"}
                 width={30}
                 height={30}
-                alt="pallet"
+                alt="courier pack"
               />
               <p>Courier Pack</p>
             </div>
@@ -258,16 +255,15 @@ export default function PackageLTL() {
           </div>
 
           <div
-            className={`flex flex-1 p-4 justify-between ${
-              switchErrors && "border-red-400 text-red-400"
-            } border-base-teal border-1 rounded-lg`}
+            className={`flex flex-1 p-4 justify-between ${switchErrors && "border-red-400 text-red-400"
+              } border-base-teal border-1 rounded-lg`}
           >
             <div className="flex gap-4 items-center">
               <Image
                 src={"/icons/envelop-check.svg"}
                 width={30}
                 height={30}
-                alt="pallet"
+                alt="envelop"
               />
               <p>Envelop</p>
             </div>
@@ -609,11 +605,10 @@ export default function PackageLTL() {
                         classNames={{
                           base: "!m-0 ",
 
-                          trigger: `${
-                            !!(errors.items as any)?.[index]?.freightClass
+                          trigger: `${!!(errors.items as any)?.[index]?.freightClass
                               ? ""
                               : "bg-transparent"
-                          } border-1 border-base-teal p-7 rounded-xl`,
+                            } border-1 border-base-teal p-7 rounded-xl`,
                           label: "",
                           value: "!text-base-blue",
                           helperWrapper: "text-start",
@@ -644,11 +639,10 @@ export default function PackageLTL() {
                         classNames={{
                           base: "!m-0 ",
 
-                          trigger: `${
-                            !!(errors.items as any)?.[index]?.type
+                          trigger: `${!!(errors.items as any)?.[index]?.type
                               ? ""
                               : "bg-transparent"
-                          } border-1 border-base-teal p-7 rounded-xl`,
+                            } border-1 border-base-teal p-7 rounded-xl`,
                           label: "",
                           value: "!text-base-blue",
                           helperWrapper: "text-start",

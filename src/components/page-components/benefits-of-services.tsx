@@ -14,20 +14,20 @@ export default function BenefitsOfServices() {
                     </div>
 
                     <div className="flex flex-col gap-2 bg-white shadow-lg flex-[1_0_35%] items-start text-start rounded-xl p-4">
-                        <Image src={'/icons/reliable-delivery.svg'} alt={'efficiency'} width={50} height={50} />
+                        <Image src={'/icons/reliable-delivery.svg'} alt={'reliable delivery'} width={50} height={50} />
                         <LinearGradientText extraClass="font-bold text-2xl" text={'Reliable Delivery'} />
                         <p className="text-text-gray">Count on timely and secure deliveries, ensuring your goods reach their destination without hassle.</p>
                     </div>
 
 
                     <div className="flex flex-col gap-2 bg-white shadow-lg flex-[1_0_35%] items-start text-start rounded-xl p-4">
-                        <Image src={'/icons/flexible-solutions.svg'} alt={'efficiency'} width={50} height={50} />
+                        <Image src={'/icons/flexible-solutions.svg'} alt={'flexible solutions'} width={50} height={50} />
                         <LinearGradientText extraClass="font-bold text-2xl" text={'Flexible Solutions'} />
                         <p className="text-text-gray">Enjoy customizable shipping options designed to meet the unique requirements of your business operations.</p>
                     </div>
 
                     <div className="flex flex-col gap-2 bg-white shadow-lg flex-[1_0_35%] items-start text-start rounded-xl p-4">
-                        <Image src={'/icons/trusted-partnerships.svg'} alt={'efficiency'} width={50} height={50} />
+                        <Image src={'/icons/trusted-partnerships.svg'} alt={'trusted partnerships'} width={50} height={50} />
                         <LinearGradientText extraClass="font-bold text-2xl" text={'Trusted Partnerships'} />
                         <p className="text-text-gray">Work with a network of experienced and reputable carriers committed to providing top-notch service.</p>
                     </div>

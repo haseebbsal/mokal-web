@@ -12,7 +12,7 @@ export default function GuideToBook() {
 
                 <div className="flex flex-col gap-16">
                     <div className={`flex sm:flex-row flex-col   items-center text-center gap-16`}>
-                        <Image className="flex-1 sm:order-0 order-1 " src={'/images/step1.svg'} alt="truckload" width={500} height={500} />
+                        <Image className="flex-1 sm:order-0 order-1 " src={'/images/step1.svg'} alt="quick quote form" width={500} height={500} />
                         <div className="flex sm:order-1 order-0 flex-1 flex-col sm:items-start items-center sm:text-start text-center gap-4">
                             <h1 className="text-base-purple text-2xl">Step # 01</h1>
                             <h1 className="sm:text-[2rem] text-[1.5rem] font-bold">Get a <LinearGradientText extraClass="" text="Quick Quote" /> </h1>
@@ -27,7 +27,7 @@ export default function GuideToBook() {
                             <h1 className="sm:text-[2rem] text-[1.5rem] font-bold">Provide <LinearGradientText extraClass="" text="Shipment Details " /> </h1>
                             <p className="text-text-gray text-md">Fill in all the necessary information about your shipment, including pickup location, delivery address, and package specifics. Accurate details ensure smooth processing.</p>
                         </div>
-                        <Image className="flex-1" src={'/images/step2.svg'} alt="truckload" width={500} height={500} />
+                        <Image className="flex-1" src={'/images/step2.svg'} alt="shipping form" width={500} height={500} />
                     </div>
 
 
@@ -38,7 +38,7 @@ export default function GuideToBook() {
                             <p className="text-text-gray text-md">Browse through a list of top carriers. Compare prices, delivery times, and service options to find the one that perfectly meets your shipping needs.</p>
                         </div>
 
-                        <Image className="flex-1 w-full" src={'/images/step3.svg'} alt="truckload" width={500} height={500} />
+                        <Image className="flex-1 w-full" src={'/images/step3.svg'} alt="carrier selection form" width={500} height={500} />
                         {/* <div className="flex flex-1 flex-col sm:items-start items-center sm:text-start text-center gap-4">
                                             <h1 className="text-base-purple text-2xl">Step # 04</h1>
                                         </div> */}
@@ -51,14 +51,14 @@ export default function GuideToBook() {
                             <h1 className="sm:text-[2rem] text-[1.5rem] font-bold">Complete <LinearGradientText extraClass="" text="Address and Additional" /> Info </h1>
                             <p className="text-text-gray text-md">Add the final touches by entering remaining address details, special instructions, or preferences. Double-check for accuracy to avoid delays.</p>
                         </div>
-                        <Image className="flex-1" src={'/images/step4.svg'} alt="truckload" width={500} height={500} />
+                        <Image className="flex-1" src={'/images/step4.svg'} alt="pickup and consignee form" width={500} height={500} />
                     </div>
 
 
 
 
                     <div className={`flex sm:flex-row flex-col   items-center text-center gap-16`}>
-                        <Image className="flex-1 sm:order-0 order-1 " src={'/images/step5.svg'} alt="truckload" width={500} height={500} />
+                        <Image className="flex-1 sm:order-0 order-1 " src={'/images/step5.svg'} alt="payment form" width={500} height={500} />
                         <div className="flex flex-1 sm:order-1 order-0  flex-col sm:items-start items-center sm:text-start text-center gap-4">
                             <h1 className="text-base-purple text-2xl">Step # 05</h1>
                             <h1 className="sm:text-[2rem] text-[1.5rem] font-bold">Make the Payment and <LinearGradientText extraClass="" text="Confirm Order" /> </h1>

@@ -73,7 +73,7 @@ export default function BlogsClient({ data }: { data: Blogs }) {
                     <div className="flex gap-2 w-full items-center">
                       <Image
                         src={e.authorImg}
-                        alt="person"
+                        alt="author"
                         height={30}
                         width={30}
                       />

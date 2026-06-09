@@ -99,7 +99,7 @@ export default async function MainBlog({
                 <div className="flex gap-2 w-full items-center">
                   <Image
                     src={e.AuthorImage}
-                    alt="person"
+                    alt="author"
                     height={30}
                     width={30}
                   />

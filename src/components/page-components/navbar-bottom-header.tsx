@@ -182,14 +182,14 @@ export default function NavbarBottomHeader({ logo }: { logo: string }) {
                   <Image
                     src={"/megamenu.svg"}
                     className="min-h-[18rem] rounded-xl"
-                    alt="mega"
+                    alt="menu icon"
                     width={400}
                     height={200}
                   />
                   <div className="absolute bottom-10 left-4 flex flex-col gap-2">
                     <Image
                       src={"/logo-white.svg"}
-                      alt="icon white"
+                      alt="MGC logo white"
                       width={200}
                       height={200}
                     />

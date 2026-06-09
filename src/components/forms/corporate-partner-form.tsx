@@ -47,7 +47,7 @@ export default function CorporatePartnerForm() {
         <div className="flex flex-1 flex-col sm:items-start items-center sm:text-start text-center gap-4">
           <Image
             src={"/images/office-building (1).svg"}
-            alt="broker"
+            alt="office building"
             width={200}
             height={200}
           />
