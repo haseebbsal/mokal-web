@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Script from "next/script";
+// import Script from "next/script";
 import HeroProvider from "@/providers/hero-provider";
 import { Lato } from "next/font/google";
 import MainNavbar from "@/components/page-components/navbar";
@@ -51,7 +51,7 @@ export default function RootLayout({
             </MegaMenuProvider>
           </QueryProvider>
         </HeroProvider>
-        <Script
+        {/* <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-H7Y1TXGZ4R"
           strategy="afterInteractive"
         />
@@ -63,7 +63,7 @@ export default function RootLayout({
 
             gtag('config', 'G-H7Y1TXGZ4R');
           `}
-        </Script>
+        </Script> */}
       </body>
     </html>
   );
