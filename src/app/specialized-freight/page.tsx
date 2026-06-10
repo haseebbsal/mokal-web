@@ -2,21 +2,21 @@ import { getServiceSchema, getFAQSchema } from "@/utils/schema";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Specialized Freight Shipping | MGC Freight",
-  description: "Expert handling for unique, oversized, or complex shipments. Find customized shipping solutions with MGC Freight.",
+  title: "Specialized Freight Services Ontario | Hazmat, Oversized & Temperature-Controlled Shipping | MGC Freight",
+  description: "MGC Freight handles specialized freight including hazardous materials, oversized loads, freeze-protection, in-bond cargo, and Amazon FBA shipments. Expert handling for unique freight across Canada and the US.",
 
   keywords: ["specialized freight", "heavy haul", "oversized loads", "complex shipments", "MGC Freight", "logistics services", "custom shipping", "delicate cargo"],
   openGraph: {
-    title: "Specialized Freight Shipping | MGC Freight",
-    description: "Expert handling for unique, oversized, or complex shipments.",
+    title: "Specialized Freight Services Ontario | Hazmat, Oversized & Temperature-Controlled Shipping | MGC Freight",
+    description: "MGC Freight handles specialized freight including hazardous materials, oversized loads, freeze-protection, in-bond cargo, and Amazon FBA shipments. Expert handling for unique freight across Canada and the US.",
     type: "website",
     locale: "en_US",
     siteName: "MGC Freight",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Specialized Freight Shipping | MGC Freight",
-    description: "Customized shipping solutions for your unique freight needs.",
+    title: "Specialized Freight Services Ontario | Hazmat, Oversized & Temperature-Controlled Shipping | MGC Freight",
+    description: "MGC Freight handles specialized freight including hazardous materials, oversized loads, freeze-protection, in-bond cargo, and Amazon FBA shipments. Expert handling for unique freight across Canada and the US.",
   },
 };
 
@@ -143,10 +143,10 @@ export default async function SpecializedFreight() {
             <div
               key={e._type + index}
               className={`${index != 0
-                  ? index % 2 != 0
-                    ? "bg-white w-full"
-                    : "bg-base-shadeBlue w-full"
-                  : ""
+                ? index % 2 != 0
+                  ? "bg-white w-full"
+                  : "bg-base-shadeBlue w-full"
+                : ""
                 }`}
             >
               {e._type == "title" && (

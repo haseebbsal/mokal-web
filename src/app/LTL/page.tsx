@@ -2,21 +2,21 @@ import { getServiceSchema, getFAQSchema } from "@/utils/schema";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Less Than Truckload (LTL) Shipping | MGC Freight",
-  description: "Cost-effective LTL freight shipping. Optimize your smaller cargo shipments with our premium carrier network.",
+  title: "FTL Truckload Shipping Canada & USA | Full Truckload Freight Broker | MGC Freight",
+  description: "MGC Freight provides full truckload (FTL) shipping services across Canada and the US. Access competitive FTL rates, dedicated carrier capacity, and real-time tracking. Get a free truckload quote today.",
 
   keywords: ["LTL shipping", "less than truckload", "freight LTL", "MGC Freight", "LTL carrier", "shipping LTL", "cost-effective", "cargo optimization"],
   openGraph: {
-    title: "Less Than Truckload (LTL) Shipping | MGC Freight",
-    description: "Cost-effective LTL freight shipping with MGC Freight.",
+    title: "FTL Truckload Shipping Canada & USA | Full Truckload Freight Broker | MGC Freight",
+    description: "MGC Freight provides full truckload (FTL) shipping services across Canada and the US. Access competitive FTL rates, dedicated carrier capacity, and real-time tracking. Get a free truckload quote today.",
     type: "website",
     locale: "en_US",
     siteName: "MGC Freight",
   },
   twitter: {
     card: "summary_large_image",
-    title: "LTL Shipping | MGC Freight",
-    description: "Optimize your LTL shipments with our premium carrier network.",
+    title: "FTL Truckload Shipping Canada & USA | Full Truckload Freight Broker | MGC Freight",
+    description: "MGC Freight provides full truckload (FTL) shipping services across Canada and the US. Access competitive FTL rates, dedicated carrier capacity, and real-time tracking. Get a free truckload quote today.",
   },
 };
 
@@ -133,10 +133,10 @@ export default async function LTL() {
             <div
               key={e._type + index}
               className={`${index != 0
-                  ? index % 2 != 0
-                    ? "bg-white w-full"
-                    : "bg-base-shadeBlue w-full"
-                  : ""
+                ? index % 2 != 0
+                  ? "bg-white w-full"
+                  : "bg-base-shadeBlue w-full"
+                : ""
                 }`}
             >
               {e._type == "title" && (

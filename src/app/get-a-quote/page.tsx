@@ -1,21 +1,21 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Get a Shipping Quote | MGC Freight",
-  description: "Request a custom shipping quote for LTL, full truckload, courier, or international logistics services from MGC Freight.",
+  title: "Get a Free Freight Quote | LTL & FTL Shipping Rates Canada & USA | MGC Freight",
+  description: "Get an instant free freight quote from MGC Freight. Compare LTL and FTL shipping rates from top Canadian carriers. Fast, accurate freight pricing for Ontario and North American shipments.",
 
   keywords: ["shipping quote", "freight quote", "LTL quote", "truckload quote", "international shipping", "MGC Freight", "online quote", "freight rates", "logistics services", "custom shipping quote"],
   openGraph: {
-    title: "Get a Shipping Quote | MGC Freight",
-    description: "Request a custom shipping quote for LTL, full truckload, or international logistics.",
+    title: "Get a Free Freight Quote | LTL & FTL Shipping Rates Canada & USA | MGC Freight",
+    description: "Get an instant free freight quote from MGC Freight. Compare LTL and FTL shipping rates from top Canadian carriers. Fast, accurate freight pricing for Ontario and North American shipments.",
     type: "website",
     locale: "en_US",
     siteName: "MGC Freight",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Get a Shipping Quote | MGC Freight",
-    description: "Get competitive rates for your freight shipments.",
+    title: "Get a Free Freight Quote | LTL & FTL Shipping Rates Canada & USA | MGC Freight",
+    description: "Get an instant free freight quote from MGC Freight. Compare LTL and FTL shipping rates from top Canadian carriers. Fast, accurate freight pricing for Ontario and North American shipments.",
   },
 };
 
@@ -119,10 +119,10 @@ export default async function GetAQuote() {
             <div
               key={e._type + index}
               className={`${index != 0
-                  ? index % 2 != 0
-                    ? "bg-white w-full"
-                    : "bg-base-shadeBlue w-full"
-                  : ""
+                ? index % 2 != 0
+                  ? "bg-white w-full"
+                  : "bg-base-shadeBlue w-full"
+                : ""
                 }`}
             >
               {e._type == "title" && (

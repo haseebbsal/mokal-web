@@ -2,21 +2,21 @@ import { getServiceSchema, getFAQSchema } from "@/utils/schema";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Freight Forwarding Services | MGC Freight",
-  description: "Reliable freight forwarding and global logistics management to move your cargo across borders efficiently.",
+  title: "Freight Forwarding Services Ontario & Canada | Global Logistics | MGC Freight",
+  description: "MGC Freight offers reliable freight forwarding services from Ontario and across Canada. Manage global supply chain logistics by air, sea, and land with competitive rates and end-to-end shipment tracking.",
 
   keywords: ["freight forwarding", "global logistics", "MGC Freight", "international shipping", "freight broker", "cross-border logistics", "supply chain management", "ocean freight", "air freight", "customs brokerage", "shipping services"],
   openGraph: {
-    title: "Freight Forwarding Services | MGC Freight",
-    description: "Reliable freight forwarding with global reach.",
+    title: "Freight Forwarding Services Ontario & Canada | Global Logistics | MGC Freight",
+    description: "MGC Freight offers reliable freight forwarding services from Ontario and across Canada. Manage global supply chain logistics by air, sea, and land with competitive rates and end-to-end shipment tracking.",
     type: "website",
     locale: "en_US",
     siteName: "MGC Freight",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Freight Forwarding | MGC Freight",
-    description: "Streamline your international shipments with our expert forwarding services.",
+    title: "Freight Forwarding Services Ontario & Canada | Global Logistics | MGC Freight",
+    description: "MGC Freight offers reliable freight forwarding services from Ontario and across Canada. Manage global supply chain logistics by air, sea, and land with competitive rates and end-to-end shipment tracking.",
   },
 };
 
@@ -133,10 +133,10 @@ export default async function FreightForwarding() {
             <div
               key={e._type + index}
               className={`${index != 0
-                  ? index % 2 != 0
-                    ? "bg-white w-full"
-                    : "bg-base-shadeBlue w-full"
-                  : ""
+                ? index % 2 != 0
+                  ? "bg-white w-full"
+                  : "bg-base-shadeBlue w-full"
+                : ""
                 }`}
             >
               {e._type == "title" && (

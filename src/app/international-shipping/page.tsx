@@ -2,21 +2,21 @@ import { getServiceSchema, getFAQSchema } from "@/utils/schema";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "International Shipping | MGC Freight",
-  description: "Cross-border and global logistics solutions. Ship seamlessly between the USA, Canada, Mexico, and worldwide with MGC Freight.",
+  title: "International Shipping from Canada, USA & Mexico | Cross-Border Freight | MGC Freight",
+  description: "Ship internationally from Canada, the US, or Mexico with MGC Freight. Automated customs paperwork, real-time tracking, and competitive rates with trusted global carriers. Hassle-free cross-border freight and international shipping solutions.",
 
   keywords: ["international shipping", "global logistics", "freight forwarding", "MGC Freight", "cross-border shipping", "USA Canada Mexico", "international freight", "ocean freight", "air freight", "customs clearance", "supply chain services"],
   openGraph: {
-    title: "International Shipping | MGC Freight",
-    description: "Seamless international shipping solutions. Connect with MGC Freight for global logistics.",
+    title: "International Shipping from Canada, USA & Mexico | Cross-Border Freight | MGC Freight",
+    description: "Ship internationally from Canada, the US, or Mexico with MGC Freight. Automated customs paperwork, real-time tracking, and competitive rates with trusted global carriers. Hassle-free cross-border freight and international shipping solutions.",
     type: "website",
     locale: "en_US",
     siteName: "MGC Freight",
   },
   twitter: {
     card: "summary_large_image",
-    title: "International Shipping | MGC Freight",
-    description: "Cross-border and global shipping services with MGC Freight.",
+    title: "International Shipping from Canada, USA & Mexico | Cross-Border Freight | MGC Freight",
+    description: "Ship internationally from Canada, the US, or Mexico with MGC Freight. Automated customs paperwork, real-time tracking, and competitive rates with trusted global carriers. Hassle-free cross-border freight and international shipping solutions.",
   },
 };
 
@@ -142,10 +142,10 @@ export default async function InternationalShipping() {
             <div
               key={e._type + index}
               className={`${index != 0
-                  ? index % 2 != 0
-                    ? "bg-white w-full"
-                    : "bg-base-shadeBlue w-full"
-                  : ""
+                ? index % 2 != 0
+                  ? "bg-white w-full"
+                  : "bg-base-shadeBlue w-full"
+                : ""
                 }`}
             >
               {e._type == "title" && (

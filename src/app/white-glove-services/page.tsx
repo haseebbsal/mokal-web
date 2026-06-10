@@ -2,21 +2,21 @@ import { getServiceSchema, getFAQSchema } from "@/utils/schema";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "White Glove Services | MGC Freight",
-  description: "Premium white glove services for delicate, high-value, or complex freight. We handle your sensitive shipments with extreme care and professional support.",
+  title: "White Glove Delivery Services Canada | Premium Freight Handling | MGC Freight",
+  description: "MGC Freight's white glove delivery service provides premium handling for high-value, fragile, and large-item shipments across Canada and the US. Room-of-choice delivery, unpacking, and debris removal — all managed through our platform.",
 
   keywords: ["white glove shipping", "delicate freight", "high-value shipping", "secure transport", "MGC Freight white glove", "logistics services"],
   openGraph: {
-    title: "White Glove Services | MGC Freight",
-    description: "Premium white glove shipping services for your most sensitive freight.",
+    title: "White Glove Delivery Services Canada | Premium Freight Handling | MGC Freight",
+    description: "MGC Freight's white glove delivery service provides premium handling for high-value, fragile, and large-item shipments across Canada and the US. Room-of-choice delivery, unpacking, and debris removal — all managed through our platform.",
     type: "website",
     locale: "en_US",
     siteName: "MGC Freight",
   },
   twitter: {
     card: "summary_large_image",
-    title: "White Glove Services | MGC Freight",
-    description: "Professional handling for delicate and high-value shipments.",
+    title: "White Glove Delivery Services Canada | Premium Freight Handling | MGC Freight",
+    description: "MGC Freight's white glove delivery service provides premium handling for high-value, fragile, and large-item shipments across Canada and the US. Room-of-choice delivery, unpacking, and debris removal — all managed through our platform.",
   },
 };
 
@@ -133,10 +133,10 @@ export default async function WhiteGlove() {
             <div
               key={e._type + index}
               className={`${index != 0
-                  ? index % 2 != 0
-                    ? "bg-white w-full"
-                    : "bg-base-shadeBlue w-full"
-                  : ""
+                ? index % 2 != 0
+                  ? "bg-white w-full"
+                  : "bg-base-shadeBlue w-full"
+                : ""
                 }`}
             >
               {e._type == "title" && (

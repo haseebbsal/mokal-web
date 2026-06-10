@@ -1,21 +1,21 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Get a Spot Quote | MGC Freight",
-  description: "Get instant, competitive freight spot quotes. Streamline your freight booking with fast pricing options through MGC Freight.",
+  title: "Spot Quote Freight Pricing | Urgent & Expedited Shipments Canada | MGC Freight",
+  description: "Need urgent freight pricing? MGC Freight provides instant spot quotes for time-sensitive, oversized, refrigerated, FTL, and same-day shipments across Canada and the US. Get a spot quote now.",
 
   keywords: ["spot quote", "freight rates", "quick quote", "shipping prices", "MGC Freight spot", "instant quote", "freight cost"],
   openGraph: {
-    title: "Get a Spot Quote | MGC Freight",
-    description: "Fast freight spot quotes for your shipments.",
+    title: "Spot Quote Freight Pricing | Urgent & Expedited Shipments Canada | MGC Freight",
+    description: "Need urgent freight pricing? MGC Freight provides instant spot quotes for time-sensitive, oversized, refrigerated, FTL, and same-day shipments across Canada and the US. Get a spot quote now.",
     type: "website",
     locale: "en_US",
     siteName: "MGC Freight",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Get a Spot Quote | MGC Freight",
-    description: "Instant freight quotes - get pricing now.",
+    title: "Spot Quote Freight Pricing | Urgent & Expedited Shipments Canada | MGC Freight",
+    description: "Need urgent freight pricing? MGC Freight provides instant spot quotes for time-sensitive, oversized, refrigerated, FTL, and same-day shipments across Canada and the US. Get a spot quote now.",
   },
 };
 
@@ -126,10 +126,10 @@ export default async function SpotQuote() {
             <div
               key={e._type + index}
               className={`${index != 0
-                  ? index % 2 != 0
-                    ? "bg-white w-full"
-                    : "bg-base-shadeBlue w-full"
-                  : ""
+                ? index % 2 != 0
+                  ? "bg-white w-full"
+                  : "bg-base-shadeBlue w-full"
+                : ""
                 }`}
             >
               {e._type == "title" && (

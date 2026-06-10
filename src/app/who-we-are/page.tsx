@@ -1,21 +1,21 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Who We Are | MGC Freight",
-  description: "Learn more about MGC Freight, our mission, values, and our commitment to helping businesses succeed through premium logistics and reliable shipping solutions.",
+  title: "About MGC Freight | Ontario Freight Broker | Domestic & Cross-Border Logistics",
+  description: "MGC Freight is an Ontario-based freight brokerage and 3PL provider connecting shippers with a network of 160,000+ carriers across North America. Learn about our mission, values, and commitment to making transportation simpler.",
 
   keywords: ["about MGC Freight", "who we are", "logistics company", "freight broker", "MGC Freight team", "company values", "careers", "sustainability", "diversity"],
   openGraph: {
-    title: "Who We Are | MGC Freight",
-    description: "Learn about our team, mission, and values at MGC Freight.",
+    title: "About MGC Freight | Ontario Freight Broker | Domestic & Cross-Border Logistics",
+    description: "MGC Freight is an Ontario-based freight brokerage and 3PL provider connecting shippers with a network of 160,000+ carriers across North America. Learn about our mission, values, and commitment to making transportation simpler.",
     type: "website",
     locale: "en_US",
     siteName: "MGC Freight",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Who We Are | MGC Freight",
-    description: "About MGC Freight - your trusted logistics partner.",
+    title: "About MGC Freight | Ontario Freight Broker | Domestic & Cross-Border Logistics",
+    description: "MGC Freight is an Ontario-based freight brokerage and 3PL provider connecting shippers with a network of 160,000+ carriers across North America. Learn about our mission, values, and commitment to making transportation simpler.",
   },
 };
 
@@ -118,10 +118,10 @@ export default async function WhoWeAre() {
             <div
               key={e._type + index}
               className={`${index != 0
-                  ? index % 2 != 0
-                    ? "bg-white w-full"
-                    : "bg-base-shadeBlue w-full"
-                  : ""
+                ? index % 2 != 0
+                  ? "bg-white w-full"
+                  : "bg-base-shadeBlue w-full"
+                : ""
                 }`}
             >
               {e._type == "title" && (

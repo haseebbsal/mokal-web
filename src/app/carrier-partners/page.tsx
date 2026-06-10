@@ -1,21 +1,21 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Become a Carrier Partner | MGC Freight",
-  description: "Join MGC Freight's carrier network. Access high-quality loads, regular routes, and fast, reliable payment options.",
+  title: "Carrier Partners | Freight Carriers Working with MGC Freight | Ontario Broker Network",
+  description: "MGC Freight partners with North America's leading freight carriers for LTL, FTL, reefer, and expedited shipments. See our carrier network and learn why shippers across Canada trust MGC Freight.",
 
   keywords: ["carrier partners", "trucking jobs", "freight carrier", "MGC Freight", "carrier opportunities", "reliable loads", "trucking company", "carrier network", "payment terms"],
   openGraph: {
-    title: "Carrier Partners | MGC Freight",
-    description: "Join our network of trusted carriers and access consistent loads.",
+    title: "Carrier Partners | Freight Carriers Working with MGC Freight | Ontario Broker Network",
+    description: "MGC Freight partners with North America's leading freight carriers for LTL, FTL, reefer, and expedited shipments. See our carrier network and learn why shippers across Canada trust MGC Freight.",
     type: "website",
     locale: "en_US",
     siteName: "MGC Freight",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Carrier Partners | MGC Freight",
-    description: "Reliable loads and fast payments for our carrier partners.",
+    title: "Carrier Partners | Freight Carriers Working with MGC Freight | Ontario Broker Network",
+    description: "MGC Freight partners with North America's leading freight carriers for LTL, FTL, reefer, and expedited shipments. See our carrier network and learn why shippers across Canada trust MGC Freight.",
   },
 };
 
@@ -118,10 +118,10 @@ export default async function CarrierPartners() {
             <div
               key={e._type + index}
               className={`${index != 0
-                  ? index % 2 != 0
-                    ? "bg-white w-full"
-                    : "bg-base-shadeBlue w-full"
-                  : ""
+                ? index % 2 != 0
+                  ? "bg-white w-full"
+                  : "bg-base-shadeBlue w-full"
+                : ""
                 }`}
             >
               {e._type == "title" && (

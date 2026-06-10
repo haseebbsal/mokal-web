@@ -339,7 +339,7 @@ export default async function CardsContent({
 
       {variation == 3 && (
         <div className={`w-full p-8 flex flex-col gap-16 items-center `}>
-          <h1 className="sm:text-[2.3rem] text-[1.5rem] flex flex-wrap gap-2 font-bold">
+          <h1 className="sm:text-[2.3rem] text-[1.5rem] flex flex-wrap gap-2 font-bold justify-center">
             {header.map((e) => {
               if (e.Highlight) {
                 return <LinearGradientText key={e.Value} text={e.Value} />;

@@ -2,21 +2,21 @@ import { getServiceSchema, getFAQSchema } from "@/utils/schema";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Courier & Package Delivery Services | MGC Freight",
-  description: "Fast, reliable, and secure courier services. Get local and expedited package delivery with real-time tracking.",
+  title: "Courier Services Canada & USA | Same-Day & Next-Day Parcel Delivery | MGC Freight",
+  description: "Fast and reliable courier services across Canada and the US with MGC Freight. Compare courier rates from top carriers, book same-day or next-day parcel delivery, and track shipments in real-time. Serving Ontario and all of North America.",
 
   keywords: ["courier services", "package delivery", "MGC Freight", "express delivery", "local courier", "shipping services", "package tracking", "reliable courier", "fast delivery"],
   openGraph: {
-    title: "Courier & Package Delivery | MGC Freight",
-    description: "Fast and reliable courier services for all your package delivery needs.",
+    title: "Courier Services Canada & USA | Same-Day & Next-Day Parcel Delivery | MGC Freight",
+    description: "Fast and reliable courier services across Canada and the US with MGC Freight. Compare courier rates from top carriers, book same-day or next-day parcel delivery, and track shipments in real-time. Serving Ontario and all of North America.",
     type: "website",
     locale: "en_US",
     siteName: "MGC Freight",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Courier Services | MGC Freight",
-    description: "Fast, reliable package delivery with real-time tracking.",
+    title: "Courier Services Canada & USA | Same-Day & Next-Day Parcel Delivery | MGC Freight",
+    description: "Fast and reliable courier services across Canada and the US with MGC Freight. Compare courier rates from top carriers, book same-day or next-day parcel delivery, and track shipments in real-time. Serving Ontario and all of North America.",
   },
 };
 
@@ -144,10 +144,10 @@ export default async function CourierServices() {
             <div
               key={e._type + index}
               className={`${index != 0
-                  ? index % 2 != 0
-                    ? "bg-white w-full"
-                    : "bg-base-shadeBlue w-full"
-                  : ""
+                ? index % 2 != 0
+                  ? "bg-white w-full"
+                  : "bg-base-shadeBlue w-full"
+                : ""
                 }`}
             >
               {e._type == "title" && (

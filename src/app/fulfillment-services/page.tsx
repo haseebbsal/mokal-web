@@ -2,21 +2,21 @@ import { getServiceSchema, getFAQSchema } from "@/utils/schema";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Fulfillment Services | MGC Freight",
-  description: "Streamline your e-commerce and retail supply chain with our end-to-end order fulfillment, warehousing, and inventory management.",
+  title: "3PL Fulfillment Services Canada | Pick, Pack & Ship | MGC Freight",
+  description: "MGC Freight's 3PL fulfillment services handle order processing, warehousing, pick-and-pack, and shipping for growing Canadian businesses. Scalable, cost-efficient fulfillment with real-time inventory tracking. No long-term commitments.",
 
   keywords: ["fulfillment services", "order fulfillment", "e-commerce fulfillment", "MGC Freight", "warehousing", "inventory management", "logistics services", "shipping services", "3PL", "supply chain management"],
   openGraph: {
-    title: "Fulfillment Services | MGC Freight",
-    description: "End-to-end fulfillment services - warehousing, packing, shipping, and returns.",
+    title: "3PL Fulfillment Services Canada | Pick, Pack & Ship | MGC Freight",
+    description: "MGC Freight's 3PL fulfillment services handle order processing, warehousing, pick-and-pack, and shipping for growing Canadian businesses. Scalable, cost-efficient fulfillment with real-time inventory tracking. No long-term commitments.",
     type: "website",
     locale: "en_US",
     siteName: "MGC Freight",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Fulfillment Services | MGC Freight",
-    description: "Streamline your e-commerce operations with our expert fulfillment services.",
+    title: "3PL Fulfillment Services Canada | Pick, Pack & Ship | MGC Freight",
+    description: "MGC Freight's 3PL fulfillment services handle order processing, warehousing, pick-and-pack, and shipping for growing Canadian businesses. Scalable, cost-efficient fulfillment with real-time inventory tracking. No long-term commitments.",
   },
 };
 
@@ -140,10 +140,10 @@ export default async function FulfillmentServices() {
             <div
               key={e._type + index}
               className={`${index != 0
-                  ? index % 2 != 0
-                    ? "bg-white w-full"
-                    : "bg-base-shadeBlue w-full"
-                  : ""
+                ? index % 2 != 0
+                  ? "bg-white w-full"
+                  : "bg-base-shadeBlue w-full"
+                : ""
                 }`}
             >
               {e._type == "title" && (
