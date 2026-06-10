@@ -2,21 +2,21 @@ import { getServiceSchema, getFAQSchema } from "@/utils/schema";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "FTL Truckload Shipping Canada & USA | Full Truckload Freight Broker | MGC Freight",
-  description: "MGC Freight provides full truckload (FTL) shipping services across Canada and the US. Access competitive FTL rates, dedicated carrier capacity, and real-time tracking. Get a free truckload quote today.",
+  title: "LTL Shipping Services in Ontario & Canada | Less-Than-Truckload Freight | MGC Freight",
+  description: "MGC Freight offers cost-effective LTL (less-than-truckload) shipping services across Canada and the US. Compare carrier rates instantly and book your LTL shipment online. Serving Ontario and all of North America.",
 
   keywords: ["LTL shipping", "less than truckload", "freight LTL", "MGC Freight", "LTL carrier", "shipping LTL", "cost-effective", "cargo optimization"],
   openGraph: {
-    title: "FTL Truckload Shipping Canada & USA | Full Truckload Freight Broker | MGC Freight",
-    description: "MGC Freight provides full truckload (FTL) shipping services across Canada and the US. Access competitive FTL rates, dedicated carrier capacity, and real-time tracking. Get a free truckload quote today.",
+    title: "LTL Shipping Services in Ontario & Canada | Less-Than-Truckload Freight | MGC Freight",
+    description: "MGC Freight offers cost-effective LTL (less-than-truckload) shipping services across Canada and the US. Compare carrier rates instantly and book your LTL shipment online. Serving Ontario and all of North America.",
     type: "website",
     locale: "en_US",
     siteName: "MGC Freight",
   },
   twitter: {
     card: "summary_large_image",
-    title: "FTL Truckload Shipping Canada & USA | Full Truckload Freight Broker | MGC Freight",
-    description: "MGC Freight provides full truckload (FTL) shipping services across Canada and the US. Access competitive FTL rates, dedicated carrier capacity, and real-time tracking. Get a free truckload quote today.",
+    title: "LTL Shipping Services in Ontario & Canada | Less-Than-Truckload Freight | MGC Freight",
+    description: "MGC Freight offers cost-effective LTL (less-than-truckload) shipping services across Canada and the US. Compare carrier rates instantly and book your LTL shipment online. Serving Ontario and all of North America.",
   },
 };
 
