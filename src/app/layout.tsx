@@ -9,25 +9,6 @@ import QueryProvider from "@/providers/query-provider";
 import MegaMenuProvider from "@/providers/mega-menu";
 import { ToastContainer } from 'react-toastify';
 
-export const metadata: Metadata = {
-  title: "MGC Freight | Freight Brokerage Services Canada & USA | LTL, FTL, Courier & More",
-  description: "MGC Freight is a trusted freight brokerage based in Ontario offering LTL shipping, FTL truckload, courier services, cross-border freight, and fulfillment across Canada and the US. Get a free freight quote today.",
-
-  keywords: ["freight shipping", "logistics company", "MGC Freight", "cargo shipping", "supply chain management", "freight broker", "transportation services", "shipping solutions", "truckload shipping", "LTL shipping"],
-  openGraph: {
-    title: "MGC Freight | Freight Brokerage Services Canada & USA | LTL, FTL, Courier & More",
-    description: "MGC Freight is a trusted freight brokerage based in Ontario offering LTL shipping, FTL truckload, courier services, cross-border freight, and fulfillment across Canada and the US. Get a free freight quote today.",
-    type: "website",
-    locale: "en_US",
-    siteName: "MGC Freight",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "MGC Freight | Freight Brokerage Services Canada & USA | LTL, FTL, Courier & More",
-    description: "MGC Freight is a trusted freight brokerage based in Ontario offering LTL shipping, FTL truckload, courier services, cross-border freight, and fulfillment across Canada and the US. Get a free freight quote today.",
-  },
-};
-
 const lato = Lato({
   weight: "400",
   subsets: ["latin"],
