@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import "./globals.css";
 // import Script from "next/script";
 import HeroProvider from "@/providers/hero-provider";
