@@ -8,6 +8,15 @@ export default function robots(): MetadataRoute.Robots {
     baseUrl = baseUrl.slice(0, -1);
   }
 
+  if (process.env.SANITY_STUDIO_DATASET === "test") {
+    return {
+      rules: {
+        userAgent: '*',
+        disallow: '/',
+      },
+    };
+  }
+
   return {
     rules: {
       userAgent: "*",
