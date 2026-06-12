@@ -103,7 +103,7 @@ export default function TabNoSlider({
                   href={e.url.current}
                   className="bg-base-purple min-w-[9rem] flex justify-between items-center rounded-xl px-2 text-white border-2 py-2 "
                 >
-                  {t(e)}
+                  {t(e.text)}
                   <MdKeyboardDoubleArrowRight className="text-lg" />
                 </Link>
               );
