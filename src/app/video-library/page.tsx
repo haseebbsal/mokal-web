@@ -103,8 +103,8 @@ export default async function VideoLibrary() {
               <div key={e.video} className="flex flex-col items-start sm:flex-[1_0_25%] flex-[1_0_100%] sm:max-w-[30%] gap-2 text-start">
                 <BaseVideo src={e.video} />
                 {/* <Image src={'/images/video1.svg'} className="w-full max-h-56" alt="video1" width={300} height={300} /> */}
-                <p className="font-bold text-2xl">{e.title}</p>
-                <p className="text-text-gray text-sm">{e.description}</p>
+                <p className="font-bold text-2xl">{e.title?.en}</p>
+                <p className="text-text-gray text-sm">{e.description?.en}</p>
               </div>
             )}
             {/* <div className="flex flex-col items-start sm:flex-[1_0_25%] flex-[1_0_100%] sm:max-w-[30%] gap-2 text-start">

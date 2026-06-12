@@ -16,7 +16,12 @@ import Link from "next/link";
 import axios from "axios";
 import { configData } from "@/utils/types";
 
+import { getLocale } from "@/utils/locale-server";
+import { translate } from "@/utils/locale";
+
 export default async function Footer() {
+  const lang = await getLocale();
+
   const configData: configData = await client.fetch({
     query: `*[_type == 'config'][0]{
         ...,
@@ -40,7 +45,7 @@ export default async function Footer() {
   const addressText = await axios.get(
     `https://maps.googleapis.com/maps/api/geocode/json?latlng=${configData.address.lat},${configData.address.lng}&key=${process.env.GOOGLE_APIKEY}`
   );
-  
+
   return (
     <div className="w-full bg-white">
       <div className="w-full">
@@ -173,7 +178,7 @@ export default async function Footer() {
         </div>
       </div>
       <div className="bg-nav  sm:px-20 px-4 py-4 text-base-blue font-normal">
-        <p>{configData.copyright}</p>
+        <p>{translate(configData.copyright, lang)}</p>
       </div>
     </div>
   );

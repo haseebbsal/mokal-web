@@ -51,9 +51,10 @@ import TrackShipment from "@/components/page-components/track-shipment";
 import GetAQuoteForm from "@/components/page-components/get-a-quote";
 import BrokerPartnerForm from "@/components/forms/broker-partner-form";
 import CorporatePartnerForm from "@/components/forms/corporate-partner-form";
-// import CustomerBase from "@/components/page-components/customer-base";
+import { getLocale } from "@/utils/locale-server";
 
 export default async function InternationalShipping() {
+  const lang = await getLocale();
   const homeData: { content: [PagesContent] } = await client.fetch({
     query: `*[_type=='international-shipping'][0]{
                                                           "content":[...contentBlocks[]->{
@@ -119,9 +120,9 @@ export default async function InternationalShipping() {
                                                             }`,
   });
   const { content } = homeData;
-  const serviceSchema = getServiceSchema("International Shipping", "Cross-border and global logistics solutions. Ship seamlessly between the USA, Canada, Mexico, and worldwide with MGC Freight.", "https://www.mgcfreight.com/international-shipping");
+  const serviceSchema = getServiceSchema("International Shipping", "Cross-border and global logistics solutions. Ship seamlessly between the USA, Canada, Mexico, and worldwide with MGC Freight.", "https://www.mgcfreight.com/international-shipping", lang);
   const faqBlock = content.find((e) => e._type === "faqs");
-  const faqSchema = faqBlock && faqBlock.questions ? getFAQSchema(faqBlock.questions) : null;
+  const faqSchema = faqBlock && faqBlock.questions ? getFAQSchema(faqBlock.questions, lang) : null;
 
 
   return (

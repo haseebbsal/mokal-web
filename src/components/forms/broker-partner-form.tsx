@@ -53,7 +53,7 @@ export default function BrokerPartnerForm() {
         <h1 className="sm:text-[2rem] text-[1.5rem] font-bold">
           <LinearGradientText
             extraClass=""
-            text="Discover the MGC Freight Advantage"
+            text={{ en: "Discover the MGC Freight Advantage", fr: "Découvrez l'avantage de MGC Freight" }}
           />
         </h1>
         <p className="text-text-gray text-md">

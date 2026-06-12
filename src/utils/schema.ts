@@ -1,3 +1,5 @@
+import { translate } from "./locale";
+
 export function getOrganizationSchema(config: any) {
   const socialLinks = config?.socialLinks
     ? Object.values(config.socialLinks).filter((link) => typeof link === "string" && link.length > 0)
@@ -30,12 +32,12 @@ export function getWebSiteSchema() {
   };
 }
 
-export function getServiceSchema(name: string, description: string, url: string) {
+export function getServiceSchema(name: any, description: any, url: string, lang: string = "en") {
   return {
     "@context": "https://schema.org",
     "@type": "Service",
-    "name": name,
-    "description": description,
+    "name": translate(name, lang),
+    "description": translate(description, lang),
     "provider": {
       "@type": "Organization",
       "name": "MGC Freight",
@@ -51,26 +53,26 @@ export function getServiceSchema(name: string, description: string, url: string)
   };
 }
 
-export function getFAQSchema(questions: Array<{ question: string; answer: string }>) {
+export function getFAQSchema(questions: Array<{ question: any; answer: any }>, lang: string = "en") {
   return {
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": questions.map((q) => ({
       "@type": "Question",
-      "name": q.question,
+      "name": translate(q.question, lang),
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": q.answer
+        "text": translate(q.answer, lang)
       }
     }))
   };
 }
 
-export function getBlogPostingSchema(blog: any, url: string) {
+export function getBlogPostingSchema(blog: any, url: string, lang: string = "en") {
   return {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "headline": blog.title,
+    "headline": translate(blog.title, lang),
     "image": blog.imageUrl ? [blog.imageUrl] : ["https://www.mgcfreight.com/images/logo.png"],
     "datePublished": blog.publishedAt,
     "dateModified": blog.publishedAt,

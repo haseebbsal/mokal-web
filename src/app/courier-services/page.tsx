@@ -54,8 +54,10 @@ import TrackShipment from "@/components/page-components/track-shipment";
 import GetAQuoteForm from "@/components/page-components/get-a-quote";
 import BrokerPartnerForm from "@/components/forms/broker-partner-form";
 import CorporatePartnerForm from "@/components/forms/corporate-partner-form";
+import { getLocale } from "@/utils/locale-server";
 
 export default async function CourierServices() {
+  const lang = await getLocale();
   const homeData: { content: [PagesContent] } = await client.fetch({
     query: `*[_type=='courier'][0]{
                                                           "content":[...contentBlocks[]->{
@@ -121,9 +123,9 @@ export default async function CourierServices() {
                                                             }`,
   });
   const { content } = homeData;
-  const serviceSchema = getServiceSchema("Courier & Package Delivery Services", "Fast, reliable, and secure courier services. Get local and expedited package delivery with real-time tracking.", "https://www.mgcfreight.com/courier-services");
+  const serviceSchema = getServiceSchema("Courier & Package Delivery Services", "Fast, reliable, and secure courier services. Get local and expedited package delivery with real-time tracking.", "https://www.mgcfreight.com/courier-services", lang);
   const faqBlock = content.find((e) => e._type === "faqs");
-  const faqSchema = faqBlock && faqBlock.questions ? getFAQSchema(faqBlock.questions) : null;
+  const faqSchema = faqBlock && faqBlock.questions ? getFAQSchema(faqBlock.questions, lang) : null;
 
 
   return (

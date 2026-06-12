@@ -3,6 +3,7 @@ import IndividualBlog from "@/components/page-components/individualblog";
 import { IndvidualBlog } from "@/utils/types";
 import type { Metadata } from "next";
 import { getBlogPostingSchema } from "@/utils/schema";
+import { getLocale } from "@/utils/locale-server";
 
 export async function generateMetadata({
   params,
@@ -66,8 +67,10 @@ export default async function Blog({ params }: { params: Promise<{ blogId: strin
     }
   })
 
+  const lang = await getLocale();
+
   const blogSchema = individualBlogData
-    ? getBlogPostingSchema(individualBlogData, `https://www.mgcfreight.com/blogs/${blogId}`)
+    ? getBlogPostingSchema(individualBlogData, `https://www.mgcfreight.com/blogs/${blogId}`, lang)
     : null;
 
   return (

@@ -2,11 +2,12 @@ import Image from "next/image";
 import BaseSlider from "../common/base-slider";
 import LinearGradientText from "../common/linear-gradient-text";
 import { client } from "@/utils/constants";
+import { useTranslate } from "@/providers/locale-provider";
 
 interface BlogProps {
-  header: [{ Value: string; Highlight: boolean }];
+  header: [{ Value: { en: string, fr: string }; Highlight: boolean }];
   blogs?: [
-    { _id: string; title: string; _createdAt: string; imageUrl: string }
+    { _id: string; title: { en: string, fr: string }; _createdAt: string; imageUrl: string }
   ];
 }
 export const responsiveWhoWeAre = {
@@ -43,7 +44,7 @@ export default async function MainBlog({
 }
             `,
   });
-  const header: [{ Value: string; Highlight: boolean }] = headerr
+  const header: [{ Value: { en: string, fr: string }; Highlight: boolean }] = headerr
     ? headerr
     : fetchData.header;
   const blogs: [
@@ -56,7 +57,7 @@ export default async function MainBlog({
       Author: string;
     }
   ] = blogss ? blogss : fetchData.header;
-
+  const t = useTranslate();
   return (
     <div
       className={`flex flex-col m-auto sm:px-8 px-4 sm:py-20 py-16 sm:w-[80%] text-center gap-4`}
@@ -67,14 +68,14 @@ export default async function MainBlog({
             return (
               <LinearGradientText
                 extraClass="mr-2"
-                key={e.Value}
-                text={e.Value}
+                key={t(e.Value)}
+                text={t(e.Value)}
               />
             );
           }
           return (
-            <span className="mr-2" key={e.Value}>
-              {e.Value}
+            <span className="mr-2" key={t(e.Value)}>
+              {t(e.Value)}
             </span>
           );
         })}

@@ -158,7 +158,7 @@ export default async function PrivacyPolicy() {
           >
             <div className="flex flex-col ">
               <h1 className="sm:text-[3rem] text-[1.8rem] font-bold">
-                <LinearGradientText text="Privacy Policy" />{" "}
+                <LinearGradientText text={{ en: "Privacy Policy", fr: "Politique de confidentialité" }} />{" "}
               </h1>
             </div>
             <BaseBreadCrumb items={["Privacy Policy"]} />

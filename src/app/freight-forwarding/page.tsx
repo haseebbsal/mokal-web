@@ -43,8 +43,10 @@ import TrackShipment from "@/components/page-components/track-shipment";
 import GetAQuoteForm from "@/components/page-components/get-a-quote";
 import BrokerPartnerForm from "@/components/forms/broker-partner-form";
 import CorporatePartnerForm from "@/components/forms/corporate-partner-form";
+import { getLocale } from "@/utils/locale-server";
 
 export default async function FreightForwarding() {
+  const lang = await getLocale();
   const homeData: { content: [PagesContent] } = await client.fetch({
     query: `*[_type=='freight'][0]{
                                                           "content":[...contentBlocks[]->{
@@ -110,9 +112,9 @@ export default async function FreightForwarding() {
                                                             }`,
   });
   const { content } = homeData;
-  const serviceSchema = getServiceSchema("Freight Forwarding Services", "Reliable freight forwarding and global logistics management to move your cargo across borders efficiently.", "https://www.mgcfreight.com/freight-forwarding");
+  const serviceSchema = getServiceSchema("Freight Forwarding Services", "Reliable freight forwarding and global logistics management to move your cargo across borders efficiently.", "https://www.mgcfreight.com/freight-forwarding", lang);
   const faqBlock = content.find((e) => e._type === "faqs");
-  const faqSchema = faqBlock && faqBlock.questions ? getFAQSchema(faqBlock.questions) : null;
+  const faqSchema = faqBlock && faqBlock.questions ? getFAQSchema(faqBlock.questions, lang) : null;
 
 
   return (

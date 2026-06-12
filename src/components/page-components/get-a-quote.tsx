@@ -9,7 +9,7 @@ export default function GetAQuoteForm() {
       className={`flex flex-col items-center m-auto sm:px-8 px-4 py-16 sm:w-[90%]  text-center gap-4`}
     >
       <h1 className="sm:text-[2.3rem] text-[1.5rem] font-bold">
-        Compare Instant Freight Shipping Rates — <LinearGradientText text="Canada & USA" />
+        Compare Instant Freight Shipping Rates — <LinearGradientText text={{ en: "Canada & USA", fr: "Canada et États-Unis" }} />
       </h1>
       <QuoteBaseTabs
         keys={[

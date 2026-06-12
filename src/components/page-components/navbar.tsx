@@ -6,8 +6,13 @@ import NavbarBottomHeader from "./navbar-bottom-header";
 import Link from "next/link";
 import { configData } from "@/utils/types";
 import Marquee from "react-fast-marquee";
+import LanguageSelector from "../common/language-selector";
+import { getLocale } from "@/utils/locale-server";
+import { translate } from "@/utils/locale";
 
 export default async function MainNavbar() {
+  const lang = await getLocale();
+
   const configData: configData = await client.fetch({
     query: `*[_type == 'config'][0]{
         ...,
@@ -47,12 +52,11 @@ export default async function MainNavbar() {
                   <p className="sm:block hidden">www.mgcfreight.com</p>
                   {configData.countries?.slice(0, 3).map((e, index) => (
                     <p
-                      key={e.name}
-                      className={`${
-                        index != 0 ? "border-l-2" : "sm:border-l-2"
-                      } text-xs sm:text-sm pl-2 border-base-blue`}
+                      key={translate(e.name, lang)}
+                      className={`${index != 0 ? "border-l-2" : "sm:border-l-2"
+                        } text-xs sm:text-sm pl-2 border-base-blue`}
                     >
-                      {e.name}
+                      {translate(e.name, lang)}
                     </p>
                   ))}
                 </div>
@@ -76,6 +80,7 @@ export default async function MainNavbar() {
                     ))}
                 </div>
                 <CheckStatusForm />
+                <LanguageSelector />
               </div>
             </NavbarContent>
           </Navbar>

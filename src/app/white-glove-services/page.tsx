@@ -43,12 +43,15 @@ import TrackShipment from "@/components/page-components/track-shipment";
 import GetAQuoteForm from "@/components/page-components/get-a-quote";
 import BrokerPartnerForm from "@/components/forms/broker-partner-form";
 import CorporatePartnerForm from "@/components/forms/corporate-partner-form";
+import { getLocale } from "@/utils/locale-server";
 
 export default async function WhiteGlove() {
+  const lang = await getLocale();
+
   const homeData: { content: [PagesContent] } = await client.fetch({
     query: `*[_type=='white-glove'][0]{
                                                           "content":[...contentBlocks[]->{
-
+ 
                                                             ...,
                                                             
                                                             "singleSlider":[...slider[]{...,"cards":[...cards[]{
@@ -110,9 +113,9 @@ export default async function WhiteGlove() {
                                                             }`,
   });
   const { content } = homeData;
-  const serviceSchema = getServiceSchema("White Glove Services", "Premium white glove services for delicate, high-value, or complex freight. We handle your sensitive shipments with extreme care and professional support.", "https://www.mgcfreight.com/white-glove-services");
+  const serviceSchema = getServiceSchema("White Glove Services", "Premium white glove services for delicate, high-value, or complex freight. We handle your sensitive shipments with extreme care and professional support.", "https://www.mgcfreight.com/white-glove-services", lang);
   const faqBlock = content.find((e) => e._type === "faqs");
-  const faqSchema = faqBlock && faqBlock.questions ? getFAQSchema(faqBlock.questions) : null;
+  const faqSchema = faqBlock && faqBlock.questions ? getFAQSchema(faqBlock.questions, lang) : null;
 
 
   return (

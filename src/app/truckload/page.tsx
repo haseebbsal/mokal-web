@@ -4,7 +4,6 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Truckload Freight Shipping | MGC Freight",
   description: "Reliable and secure truckload freight shipping. Access full capacity (FTL) solutions for large-scale shipments across North America.",
-
   keywords: ["truckload freight", "FTL shipping", "full truckload", "freight broker", "LTL", "North America shipping", "MGC Freight"],
   openGraph: {
     title: "Truckload Freight Shipping | MGC Freight",
@@ -43,8 +42,11 @@ import TrackShipment from "@/components/page-components/track-shipment";
 import GetAQuoteForm from "@/components/page-components/get-a-quote";
 import BrokerPartnerForm from "@/components/forms/broker-partner-form";
 import CorporatePartnerForm from "@/components/forms/corporate-partner-form";
+import { getLocale } from "@/utils/locale-server";
 
 export default async function Truckload() {
+  const lang = await getLocale();
+
   const homeData: { content: [PagesContent] } = await client.fetch({
     query: `*[_type=='truckload'][0]{
                                                           "content":[...contentBlocks[]->{
@@ -110,9 +112,9 @@ export default async function Truckload() {
                                                             }`,
   });
   const { content } = homeData;
-  const serviceSchema = getServiceSchema("Truckload Freight Shipping", "Reliable and secure truckload freight shipping. Access full capacity (FTL) solutions for large-scale shipments across North America.", "https://www.mgcfreight.com/truckload");
+  const serviceSchema = getServiceSchema("Truckload Freight Shipping", "Reliable and secure truckload freight shipping. Access full capacity (FTL) solutions for large-scale shipments across North America.", "https://www.mgcfreight.com/truckload", lang);
   const faqBlock = content.find((e) => e._type === "faqs");
-  const faqSchema = faqBlock && faqBlock.questions ? getFAQSchema(faqBlock.questions) : null;
+  const faqSchema = faqBlock && faqBlock.questions ? getFAQSchema(faqBlock.questions, lang) : null;
 
 
 

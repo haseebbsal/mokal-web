@@ -44,11 +44,15 @@ import GetAQuoteForm from "@/components/page-components/get-a-quote";
 import BrokerPartnerForm from "@/components/forms/broker-partner-form";
 import CorporatePartnerForm from "@/components/forms/corporate-partner-form";
 
+import { getLocale } from "@/utils/locale-server";
+
 export default async function LTL() {
+  const lang = await getLocale();
+
   const homeData: { content: [PagesContent] } = await client.fetch({
     query: `*[_type=='LTL'][0]{
                                                           "content":[...contentBlocks[]->{
-
+ 
                                                             ...,
                                                             
                                                             "singleSlider":[...slider[]{...,"cards":[...cards[]{
@@ -110,9 +114,9 @@ export default async function LTL() {
                                                             }`,
   });
   const { content } = homeData;
-  const serviceSchema = getServiceSchema("Less Than Truckload (LTL) Shipping", "Cost-effective LTL freight shipping. Optimize your smaller cargo shipments with our premium carrier network.", "https://www.mgcfreight.com/LTL");
+  const serviceSchema = getServiceSchema("Less Than Truckload (LTL) Shipping", "Cost-effective LTL freight shipping. Optimize your smaller cargo shipments with our premium carrier network.", "https://www.mgcfreight.com/LTL", lang);
   const faqBlock = content.find((e) => e._type === "faqs");
-  const faqSchema = faqBlock && faqBlock.questions ? getFAQSchema(faqBlock.questions) : null;
+  const faqSchema = faqBlock && faqBlock.questions ? getFAQSchema(faqBlock.questions, lang) : null;
 
 
   return (

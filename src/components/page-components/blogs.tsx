@@ -27,7 +27,7 @@ export default function BlogsClient({ data }: { data: Blogs }) {
           >
             <div className="flex flex-col ">
               <h1 className="sm:text-[3rem] text-[1.8rem] font-bold">
-                <LinearGradientText text="Blogs" />{" "}
+                <LinearGradientText text={{ en: 'Blogs', fr: 'Blogues' }} />{" "}
               </h1>
             </div>
             <BaseBreadCrumb items={["Resources", "Blogs"]} />

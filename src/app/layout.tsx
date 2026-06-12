@@ -8,26 +8,33 @@ import QueryProvider from "@/providers/query-provider";
 import MegaMenuProvider from "@/providers/mega-menu";
 import { ToastContainer } from 'react-toastify';
 
+import { getLocale } from "@/utils/locale-server";
+import { LocaleProvider } from "@/providers/locale-provider";
+
 const lato = Lato({
   weight: "400",
   subsets: ["latin"],
 });
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const lang = await getLocale();
+
   return (
-    <html lang="en">
+    <html lang={lang}>
       <body className={`${lato.className} antialiased bg-grid bg-base-gridBg`}>
         <HeroProvider>
           <QueryProvider>
             <MegaMenuProvider>
-              <MainNavbar />
-              <div className={` mt-8`}>{children}</div>
-              <Footer />
-              <ToastContainer />
+              <LocaleProvider lang={lang}>
+                <MainNavbar />
+                <div className={` mt-8`}>{children}</div>
+                <Footer />
+                <ToastContainer />
+              </LocaleProvider>
             </MegaMenuProvider>
           </QueryProvider>
         </HeroProvider>

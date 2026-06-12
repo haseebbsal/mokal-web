@@ -7,6 +7,7 @@ import LinearGradientText from "./linear-gradient-text";
 import TabNoSlider from "./tabs/tab-no-slider";
 import Image from "next/image";
 import BaseButton from "./base-button";
+import { useTranslate } from "@/providers/locale-provider";
 
 function Title(
   title: string,
@@ -173,6 +174,7 @@ function Title(
 
 export default function BaseTabs({ keys, variation }: TabsProps) {
   const [key, setKey] = useState<number>(0);
+  const t = useTranslate();
 
 
   return (
@@ -181,14 +183,13 @@ export default function BaseTabs({ keys, variation }: TabsProps) {
         {keys.map((e, index) => (
           <BaseButton
             onClick={() => setKey(index)}
-            extraClass={`min-w-[13rem] flex-1 ${
-              index == key
+            extraClass={`min-w-[13rem] flex-1 ${index == key
                 ? "!bg-base-buttonTab text-base-blue"
                 : "!bg-gray-200 text-base-gray"
-            }`}
-            key={e.name}
+              }`}
+            key={t(e.name)}
           >
-            {e.name}
+            {t(e.name)}
           </BaseButton>
         ))}
       </div>
@@ -205,14 +206,14 @@ export default function BaseTabs({ keys, variation }: TabsProps) {
                       return (
                         <LinearGradientText
                           extraClass="mr-2"
-                          key={e.Value}
-                          text={e.Value}
+                          key={t(e.Value)}
+                          text={t(e.Value)}
                         />
                       );
                     }
                     return (
-                      <span className="mr-2" key={e.Value}>
-                        {e.Value}
+                      <span className="mr-2" key={t(e.Value)}>
+                        {t(e.Value)}
                       </span>
                     );
                   })}
@@ -238,14 +239,14 @@ export default function BaseTabs({ keys, variation }: TabsProps) {
                         return (
                           <LinearGradientText
                             extraClass="mr-2"
-                            key={e.Value}
-                            text={e.Value}
+                            key={t(e.Value)}
+                            text={t(e.Value)}
                           />
                         );
                       }
                       return (
-                        <span className="mr-2" key={e.Value}>
-                          {e.Value}
+                        <span className="mr-2" key={t(e.Value)}>
+                          {t(e.Value)}
                         </span>
                       );
                     })}
@@ -279,13 +280,10 @@ export default function BaseTabs({ keys, variation }: TabsProps) {
                     key={i.slider[0].imageUrl}
                     src={i.slider[0].imageUrl!}
                     alt="platform"
-                    className={`h-full w-[50%] ${
-                      index == 1 && "rotate-[4deg]"
-                    }  ${
-                      index == 0 && "rotate-[-4deg]"
-                    } flex-1 object-cover relative z-20 ${
-                      index == array.length - 1 && "!absolute left-[25%] z-0"
-                    }  `}
+                    className={`h-full w-[50%] ${index == 1 && "rotate-[4deg]"
+                      }  ${index == 0 && "rotate-[-4deg]"
+                      } flex-1 object-cover relative z-20 ${index == array.length - 1 && "!absolute left-[25%] z-0"
+                      }  `}
                     width={500}
                     height={1000}
                   />
@@ -325,7 +323,7 @@ export default function BaseTabs({ keys, variation }: TabsProps) {
           <Tab
             className="sm:block hidden"
             key={index}
-            title={Title(e.name, index, key, keys.length - 1)}
+            title={Title(t(e.name), index, key, keys.length - 1)}
           >
             {/* {e.component} */}
             {e.slider[0].cards.length > 0 && variation == 1 && (
@@ -339,14 +337,14 @@ export default function BaseTabs({ keys, variation }: TabsProps) {
                           return (
                             <LinearGradientText
                               extraClass="mr-2"
-                              key={e.Value}
+                              key={t(e.Value)}
                               text={e.Value}
                             />
                           );
                         }
                         return (
-                          <span className="mr-2" key={e.Value}>
-                            {e.Value}
+                          <span className="mr-2" key={t(e.Value)}>
+                            {t(e.Value)}
                           </span>
                         );
                       })}
@@ -375,14 +373,14 @@ export default function BaseTabs({ keys, variation }: TabsProps) {
                             return (
                               <LinearGradientText
                                 extraClass="mr-2"
-                                key={e.Value}
+                                key={t(e.Value)}
                                 text={e.Value}
                               />
                             );
                           }
                           return (
-                            <span className="mr-2" key={e.Value}>
-                              {e.Value}
+                            <span className="mr-2" key={t(e.Value)}>
+                              {t(e.Value)}
                             </span>
                           );
                         })}
@@ -414,13 +412,10 @@ export default function BaseTabs({ keys, variation }: TabsProps) {
                       key={i.slider[0].imageUrl}
                       src={i.slider[0].imageUrl!}
                       alt="platform"
-                      className={`h-full w-[50%] ${
-                        index == 1 && "rotate-[4deg]"
-                      }  ${
-                        index == 0 && "rotate-[-4deg]"
-                      } flex-1 object-cover relative z-20 ${
-                        index == array.length - 1 && "!absolute left-[25%] z-0"
-                      }  `}
+                      className={`h-full w-[50%] ${index == 1 && "rotate-[4deg]"
+                        }  ${index == 0 && "rotate-[-4deg]"
+                        } flex-1 object-cover relative z-20 ${index == array.length - 1 && "!absolute left-[25%] z-0"
+                        }  `}
                       width={500}
                       height={1000}
                     />

@@ -54,7 +54,7 @@ export default function CorporatePartnerForm() {
           <h1 className="sm:text-[2rem] text-[1.5rem] font-bold">
             <LinearGradientText
               extraClass=""
-              text="Building Strong Partnerships"
+              text={{ en: "Building Strong Partnerships", fr: "Établir des partenariats solides" }}
             />
           </h1>
           <p className="text-text-gray text-md">

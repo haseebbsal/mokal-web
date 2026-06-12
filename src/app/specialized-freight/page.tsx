@@ -53,8 +53,10 @@ import TrackShipment from "@/components/page-components/track-shipment";
 import GetAQuoteForm from "@/components/page-components/get-a-quote";
 import BrokerPartnerForm from "@/components/forms/broker-partner-form";
 import CorporatePartnerForm from "@/components/forms/corporate-partner-form";
+import { getLocale } from "@/utils/locale-server";
 
 export default async function SpecializedFreight() {
+  const lang = await getLocale();
   const homeData: { content: [PagesContent] } = await client.fetch({
     query: `*[_type=='specialized-freight'][0]{
                                                           "content":[...contentBlocks[]->{
@@ -120,9 +122,9 @@ export default async function SpecializedFreight() {
                                                             }`,
   });
   const { content } = homeData;
-  const serviceSchema = getServiceSchema("Specialized Freight Shipping", "Expert handling for unique, oversized, or complex shipments. Find customized shipping solutions with MGC Freight.", "https://www.mgcfreight.com/specialized-freight");
+  const serviceSchema = getServiceSchema("Specialized Freight Shipping", "Expert handling for unique, oversized, or complex shipments. Find customized shipping solutions with MGC Freight.", "https://www.mgcfreight.com/specialized-freight", lang);
   const faqBlock = content.find((e) => e._type === "faqs");
-  const faqSchema = faqBlock && faqBlock.questions ? getFAQSchema(faqBlock.questions) : null;
+  const faqSchema = faqBlock && faqBlock.questions ? getFAQSchema(faqBlock.questions, lang) : null;
 
 
   return (

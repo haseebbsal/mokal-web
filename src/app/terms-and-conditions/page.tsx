@@ -157,7 +157,7 @@ export default async function TermsAndConditions() {
           >
             <div className="flex flex-col ">
               <h1 className="sm:text-[3rem] text-[1.8rem] font-bold">
-                <LinearGradientText text="Terms & Conditions" />{" "}
+                <LinearGradientText text={{ en: "Terms & Conditions", fr: "Conditions générales" }} />{" "}
               </h1>
             </div>
             <BaseBreadCrumb items={["Terms & Conditions"]} />

@@ -43,8 +43,11 @@ import GetAQuoteForm from "@/components/page-components/get-a-quote";
 import BrokerPartnerForm from "@/components/forms/broker-partner-form";
 import CorporatePartnerForm from "@/components/forms/corporate-partner-form";
 import { getOrganizationSchema, getWebSiteSchema, getFAQSchema } from "@/utils/schema";
+import { getLocale } from "@/utils/locale-server";
 
 export default async function Home() {
+  const lang = await getLocale();
+
   const [homeData, configData] = await Promise.all([
     client.fetch<{ content: [PagesContent] }>({
       query: `*[_type=='home'][0]{
@@ -127,12 +130,13 @@ export default async function Home() {
   ]);
 
   const { content } = homeData;
+  console.log(content)
   const orgSchema = getOrganizationSchema(configData);
   const webSiteSchema = getWebSiteSchema();
 
   const faqBlock = content.find((e) => e._type === "faqs");
   const faqSchema = faqBlock && faqBlock.questions
-    ? getFAQSchema(faqBlock.questions)
+    ? getFAQSchema(faqBlock.questions, lang)
     : null;
 
   return (
@@ -166,10 +170,10 @@ export default async function Home() {
               {e._type == "title" && (
                 <Title
                   header={e.header!}
-                  title={e.title}
+                  title={e?.title}
                   buttons={e.buttons}
                   imageUrl={e.imageUrl}
-                  description={e.description}
+                  description={e?.description}
                 />
               )}
               {e._type == "tabs" && (

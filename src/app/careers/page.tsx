@@ -4,7 +4,7 @@ export const metadata: Metadata = {
   title: "Careers at MGC Freight | Join Our Team",
   description: "Explore job opportunities and career paths at MGC Freight. Join a fast-growing logistics company focused on innovation.",
 
-  keywords: ["careers MGC Freight", "trucking jobs", "freight broker careers", "MGC Freight jobs", "logistics careers", "supply chain jobs", "transportation jobs", "office careers", "driver opportunities"],
+  keywords: ["careers MGC Freight", "trucking jobs", "freight broker careers", "MGC Freight jobs", "office careers"],
   openGraph: {
     title: "Careers at MGC Freight | Join Our Team",
     description: "Discover exciting career opportunities in the logistics industry.",
@@ -118,10 +118,10 @@ export default async function Careers() {
             <div
               key={e._type + index}
               className={`${index != 0
-                  ? index % 2 != 0
-                    ? "bg-white w-full"
-                    : "bg-base-shadeBlue w-full"
-                  : ""
+                ? index % 2 != 0
+                  ? "bg-white w-full"
+                  : "bg-base-shadeBlue w-full"
+                : ""
                 }`}
             >
               {e._type == "title" && (

@@ -50,8 +50,10 @@ import TrackShipment from "@/components/page-components/track-shipment";
 import GetAQuoteForm from "@/components/page-components/get-a-quote";
 import BrokerPartnerForm from "@/components/forms/broker-partner-form";
 import CorporatePartnerForm from "@/components/forms/corporate-partner-form";
+import { getLocale } from "@/utils/locale-server";
 
 export default async function FulfillmentServices() {
+  const lang = await getLocale();
   const homeData: { content: [PagesContent] } = await client.fetch({
     query: `*[_type=='fullfillment'][0]{
                                                           "content":[...contentBlocks[]->{
@@ -117,9 +119,9 @@ export default async function FulfillmentServices() {
                                                             }`,
   });
   const { content } = homeData;
-  const serviceSchema = getServiceSchema("Fulfillment Services", "Streamline your e-commerce and retail supply chain with our end-to-end order fulfillment, warehousing, and inventory management.", "https://www.mgcfreight.com/fulfillment-services");
+  const serviceSchema = getServiceSchema("Fulfillment Services", "Streamline your e-commerce and retail supply chain with our end-to-end order fulfillment, warehousing, and inventory management.", "https://www.mgcfreight.com/fulfillment-services", lang);
   const faqBlock = content.find((e) => e._type === "faqs");
-  const faqSchema = faqBlock && faqBlock.questions ? getFAQSchema(faqBlock.questions) : null;
+  const faqSchema = faqBlock && faqBlock.questions ? getFAQSchema(faqBlock.questions, lang) : null;
 
 
   return (
@@ -195,7 +197,7 @@ export default async function FulfillmentServices() {
                   testimonials={e.testimonials}
                 />
               )}
-              {e._type == "contentPageComponent" && (
+              {/* {e._type == "contentPageComponent" && (
                 <Content2
                   images={e.images}
                   buttons={e.buttons}
@@ -203,7 +205,7 @@ export default async function FulfillmentServices() {
                   header={e.header!}
                   video={e.video}
                 />
-              )}
+              )} */}
               {e._type == "guideComponent" && <GuideToBook />}
               {(e._type == "growYourBusiness" ||
                 e._type == "spotQuoteForm") && <GrowYourBusiness />}

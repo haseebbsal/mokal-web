@@ -3,7 +3,6 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Book a Demo | MGC Freight",
   description: "Schedule a personalized demo of MGC Freight’s logistics platform to see how we simplify cargo booking and supply chain tracking.",
-
   keywords: ["book a demo", "freight booking", "logistics platform", "MGC Freight demo", "cargo booking", "supply chain software", "freight management", "shipping demo", "transportation solutions"],
   openGraph: {
     title: "Book a Demo | MGC Freight",
@@ -118,10 +117,10 @@ export default async function BookADemo() {
             <div
               key={e._type + index}
               className={`${index != 0
-                  ? index % 2 != 0
-                    ? "bg-white w-full"
-                    : "bg-base-shadeBlue w-full"
-                  : ""
+                ? index % 2 != 0
+                  ? "bg-white w-full"
+                  : "bg-base-shadeBlue w-full"
+                : ""
                 }`}
             >
               {e._type == "title" && (
