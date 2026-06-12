@@ -62,7 +62,7 @@ export default async function MainBlog({
     <div
       className={`flex flex-col m-auto sm:px-8 px-4 sm:py-20 py-16 sm:w-[80%] text-center gap-4`}
     >
-      <h1 className="font-bold sm:text-[2.3rem] text-[1.5rem]">
+      <div className="font-bold sm:text-[2.3rem] text-[1.5rem]">
         {header.map((e) => {
           if (e.Highlight) {
             return (
@@ -79,7 +79,7 @@ export default async function MainBlog({
             </span>
           );
         })}
-      </h1>
+      </div>
       {/* <p className="text-text-gray">Discover how MGC Freight has transformed the logistics and shipping experience for businesses of all sizes. Real stories from our satisfied clients highlight the value of our efficient solutions and commitment to excellence.</p> */}
       <div className="w-full">
         <BaseSlider extraResponsive={responsiveWhoWeAre}>

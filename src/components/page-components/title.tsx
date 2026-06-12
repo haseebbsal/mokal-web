@@ -32,7 +32,7 @@ export default function Title({ title, header, buttons, imageUrl, description, i
 
                 <div className={`flex flex-col items-center m-auto    text-center gap-4`}>
                     {title && identifier && <p className="text-base-purple text-xl font-semibold">{t(title)}</p>}
-                    <h1 className="sm:text-[3rem]  text-[1.8rem] font-bold">
+                    <h1 className="sm:text-[3rem] text-[1.8rem] font-bold">
                         {
                             header.map((e) => {
                                 const val = t(e.Value);
@@ -40,7 +40,7 @@ export default function Title({ title, header, buttons, imageUrl, description, i
                                     return <LinearGradientText extraClass="mr-2" key={val + " highlight"} text={e.Value} />
                                 }
                                 return <span className="mr-2" key={val + " not highlight"}>{val}</span>
-                             })
+                            })
                         }
                     </h1>
                     {identifier && <BaseBreadCrumb items={breadCrumb!} />}

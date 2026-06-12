@@ -17,7 +17,7 @@ export default function SingleSlider({ header, buttons, description, cards }: {
             <div className="sm:w-[80%] m-auto">
                 <TabWithSlider
                     buttons={buttons}
-                    title={<h1 className="sm:!text-3xl text-xl font-bold" >
+                    title={<div className="sm:!text-3xl text-xl font-bold" >
                         {
                             header!.map((e) => {
                                 if (e.Highlight) {
@@ -26,7 +26,7 @@ export default function SingleSlider({ header, buttons, description, cards }: {
                                 return <span className="mr-2" key={t(e.Value)}>{t(e.Value)}</span>
                             })
                         }
-                    </h1>}
+                    </div>}
                     description={[description!]}
                     carousel={cards.map((e) => ({ imageSrc: e.imageUrl, description: e.description }))} />
 

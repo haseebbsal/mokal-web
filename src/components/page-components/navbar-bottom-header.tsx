@@ -37,7 +37,7 @@ export default function NavbarBottomHeader({ logo }: { logo: string }) {
         <div className="flex sm:flex-row flex-col sm:w-max w-full sm:gap-8 gap-4">
           <div className="flex justify-between items-center">
             <Link href={"/"}>
-              <Image src={logo} alt="logo" width={200} height={200} />
+              <Image src={logo} alt="logo" width={150} height={200} />
             </Link>
             <HiMenu className="sm:hidden" onClick={() => onOpen()} size={30} />
           </div>
@@ -46,7 +46,7 @@ export default function NavbarBottomHeader({ logo }: { logo: string }) {
               href={"/get-a-quote"}
               className="!bg-transparent text-base-purple w-max border-2 flex items-center p-2 rounded-xl border-base-purple font-semibold"
             >
-              Get Quick Quote
+              Quick Quote
             </Link>
             <Link
               href={"/book-a-demo"}

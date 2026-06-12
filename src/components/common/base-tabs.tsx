@@ -184,8 +184,8 @@ export default function BaseTabs({ keys, variation }: TabsProps) {
           <BaseButton
             onClick={() => setKey(index)}
             extraClass={`min-w-[13rem] flex-1 ${index == key
-                ? "!bg-base-buttonTab text-base-blue"
-                : "!bg-gray-200 text-base-gray"
+              ? "!bg-base-buttonTab text-base-blue"
+              : "!bg-gray-200 text-base-gray"
               }`}
             key={t(e.name)}
           >
@@ -200,7 +200,7 @@ export default function BaseTabs({ keys, variation }: TabsProps) {
             <TabWithSlider
               buttons={keys[key].slider[0].buttons}
               title={
-                <h1 className="sm:!text-3xl text-lg font-bold">
+                <div className="sm:!text-3xl text-lg font-bold">
                   {keys[key].slider[0].header?.map((e) => {
                     if (e.Highlight) {
                       return (
@@ -217,7 +217,7 @@ export default function BaseTabs({ keys, variation }: TabsProps) {
                       </span>
                     );
                   })}
-                </h1>
+                </div>
               }
               content={keys[key].slider[0].content}
               description={[keys[key].slider[0].description!]}
@@ -233,7 +233,7 @@ export default function BaseTabs({ keys, variation }: TabsProps) {
               <TabNoSlider
                 buttons={keys[key].slider[0].buttons}
                 title={
-                  <h1 className="sm:!text-3xl text-lg font-bold">
+                  <div className="sm:!text-3xl text-lg font-bold">
                     {keys[key].slider[0].header?.map((e) => {
                       if (e.Highlight) {
                         return (
@@ -250,7 +250,7 @@ export default function BaseTabs({ keys, variation }: TabsProps) {
                         </span>
                       );
                     })}
-                  </h1>
+                  </div>
                 }
                 content={keys[key].slider[0].content}
                 description={[keys[key].slider[0].description!]}
@@ -331,7 +331,7 @@ export default function BaseTabs({ keys, variation }: TabsProps) {
                 buttons={e.slider[0].buttons}
                 title={
                   e.slider[0].header && (
-                    <h1 className="sm:!text-3xl text-lg font-bold">
+                    <div className="sm:!text-3xl text-lg font-bold">
                       {e.slider[0].header?.map((e) => {
                         if (e.Highlight) {
                           return (
@@ -348,7 +348,7 @@ export default function BaseTabs({ keys, variation }: TabsProps) {
                           </span>
                         );
                       })}
-                    </h1>
+                    </div>
                   )
                 }
                 description={[e.slider[0].description!]}
@@ -367,7 +367,7 @@ export default function BaseTabs({ keys, variation }: TabsProps) {
                   content={keys[key].slider[0].content}
                   title={
                     e.slider[0].header && (
-                      <h1 className="sm:!text-3xl text-lg font-bold">
+                      <div className="sm:!text-3xl text-lg font-bold">
                         {e.slider[0].header?.map((e) => {
                           if (e.Highlight) {
                             return (
@@ -384,7 +384,7 @@ export default function BaseTabs({ keys, variation }: TabsProps) {
                             </span>
                           );
                         })}
-                      </h1>
+                      </div>
                     )
                   }
                   description={[e.slider[0].description!]}

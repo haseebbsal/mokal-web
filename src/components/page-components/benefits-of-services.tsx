@@ -5,7 +5,7 @@ export default function BenefitsOfServices() {
     return (
         <div className="bg-base-shadeBlue w-full">
             <div className={`flex flex-col m-auto sm:px-8 px-4 sm:py-20 py-16 sm:w-[80%] text-center gap-4`}>
-                <h1 className="font-bold sm:text-[2.3rem] text-[1.5rem]">Benefits of <LinearGradientText text={{ en: 'Services', fr: 'Services' }} /></h1>
+                <div className="font-bold sm:text-[2.3rem] text-[1.5rem]">Benefits of <LinearGradientText text={{ en: 'Services', fr: 'Services' }} /></div>
                 <div className="flex gap-4 flex-wrap">
                     <div className="flex flex-col gap-2 bg-white shadow-lg flex-[1_0_35%] items-start text-start rounded-xl p-4">
                         <Image src={'/icons/efficiency.svg'} alt={'efficiency'} width={50} height={50} />

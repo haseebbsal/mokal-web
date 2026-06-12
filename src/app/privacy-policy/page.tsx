@@ -59,9 +59,9 @@ const components = {
   block: {
     // Ex. 1: customizing common block types
     h1: ({ children }: any) => (
-      <h1 className="text-2xl mt-5 font-semibold">{children}</h1>
+      <div className="text-2xl mt-5 font-semibold">{children}</div>
     ),
-    normal: ({ children }: any) => <h1 className=" mt-2 ">{children}</h1>,
+    normal: ({ children }: any) => <div className=" mt-2 ">{children}</div>,
 
     blockquote: ({ children }: any) => (
       <blockquote className="border-l-purple-500">{children}</blockquote>
@@ -159,9 +159,9 @@ export default async function PrivacyPolicy() {
             className={`flex flex-col items-center m-auto sm:px-8 px-4 py-4 sm:w-1/2  text-center gap-4`}
           >
             <div className="flex flex-col ">
-              <h1 className="sm:text-[3rem] text-[1.8rem] font-bold">
+              <div className="sm:text-[3rem] text-[1.8rem] font-bold">
                 <LinearGradientText text={{ en: "Privacy Policy", fr: "Politique de confidentialité" }} />{" "}
-              </h1>
+              </div>
             </div>
             <BaseBreadCrumb items={["Privacy Policy"]} />
           </div>
@@ -176,10 +176,10 @@ export default async function PrivacyPolicy() {
               {new Date(homeData.remaining._updatedAt).toDateString()}
             </p>
             {/* <div dangerouslySetInnerHTML={{__html:toHTML(homeData.remaining.content)}}/> */}
-            <PortableText
+            {/* <PortableText
               value={homeData.remaining.content}
               components={components}
-            />
+            /> */}
 
             {/* <div className="flex flex-col gap-1">
                                     <p className="font-semibold text-lg">Effective Date: January <span className="text-sm text-text-gray">29, 2022</span></p>

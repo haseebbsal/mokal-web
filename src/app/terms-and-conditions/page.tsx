@@ -60,9 +60,9 @@ const components = {
   block: {
     // Ex. 1: customizing common block types
     h1: ({ children }: any) => (
-      <h1 className="text-2xl mt-5 font-semibold">{children}</h1>
+      <div className="text-2xl mt-5 font-semibold">{children}</div>
     ),
-    normal: ({ children }: any) => <h1 className=" mt-2 ">{children}</h1>,
+    normal: ({ children }: any) => <div className=" mt-2 ">{children}</div>,
 
     blockquote: ({ children }: any) => (
       <blockquote className="border-l-purple-500">{children}</blockquote>
@@ -158,9 +158,9 @@ export default async function TermsAndConditions() {
             className={`flex flex-col items-center m-auto sm:px-8 px-4 py-4 sm:w-1/2  text-center gap-4`}
           >
             <div className="flex flex-col ">
-              <h1 className="sm:text-[3rem] text-[1.8rem] font-bold">
+              <div className="sm:text-[3rem] text-[1.8rem] font-bold">
                 <LinearGradientText text={{ en: "Terms & Conditions", fr: "Conditions générales" }} />{" "}
-              </h1>
+              </div>
             </div>
             <BaseBreadCrumb items={["Terms & Conditions"]} />
           </div>

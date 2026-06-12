@@ -42,7 +42,7 @@ export default async function CardsContent({
       {variation == 1 && (
         <div className="  p-8 flex flex-col gap-4 items-center ">
           {header && (
-            <h1 className="sm:text-[2.3rem] flex flex-wrap gap-2 text-[1.5rem] font-bold">
+            <div className="sm:text-[2.3rem] flex flex-wrap gap-2 text-[1.5rem] font-bold">
               {header.map((e) => {
                 const val = translate(e.Value, lang);
                 if (e.Highlight) {
@@ -50,7 +50,7 @@ export default async function CardsContent({
                 }
                 return <span key={val}>{val}</span>;
               })}
-            </h1>
+            </div>
           )}
 
           <div className="sm:flex hidden gap-4 w-[80%] flex-wrap">
@@ -139,7 +139,7 @@ export default async function CardsContent({
         <div className=" p-8  w-full">
           <div className="sm:w-[80%] m-auto flex flex-col  gap-4 items-center">
             {header && (
-              <h1 className="sm:text-[2.3rem] flex flex-wrap gap-2 text-[1.5rem] font-bold">
+              <div className="sm:text-[2.3rem] flex flex-wrap gap-2 text-[1.5rem] font-bold">
                 {header.map((e) => {
                   const val = translate(e.Value, lang);
                   if (e.Highlight) {
@@ -147,7 +147,7 @@ export default async function CardsContent({
                   }
                   return <span key={val}>{val}</span>;
                 })}
-              </h1>
+              </div>
             )}
 
             <p className="text-text-gray text-center">{translate(description, lang)}</p>
@@ -162,9 +162,9 @@ export default async function CardsContent({
                       className={` bg-base-lightBlue  relative p-8 overflow-hidden  rounded-xl flex-[1_1_15rem]`}
                     >
                       <div className="flex flex-col gap-2 relative z-30">
-                        <h1 className="font-bold text-base-blue sm:text-2xl text-lg">
+                        <div className="font-bold text-base-blue sm:text-2xl text-lg">
                           {head}
-                        </h1>
+                        </div>
                         <p className="text-text-lighterDarkBlue">
                           {desc}
                         </p>
@@ -187,9 +187,9 @@ export default async function CardsContent({
                       className=" bg-linearPurple  relative p-8 overflow-hidden  rounded-xl flex-[1_1_15rem]"
                     >
                       <div className="flex flex-col gap-2 relative z-30">
-                        <h1 className="font-bold text-base-purple sm:text-2xl text-lg ">
+                        <div className="font-bold text-base-purple sm:text-2xl text-lg ">
                           {head}
-                        </h1>
+                        </div>
                         <p className="text-base-purple">{desc}</p>
                         <Image
                           src={e.imageUrl}
@@ -212,9 +212,9 @@ export default async function CardsContent({
                       className=" bg-linearBlue p-8 flex sm:flex-row flex-col sm:gap-8 gap-4 items-center rounded-xl w-full"
                     >
                       <div className="flex flex-1 text-white flex-col sm:gap-8 gap-4 relative z-30">
-                        <h1 className="font-bold  sm:text-4xl text-lg">
+                        <div className="font-bold  sm:text-4xl text-lg">
                           {head}
-                        </h1>
+                        </div>
                         <p className="">{desc}</p>
                         <div className="sm:flex hidden gap-8">
                           {e.buttons && e.buttons?.length > 0 && (
@@ -331,7 +331,7 @@ export default async function CardsContent({
 
       {variation == 3 && (
         <div className={`w-full p-8 flex flex-col gap-16 items-center `}>
-          <h1 className="sm:text-[2.3rem] text-[1.5rem] flex flex-wrap gap-2 font-bold justify-center">
+          <div className="sm:text-[2.3rem] text-[1.5rem] flex flex-wrap gap-2 font-bold justify-center">
             {header.map((e) => {
               const val = translate(e.Value, lang);
               if (e.Highlight) {
@@ -339,7 +339,7 @@ export default async function CardsContent({
               }
               return <span key={val}>{val}</span>;
             })}
-          </h1>
+          </div>
           <div className="flex flex-col gap-8 sm:w-[80%] flex-wrap">
             <div className="grid sm:grid-cols-3 grid-cols-1 gap-8 ">
               {cards.map((e) => {

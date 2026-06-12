@@ -42,28 +42,26 @@ export default async function Content({ content }: ContentProps) {
               return (
                 <Image
                   key={e.imageUrl}
-                  className={`flex-1 ${
-                    content.find((item) => item.header)?.header?.[0].Value &&
+                  className={`flex-1 ${content.find((item) => item.header)?.header?.[0].Value &&
                     translate(content.find((item) => item.header)?.header?.[0].Value, lang) ==
-                      "Track Your Shipments" && "sm:order-2 order-1"
-                  } `}
+                    "Track Your Shipments" && "sm:order-2 order-1"
+                    } `}
                   src={e.imageUrl}
                   alt="metrics"
                   width={500}
                   height={500}
                 />
               );
-            
+
             const firstHeaderVal = e.header?.[0] ? translate(e.header[0].Value, lang) : '';
             return (
               <div
                 key={firstHeaderVal}
-                className={` ${
-                  firstHeaderVal == "Track Your Shipments" &&
+                className={` ${firstHeaderVal == "Track Your Shipments" &&
                   "sm:order-1 order-2"
-                } flex flex-1 flex-col sm:items-start items-center sm:text-start text-center gap-4`}
+                  } flex flex-1 flex-col sm:items-start items-center sm:text-start text-center gap-4`}
               >
-                <h1 className="sm:text-[3rem] text-[1.5rem] font-bold">
+                <div className="sm:text-[3rem] text-[1.5rem] font-bold">
                   {e.header!.map((h) => {
                     const val = translate(h.Value, lang);
                     if (h.Highlight) {
@@ -81,7 +79,7 @@ export default async function Content({ content }: ContentProps) {
                       </span>
                     );
                   })}
-                </h1>
+                </div>
 
                 {e.description?.map((d) => {
                   {
@@ -148,10 +146,9 @@ export default async function Content({ content }: ContentProps) {
                         )}
 
                         <h2
-                          className={`font-bold text-xl ${
-                            firstHeaderVal == "Track Your Shipments" &&
+                          className={`font-bold text-xl ${firstHeaderVal == "Track Your Shipments" &&
                             "!text-3xl font-black"
-                          }`}
+                            }`}
                         >
                           {nameVal}
                         </h2>

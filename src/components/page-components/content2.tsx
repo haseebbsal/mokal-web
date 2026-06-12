@@ -45,14 +45,14 @@ export default function Content2({ header, video, description, images, buttons }
     return (
         <div className=" w-full">
             <div className={`flex flex-col m-auto sm:px-8 px-4 sm:py-20 py-16 sm:w-[80%] text-center gap-4`}>
-                <h1 className="font-bold sm:text-[2.3rem] text-[1.5rem]">
+                <div className="font-bold sm:text-[2.3rem] text-[1.5rem]">
                     {header.map((e) => {
                         if (e.Highlight) {
                             return <LinearGradientText extraClass="mr-2" key={t(e.Value)} text={t(e.Value)} />
                         }
                         return <span className="mr-2" key={t(e.Value)}>{t(e.Value)}</span>
                     })}
-                </h1>
+                </div>
                 {description && <p className="text-text-gray">{t(description)}</p>}
                 {video && <BaseVideo src={video} />}
                 {images && images.length > 0 && !images[0].description && <>
