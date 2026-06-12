@@ -3,8 +3,10 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Spot Quote Freight Pricing | Urgent & Expedited Shipments Canada | MGC Freight",
   description: "Need urgent freight pricing? MGC Freight provides instant spot quotes for time-sensitive, oversized, refrigerated, FTL, and same-day shipments across Canada and the US. Get a spot quote now.",
-
   keywords: ["spot quote", "freight rates", "quick quote", "shipping prices", "MGC Freight spot", "instant quote", "freight cost"],
+  alternates: {
+    canonical: process.env.NEXT_PUBLIC_BASE_URL,
+  },
   openGraph: {
     title: "Spot Quote Freight Pricing | Urgent & Expedited Shipments Canada | MGC Freight",
     description: "Need urgent freight pricing? MGC Freight provides instant spot quotes for time-sensitive, oversized, refrigerated, FTL, and same-day shipments across Canada and the US. Get a spot quote now.",

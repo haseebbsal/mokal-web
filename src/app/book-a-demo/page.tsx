@@ -4,6 +4,9 @@ export const metadata: Metadata = {
   title: "Book a Demo | MGC Freight",
   description: "Schedule a personalized demo of MGC Freight’s logistics platform to see how we simplify cargo booking and supply chain tracking.",
   keywords: ["book a demo", "freight booking", "logistics platform", "MGC Freight demo", "cargo booking", "supply chain software", "freight management", "shipping demo", "transportation solutions"],
+  alternates: {
+    canonical: process.env.NEXT_PUBLIC_BASE_URL,
+  },
   openGraph: {
     title: "Book a Demo | MGC Freight",
     description: "Schedule your demo and see how our platform works.",

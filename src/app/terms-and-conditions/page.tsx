@@ -3,8 +3,10 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Terms and Conditions | MGC Freight",
   description: "Read the Terms of Use and service agreements for using MGC Freight's website and logistics services.",
-
   keywords: ["terms and conditions", "MGC Freight terms", "service agreement", "legal", "privacy policy", "user agreement"],
+  alternates: {
+    canonical: process.env.NEXT_PUBLIC_BASE_URL,
+  },
   openGraph: {
     title: "Terms and Conditions | MGC Freight",
     description: "Read the terms of service for MGC Freight.",

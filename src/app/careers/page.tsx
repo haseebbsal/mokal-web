@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   description: "Explore job opportunities and career paths at MGC Freight. Join a fast-growing logistics company focused on innovation.",
 
   keywords: ["careers MGC Freight", "trucking jobs", "freight broker careers", "MGC Freight jobs", "office careers"],
+  alternates: {
+    canonical: process.env.NEXT_PUBLIC_BASE_URL,
+  },
   openGraph: {
     title: "Careers at MGC Freight | Join Our Team",
     description: "Discover exciting career opportunities in the logistics industry.",

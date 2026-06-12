@@ -3,8 +3,10 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Track Shipments | MGC Freight",
   description: "Track your freight shipment in real-time. Get real-time status updates and end-to-end tracking for your cargo.",
-
   keywords: ["freight tracking", "shipment tracking", "cargo tracking", "MGC Freight tracking", "real-time tracking", "LTL tracking", "truckload tracking"],
+  alternates: {
+    canonical: process.env.NEXT_PUBLIC_BASE_URL,
+  },
   openGraph: {
     title: "Track Shipments | MGC Freight",
     description: "Track your freight shipment in real-time with MGC Freight. Get instant status updates for your cargo.",
@@ -123,10 +125,10 @@ export default async function TrackShipments({
             <div
               key={e._type + index}
               className={`${index != 0
-                  ? index % 2 != 0
-                    ? "bg-white w-full"
-                    : "bg-base-shadeBlue w-full"
-                  : ""
+                ? index % 2 != 0
+                  ? "bg-white w-full"
+                  : "bg-base-shadeBlue w-full"
+                : ""
                 }`}
             >
               {e._type == "title" && (

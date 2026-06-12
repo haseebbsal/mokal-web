@@ -3,8 +3,10 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Video Library | MGC Freight",
   description: "Explore our video library to learn more about MGC Freight’s logistics platform, tutorials, and insights for simplifying your freight shipping.",
-
   keywords: ["freight videos", "logistics tutorials", "MGC Freight", "how to ship", "shipping guide", "carrier training"],
+  alternates: {
+    canonical: process.env.NEXT_PUBLIC_BASE_URL,
+  },
   openGraph: {
     title: "Video Library | MGC Freight",
     description: "Learn how to use MGC Freight's platform with our comprehensive video library.",

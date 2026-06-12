@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   description: "Collaborate with MGC Freight as a broker partner. Access our network, advanced booking tools, and expand your operations.",
 
   keywords: ["broker partnership", "freight broker", "MGC Freight", "broker program", "carrier partners", "freight solutions", "transportation partnership", "broker services", "grow business"],
+  alternates: {
+    canonical: process.env.NEXT_PUBLIC_BASE_URL,
+  },
   openGraph: {
     title: "Broker Partnership Program | MGC Freight",
     description: "Partner with us and grow your brokerage business.",
@@ -119,10 +122,10 @@ export default async function Careers() {
             <div
               key={e._type + index}
               className={`${index != 0
-                  ? index % 2 != 0
-                    ? "bg-white w-full"
-                    : "bg-base-shadeBlue w-full"
-                  : ""
+                ? index % 2 != 0
+                  ? "bg-white w-full"
+                  : "bg-base-shadeBlue w-full"
+                : ""
                 }`}
             >
               {e._type == "title" && (

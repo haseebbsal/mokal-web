@@ -4,8 +4,10 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "LTL Shipping Services in Ontario & Canada | Less-Than-Truckload Freight | MGC Freight",
   description: "MGC Freight offers cost-effective LTL (less-than-truckload) shipping services across Canada and the US. Compare carrier rates instantly and book your LTL shipment online. Serving Ontario and all of North America.",
-
   keywords: ["LTL shipping", "less than truckload", "freight LTL", "MGC Freight", "LTL carrier", "shipping LTL", "cost-effective", "cargo optimization"],
+  alternates: {
+    canonical: process.env.NEXT_PUBLIC_BASE_URL,
+  },
   openGraph: {
     title: "LTL Shipping Services in Ontario & Canada | Less-Than-Truckload Freight | MGC Freight",
     description: "MGC Freight offers cost-effective LTL (less-than-truckload) shipping services across Canada and the US. Compare carrier rates instantly and book your LTL shipment online. Serving Ontario and all of North America.",

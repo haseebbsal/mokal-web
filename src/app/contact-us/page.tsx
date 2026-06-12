@@ -3,8 +3,10 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Contact Us | MGC Freight",
   description: "Get in touch with the logistics experts at MGC Freight. We are here to support your shipping needs 24/7.",
-
   keywords: ["contact MGC Freight", "freight broker contact", "shipping support", "logistics help", "MGC Freight customer service", "freight quotes", "broker partnership contact", "corporate partnership contact", "24/7 shipping support"],
+  alternates: {
+    canonical: process.env.NEXT_PUBLIC_BASE_URL,
+  },
   openGraph: {
     title: "Contact Us | MGC Freight",
     description: "Get in touch with our logistics experts for 24/7 support.",
@@ -118,10 +120,10 @@ export default async function ContactUs() {
             <div
               key={e._type + index}
               className={`${index != 0
-                  ? index % 2 != 0
-                    ? "bg-white w-full"
-                    : "bg-base-shadeBlue w-full"
-                  : ""
+                ? index % 2 != 0
+                  ? "bg-white w-full"
+                  : "bg-base-shadeBlue w-full"
+                : ""
                 }`}
             >
               {e._type == "title" && (

@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   description: "MGC Freight partners with North America's leading freight carriers for LTL, FTL, reefer, and expedited shipments. See our carrier network and learn why shippers across Canada trust MGC Freight.",
 
   keywords: ["carrier partners", "trucking jobs", "freight carrier", "MGC Freight", "carrier opportunities", "reliable loads", "trucking company", "carrier network", "payment terms"],
+  alternates: {
+    canonical: process.env.NEXT_PUBLIC_BASE_URL,
+  },
   openGraph: {
     title: "Carrier Partners | Freight Carriers Working with MGC Freight | Ontario Broker Network",
     description: "MGC Freight partners with North America's leading freight carriers for LTL, FTL, reefer, and expedited shipments. See our carrier network and learn why shippers across Canada trust MGC Freight.",

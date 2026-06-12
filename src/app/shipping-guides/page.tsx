@@ -3,8 +3,10 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Shipping Guides | MGC Freight",
   description: "Access step-by-step resources, tools, and guides for hassle-free shipping and logistics planning.",
-
   keywords: ["shipping guides", "logistics resources", "MGC Freight guides", "transportation tips", "freight planning", "shipping checklist", "carrier selection", "supply chain management", "international shipping", "domestic shipping"],
+  alternates: {
+    canonical: process.env.NEXT_PUBLIC_BASE_URL,
+  },
   openGraph: {
     title: "Shipping Guides | MGC Freight",
     description: "Step-by-step guides for hassle-free shipping.",
@@ -119,10 +121,10 @@ export default async function ShippingGuides() {
             <div
               key={e._type + index}
               className={`${index != 0
-                  ? index % 2 != 0
-                    ? "bg-white w-full"
-                    : "bg-base-shadeBlue w-full"
-                  : ""
+                ? index % 2 != 0
+                  ? "bg-white w-full"
+                  : "bg-base-shadeBlue w-full"
+                : ""
                 }`}
             >
               {e._type == "title" && (

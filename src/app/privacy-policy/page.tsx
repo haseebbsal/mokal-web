@@ -3,8 +3,10 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Privacy Policy | MGC Freight",
   description: "Read MGC Freight's privacy policy to understand how we protect and manage your personal data and shipping details.",
-
   keywords: ["privacy policy", "MGC Freight privacy", "data protection", "shipping data", "personal information", "terms and conditions", "privacy practices"],
+  alternates: {
+    canonical: process.env.NEXT_PUBLIC_BASE_URL,
+  },
   openGraph: {
     title: "Privacy Policy | MGC Freight",
     description: "MGC Freight's privacy policy - learn how we protect your data.",

@@ -3,8 +3,10 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Customer Spotlight | MGC Freight",
   description: "Discover our client success stories and see how we help businesses optimize their logistics, reduce shipping costs, and scale.",
-
   keywords: ["customer spotlight", "client success stories", "case studies", "logistics optimization", "shipping savings", "MGC Freight", "transportation case studies", "freight success", "supply chain optimization"],
+  alternates: {
+    canonical: process.env.NEXT_PUBLIC_BASE_URL,
+  },
   openGraph: {
     title: "Customer Spotlight | MGC Freight",
     description: "Real stories of how businesses benefit from MGC Freight.",
@@ -118,10 +120,10 @@ export default async function CustomerSpotlight() {
             <div
               key={e._type + index}
               className={`${index != 0
-                  ? index % 2 != 0
-                    ? "bg-white w-full"
-                    : "bg-base-shadeBlue w-full"
-                  : ""
+                ? index % 2 != 0
+                  ? "bg-white w-full"
+                  : "bg-base-shadeBlue w-full"
+                : ""
                 }`}
             >
               {e._type == "title" && (

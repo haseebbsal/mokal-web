@@ -3,8 +3,10 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Get a Free Freight Quote | LTL & FTL Shipping Rates Canada & USA | MGC Freight",
   description: "Get an instant free freight quote from MGC Freight. Compare LTL and FTL shipping rates from top Canadian carriers. Fast, accurate freight pricing for Ontario and North American shipments.",
-
   keywords: ["shipping quote", "freight quote", "LTL quote", "truckload quote", "international shipping", "MGC Freight", "online quote", "freight rates", "logistics services", "custom shipping quote"],
+  alternates: {
+    canonical: process.env.NEXT_PUBLIC_BASE_URL,
+  },
   openGraph: {
     title: "Get a Free Freight Quote | LTL & FTL Shipping Rates Canada & USA | MGC Freight",
     description: "Get an instant free freight quote from MGC Freight. Compare LTL and FTL shipping rates from top Canadian carriers. Fast, accurate freight pricing for Ontario and North American shipments.",

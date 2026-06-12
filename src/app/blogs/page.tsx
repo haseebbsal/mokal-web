@@ -3,8 +3,10 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Logistics & Shipping Blog | MGC Freight",
   description: "Stay up to date with the latest industry news, expert logistics advice, and shipping guides on the MGC Freight blog.",
-
   keywords: ["blogs", "freight blogs", "MGC Freight blogs", "logistics blogs", "supply chain blogs", "transportation blogs"],
+  alternates: {
+    canonical: process.env.NEXT_PUBLIC_BASE_URL,
+  },
   openGraph: {
     title: "Logistics & Shipping Blog | MGC Freight",
     description: "Read expert insights and updates on freight shipping and logistics.",

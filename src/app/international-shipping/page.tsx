@@ -4,8 +4,10 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "International Shipping from Canada, USA & Mexico | Cross-Border Freight | MGC Freight",
   description: "Ship internationally from Canada, the US, or Mexico with MGC Freight. Automated customs paperwork, real-time tracking, and competitive rates with trusted global carriers. Hassle-free cross-border freight and international shipping solutions.",
-
   keywords: ["international shipping", "global logistics", "freight forwarding", "MGC Freight", "cross-border shipping", "USA Canada Mexico", "international freight", "ocean freight", "air freight", "customs clearance", "supply chain services"],
+  alternates: {
+    canonical: process.env.NEXT_PUBLIC_BASE_URL,
+  },
   openGraph: {
     title: "International Shipping from Canada, USA & Mexico | Cross-Border Freight | MGC Freight",
     description: "Ship internationally from Canada, the US, or Mexico with MGC Freight. Automated customs paperwork, real-time tracking, and competitive rates with trusted global carriers. Hassle-free cross-border freight and international shipping solutions.",

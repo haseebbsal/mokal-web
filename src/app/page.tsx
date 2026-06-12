@@ -3,7 +3,9 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "MGC Freight | Freight Brokerage Services Canada & USA | LTL, FTL, Courier & More",
   description: "MGC Freight is a trusted freight brokerage based in Ontario offering LTL shipping, FTL truckload, courier services, cross-border freight, and fulfillment across Canada and the US. Get a free freight quote today.",
-
+  alternates: {
+    canonical: process.env.NEXT_PUBLIC_BASE_URL,
+  },
   keywords: ["freight shipping", "logistics company", "MGC Freight", "cargo shipping", "supply chain management", "freight broker", "transportation services", "shipping solutions", "truckload shipping", "LTL shipping"],
   openGraph: {
     title: "MGC Freight | Freight Brokerage Services Canada & USA | LTL, FTL, Courier & More",

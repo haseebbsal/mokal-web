@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: "Truckload Freight Shipping | MGC Freight",
   description: "Reliable and secure truckload freight shipping. Access full capacity (FTL) solutions for large-scale shipments across North America.",
   keywords: ["truckload freight", "FTL shipping", "full truckload", "freight broker", "LTL", "North America shipping", "MGC Freight"],
+  alternates: {
+    canonical: process.env.NEXT_PUBLIC_BASE_URL,
+  },
   openGraph: {
     title: "Truckload Freight Shipping | MGC Freight",
     description: "Reliable FTL shipping across North America with MGC Freight. Get competitive rates and guaranteed capacity.",
@@ -136,10 +139,10 @@ export default async function Truckload() {
             <div
               key={e._type + index}
               className={`${index != 0
-                  ? index % 2 != 0
-                    ? "bg-white w-full"
-                    : "bg-base-shadeBlue w-full"
-                  : ""
+                ? index % 2 != 0
+                  ? "bg-white w-full"
+                  : "bg-base-shadeBlue w-full"
+                : ""
                 }`}
             >
               {e._type == "title" && (
