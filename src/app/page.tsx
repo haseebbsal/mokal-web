@@ -44,7 +44,7 @@ import TrackShipment from "@/components/page-components/track-shipment";
 import GetAQuoteForm from "@/components/page-components/get-a-quote";
 import BrokerPartnerForm from "@/components/forms/broker-partner-form";
 import CorporatePartnerForm from "@/components/forms/corporate-partner-form";
-import { getOrganizationSchema, getWebSiteSchema, getFAQSchema } from "@/utils/schema";
+import { getOrganizationSchema, getWebSiteSchema, getFAQSchema, getLocalBusinessSchema } from "@/utils/schema";
 import { getLocale } from "@/utils/locale-server";
 
 export default async function Home() {
@@ -135,7 +135,7 @@ export default async function Home() {
   console.log(content)
   const orgSchema = getOrganizationSchema(configData);
   const webSiteSchema = getWebSiteSchema();
-
+  const localBusinessSchema = getLocalBusinessSchema();
   const faqBlock = content.find((e) => e._type === "faqs");
   const faqSchema = faqBlock && faqBlock.questions
     ? getFAQSchema(faqBlock.questions, lang)
@@ -150,6 +150,10 @@ export default async function Home() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(webSiteSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
       />
       {faqSchema && (
         <script

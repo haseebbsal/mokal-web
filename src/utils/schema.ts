@@ -16,10 +16,60 @@ export function getOrganizationSchema(config: any) {
       "telephone": config?.phoneNumber || "+1 (289) 295-1640",
       "contactType": "customer service",
       "email": config?.email || "info@mgcfreight.com",
-      "areaServed": ["CA", "US", "MX"],
+      "areaServed": ["CA", "US"],
       "availableLanguage": ["en", "fr"]
     },
     "sameAs": socialLinks
+  };
+}
+
+export function getLocalBusinessSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "MGC Freight",
+    "image": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEiNQD0IWeskhUganOYwZXYdhsDL9tK23mTmz626A2KVxzGTD-RiDveeSwbqj_b6tmu-ftYhZGKZHvkjBu7xJ93_oN6lr0oVJ5m7mWrrVsac7zmGGPcc5isa1rcXPs3T69fUDHzWfGps1Us=s1360-w1360-h1020-rw",
+    "url": "https://www.mgcfreight.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "2275 Upper Middle Rd E Suite 101",
+      "addressLocality": "Oakville",
+      "addressRegion": "ON",
+      "postalCode": "L6H0C3",
+      "addressCountry": "CA"
+    },
+    "review": {
+      "@type": "Review",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": 4.9,
+        "bestRating": 5
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Cindy"
+      }
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 40.761293,
+      "longitude": -73.982294
+    },
+    "telephone": "+14379956320",
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "opens": "8:00",
+        "closes": "17:00"
+      },
+    ],
   };
 }
 
