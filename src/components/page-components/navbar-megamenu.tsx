@@ -34,7 +34,7 @@ export default function MegaMenu() {
                   <Image
                     key={e.icon}
                     src={e.icon}
-                    alt="icon"
+                    alt={`${e.title} icon`}
                     width={50}
                     height={50}
                   />

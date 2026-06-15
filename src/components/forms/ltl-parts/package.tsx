@@ -7,7 +7,6 @@ import Image from "next/image";
 import { useContext, useEffect } from "react";
 import {
   Controller,
-
   useController,
   useFieldArray,
   useFormContext,
@@ -263,7 +262,7 @@ export default function PackageLTL() {
                 src={"/icons/envelop-check.svg"}
                 width={30}
                 height={30}
-                alt="envelop"
+                alt="envelope"
               />
               <p>Envelop</p>
             </div>
@@ -606,8 +605,8 @@ export default function PackageLTL() {
                           base: "!m-0 ",
 
                           trigger: `${!!(errors.items as any)?.[index]?.freightClass
-                              ? ""
-                              : "bg-transparent"
+                            ? ""
+                            : "bg-transparent"
                             } border-1 border-base-teal p-7 rounded-xl`,
                           label: "",
                           value: "!text-base-blue",
@@ -640,8 +639,8 @@ export default function PackageLTL() {
                           base: "!m-0 ",
 
                           trigger: `${!!(errors.items as any)?.[index]?.type
-                              ? ""
-                              : "bg-transparent"
+                            ? ""
+                            : "bg-transparent"
                             } border-1 border-base-teal p-7 rounded-xl`,
                           label: "",
                           value: "!text-base-blue",

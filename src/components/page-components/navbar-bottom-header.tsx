@@ -154,7 +154,7 @@ export default function NavbarBottomHeader({ logo }: { logo: string }) {
                               <Image
                                 key={e.icon}
                                 src={e.icon}
-                                alt="icon"
+                                alt={`${e.title} icon`}
                                 width={50}
                                 height={50}
                               />

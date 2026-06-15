@@ -170,7 +170,7 @@ export default async function CardsContent({
                         </p>
                         <Image
                           src={e.imageUrl}
-                          alt="shipment1"
+                          alt="shipment"
                           width={500}
                           className="w-full sm:h-[15rem]"
                           height={500}
@@ -193,7 +193,7 @@ export default async function CardsContent({
                         <p className="text-base-purple">{desc}</p>
                         <Image
                           src={e.imageUrl}
-                          alt="shipment2"
+                          alt="shipment"
                           width={500}
                           className="w-full sm:h-[15rem]"
                           height={500}
