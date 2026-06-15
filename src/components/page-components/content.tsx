@@ -37,7 +37,7 @@ export default async function Content({ content }: ContentProps) {
         <div
           className={`flex sm:flex-row flex-col m-auto sm:px-8 px-4 sm:py-20 py-16 sm:w-[80%] text-center gap-16`}
         >
-          {content.map((e, index) => {
+          {content.map((e) => {
             if (e.imageUrl)
               return (
                 <Image

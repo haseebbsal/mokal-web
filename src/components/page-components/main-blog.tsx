@@ -2,7 +2,7 @@ import Image from "next/image";
 import BaseSlider from "../common/base-slider";
 import LinearGradientText from "../common/linear-gradient-text";
 import { client } from "@/utils/constants";
-import { useTranslate } from "@/providers/locale-provider";
+import { getLocale } from "@/utils/locale-server";
 
 interface BlogProps {
   header: [{ Value: { en: string, fr: string }; Highlight: boolean }];
@@ -57,7 +57,7 @@ export default async function MainBlog({
       Author: string;
     }
   ] = blogss ? blogss : fetchData.header;
-  const t = useTranslate();
+  const locale = await getLocale();
   return (
     <div
       className={`flex flex-col m-auto sm:px-8 px-4 sm:py-20 py-16 sm:w-[80%] text-center gap-4`}
@@ -68,14 +68,14 @@ export default async function MainBlog({
             return (
               <LinearGradientText
                 extraClass="mr-2"
-                key={t(e.Value)}
-                text={t(e.Value)}
+                key={e.Value[locale]}
+                text={e.Value}
               />
             );
           }
           return (
-            <span className="mr-2" key={t(e.Value)}>
-              {t(e.Value)}
+            <span className="mr-2" key={e.Value[locale]}>
+              {e.Value[locale]}
             </span>
           );
         })}

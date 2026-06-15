@@ -1,10 +1,6 @@
-import { useTranslate } from "@/providers/locale-provider";
 import BaseTabs from "../common/base-tabs";
 import LinearGradientText from "../common/linear-gradient-text";
 import { getLocale } from "@/utils/locale-server";
-
-
-
 import { TabItemProp } from "@/utils/types";
 
 interface TabProps {
