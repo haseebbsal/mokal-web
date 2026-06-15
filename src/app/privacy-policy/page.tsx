@@ -26,6 +26,7 @@ import LinearGradientText from "@/components/common/linear-gradient-text";
 import { client } from "@/utils/constants";
 import { PagesContent } from "@/utils/types";
 import { PortableText } from "@portabletext/react";
+import { getLocale } from "@/utils/locale-server";
 
 const components = {
   // types: {
@@ -148,8 +149,7 @@ export default async function PrivacyPolicy() {
       "remaining":{...}
     }`,
     });
-
-  console.log("priacyyy", homeData.remaining);
+  const locale = await getLocale();
 
   return (
     <>
@@ -176,10 +176,10 @@ export default async function PrivacyPolicy() {
               {new Date(homeData.remaining._updatedAt).toDateString()}
             </p>
             {/* <div dangerouslySetInnerHTML={{__html:toHTML(homeData.remaining.content)}}/> */}
-            {/* <PortableText
-              value={homeData.remaining.content}
+            <PortableText
+              value={homeData.remaining.content[locale]}
               components={components}
-            /> */}
+            />
 
             {/* <div className="flex flex-col gap-1">
                                     <p className="font-semibold text-lg">Effective Date: January <span className="text-sm text-text-gray">29, 2022</span></p>

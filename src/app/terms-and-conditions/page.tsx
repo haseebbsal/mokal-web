@@ -26,6 +26,7 @@ import { client } from "@/utils/constants";
 import BaseBreadCrumb from "@/components/common/base-breadcrumb";
 import { PagesContent } from "@/utils/types";
 import { PortableText } from "@portabletext/react";
+import { getLocale } from "@/utils/locale-server";
 
 
 const components = {
@@ -149,7 +150,7 @@ export default async function TermsAndConditions() {
       "remaining":{...}
     }`,
     });
-
+  const locale = await getLocale();
   return (
     <>
       <div className="flex flex-col gap-4">
@@ -176,7 +177,7 @@ export default async function TermsAndConditions() {
             </p>
             {/* <div dangerouslySetInnerHTML={{__html:toHTML(homeData.remaining.content)}}/> */}
             <PortableText
-              value={homeData.remaining.content}
+              value={homeData.remaining.content[locale]}
               components={components}
             />
 

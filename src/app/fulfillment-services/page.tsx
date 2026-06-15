@@ -41,7 +41,7 @@ import RefineTransportPage from "@/components/page-components/refine-transportPa
 import CardsContent from "@/components/page-components/cards-content";
 import MainBlog from "@/components/page-components/main-blog";
 import Testimonials from "@/components/page-components/testimonials";
-import Content2 from "@/components/page-components/content2";
+// import Content2 from "@/components/page-components/content2";
 import GuideToBook from "@/components/page-components/guide-to-book";
 import SingleSlider from "@/components/page-components/single-slider";
 import CareerOppurtunities from "@/components/page-components/career-oppurtunities";
