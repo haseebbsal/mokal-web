@@ -3,7 +3,6 @@ import { Input, Radio, RadioGroup } from "@heroui/react";
 import Image from "next/image";
 import { useContext, useEffect } from "react";
 import {
-  FieldValues,
   useController,
   useFieldArray,
   useFormContext,
@@ -36,7 +35,8 @@ export default function Package() {
     }
   }, []);
 
-  function submit(values: FieldValues) {
+  // values: FieldValues
+  function submit() {
     setActiveState((prev) => prev + 1);
   }
 
