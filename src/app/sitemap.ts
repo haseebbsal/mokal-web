@@ -1,12 +1,12 @@
 import { MetadataRoute } from "next";
 import { client } from "@/utils/constants";
 
-export const revalidate = 3600; // Revalidate sitemap at most every hour
+// export const revalidate = 3600; // Revalidate sitemap at most every hour
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // Use production URL as fallback if NEXT_PUBLIC_BASE_URL is not set or points to localhost
   let baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://www.mgcfreight.com";
-  
+
   // Clean up potential trailing slash
   if (baseUrl.endsWith("/")) {
     baseUrl = baseUrl.slice(0, -1);
@@ -53,9 +53,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   try {
     const blogs = await client.fetch<Array<{ id: string; publishedAt?: string }>>({
       query: `*[_type == 'blog']{ "id": _id, "publishedAt": _createdAt }`,
-      config: {
-        cache: "no-store",
-      },
+      // config: {
+      //   cache: "no-store",
+      // },
     });
 
     if (blogs && Array.isArray(blogs)) {
