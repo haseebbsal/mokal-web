@@ -7,7 +7,7 @@ import LinearGradientText from "./linear-gradient-text";
 import TabNoSlider from "./tabs/tab-no-slider";
 import Image from "next/image";
 import BaseButton from "./base-button";
-import { useTranslate } from "@/providers/locale-provider";
+import { useLocale, useTranslate } from "@/providers/locale-provider";
 
 function Title(
   title: string,
@@ -175,12 +175,11 @@ function Title(
 export default function BaseTabs({ keys, variation }: TabsProps) {
   const [key, setKey] = useState<number>(0);
   const t = useTranslate();
-
-
+  const locale = useLocale();
   return (
     <>
       <div className="flex sm:hidden flex-wrap gap-4">
-        {keys.map((e, index) => (
+        {keys?.map((e, index) => (
           <BaseButton
             onClick={() => setKey(index)}
             extraClass={`min-w-[13rem] flex-1 ${index == key
@@ -198,7 +197,7 @@ export default function BaseTabs({ keys, variation }: TabsProps) {
           {/* {e.component} */}
           {keys[key].slider[0].cards.length > 0 && variation == 1 && (
             <TabWithSlider
-              buttons={keys[key].slider[0].buttons}
+              buttons={keys[key].slider[0]?.buttons ?? []}
               title={
                 <div className="sm:!text-3xl text-lg font-bold">
                   {keys[key].slider[0].header?.map((e) => {
@@ -219,11 +218,11 @@ export default function BaseTabs({ keys, variation }: TabsProps) {
                   })}
                 </div>
               }
-              content={keys[key].slider[0].content}
-              description={[keys[key].slider[0].description!]}
+              content={keys[key].slider[0]?.content?.[locale]}
+              description={[t(keys[key].slider[0].description!)]}
               carousel={keys[key].slider[0].cards.map((e) => ({
                 imageSrc: e.imageUrl,
-                description: e.description,
+                description: t(e.description!),
               }))}
             />
           )}
@@ -252,8 +251,8 @@ export default function BaseTabs({ keys, variation }: TabsProps) {
                     })}
                   </div>
                 }
-                content={keys[key].slider[0].content}
-                description={[keys[key].slider[0].description!]}
+                content={keys[key].slider[0].content?.[locale] ?? keys[key].slider[0].content}
+                description={[t(keys[key].slider[0].description!)]}
               />
             )}
 
@@ -351,11 +350,11 @@ export default function BaseTabs({ keys, variation }: TabsProps) {
                     </div>
                   )
                 }
-                description={[e.slider[0].description!]}
-                content={keys[key].slider[0].content}
+                description={[t(e.slider[0].description!)]}
+                content={e.slider[0].content?.[locale] ?? e.slider[0].content}
                 carousel={e.slider[0].cards.map((e) => ({
                   imageSrc: e.imageUrl,
-                  description: e.description,
+                  description: t(e.description!),
                 }))}
               />
             )}
@@ -364,7 +363,7 @@ export default function BaseTabs({ keys, variation }: TabsProps) {
               !e.slider[0].cards.length && (
                 <TabNoSlider
                   buttons={e.slider[0].buttons}
-                  content={keys[key].slider[0].content}
+                  content={e.slider[0].content?.[locale] ?? e.slider[0].content}
                   title={
                     e.slider[0].header && (
                       <div className="sm:!text-3xl text-lg font-bold">
@@ -387,7 +386,7 @@ export default function BaseTabs({ keys, variation }: TabsProps) {
                       </div>
                     )
                   }
-                  description={[e.slider[0].description!]}
+                  description={[t(e.slider[0].description!)]}
                 />
               )}
 

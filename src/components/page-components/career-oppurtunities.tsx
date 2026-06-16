@@ -25,7 +25,6 @@ export default function CareerOppurtunities() {
       `/api/jobs?job=${queryKey[1]}&limit=${queryKey[2]}&page=${queryKey[3]}`
     )
   );
-
   useEffect(() => {
     setValue("limit", 4);
   }, []);
@@ -54,7 +53,7 @@ export default function CareerOppurtunities() {
         placeholder="Search Positions"
         endContent={<BiSearch size={20} />}
       />
-      {data && (
+      {data && data.data.data.length !== 0 && (
         <div className="flex flex-col gap-8 w-full">
           <Accordion variant="splitted" className="p-0">
             {data.data.data.map((e: any, index: number) => (

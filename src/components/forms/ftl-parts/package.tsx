@@ -37,7 +37,6 @@ export default function Package() {
   }, []);
 
   function submit(values: FieldValues) {
-    console.log("values", values);
     setActiveState((prev) => prev + 1);
   }
 
@@ -133,7 +132,6 @@ export default function Package() {
 
   const switchErrors =
     !!errors.flatbed && !!errors.reefer && !!errors.container && !!errors.van;
-  console.log(watchValues)
   return (
     <form
       onSubmit={handleSubmit(submit)}

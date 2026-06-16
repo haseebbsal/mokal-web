@@ -35,8 +35,6 @@ export default async function CardsContent({
 }: CardsProps) {
   const lang = await getLocale();
 
-  console.log("butttons", buttons);
-
   return (
     <>
       {variation == 1 && (

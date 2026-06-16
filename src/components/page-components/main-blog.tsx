@@ -50,7 +50,7 @@ export default async function MainBlog({
   const blogs: [
     {
       _id: string;
-      title: string;
+      title: { en: string, fr: string };
       _createdAt: string;
       imageUrl: string;
       AuthorImage: string;
@@ -93,7 +93,7 @@ export default async function MainBlog({
                   height={70}
                   width={70}
                 />
-                <p className="font-semibold text-xl">{e.title}</p>
+                <p className="font-semibold text-xl">{e.title[locale]}</p>
                 <p className="text-xs text-text-gray">
                   {new Date(e._createdAt).toDateString()}
                 </p>

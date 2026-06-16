@@ -36,15 +36,14 @@ export default function Details() {
     { onError, onSuccess }
   );
   function submit(values: FieldValues) {
-    console.log("neww", values);
     const { reefer, flatbed, container } = values;
     const packageType = reefer
       ? FTLPackageType.REEFER
       : flatbed
-      ? FTLPackageType.FLATBED
-      : container
-      ? FTLPackageType.CONTAINER
-      : FTLPackageType.VAN;
+        ? FTLPackageType.FLATBED
+        : container
+          ? FTLPackageType.CONTAINER
+          : FTLPackageType.VAN;
     const items = values.items.map((e: any) => ({ ...e }));
     const data = {
       ...values,

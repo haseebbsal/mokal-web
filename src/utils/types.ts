@@ -48,7 +48,7 @@ export type TabItemProp = [
     buttons?: [
       { withBackground: boolean; url: { current: string }; text: { en: string; fr: string } }
     ];
-    name: { en: string; fr: string };
+    name: { en: string; fr: string } | string;
     description?: { en: string; fr: string };
     cards: [{ imageUrl: string; description: { en: string; fr: string } }];
     slider: [
@@ -229,7 +229,7 @@ export interface PagesContent {
   testimonials?: [
     {
       _id: string;
-      name: { en: string; fr: string };
+      name: string;
       _createdAt: string;
       imageUrl: string;
       description: { en: string; fr: string };

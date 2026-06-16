@@ -132,7 +132,7 @@ export default async function Home() {
   ]);
 
   const { content } = homeData;
-  console.log(content)
+  // console.log(content)
   const orgSchema = getOrganizationSchema(configData);
   const webSiteSchema = getWebSiteSchema();
   const localBusinessSchema = getLocalBusinessSchema();

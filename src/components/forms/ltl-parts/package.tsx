@@ -212,7 +212,6 @@ export default function PackageLTL() {
               control={control}
               rules={{
                 validate: (value, formValues) => {
-                  console.log("packagee", formValues);
                   return (
                     !!value ||
                     !!formValues.pallet ||

@@ -10,6 +10,7 @@ import { Blogs, IndvidualBlog } from "@/utils/types";
 import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
 import { ImSpinner9 } from "react-icons/im";
+import { useTranslate } from "@/providers/locale-provider";
 
 export default function BlogsClient({ data }: { data: Blogs }) {
   const { control, watch } = useForm();
@@ -18,6 +19,7 @@ export default function BlogsClient({ data }: { data: Blogs }) {
   const blogQuery = useQuery(["blogs", search], ({ queryKey }) =>
     axios.get(`/api/blog?searchQuery=${queryKey[1]}`)
   );
+  const t = useTranslate();
   return (
     <>
       <div className="flex flex-col gap-4">
@@ -66,7 +68,7 @@ export default function BlogsClient({ data }: { data: Blogs }) {
                       height={70}
                       width={70}
                     />
-                    <p className="font-semibold text-xl">{e.title}</p>
+                    <p className="font-semibold text-xl">{t(e.title)}</p>
                     <p className="text-xs text-text-gray">
                       Posted on {new Date(e.publishedAt).toDateString()}
                     </p>

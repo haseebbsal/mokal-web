@@ -13,6 +13,8 @@ interface TabProps {
 
 export default async function TabPageComponent({ header, slider, variation }: TabProps) {
     const locale = await getLocale();
+    // if (slider?.[1]?.name === "Courier") console.log(slider[1].slider[0])
+    // if (slider?.[1]?.name === "Courier") console.log(variation)
     return (
         <div className={`flex flex-col items-center m-auto sm:px-8 px-4 sm:py-20 py-16  text-center gap-4`}>
             <div className="sm:text-[2.3rem] text-[1.5rem] font-bold">

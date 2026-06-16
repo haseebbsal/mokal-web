@@ -29,8 +29,6 @@ interface ContentProps {
 
 export default async function Content({ content }: ContentProps) {
   const lang = await getLocale();
-
-  console.log(content);
   return (
     <>
       {
