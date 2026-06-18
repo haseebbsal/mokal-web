@@ -10,17 +10,17 @@ import { ToastContainer } from 'react-toastify';
 
 import { getLocale } from "@/utils/locale-server";
 import { LocaleProvider } from "@/providers/locale-provider";
-import { Metadata } from "next";
-import { isProduction } from "@/utils/environment";
+// import { Metadata } from "next";
+// import { isProduction } from "@/utils/environment";
 import { getLocalBusinessSchema, getLogisticsBusinessSchema, getWebSiteSchema } from "@/utils/schema";
 
-export const metadata: Metadata = {
-  robots: {
-    index: isProduction,
-    follow: isProduction,
-    nocache: !isProduction,
-  },
-};
+// export const metadata: Metadata = {
+//   robots: {
+//     index: isProduction,
+//     follow: isProduction,
+//     nocache: !isProduction,
+//   },
+// };
 
 const lato = Lato({
   weight: "400",
