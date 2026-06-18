@@ -38,7 +38,7 @@ export default async function Content({ content }: ContentProps) {
           {content.map((e) => {
             if (e.imageUrl)
               return (
-                <div>
+                <div key={e.imageUrl} >
                   <Image
                     key={e.imageUrl}
                     className={`flex-1 ${content.find((item) => item.header)?.header?.[0].Value &&
