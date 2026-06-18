@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Privacy Policy | MGC Freight",
-    description: "MGC Freight's privacy policy - learn how we protect your data.",
+    description: "Read MGC Freight's privacy policy to understand how we protect and manage your personal data and shipping details.",
     type: "website",
     locale: "en_US",
     siteName: "MGC Freight",
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Privacy Policy | MGC Freight",
-    description: "Read MGC Freight's privacy policy.",
+    description: "Read MGC Freight's privacy policy to understand how we protect and manage your personal data and shipping details.",
   },
 };
 

@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Shipping Guides | MGC Freight",
-    description: "Step-by-step guides for hassle-free shipping.",
+    description: "Access step-by-step resources, tools, and guides for hassle-free shipping and logistics planning.",
     type: "website",
     locale: "en_US",
     siteName: "MGC Freight",
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Shipping Guides | MGC Freight",
-    description: "Your complete guide to shipping and logistics.",
+    description: "Access step-by-step resources, tools, and guides for hassle-free shipping and logistics planning.",
   },
 };
 

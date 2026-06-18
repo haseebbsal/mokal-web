@@ -3,14 +3,14 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "White Glove Delivery Services Canada | Premium Freight Handling | MGC Freight",
-  description: "MGC Freight's white glove delivery service provides premium handling for high-value, fragile, and large-item shipments across Canada and the US. Room-of-choice delivery, unpacking, and debris removal — all managed through our platform.",
+  description: "MGC Freight's white glove delivery service provides premium handling for high-value, fragile, and large-item shipments across Canada and the US.",
   keywords: ["white glove shipping", "delicate freight", "high-value shipping", "secure transport", "MGC Freight white glove", "logistics services"],
   alternates: {
     canonical: process.env.NEXT_PUBLIC_BASE_URL,
   },
   openGraph: {
     title: "White Glove Delivery Services Canada | Premium Freight Handling | MGC Freight",
-    description: "MGC Freight's white glove delivery service provides premium handling for high-value, fragile, and large-item shipments across Canada and the US. Room-of-choice delivery, unpacking, and debris removal — all managed through our platform.",
+    description: "MGC Freight's white glove delivery service provides premium handling for high-value, fragile, and large-item shipments across Canada and the US.",
     type: "website",
     locale: "en_US",
     siteName: "MGC Freight",
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "White Glove Delivery Services Canada | Premium Freight Handling | MGC Freight",
-    description: "MGC Freight's white glove delivery service provides premium handling for high-value, fragile, and large-item shipments across Canada and the US. Room-of-choice delivery, unpacking, and debris removal — all managed through our platform.",
+    description: "MGC Freight's white glove delivery service provides premium handling for high-value, fragile, and large-item shipments across Canada and the US.",
   },
 };
 

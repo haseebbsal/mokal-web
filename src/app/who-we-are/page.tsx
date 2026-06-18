@@ -2,14 +2,14 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "About MGC Freight | Ontario Freight Broker | Domestic & Cross-Border Logistics",
-  description: "MGC Freight is an Ontario-based freight brokerage and 3PL provider connecting shippers with a network of 160,000+ carriers across North America. Learn about our mission, values, and commitment to making transportation simpler.",
+  description: "MGC Freight is an Ontario-based freight brokerage and 3PL provider connecting shippers with a network of 160,000+ carriers across North America.",
   keywords: ["about MGC Freight", "who we are", "logistics company", "freight broker", "MGC Freight team", "company values", "careers", "sustainability", "diversity"],
   alternates: {
     canonical: process.env.NEXT_PUBLIC_BASE_URL,
   },
   openGraph: {
     title: "About MGC Freight | Ontario Freight Broker | Domestic & Cross-Border Logistics",
-    description: "MGC Freight is an Ontario-based freight brokerage and 3PL provider connecting shippers with a network of 160,000+ carriers across North America. Learn about our mission, values, and commitment to making transportation simpler.",
+    description: "MGC Freight is an Ontario-based freight brokerage and 3PL provider connecting shippers with a network of 160,000+ carriers across North America.",
     type: "website",
     locale: "en_US",
     siteName: "MGC Freight",
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "About MGC Freight | Ontario Freight Broker | Domestic & Cross-Border Logistics",
-    description: "MGC Freight is an Ontario-based freight brokerage and 3PL provider connecting shippers with a network of 160,000+ carriers across North America. Learn about our mission, values, and commitment to making transportation simpler.",
+    description: "MGC Freight is an Ontario-based freight brokerage and 3PL provider connecting shippers with a network of 160,000+ carriers across North America.",
   },
 };
 

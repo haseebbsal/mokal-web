@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Customer Spotlight | MGC Freight",
-    description: "Real stories of how businesses benefit from MGC Freight.",
+    description: "Discover our client success stories and see how we help businesses optimize their logistics, reduce shipping costs, and scale.",
     type: "website",
     locale: "en_US",
     siteName: "MGC Freight",
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Customer Spotlight | MGC Freight",
-    description: "Success stories from our valued clients.",
+    description: "Discover our client success stories and see how we help businesses optimize their logistics, reduce shipping costs, and scale.",
   },
 };
 

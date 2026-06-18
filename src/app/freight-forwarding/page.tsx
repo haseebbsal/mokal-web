@@ -3,14 +3,14 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Freight Forwarding Services Ontario & Canada | Global Logistics | MGC Freight",
-  description: "MGC Freight offers reliable freight forwarding services from Ontario and across Canada. Manage global supply chain logistics by air, sea, and land with competitive rates and end-to-end shipment tracking.",
+  description: "MGC Freight offers reliable freight forwarding services from Ontario and across Canada. Manage global supply chain with competitive rates.",
   keywords: ["freight forwarding", "global logistics", "MGC Freight", "international shipping", "freight broker", "cross-border logistics", "supply chain management", "ocean freight", "air freight", "customs brokerage", "shipping services"],
   alternates: {
     canonical: process.env.NEXT_PUBLIC_BASE_URL,
   },
   openGraph: {
     title: "Freight Forwarding Services Ontario & Canada | Global Logistics | MGC Freight",
-    description: "MGC Freight offers reliable freight forwarding services from Ontario and across Canada. Manage global supply chain logistics by air, sea, and land with competitive rates and end-to-end shipment tracking.",
+    description: "MGC Freight offers reliable freight forwarding services from Ontario and across Canada. Manage global supply chain with competitive rates.",
     type: "website",
     locale: "en_US",
     siteName: "MGC Freight",
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Freight Forwarding Services Ontario & Canada | Global Logistics | MGC Freight",
-    description: "MGC Freight offers reliable freight forwarding services from Ontario and across Canada. Manage global supply chain logistics by air, sea, and land with competitive rates and end-to-end shipment tracking.",
+    description: "MGC Freight offers reliable freight forwarding services from Ontario and across Canada. Manage global supply chain with competitive rates.",
   },
 };
 

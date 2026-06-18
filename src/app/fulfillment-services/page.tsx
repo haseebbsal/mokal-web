@@ -3,14 +3,14 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "3PL Fulfillment Services Canada | Pick, Pack & Ship | MGC Freight",
-  description: "MGC Freight's 3PL fulfillment services handle order processing, warehousing, pick-and-pack, and shipping for growing Canadian businesses. Scalable, cost-efficient fulfillment with real-time inventory tracking. No long-term commitments.",
+  description: "MGC Freight's 3PL fulfillment services handle order processing, warehousing, pick-and-pack, and shipping for growing Canadian businesses.",
   keywords: ["fulfillment services", "order fulfillment", "e-commerce fulfillment", "MGC Freight", "warehousing", "inventory management", "logistics services", "shipping services", "3PL", "supply chain management"],
   alternates: {
     canonical: process.env.NEXT_PUBLIC_BASE_URL,
   },
   openGraph: {
     title: "3PL Fulfillment Services Canada | Pick, Pack & Ship | MGC Freight",
-    description: "MGC Freight's 3PL fulfillment services handle order processing, warehousing, pick-and-pack, and shipping for growing Canadian businesses. Scalable, cost-efficient fulfillment with real-time inventory tracking. No long-term commitments.",
+    description: "MGC Freight's 3PL fulfillment services handle order processing, warehousing, pick-and-pack, and shipping for growing Canadian businesses.",
     type: "website",
     locale: "en_US",
     siteName: "MGC Freight",
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "3PL Fulfillment Services Canada | Pick, Pack & Ship | MGC Freight",
-    description: "MGC Freight's 3PL fulfillment services handle order processing, warehousing, pick-and-pack, and shipping for growing Canadian businesses. Scalable, cost-efficient fulfillment with real-time inventory tracking. No long-term commitments.",
+    description: "MGC Freight's 3PL fulfillment services handle order processing, warehousing, pick-and-pack, and shipping for growing Canadian businesses.",
   },
 };
 

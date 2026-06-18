@@ -1,23 +1,45 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "MGC Freight | Freight Brokerage Services Canada & USA | LTL, FTL, Courier & More",
-  description: "MGC Freight is a trusted freight brokerage based in Ontario offering LTL shipping, FTL truckload, courier services, cross-border freight, and fulfillment across Canada and the US. Get a free freight quote today.",
+  title: "MGC Freight | Canada & USA Freight Brokerage Services",
+  description: "MGC Freight offers reliable LTL, FTL, courier, and cross-border shipping across Canada and the US. Get your free freight quote from our Ontario experts today.",
   alternates: {
     canonical: process.env.NEXT_PUBLIC_BASE_URL,
   },
+  robots: {
+    index: isProduction,
+    follow: isProduction,
+    nocache: !isProduction,
+  },
   keywords: ["freight shipping", "logistics company", "MGC Freight", "cargo shipping", "supply chain management", "freight broker", "transportation services", "shipping solutions", "truckload shipping", "LTL shipping"],
   openGraph: {
-    title: "MGC Freight | Freight Brokerage Services Canada & USA | LTL, FTL, Courier & More",
-    description: "MGC Freight is a trusted freight brokerage based in Ontario offering LTL shipping, FTL truckload, courier services, cross-border freight, and fulfillment across Canada and the US. Get a free freight quote today.",
+    title: "MGC Freight | Canada & USA Freight Brokerage Services",
+    description: "MGC Freight offers reliable LTL, FTL, courier, and cross-border shipping across Canada and the US. Get your free freight quote from our Ontario experts today.",
     type: "website",
     locale: "en_US",
     siteName: "MGC Freight",
+    url: `${process.env.NEXT_PUBLIC_BASE_URL}/`,
+    images: [
+      {
+        url: `${process.env.NEXT_PUBLIC_BASE_URL}/logo-white.svg`,
+        width: 165,
+        height: 36,
+        alt: 'MGC Freight Digital Supply Chain Management Platform',
+      },
+    ]
   },
   twitter: {
     card: "summary_large_image",
-    title: "MGC Freight | Freight Brokerage Services Canada & USA | LTL, FTL, Courier & More",
-    description: "MGC Freight is a trusted freight brokerage based in Ontario offering LTL shipping, FTL truckload, courier services, cross-border freight, and fulfillment across Canada and the US. Get a free freight quote today.",
+    title: "MGC Freight | Canada & USA Freight Brokerage Services",
+    description: "MGC Freight offers reliable LTL, FTL, courier, and cross-border shipping across Canada and the US. Get your free freight quote from our Ontario experts today.",
+    images: [
+      {
+        url: `${process.env.NEXT_PUBLIC_BASE_URL}/logo-white.svg`,
+        width: 165,
+        height: 36,
+        alt: 'MGC Freight Digital Supply Chain Management Platform',
+      },
+    ],
   },
 };
 
@@ -46,6 +68,7 @@ import BrokerPartnerForm from "@/components/forms/broker-partner-form";
 import CorporatePartnerForm from "@/components/forms/corporate-partner-form";
 import { getOrganizationSchema, getWebSiteSchema, getFAQSchema, getLocalBusinessSchema } from "@/utils/schema";
 import { getLocale } from "@/utils/locale-server";
+import { isProduction } from "@/utils/environment";
 
 export default async function Home() {
   const lang = await getLocale();

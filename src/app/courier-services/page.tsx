@@ -2,23 +2,23 @@ import { getServiceSchema, getFAQSchema } from "@/utils/schema";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Courier Services Canada & USA | Same-Day & Next-Day Parcel Delivery | MGC Freight",
-  description: "Fast and reliable courier services across Canada and the US with MGC Freight. Compare courier rates from top carriers, book same-day or next-day parcel delivery, and track shipments in real-time. Serving Ontario and all of North America.",
+  title: "Courier Services Canada & USA | Same-Day & Next-Day Delivery | MGC Freight",
+  description: "Fast and reliable courier services across Canada and the US. Compare courier rates from top carriers, book same-day or next-day delivery with real-time tracking.",
   keywords: ["courier services", "package delivery", "MGC Freight", "express delivery", "local courier", "shipping services", "package tracking", "reliable courier", "fast delivery"],
   alternates: {
     canonical: process.env.NEXT_PUBLIC_BASE_URL,
   },
   openGraph: {
-    title: "Courier Services Canada & USA | Same-Day & Next-Day Parcel Delivery | MGC Freight",
-    description: "Fast and reliable courier services across Canada and the US with MGC Freight. Compare courier rates from top carriers, book same-day or next-day parcel delivery, and track shipments in real-time. Serving Ontario and all of North America.",
+    title: "Courier Services Canada & USA | Same-Day & Next-Day Delivery | MGC Freight",
+    description: "Fast and reliable courier services across Canada and the US. Compare courier rates from top carriers, book same-day or next-day delivery with real-time tracking.",
     type: "website",
     locale: "en_US",
     siteName: "MGC Freight",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Courier Services Canada & USA | Same-Day & Next-Day Parcel Delivery | MGC Freight",
-    description: "Fast and reliable courier services across Canada and the US with MGC Freight. Compare courier rates from top carriers, book same-day or next-day parcel delivery, and track shipments in real-time. Serving Ontario and all of North America.",
+    title: "Courier Services Canada & USA | Same-Day & Next-Day Delivery | MGC Freight",
+    description: "Fast and reliable courier services across Canada and the US. Compare courier rates from top carriers, book same-day or next-day delivery with real-time tracking.",
   },
 };
 

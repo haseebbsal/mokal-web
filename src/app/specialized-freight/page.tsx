@@ -2,23 +2,23 @@ import { getServiceSchema, getFAQSchema } from "@/utils/schema";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Specialized Freight Services Ontario | Hazmat, Oversized & Temperature-Controlled Shipping | MGC Freight",
-  description: "MGC Freight handles specialized freight including hazardous materials, oversized loads, freeze-protection, in-bond cargo, and Amazon FBA shipments. Expert handling for unique freight across Canada and the US.",
+  title: "Specialized Freight Services Ontario | MGC Freight",
+  description: "MGC Freight handles specialized freight including hazardous materials, oversized loads, freeze-protection, in-bond cargo, and Amazon FBA shipments.",
   keywords: ["specialized freight", "heavy haul", "oversized loads", "complex shipments", "MGC Freight", "logistics services", "custom shipping", "delicate cargo"],
   alternates: {
     canonical: process.env.NEXT_PUBLIC_BASE_URL,
   },
   openGraph: {
-    title: "Specialized Freight Services Ontario | Hazmat, Oversized & Temperature-Controlled Shipping | MGC Freight",
-    description: "MGC Freight handles specialized freight including hazardous materials, oversized loads, freeze-protection, in-bond cargo, and Amazon FBA shipments. Expert handling for unique freight across Canada and the US.",
+    title: "Specialized Freight Services Ontario | MGC Freight",
+    description: "MGC Freight handles specialized freight including hazardous materials, oversized loads, freeze-protection, in-bond cargo, and Amazon FBA shipments.",
     type: "website",
     locale: "en_US",
     siteName: "MGC Freight",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Specialized Freight Services Ontario | Hazmat, Oversized & Temperature-Controlled Shipping | MGC Freight",
-    description: "MGC Freight handles specialized freight including hazardous materials, oversized loads, freeze-protection, in-bond cargo, and Amazon FBA shipments. Expert handling for unique freight across Canada and the US.",
+    title: "Specialized Freight Services Ontario | MGC Freight",
+    description: "MGC Freight handles specialized freight including hazardous materials, oversized loads, freeze-protection, in-bond cargo, and Amazon FBA shipments.",
   },
 };
 
