@@ -38,17 +38,19 @@ export default async function Content({ content }: ContentProps) {
           {content.map((e) => {
             if (e.imageUrl)
               return (
-                <Image
-                  key={e.imageUrl}
-                  className={`flex-1 ${content.find((item) => item.header)?.header?.[0].Value &&
-                    translate(content.find((item) => item.header)?.header?.[0].Value, lang) ==
-                    "Track Your Shipments" && "sm:order-2 order-1"
-                    } `}
-                  src={e.imageUrl}
-                  alt="metrics"
-                  width={500}
-                  height={500}
-                />
+                <div>
+                  <Image
+                    key={e.imageUrl}
+                    className={`flex-1 ${content.find((item) => item.header)?.header?.[0].Value &&
+                      translate(content.find((item) => item.header)?.header?.[0].Value, lang) ==
+                      "Track Your Shipments" && "sm:order-2 order-1"
+                      } `}
+                    src={e.imageUrl}
+                    alt="metrics"
+                    width={400}
+                    height={400}
+                  />
+                </div>
               );
 
             const firstHeaderVal = e.header?.[0] ? translate(e.header[0].Value, lang) : '';
