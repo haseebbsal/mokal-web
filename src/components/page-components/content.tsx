@@ -59,7 +59,7 @@ export default async function Content({ content }: ContentProps) {
                   "sm:order-1 order-2"
                   } flex flex-1 flex-col sm:items-start items-center sm:text-start text-center gap-4`}
               >
-                <div className="sm:text-[3rem] text-[1.5rem] font-bold">
+                <h2 className="sm:text-[3rem] text-[1.5rem] font-bold">
                   {e.header!.map((h) => {
                     const val = translate(h.Value, lang);
                     if (h.Highlight) {
@@ -77,7 +77,7 @@ export default async function Content({ content }: ContentProps) {
                       </span>
                     );
                   })}
-                </div>
+                </h2>
 
                 {e.description?.map((d) => {
                   {

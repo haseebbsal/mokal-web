@@ -42,7 +42,7 @@ export default function CareerOppurtunities() {
           Current <LinearGradientText text={{ en: "Career Opportunities", fr: "Possibilités de Carrière" }} />
         </div>
         <p className="text-text-darkGray">
-          View available openings with Freightcom across our many locations.
+          View available openings with MGC Freight across our many locations.
         </p>
       </div>
       <BaseInput

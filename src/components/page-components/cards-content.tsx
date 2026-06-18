@@ -40,7 +40,7 @@ export default async function CardsContent({
       {variation == 1 && (
         <div className="  p-8 flex flex-col gap-4 items-center ">
           {header && (
-            <div className="sm:text-[2.3rem] flex flex-wrap gap-2 text-[1.5rem] font-bold">
+            <h2 className="sm:text-[2.3rem] flex flex-wrap gap-2 text-[1.5rem] font-bold">
               {header.map((e) => {
                 const val = translate(e.Value, lang);
                 if (e.Highlight) {
@@ -48,7 +48,7 @@ export default async function CardsContent({
                 }
                 return <span key={val}>{val}</span>;
               })}
-            </div>
+            </h2>
           )}
 
           <div className="sm:flex hidden gap-4 w-[80%] flex-wrap">
@@ -65,10 +65,13 @@ export default async function CardsContent({
                     width={50}
                     height={50}
                   />
-                  <LinearGradientText
-                    extraClass="font-bold text-2xl"
-                    text={e.heading}
-                  />
+                  <h3>
+                    <LinearGradientText
+                      extraClass="font-bold text-2xl"
+                      text={e.heading}
+                    />
+                  </h3>
+
                   <p className="text-text-gray">{translate(e.description, lang)}</p>
                 </div>
               );
@@ -160,9 +163,9 @@ export default async function CardsContent({
                       className={` bg-base-lightBlue  relative p-8 overflow-hidden  rounded-xl flex-[1_1_15rem]`}
                     >
                       <div className="flex flex-col gap-2 relative z-30">
-                        <div className="font-bold text-base-blue sm:text-2xl text-lg">
+                        <h3 className="font-bold text-base-blue sm:text-2xl text-lg">
                           {head}
-                        </div>
+                        </h3>
                         <p className="text-text-lighterDarkBlue">
                           {desc}
                         </p>
@@ -185,9 +188,9 @@ export default async function CardsContent({
                       className=" bg-linearPurple  relative p-8 overflow-hidden  rounded-xl flex-[1_1_15rem]"
                     >
                       <div className="flex flex-col gap-2 relative z-30">
-                        <div className="font-bold text-base-purple sm:text-2xl text-lg ">
+                        <h3 className="font-bold text-base-purple sm:text-2xl text-lg ">
                           {head}
-                        </div>
+                        </h3>
                         <p className="text-base-purple">{desc}</p>
                         <Image
                           src={e.imageUrl}
@@ -210,9 +213,9 @@ export default async function CardsContent({
                       className=" bg-linearBlue p-8 flex sm:flex-row flex-col sm:gap-8 gap-4 items-center rounded-xl w-full"
                     >
                       <div className="flex flex-1 text-white flex-col sm:gap-8 gap-4 relative z-30">
-                        <div className="font-bold  sm:text-4xl text-lg">
+                        <h3 className="sm:text-2xl text-lg">
                           {head}
-                        </div>
+                        </h3>
                         <p className="">{desc}</p>
                         <div className="sm:flex hidden gap-8">
                           {e.buttons && e.buttons?.length > 0 && (

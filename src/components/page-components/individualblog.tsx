@@ -38,7 +38,7 @@ export default function IndividualBlog({ data }: { data: IndvidualBlog }) {
                             <BaseInput name="search" classNames={{ inputWrapper: "p-6" }} extraClass="w-full" control={control} placeholder="Search Blogs" endContent={<BiSearch size={20} />} />
                             <div className=" flex flex-col gap-4 items-start text-start">
                                 <p className="text-text-blue text-2xl font-semibold">Table of Content</p>
-                                <p className="text-text-blue">Utilizing Freightcom to Manage Your End of the Supply Chain</p>
+                                <p className="text-text-blue">Utilizing MGC Freight to Manage Your End of the Supply Chain</p>
                                 <p className="text-text-blue">Building Strong Relationships with Suppliers and Partners</p>
                                 <p className="text-text-blue">Optimizing Shipping Practices for Resilience</p>
                                 <p className="text-text-blue">Strategic Stock Management: Balancing Inventory and Demand</p>

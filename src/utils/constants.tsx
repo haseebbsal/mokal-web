@@ -204,10 +204,10 @@ export const HomePageTabs = [
     component: (
       <TabNoSlider
         title={
-          <div className="sm:!text-3xl text-lg font-bold">
+          <h3 className="sm:!text-3xl text-lg font-bold">
             Comprehensive <LinearGradientText text={{ en: "Fulfillment Services", fr: "Services d'exécution" }} /> for
             Your Business
-          </div>
+          </h3>
         }
         description={[
           { en: "Simplify your logistics with MGC Freight! We offer end-to-end fulfillment solutions, including efficient order processing, secure warehousing, and hassle-free shipping, ensuring a smooth experience for you and your customers.", fr: "Simplifiez votre logistique avec MGC Freight! Nous offrons des solutions d'exécution complètes, y compris le traitement efficace des commandes, l'entreposage sécurisé et l'expédition sans tracas, garantissant une expérience fluide pour vous et vos clients.", },
@@ -220,10 +220,10 @@ export const HomePageTabs = [
     component: (
       <TabWithSlider
         title={
-          <div className="sm:!text-3xl text-lg font-bold">
+          <h3 className="sm:!text-3xl text-lg font-bold">
             Trusted Courier Partner Solutions for{" "}
             <LinearGradientText text={{ en: "Seamless Deliveries", fr: "Livraisons Impeccables" }} />
-          </div>
+          </h3>
         }
         description={[
           { en: "Enhance your shipping capabilities with MGC Freight’s reliable courier partnerships. We ensure timely deliveries, secure handling, and exceptional service, providing your business with the flexibility and efficiency needed to satisfy your customers every step of the way.", fr: "Améliorez vos capacités d'expédition avec les partenariats de messagerie fiables de MGC Freight. Nous garantissons des livraisons rapides, une manutention sécurisée et un service exceptionnel, offrant à votre entreprise la flexibilité et l'efficacité nécessaires pour satisfaire vos clients à chaque étape du processus." },
@@ -273,10 +273,10 @@ export const HomePageTabs = [
     component: (
       <TabWithSlider
         title={
-          <div className="sm:!text-3xl text-lg font-bold">
+          <h3 className="sm:!text-3xl text-lg font-bold">
             Reliable <LinearGradientText text={{ en: "LTL (Less Than Truckload)", fr: "LTL (Moins qu'un chargement complet)" }} />{" "}
             Partner Solutions
-          </div>
+          </h3>
         }
         description={[
           { en: "Optimize your freight shipping with MGC Freight’s LTL services. We provide cost-effective and flexible solutions, ensuring your smaller shipments are delivered safely and on time, no matter the destination.", fr: "Optimisez votre expédition de fret avec les services LTL de MGC Freight. Nous fournissons des solutions rentables et flexibles, garantissant que vos expéditions plus petites sont livrées en toute sécurité et à temps, quelle que soit la destination." },
@@ -326,10 +326,10 @@ export const HomePageTabs = [
     component: (
       <TabNoSlider
         title={
-          <div className="sm:!text-3xl text-lg font-bold">
+          <h3 className="sm:!text-3xl text-lg font-bold">
             The <LinearGradientText text={{ en: "Ultimate Platform", fr: "La plateforme ultime" }} /> for Freight
             Brokers
-          </div>
+          </h3>
         }
         description={[
           { en: "Streamline your operations with MGC Freight’s broker-friendly solutions. We offer efficient tools and reliable support to help you manage shipments, connect with carriers, and ensure seamless deliveries for your clients.", fr: "Simplifiez vos opérations avec les solutions conviviales de MGC Freight pour les courtiers. Nous offrons des outils efficaces et un soutien fiable pour vous aider à gérer les expéditions, à vous connecter avec les transporteurs et à assurer des livraisons fluides pour vos clients." },
@@ -342,10 +342,10 @@ export const HomePageTabs = [
     component: (
       <TabNoSlider
         title={
-          <div className="sm:!text-3xl text-lg font-bold">
+          <h3 className="sm:!text-3xl text-lg font-bold">
             Fast, Reliable Spot Quotes to{" "}
             <LinearGradientText text={{ en: "Simplify Your Freight Booking", fr: "Simplifiez votre réservation de fret" }} />
-          </div>
+          </h3>
         }
         description={[
           { en: "MGC Freight eliminates the hassle of spot quoting, reducing your workload and boosting efficiency.", fr: "MGC Freight élimine les tracas liés aux cotations ponctuelles, réduisant ainsi votre charge de travail et augmentant votre efficacité." },
@@ -359,9 +359,9 @@ export const HomePageTabs = [
     component: (
       <TabNoSlider
         title={
-          <div className="sm:!text-3xl text-lg font-bold">
+          <h3 className="sm:!text-3xl text-lg font-bold">
             Simplified and Swift <LinearGradientText text={{ en: "Claims Resolution", fr: "Résolution rapide et simplifiée des réclamations" }} />
-          </div>
+          </h3>
         }
         description={[
           { en: "Say goodbye to the hassle of filing claims with MGC Freight! Our intuitive claims system ensures quick and easy resolutions.", fr: "Dites adieu aux tracas liés au dépôt de réclamations avec MGC Freight! Notre système de réclamation intuitif garantit des résolutions rapides et faciles." },

@@ -6,11 +6,6 @@ export const metadata: Metadata = {
   alternates: {
     canonical: process.env.NEXT_PUBLIC_BASE_URL,
   },
-  robots: {
-    index: isProduction,
-    follow: isProduction,
-    nocache: !isProduction,
-  },
   keywords: ["freight shipping", "logistics company", "MGC Freight", "cargo shipping", "supply chain management", "freight broker", "transportation services", "shipping solutions", "truckload shipping", "LTL shipping"],
   openGraph: {
     title: "MGC Freight | Canada & USA Freight Brokerage Services",
@@ -66,9 +61,8 @@ import TrackShipment from "@/components/page-components/track-shipment";
 import GetAQuoteForm from "@/components/page-components/get-a-quote";
 import BrokerPartnerForm from "@/components/forms/broker-partner-form";
 import CorporatePartnerForm from "@/components/forms/corporate-partner-form";
-import { getOrganizationSchema, getWebSiteSchema, getFAQSchema, getLocalBusinessSchema } from "@/utils/schema";
+import { getOrganizationSchema, getFAQSchema } from "@/utils/schema";
 import { getLocale } from "@/utils/locale-server";
-import { isProduction } from "@/utils/environment";
 
 export default async function Home() {
   const lang = await getLocale();
@@ -157,8 +151,6 @@ export default async function Home() {
   const { content } = homeData;
   // console.log(content)
   const orgSchema = getOrganizationSchema(configData);
-  const webSiteSchema = getWebSiteSchema();
-  const localBusinessSchema = getLocalBusinessSchema();
   const faqBlock = content.find((e) => e._type === "faqs");
   const faqSchema = faqBlock && faqBlock.questions
     ? getFAQSchema(faqBlock.questions, lang)
@@ -169,14 +161,6 @@ export default async function Home() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(webSiteSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
       />
       {faqSchema && (
         <script

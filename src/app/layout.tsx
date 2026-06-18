@@ -10,6 +10,17 @@ import { ToastContainer } from 'react-toastify';
 
 import { getLocale } from "@/utils/locale-server";
 import { LocaleProvider } from "@/providers/locale-provider";
+import { Metadata } from "next";
+import { isProduction } from "@/utils/environment";
+import { getLocalBusinessSchema, getLogisticsBusinessSchema, getWebSiteSchema } from "@/utils/schema";
+
+export const metadata: Metadata = {
+  robots: {
+    index: isProduction,
+    follow: isProduction,
+    nocache: !isProduction,
+  },
+};
 
 const lato = Lato({
   weight: "400",
@@ -38,6 +49,18 @@ export default async function RootLayout({
             </MegaMenuProvider>
           </QueryProvider>
         </HeroProvider>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(getWebSiteSchema()) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(getLocalBusinessSchema()) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(getLogisticsBusinessSchema()) }}
+        />
         {/* <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-H7Y1TXGZ4R"
           strategy="afterInteractive"

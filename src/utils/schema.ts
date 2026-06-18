@@ -144,3 +144,49 @@ export function getBlogPostingSchema(blog: any, url: string, lang: string = "en"
     }
   };
 }
+
+export function getLogisticsBusinessSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "LogisticsBusiness",
+    "name": "MGC Freight",
+    "description": "A trusted freight brokerage providing asset-light LTL, FTL truckload, courier, and cross-border shipping services across Canada and the United States.",
+    "url": "https://mgcfreight.com",
+    "logo": "https://mgcfreight.com/logo-white.svg",
+    "telephone": "+1-289-295-1640",
+    "email": "marketing@mgcfreight.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "2275 Upper Middle Rd E #700",
+      "addressLocality": "Oakville",
+      "addressRegion": "ON",
+      "postalCode": "L6H 0C3",
+      "addressCountry": "CA"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "43.4842",
+      "longitude": "-79.6731"
+    },
+    "areaServed": [
+      { "@type": "AdministrativeArea", "name": "Canada" },
+      { "@type": "AdministrativeArea", "name": "United States" },
+      { "@type": "AdministrativeArea", "name": "Ontario" }
+    ],
+    "knowsAbout": [
+      "Less Than Truckload Shipping (LTL)",
+      "Full Truckload Shipping (FTL)",
+      "Cross-Border Freight Transport",
+      "3PL Fulfillment Services",
+      "Courier and Package Delivery Services",
+      "Supply Chain Management"
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+1-289-295-1640",
+      "contactType": "customer service",
+      "areaServed": ["CA", "US"],
+      "availableLanguage": ["en", "fr"]
+    }
+  };
+}

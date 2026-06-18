@@ -199,7 +199,7 @@ export default function BaseTabs({ keys, variation }: TabsProps) {
             <TabWithSlider
               buttons={keys[key].slider[0]?.buttons ?? []}
               title={
-                <div className="sm:!text-3xl text-lg font-bold">
+                <h3 className="sm:!text-3xl text-lg font-bold">
                   {keys[key].slider[0].header?.map((e) => {
                     if (e.Highlight) {
                       return (
@@ -216,7 +216,7 @@ export default function BaseTabs({ keys, variation }: TabsProps) {
                       </span>
                     );
                   })}
-                </div>
+                </h3>
               }
               content={keys[key].slider[0]?.content?.[locale]}
               description={[t(keys[key].slider[0].description!)]}
@@ -232,7 +232,7 @@ export default function BaseTabs({ keys, variation }: TabsProps) {
               <TabNoSlider
                 buttons={keys[key].slider[0].buttons}
                 title={
-                  <div className="sm:!text-3xl text-lg font-bold">
+                  <h3 className="sm:!text-3xl text-lg font-bold">
                     {keys[key].slider[0].header?.map((e) => {
                       if (e.Highlight) {
                         return (
@@ -249,7 +249,7 @@ export default function BaseTabs({ keys, variation }: TabsProps) {
                         </span>
                       );
                     })}
-                  </div>
+                  </h3>
                 }
                 content={keys[key].slider[0].content?.[locale] ?? keys[key].slider[0].content}
                 description={[t(keys[key].slider[0].description!)]}
@@ -330,7 +330,7 @@ export default function BaseTabs({ keys, variation }: TabsProps) {
                 buttons={e.slider[0].buttons}
                 title={
                   e.slider[0].header && (
-                    <div className="sm:!text-3xl text-lg font-bold">
+                    <h3 className="sm:!text-3xl text-lg font-bold">
                       {e.slider[0].header?.map((e) => {
                         if (e.Highlight) {
                           return (
@@ -347,7 +347,7 @@ export default function BaseTabs({ keys, variation }: TabsProps) {
                           </span>
                         );
                       })}
-                    </div>
+                    </h3>
                   )
                 }
                 description={[t(e.slider[0].description!)]}
@@ -366,7 +366,7 @@ export default function BaseTabs({ keys, variation }: TabsProps) {
                   content={e.slider[0].content?.[locale] ?? e.slider[0].content}
                   title={
                     e.slider[0].header && (
-                      <div className="sm:!text-3xl text-lg font-bold">
+                      <h3 className="sm:!text-3xl text-lg font-bold">
                         {e.slider[0].header?.map((e) => {
                           if (e.Highlight) {
                             return (
@@ -383,7 +383,7 @@ export default function BaseTabs({ keys, variation }: TabsProps) {
                             </span>
                           );
                         })}
-                      </div>
+                      </h3>
                     )
                   }
                   description={[t(e.slider[0].description!)]}
