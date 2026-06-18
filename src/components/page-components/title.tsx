@@ -60,7 +60,7 @@ export default function Title({ title, header, buttons, imageUrl, description, i
                 </div> */}
             </div>
             {imageUrl && <div className={`sm:px-8 px-4 py-4 flex justify-center  `}>
-                <Image src={imageUrl} alt="dashboard" width={1000} height={1000} className="" />
+                <Image fetchPriority="high" src={imageUrl} alt="dashboard" width={1000} height={1000} className="" />
             </div>}
 
         </div>
