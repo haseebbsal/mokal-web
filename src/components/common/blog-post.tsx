@@ -13,7 +13,7 @@ interface BlogPostProp {
     createdAt: string
 }
 
-export default function BlogPost({ index, description, rating, name, imageUrl, createdAt }: BlogPostProp) {
+export default function BlogPost({ index, description, rating, name, imageUrl }: BlogPostProp) {
     return (
         <div className="px-8">
             <div className={`p-4 ${index % 2 == 0 ? 'text-white bg-base-blue' : 'text-base-blue bg-white'} items-start text-start shadow-xl  rounded-xl flex flex-col gap-2`}>
