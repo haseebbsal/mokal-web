@@ -6,7 +6,7 @@ import NavbarBottomHeader from "./navbar-bottom-header";
 import Link from "next/link";
 import { configData } from "@/utils/types";
 import Marquee from "react-fast-marquee";
-import LanguageSelector from "../common/language-selector";
+// import LanguageSelector from "../common/language-selector";
 import { getLocale } from "@/utils/locale-server";
 import { translate } from "@/utils/locale";
 
@@ -80,7 +80,7 @@ export default async function MainNavbar() {
                     ))}
                 </div>
                 <CheckStatusForm />
-                <LanguageSelector />
+                {/* <LanguageSelector /> */}
               </div>
             </NavbarContent>
           </Navbar>
