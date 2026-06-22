@@ -1,5 +1,5 @@
 import "./globals.css";
-// import Script from "next/script";
+import Script from "next/script";
 import HeroProvider from "@/providers/hero-provider";
 import { Lato } from "next/font/google";
 import MainNavbar from "@/components/page-components/navbar";
@@ -10,17 +10,17 @@ import { ToastContainer } from 'react-toastify';
 
 import { getLocale } from "@/utils/locale-server";
 import { LocaleProvider } from "@/providers/locale-provider";
-// import { Metadata } from "next";
-// import { isProduction } from "@/utils/environment";
+import { Metadata } from "next";
+import { isProduction } from "@/utils/environment";
 import { getLocalBusinessSchema, getLogisticsBusinessSchema, getWebSiteSchema } from "@/utils/schema";
 
-// export const metadata: Metadata = {
-//   robots: {
-//     index: isProduction,
-//     follow: isProduction,
-//     nocache: !isProduction,
-//   },
-// };
+export const metadata: Metadata = {
+  robots: {
+    index: isProduction,
+    follow: isProduction,
+    nocache: !isProduction,
+  },
+};
 
 const lato = Lato({
   weight: "400",
@@ -61,11 +61,11 @@ export default async function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(getLogisticsBusinessSchema()) }}
         />
-        {/* <Script
+        {isProduction && <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-H7Y1TXGZ4R"
           strategy="afterInteractive"
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
+        />}
+        {isProduction && <Script id="google-analytics" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
@@ -73,7 +73,7 @@ export default async function RootLayout({
 
             gtag('config', 'G-H7Y1TXGZ4R');
           `}
-        </Script> */}
+        </Script>}
       </body>
     </html>
   );
