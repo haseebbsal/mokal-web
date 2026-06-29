@@ -11,8 +11,9 @@ export async function generateMetadata({
   params: Promise<{ blogId: string }>;
 }): Promise<Metadata> {
   const { blogId } = await params;
+  const locale = await getLocale();
   try {
-    const blog: { title: string } = await client.fetch({
+    const blog: { title: { en: string, fr: string } } = await client.fetch({
       query: `*[_type == 'blog' && _id=='${blogId}'][0]{ title }`,
       config: {
         cache: "no-store",
@@ -21,8 +22,8 @@ export async function generateMetadata({
 
     if (blog && blog.title) {
       return {
-        title: `${blog.title} | MGC Freight`,
-        description: `Read our latest blog: ${blog.title}. Stay updated with logistics insights from MGC Freight.`,
+        title: `${blog.title[locale]} | MGC Freight`,
+        description: `Read our latest blog: ${blog.title[locale]}. Stay updated with logistics insights from MGC Freight.`,
       };
     }
   } catch (error) {
@@ -81,7 +82,7 @@ export default async function Blog({ params }: { params: Promise<{ blogId: strin
           dangerouslySetInnerHTML={{ __html: JSON.stringify(blogSchema) }}
         />
       )}
-      <IndividualBlog data={individualBlogData as IndvidualBlog} />
+      <IndividualBlog data={individualBlogData as IndvidualBlog} locale={lang} />
     </>
   )
 }

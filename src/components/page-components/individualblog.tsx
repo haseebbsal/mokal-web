@@ -8,7 +8,7 @@ import { BiSearch } from "react-icons/bi"
 import { useForm } from "react-hook-form"
 import { IndvidualBlog } from "@/utils/types"
 
-export default function IndividualBlog({ data }: { data: IndvidualBlog }) {
+export default function IndividualBlog({ data, locale }: { data: IndvidualBlog, locale: 'en' | 'fr' }) {
     const { control } = useForm()
     //  console.log(data)
     return (
@@ -28,7 +28,7 @@ export default function IndividualBlog({ data }: { data: IndvidualBlog }) {
 
                         <div className={`flex flex-col sm:order-1 order-2 flex-wrap items-start text-start gap-4`}>
                             <Image className="flex-1 w-full max-h-52 rounded-xl object-cover" src={data.imageUrl} alt="blog" height={70} width={70} />
-                            <div className="text-text-blue text-2xl font-semibold">{data.title}</div>
+                            <div className="text-text-blue text-2xl font-semibold">{data.title[locale]}</div>
                             <p className="text-text-gray font-semibold">Posted on {new Date(data.publishedAt).toDateString()}</p>
 
                             {data.content.map((e) => <p key={e[0].text} className="text-text-darkGray">{e[0].text}</p>)}

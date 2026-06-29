@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Broker Partnership Program | MGC Freight",
-    description: "Partner with us and grow your brokerage business.",
+    description: "Partner with us and grow your business.",
     type: "website",
     locale: "en_US",
     siteName: "MGC Freight",

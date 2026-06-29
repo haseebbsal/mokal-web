@@ -171,7 +171,7 @@ export type IndvidualBlog = {
   imageUrl: string;
   authorName: string;
   authorImg: string;
-  title: string;
+  title: { en: string, fr: string };
   content: [{ text: string }][];
   publishedAt: string;
 };
