@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "MGC Freight | Canada & USA Freight Intelligent Freight Platform",
+  title: "MGC Freight | Canada & USA Intelligent Freight Platform",
   description: "MGC Freight offers reliable LTL, FTL, courier, and cross-border shipping across Canada and the US. Get your free freight quote from our Ontario experts today.",
   alternates: {
     canonical: process.env.NEXT_PUBLIC_BASE_URL,
   },
   keywords: ["freight shipping", "logistics company", "MGC Freight", "cargo shipping", "supply chain management", "freight broker", "transportation services", "shipping solutions", "truckload shipping", "LTL shipping"],
   openGraph: {
-    title: "MGC Freight | Canada & USA Freight Intelligent Freight Platform",
+    title: "MGC Freight | Canada & USA Intelligent Freight Platform",
     description: "MGC Freight offers reliable LTL, FTL, courier, and cross-border shipping across Canada and the US. Get your free freight quote from our Ontario experts today.",
     type: "website",
     locale: "en_US",
