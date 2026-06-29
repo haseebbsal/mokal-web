@@ -150,7 +150,7 @@ export function getLogisticsBusinessSchema() {
     "@context": "https://schema.org",
     "@type": "LogisticsBusiness",
     "name": "MGC Freight",
-    "description": "A trusted freight brokerage providing asset-light LTL, FTL truckload, courier, and cross-border shipping services across Canada and the United States.",
+    "description": "A trusted freight platform providing asset-light LTL, FTL truckload, courier, and cross-border shipping services across Canada and the United States.",
     "url": "https://mgcfreight.com",
     "logo": "https://mgcfreight.com/logo-white.svg",
     "telephone": "+1-289-295-1640",
